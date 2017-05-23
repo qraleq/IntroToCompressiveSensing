@@ -67,7 +67,7 @@ phi = generateMeasurementMatrix(phiType, block_size);
 % sigma defines variation in succesive measurement matrices
 % this simulates case in which imperfect measurement system is used and in
 % that case there is variation in measurement masks
-sigma = 0.007;
+sigma = 0.05;
 
 randomVector = ones(block_size^2,1)+(sigma*(rand(block_size^2,1)-sigma));
 randomMatrix = repmat(randomVector, [1,block_size^2]);
@@ -109,57 +109,60 @@ image=sparsifyImage(image,[], sparsityPercentage);
 
 figure
 subplot(121), imshow(image, 'InitialMagnification', 'fit'), title('Original image'), colormap gray, axis image
-subplot(122), imshow(image, 'InitialMagnification', 'fit'), title('Original image - resized and sparsified'), colormap gray, axis image
+imshow(image, 'InitialMagnification', 'fit'), title('Original image - resized and sparsified'), colormap gray, axis image
 
 %%
 tic
 
-% initialize matrix for reconstructed image
 image_est = [];
 
-% percentage of used measurements or number of used measurements
-% select only M observations out of total N
 ind = logical(randerr(1,block_size^2,noOfMeasurements));
 
 for k=1:block_size:rows-block_size+1
     for l=1:block_size:cols-block_size+1
         
         im1=image(k:k+block_size-1, l:l+block_size-1);
+        %         im2=image(k:k+block_size-1, l:l+block_size-1);
         
-        % simulated observation/measurement
-        % observation matrix  x  input data converted to 1D
-        y = phi2 * reshape(im1, block_size*block_size, 1);
+        % Simulated observation
+        % Observation matrix  x  input data converted to 1D
+        % y = R * reshape(im, rows*cols, 1);  % Real data
+        
+        y = phi2 * reshape(im1, block_size*block_size, 1); % Ideally K sparse data
         
         y_a = (phi_a * reshape(im1(1:block_size,1:block_size), block_size*block_size, 1));
+        %         y_b = (phi_b * reshape(im2(1:block_size,1:block_size), block_size*block_size, 1));
         
-        % estimate difference in measurement result caused by noise in
-        % measurement matrix rows(measurement masks)
+%         corr = (y_a./mean(y_a));
+                corr = (y_a./y_a(1));
         
-        corr = (y_a./mean(y_a));
-%         corr = (y_a./y_a(1));
-%         corr = y_a;  
-
         y = y./corr;
         
-        %         % add noise to measurements or measurement matrix
+        % add noise to measurements or measurement matrix
         %         y_orig = y;
-        %         y = y + rand(block_size^2,1)*0.01;
+        %                         y = y + rand(block_size^2,1)*0.01;
         %         noise_est=abs(y-y_orig);
+        %
+        %
         %         phi=phi+rand(size(phi, 1), size(phi, 2))/100;
         %         epsilon = 1.3*max(max(std(y)));
         
+        % percentage of used measurements or number of used measurements
         % select only M observations out of total N
+        
         y_m = y(ind);
         
-        % reduced observation matrix (phi_r)
+        % reduced observation matrix (Phi_m)
+        
         phi_r = phi(ind, :);
         
-        % define compressive sensing design matrix theta
-        theta = phi_r * psi_inv;
-        [M,N] = size(theta);
         
         % CS reconstruction - L1 optimization problem
+        
         % min_L1 subject to y_m = Phi_m * Psi^(-1) * s
+        
+        theta = phi_r * psi_inv;
+        [M,N] = size(theta);
         
         switch optimizationPackage
             case 'sedumi'
@@ -200,6 +203,12 @@ for k=1:block_size:rows-block_size+1
                 image_est(k:k+block_size-1, l:l+block_size-1) = reshape(signal_est, [block_size block_size]);
                 image_sparse(k:k+block_size-1, l:l+block_size-1)=im;
                 
+                
+                figure(100)
+                imshow(image_est, 'InitialMagnification', 'fit'), title('Image Reconstruction'), colormap gray, axis image
+                drawnow
+                
+                
             case 'cvx'
                 for i=1:1
                     %                 cvx_solver sedumi
@@ -229,7 +238,12 @@ for k=1:block_size:rows-block_size+1
                     y_m = y_m + b_Axk;
                     
                 end
-                  
+                
+                figure(100)
+                imshow(image_est, 'InitialMagnification', 'fit'), title('Image Reconstruction'), colormap gray, axis image
+                drawnow
+                
+                
             case 'yalmip'
                 
                 s_est=sdpvar(N,1);
@@ -244,6 +258,7 @@ for k=1:block_size:rows-block_size+1
                 figure(100)
                 imshow(image_est, 'InitialMagnification', 'fit'), title('Image Reconstruction'), colormap gray, axis image
                 drawnow
+                
                 
             case 'sparsa'
                 % reconstruction method using Bregman iterations and SpaRSA
@@ -277,6 +292,13 @@ for k=1:block_size:rows-block_size+1
                     
                 end
                 
+                
+                figure(100)
+                imshow(image_est, 'InitialMagnification', 'fit'), title('Image Reconstruction'), colormap gray, axis image
+                imagesc(image_est), title('Image Reconstruction'), colormap gray, axis image
+                drawnow
+                
+                
             case 'fpc'
                 for i = 1:1
                     
@@ -309,6 +331,12 @@ for k=1:block_size:rows-block_size+1
                     
                 end
                 
+                
+                figure(100)
+                imshow(image_est, 'InitialMagnification', 'fit'), title('Image Reconstruction'), colormap gray, axis image
+                drawnow
+                
+                
             case 'cls'
                 
                 opts = optimset('LargeScale', 'on', 'UseParallel', 1)
@@ -320,7 +348,12 @@ for k=1:block_size:rows-block_size+1
                 signal_est = (psi_inv * s_est).';
                 
                 image_est(k:k+block_size-1, l:l+block_size-1)= reshape(signal_est,[block_size block_size]);
-                    
+                
+                figure(100)
+                imshow(image_est, 'InitialMagnification', 'fit'), title('Image Reconstruction'), colormap gray, axis image
+                drawnow
+                
+                
             case 'sparsaTV'
                 
                 % reconstruction method using Bregman iterations and SpaRSA
@@ -385,13 +418,13 @@ for k=1:block_size:rows-block_size+1
                     
                     y_m = y_m + b_Axk;
                     
-                end   
+                end
+                figure(100)
+                imshow(image_est, 'InitialMagnification', 'fit'), title('Image Reconstruction'), colormap gray, axis image
+                drawnow
         end
         
-        figure(100)
-        %                 imshow(image_est, 'InitialMagnification', 'fit'), title('Image Reconstruction'), colormap gray, axis image
-        imagesc(image_est), title('Image Reconstruction'), colormap gray, axis image
-        drawnow
+        
         
     end
 end
