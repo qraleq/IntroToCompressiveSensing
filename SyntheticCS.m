@@ -419,6 +419,7 @@ image_vectorized=[];
 for k=1:block_size:rows-block_size+1
     for l=1:block_size:cols-block_size+1
         
+        
         im1=image(k:k+block_size-1, l:l+block_size-1);
         image_vectorized = [image_vectorized; im1(:)];
         
