@@ -44,7 +44,7 @@ end
 phiType='spike';
 
 % define optimization package
-optimizationPackage = 'sparsa'; % Options: 'cvx', 'sedumi', 'yalmip', 'sparsa', 'fpc', 'cls','sparsaTV'
+optimizationPackage = 'sedumi'; % Options: 'cvx', 'sedumi', 'yalmip', 'sparsa', 'fpc', 'cls','sparsaTV'
 
 % choose block size
 block_size = 8;
@@ -53,7 +53,7 @@ block_size = 8;
 noOfMeasurements  = 64;     % desired M << N
 
 % set desired sparsity percentage
-sparsityPercentage = 0.99;  % percentage of coefficients to be left
+sparsityPercentage = 0.9999;  % percentage of coefficients to be left
 
 %% CREATE MEASUREMENT AND TRANSFORMATION MATRIX
 % In the CS problem, linear bases are usually defined by matrices Phi and Psi
@@ -67,7 +67,7 @@ phi = generateMeasurementMatrix(phiType, block_size);
 % sigma defines variation in succesive measurement matrices
 % this simulates case in which imperfect measurement system is used and in
 % that case there is variation in measurement masks
-sigma = 0.007;
+sigma = 0.7;
 
 randomVector = ones(block_size^2,1)+(sigma*(rand(block_size^2,1)-sigma));
 randomMatrix = repmat(randomVector, [1,block_size^2]);
@@ -80,10 +80,10 @@ phi_a = randomVector.*ones(block_size^2, block_size^2);
 % Check coherence
 disp('Coherence between measurement and transformation matrix is:')
 
-npsi=sqrt(sum(psi.*conj(psi),1));
+npsi=sqrt(sum(psi_inv.*conj(psi_inv),1));
 nphi=sqrt(sum(phi.*conj(phi),1));
 
-nMatPsi = bsxfun(@rdivide,psi,npsi);
+nMatPsi = bsxfun(@rdivide,psi_inv,npsi);
 nMatPhi = bsxfun(@rdivide,phi,nphi);
 
 % from 1 - incoherent to sqrt(size(phi,2)) - coherent
@@ -95,20 +95,20 @@ coherence = sqrt(size(phi,2))* max(max(abs(nMatPhi*nMatPsi')))
 
 % load or create a test image for compressive imaging reconstruction
 image = imresize(im2double(rgb2gray(imread('lenna.tiff'))), 0.25);
-% image=ones(128, 128);
+image2 = ones(128, 128);
 
 % image=imnoise(image, 'salt & pepper', 0.01);
 % image=imnoise(image, 'gauss', 0.05);
 
 [rows, cols]=size(image);
 
-image=sparsifyImage(image,[], sparsityPercentage);
 
 
 
 
 figure
 subplot(121), imshow(image, 'InitialMagnification', 'fit'), title('Original image'), colormap gray, axis image
+image=sparsifyImage(image,[], sparsityPercentage);
 subplot(122), imshow(image, 'InitialMagnification', 'fit'), title('Original image - resized and sparsified'), colormap gray, axis image
 
 %%
@@ -125,21 +125,25 @@ for k=1:block_size:rows-block_size+1
     for l=1:block_size:cols-block_size+1
         
         im1=image(k:k+block_size-1, l:l+block_size-1);
+        im2=image2(k:k+block_size-1, l:l+block_size-1);
         
         % simulated observation/measurement
         % observation matrix  x  input data converted to 1D
-        y = phi2 * reshape(im1, block_size*block_size, 1);
+        y = phi * reshape(im1, block_size*block_size, 1);
         
-        y_a = (phi_a * reshape(im1(1:block_size,1:block_size), block_size*block_size, 1));
+        y_a = (phi_a * reshape(im2(1:block_size,1:block_size), block_size*block_size, 1));
         
         % estimate difference in measurement result caused by noise in
         % measurement matrix rows(measurement masks)
         
-        corr = (y_a./mean(y_a));
+        %         corr = (y_a./mean(y_a));
+        
 %         corr = (y_a./y_a(1));
-%         corr = y_a;  
-
-        y = y./corr;
+        %                 corr = (y_a./32);
+        
+        %         corr = y_a;
+        
+%         y = y./corr;
         
         %         % add noise to measurements or measurement matrix
         %         y_orig = y;
@@ -152,7 +156,7 @@ for k=1:block_size:rows-block_size+1
         y_m = y(ind);
         
         % reduced observation matrix (phi_r)
-        phi_r = phi(ind, :);
+        phi_r = phi2(ind, :);
         
         % define compressive sensing design matrix theta
         theta = phi_r * psi_inv;
@@ -164,41 +168,9 @@ for k=1:block_size:rows-block_size+1
         switch optimizationPackage
             case 'sedumi'
                 
-                % Standard dual form: data conditioning for minimum L1
-                b = [ spalloc(N,1,0); -sparse(ones(N,1)) ];
-                
-                At = [ -sparse(theta) , spalloc(M,N,0) ;...
-                    sparse(theta) , spalloc(M,N,0) ;...
-                    speye(N)         , -speye(N)      ;...
-                    -speye(N)         , -speye(N)      ;...
-                    spalloc(N,N,0)   , -speye(N)      ];
-                
-                c = [ -sparse(y_m(:)); sparse(y_m(:)); spalloc(3*N,1,0) ];
-                
-                % Optimization
-                pars.fid=0; % suppress output
-                K.l = max(size(At));
-                
-                %                 tic
-                
-                [~,s_est]=sedumi(At,b,c,K,pars); % SeDuMi
-                
-                %                 toc
-                
-                % Output data processing
-                s_est=s_est(:);
-                s_est=s_est(1:N);
-                
-                if(strcmp(psiType,'dct'))
-                    signal_est = (psi_inv * s_est).';
-                    
-                elseif(strcmp(psiType,'dwt'))
-                    signal_est = waverec2(s_est, S, waveletType); % wavelet reconstruction (inverse transform)
-                end
-                
-                
+                s_est = cs_sr06(y_m, theta);
+                signal_est = (psi_inv * s_est);
                 image_est(k:k+block_size-1, l:l+block_size-1) = reshape(signal_est, [block_size block_size]);
-                image_sparse(k:k+block_size-1, l:l+block_size-1)=im;
                 
             case 'cvx'
                 for i=1:1
@@ -229,7 +201,7 @@ for k=1:block_size:rows-block_size+1
                     y_m = y_m + b_Axk;
                     
                 end
-                  
+                
             case 'yalmip'
                 
                 s_est=sdpvar(N,1);
@@ -320,7 +292,7 @@ for k=1:block_size:rows-block_size+1
                 signal_est = (psi_inv * s_est).';
                 
                 image_est(k:k+block_size-1, l:l+block_size-1)= reshape(signal_est,[block_size block_size]);
-                    
+                
             case 'sparsaTV'
                 
                 % reconstruction method using Bregman iterations and SpaRSA
@@ -385,20 +357,20 @@ for k=1:block_size:rows-block_size+1
                     
                     y_m = y_m + b_Axk;
                     
-                end   
+                end
         end
         
-        figure(100)
-        %                 imshow(image_est, 'InitialMagnification', 'fit'), title('Image Reconstruction'), colormap gray, axis image
-        imagesc(image_est), title('Image Reconstruction'), colormap gray, axis image
-        drawnow
+%         figure(100)
+%         %                 imshow(image_est, 'InitialMagnification', 'fit'), title('Image Reconstruction'), colormap gray, axis image
+%         imagesc(image_est), title('Image Reconstruction'), colormap gray, axis image
+%         drawnow
         
     end
 end
 
 toc
 
-% VISUALIZATIONS
+%% VISUALIZATIONS
 figure, imshow(image_est, 'InitialMagnification', 'fit'), title('Image Reconstruction - final'), colormap gray, axis image
 
 fun = @(block_struct) mean2(block_struct.data);
@@ -407,4 +379,82 @@ measurement_visualization = blockproc(image,[block_size block_size],fun);
 measurement_visualization=(imresize(measurement_visualization,block_size,'nearest'));
 figure
 imshow(measurement_visualization, 'InitialMagnification', 'fit'), colormap gray, axis image, title('Measurement')
+
+
+
+
+%% NEW APPROACH TO BLOCK CS
+
+noOfMeasurements = 50;
+block_size = 8;
+
+image = imresize(im2double(rgb2gray(imread('lenna.tiff'))), 0.25);
+
+[rows, cols]=size(image);
+
+sigma = 0.000007;
+randomVector = ones(block_size^2,1)+(sigma*(rand(block_size^2,1)-sigma));
+
+
+phi_block = sparse(generateMeasurementMatrix('spike', block_size));
+phi_block_noise = randomVector.*phi_block;
+
+phi_block = phi_block(1:noOfMeasurements, :);
+phi_block_noise = phi_block_noise(1:noOfMeasurements, :);
+
+phi = sparse(kron(diag(ones((size(image,1) * size(image,2))/block_size^2,1)), phi_block));
+phi_noise = sparse(kron(diag(ones((size(image,1) * size(image,2))/block_size^2,1)), phi_block_noise));
+
+
+% psi_block = generateTransformationMatrix('dwt', block_size, 'waveletType', 'haar');
+[psi_block, psi_inv_block] = generateTransformationMatrix('dct', block_size);
+
+psi = sparse(kron(diag(ones((size(image,1) * size(image,2))/block_size^2,1)), psi_inv_block));
+
+% image_vectorized = image(:);
+
+
+% vectorize image by block processing
+image_vectorized=[];
+for k=1:block_size:rows-block_size+1
+    for l=1:block_size:cols-block_size+1
+        
+        im1=image(k:k+block_size-1, l:l+block_size-1);
+        image_vectorized = [image_vectorized; im1(:)];
+        
+    end
+end
+
+y_m = phi * image_vectorized;
+
+theta = phi_noise * psi;
+
+
+tic
+
+image_est = cs_sr06(y_m, theta);
+
+image_est = (psi * image_est);
+
+% figure
+% imagesc(reshape(image_est, [size(image,1), size(image,2)]))
+
+toc
+
+% reshape reconstructed image vector into image matrix
+
+i=1;
+for k=1:block_size:rows-block_size+1
+    for l=1:block_size:cols-block_size+1
+        
+        image_reconstruction(k:k+block_size-1, l:l+block_size-1)=(reshape(image_est(i:i+block_size^2-1, 1), [block_size, block_size]));
+
+        i=i+block_size^2;
+    end
+end
+
+figure, colormap gray
+imagesc(image_reconstruction)
+
+
 
