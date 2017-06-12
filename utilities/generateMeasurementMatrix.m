@@ -5,18 +5,18 @@ p=inputParser;
 p.addRequired('phiType', @isstr);
 p.addRequired('blockSize', @isnumeric);
 p.addParameter('Plot', 0, @isnumeric);
-
+p.addParameter('extendMeasurementMatrix', 0, @isnumeric)
 p.parse(phiType, blockSize, varargin{:});
 
 
 if(strcmp(phiType,'gauss'))
-    phi = randn(blockSize*blockSize);  
+    phi = randn((blockSize*blockSize) + p.Results.extendMeasurementMatrix, blockSize*blockSize);  
     
 elseif(strcmp(phiType,'spike'))
     
     percentage=0.5;
     
-    for maskNo=1:blockSize*blockSize
+    for maskNo=1:(blockSize*blockSize) + p.Results.extendMeasurementMatrix
         
         randomMask{maskNo} = zeros(1,blockSize*blockSize) ;
         randomMask{maskNo}(1:round(percentage*blockSize*blockSize)) = 1 ;
@@ -29,7 +29,7 @@ elseif(strcmp(phiType,'spike'))
         end
         
     end
-    phi=reshape(phi, blockSize*blockSize, blockSize*blockSize)';
+    phi=reshape(phi, (blockSize*blockSize), blockSize*blockSize + p.Results.extendMeasurementMatrix)';
 end
 
 if(p.Results.Plot)
