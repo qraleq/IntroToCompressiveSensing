@@ -1,5 +1,4 @@
-function [psi, psi_inv]=generateTransformationMatrix(psiType, blockSize, varargin)
-
+function [psi, psi_inv] = generateTransformationMatrix(psiType, blockSize, varargin)
 % Producing corresponding matrices of 2D linear transforms, typically given by MATLAB functions
 
 p=inputParser;
@@ -8,10 +7,9 @@ p.addRequired('psiType', @isstr);
 p.addRequired('blockSize', @isnumeric);
 p.addParameter('waveletType', [], @ismatrix)
 
-
 p.parse(psiType, blockSize, varargin{:});
 
-dummy_zeros=zeros(blockSize,blockSize);
+dummy_zeros = zeros(blockSize, blockSize);
 
 %% DWT 2D matrix Psi
 
@@ -52,7 +50,7 @@ if(strcmp(psiType, 'dwt'))
     IDWTm = sparse(blockSize*blockSize, clen); % space alocation for the result (sparse matrix)
     IDWTm(:,i) = reshape(xr, blockSize*blockSize, 1).'; % conversion to 1D
     
-    for i=2:clen,
+    for i=2:clen
         delta(i-1)=0;
         delta(i) = 1; % Unit impulse at each wavelet spectrum coefficient position
         xr = waverec2(delta, S, p.Results.waveletType); % wavelet reconstruction (inverse transform)
@@ -62,6 +60,8 @@ if(strcmp(psiType, 'dwt'))
     % Check the perfect reconstruction
     % full(max(max(abs(IDWT * DWT - speye(rows*cols)))))  % must be zero
 end
+
+
 
 %% DCT MATRIX GENERATION
 % The matrix columns are unit impulse responses for each pixel
