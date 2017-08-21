@@ -1,0 +1,374 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.2.7)  11 AUG 2017 08:03
+entering extended mode
+**./IntroToCompressiveSensing.tex
+(IntroToCompressiveSensing.tex
+LaTeX2e <2017/01/01> patch level 1
+Babel <3.9r> and hyphenation patterns for 75 language(s) loaded.
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\article.cls"
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\size10.clo"
+File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+Package: graphics 2016/10/09 v1.0u Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-cfg\graphics.cfg"
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-def\pdftex.def"
+File: pdftex.def 2017/01/12 v0.06k Graphics/color for pdfTeX
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count87
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\color.sty"
+Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-cfg\color.cfg"
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 147.
+)
+(IntroToCompressiveSensing.aux)
+\openout1 = `IntroToCompressiveSensing.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+
+(C:\Users\Ivan\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count88
+\scratchdimen=\dimen105
+\scratchbox=\box26
+\nofMPsegments=\count89
+\nofMParguments=\count90
+\everyMPshowfont=\toks15
+\MPscratchCnt=\count91
+\MPscratchDim=\dimen106
+\MPnumerator=\count92
+\makeMPintoPDFobject=\count93
+\everyMPtoPDFconversion=\toks16
+) ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\pdftexcmds.sty"
+Package: pdftexcmds 2016/05/21 v0.22 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifluatex.sty"
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty"
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\kvdefinekeys.sty"
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\kvsetkeys.sty"
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\etexcmds.sty"
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+)
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 27.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 27.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 31.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 31.
+ [1
+
+{C:/Users/Ivan/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+Package epstopdf Info: Source file: <IntroToCompressiveSensing_01.eps>
+(epstopdf)                    date: 2017-08-11 08:02:07
+(epstopdf)                    size: 31882 bytes
+(epstopdf)             Output file: <IntroToCompressiveSensing_01-eps-converted
+-to.pdf>
+(epstopdf)                    date: 2017-08-11 08:03:06
+(epstopdf)                    size: 5901 bytes
+(epstopdf)             Command: <epstopdf --outfile=IntroToCompressiveSensing_0
+1-eps-converted-to.pdf IntroToCompressiveSensing_01.eps>
+(epstopdf)             \includegraphics on input line 86.
+Package epstopdf Info: Output file is already uptodate.
+
+<IntroToCompressiveSensing_01-eps-converted-to.pdf, id=15, 261.97874pt x 274.02
+374pt>
+File: IntroToCompressiveSensing_01-eps-converted-to.pdf Graphic file (type pdf)
+
+ <use IntroToCompressiveSensing_01-eps-converted-to.pdf>
+Package pdftex.def Info: IntroToCompressiveSensing_01-eps-converted-to.pdf used
+ on input line 86.
+(pdftex.def)             Requested size: 289.07999pt x 302.38037pt.
+Package epstopdf Info: Source file: <IntroToCompressiveSensing_02.eps>
+(epstopdf)                    date: 2017-08-11 08:02:07
+(epstopdf)                    size: 31889 bytes
+(epstopdf)             Output file: <IntroToCompressiveSensing_02-eps-converted
+-to.pdf>
+(epstopdf)                    date: 2017-08-11 08:03:08
+(epstopdf)                    size: 4141 bytes
+(epstopdf)             Command: <epstopdf --outfile=IntroToCompressiveSensing_0
+2-eps-converted-to.pdf IntroToCompressiveSensing_02.eps>
+(epstopdf)             \includegraphics on input line 88.
+Package epstopdf Info: Output file is already uptodate.
+
+<IntroToCompressiveSensing_02-eps-converted-to.pdf, id=16, 261.97874pt x 273.02
+pt>
+File: IntroToCompressiveSensing_02-eps-converted-to.pdf Graphic file (type pdf)
+
+ <use IntroToCompressiveSensing_02-eps-converted-to.pdf>
+Package pdftex.def Info: IntroToCompressiveSensing_02-eps-converted-to.pdf used
+ on input line 88.
+(pdftex.def)             Requested size: 289.07999pt x 301.27277pt.
+ [2 <./IntroToCompressiveSensing_01-eps-converted-to.pdf>] [3 <./IntroToCompres
+siveSensing_02-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <IntroToCompressiveSensing_03.eps>
+(epstopdf)                    date: 2017-08-11 08:02:08
+(epstopdf)                    size: 47048 bytes
+(epstopdf)             Output file: <IntroToCompressiveSensing_03-eps-converted
+-to.pdf>
+(epstopdf)                    date: 2017-08-11 08:03:09
+(epstopdf)                    size: 6401 bytes
+(epstopdf)             Command: <epstopdf --outfile=IntroToCompressiveSensing_0
+3-eps-converted-to.pdf IntroToCompressiveSensing_03.eps>
+(epstopdf)             \includegraphics on input line 113.
+Package epstopdf Info: Output file is already uptodate.
+
+<IntroToCompressiveSensing_03-eps-converted-to.pdf, id=31, 343.2825pt x 191.716
+25pt>
+File: IntroToCompressiveSensing_03-eps-converted-to.pdf Graphic file (type pdf)
+
+ <use IntroToCompressiveSensing_03-eps-converted-to.pdf>
+Package pdftex.def Info: IntroToCompressiveSensing_03-eps-converted-to.pdf used
+ on input line 113.
+(pdftex.def)             Requested size: 289.07999pt x 161.44424pt.
+Package epstopdf Info: Source file: <IntroToCompressiveSensing_04.eps>
+(epstopdf)                    date: 2017-08-11 08:02:08
+(epstopdf)                    size: 37705 bytes
+(epstopdf)             Output file: <IntroToCompressiveSensing_04-eps-converted
+-to.pdf>
+(epstopdf)                    date: 2017-08-11 08:03:11
+(epstopdf)                    size: 7364 bytes
+(epstopdf)             Command: <epstopdf --outfile=IntroToCompressiveSensing_0
+4-eps-converted-to.pdf IntroToCompressiveSensing_04.eps>
+(epstopdf)             \includegraphics on input line 140.
+Package epstopdf Info: Output file is already uptodate.
+
+<IntroToCompressiveSensing_04-eps-converted-to.pdf, id=32, 353.32pt x 288.07625
+pt>
+File: IntroToCompressiveSensing_04-eps-converted-to.pdf Graphic file (type pdf)
+
+ <use IntroToCompressiveSensing_04-eps-converted-to.pdf>
+Package pdftex.def Info: IntroToCompressiveSensing_04-eps-converted-to.pdf used
+ on input line 140.
+(pdftex.def)             Requested size: 289.07999pt x 235.70096pt.
+ [4 <./IntroToCompressiveSensing_03-eps-converted-to.pdf>]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 143.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 143.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 143.
+ [5 <./IntroToCompressiveSensing_04-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <IntroToCompressiveSensing_05.eps>
+(epstopdf)                    date: 2017-08-11 08:02:09
+(epstopdf)                    size: 59220 bytes
+(epstopdf)             Output file: <IntroToCompressiveSensing_05-eps-converted
+-to.pdf>
+(epstopdf)                    date: 2017-08-11 08:03:12
+(epstopdf)                    size: 10767 bytes
+(epstopdf)             Command: <epstopdf --outfile=IntroToCompressiveSensing_0
+5-eps-converted-to.pdf IntroToCompressiveSensing_05.eps>
+(epstopdf)             \includegraphics on input line 169.
+Package epstopdf Info: Output file is already uptodate.
+
+<IntroToCompressiveSensing_05-eps-converted-to.pdf, id=50, 356.33125pt x 292.09
+125pt>
+File: IntroToCompressiveSensing_05-eps-converted-to.pdf Graphic file (type pdf)
+
+ <use IntroToCompressiveSensing_05-eps-converted-to.pdf>
+Package pdftex.def Info: IntroToCompressiveSensing_05-eps-converted-to.pdf used
+ on input line 169.
+(pdftex.def)             Requested size: 289.07999pt x 236.97589pt.
+ [6 <./IntroToCompressiveSensing_05-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <IntroToCompressiveSensing_06.eps>
+(epstopdf)                    date: 2017-08-11 08:02:09
+(epstopdf)                    size: 59582 bytes
+(epstopdf)             Output file: <IntroToCompressiveSensing_06-eps-converted
+-to.pdf>
+(epstopdf)                    date: 2017-08-11 08:03:13
+(epstopdf)                    size: 9876 bytes
+(epstopdf)             Command: <epstopdf --outfile=IntroToCompressiveSensing_0
+6-eps-converted-to.pdf IntroToCompressiveSensing_06.eps>
+(epstopdf)             \includegraphics on input line 201.
+Package epstopdf Info: Output file is already uptodate.
+
+<IntroToCompressiveSensing_06-eps-converted-to.pdf, id=58, 353.32pt x 292.09125
+pt>
+File: IntroToCompressiveSensing_06-eps-converted-to.pdf Graphic file (type pdf)
+
+ <use IntroToCompressiveSensing_06-eps-converted-to.pdf>
+Package pdftex.def Info: IntroToCompressiveSensing_06-eps-converted-to.pdf used
+ on input line 201.
+(pdftex.def)             Requested size: 289.07999pt x 238.98598pt.
+ [7 <./IntroToCompressiveSensing_06-eps-converted-to.pdf>]
+<cs_matrix_form.png, id=67, 940.51375pt x 314.17375pt>
+File: cs_matrix_form.png Graphic file (type png)
+
+<use cs_matrix_form.png>
+Package pdftex.def Info: cs_matrix_form.png used on input line 226.
+(pdftex.def)             Requested size: 289.07999pt x 96.5635pt.
+ [8] [9 <./cs_matrix_form.png>] [10] [11]
+<hard_thresholding.png, id=83, 260.975pt x 45.16875pt>
+File: hard_thresholding.png Graphic file (type png)
+
+<use hard_thresholding.png>
+Package pdftex.def Info: hard_thresholding.png used on input line 324.
+(pdftex.def)             Requested size: 289.07999pt x 50.03381pt.
+
+Overfull \hbox (11.99689pt too wide) in paragraph at lines 345--345
+[]\OT1/cmtt/m/n/10 plot([-threshold:0.01:threshold], [-threshold:0.01:threshold
+], '-.')[] 
+ []
+
+Package epstopdf Info: Source file: <IntroToCompressiveSensing_07.eps>
+(epstopdf)                    date: 2017-08-11 08:02:10
+(epstopdf)                    size: 23256 bytes
+(epstopdf)             Output file: <IntroToCompressiveSensing_07-eps-converted
+-to.pdf>
+(epstopdf)                    date: 2017-08-11 08:03:15
+(epstopdf)                    size: 5489 bytes
+(epstopdf)             Command: <epstopdf --outfile=IntroToCompressiveSensing_0
+7-eps-converted-to.pdf IntroToCompressiveSensing_07.eps>
+(epstopdf)             \includegraphics on input line 347.
+Package epstopdf Info: Output file is already uptodate.
+
+<IntroToCompressiveSensing_07-eps-converted-to.pdf, id=84, 363.3575pt x 303.132
+5pt>
+File: IntroToCompressiveSensing_07-eps-converted-to.pdf Graphic file (type pdf)
+
+ <use IntroToCompressiveSensing_07-eps-converted-to.pdf>
+Package pdftex.def Info: IntroToCompressiveSensing_07-eps-converted-to.pdf used
+ on input line 347.
+(pdftex.def)             Requested size: 289.07999pt x 241.17421pt.
+ [12 <./hard_thresholding.png>] [13 <./IntroToCompressiveSensing_07-eps-convert
+ed-to.pdf>]
+Package epstopdf Info: Source file: <IntroToCompressiveSensing_08.eps>
+(epstopdf)                    date: 2017-08-11 08:02:10
+(epstopdf)                    size: 25352 bytes
+(epstopdf)             Output file: <IntroToCompressiveSensing_08-eps-converted
+-to.pdf>
+(epstopdf)                    date: 2017-08-11 08:03:16
+(epstopdf)                    size: 6065 bytes
+(epstopdf)             Command: <epstopdf --outfile=IntroToCompressiveSensing_0
+8-eps-converted-to.pdf IntroToCompressiveSensing_08.eps>
+(epstopdf)             \includegraphics on input line 390.
+Package epstopdf Info: Output file is already uptodate.
+
+<IntroToCompressiveSensing_08-eps-converted-to.pdf, id=97, 363.3575pt x 303.132
+5pt>
+File: IntroToCompressiveSensing_08-eps-converted-to.pdf Graphic file (type pdf)
+
+ <use IntroToCompressiveSensing_08-eps-converted-to.pdf>
+Package pdftex.def Info: IntroToCompressiveSensing_08-eps-converted-to.pdf used
+ on input line 390.
+(pdftex.def)             Requested size: 289.07999pt x 241.17421pt.
+ [14 <./IntroToCompressiveSensing_08-eps-converted-to.pdf>] (IntroToCompressive
+Sensing.aux) ) 
+Here is how much of TeX's memory you used:
+ 1611 strings out of 493333
+ 24495 string characters out of 3139198
+ 83292 words of memory out of 3000000
+ 5129 multiletter control sequences out of 15000+200000
+ 9004 words of font info for 32 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 39i,5n,25p,1130b,241s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx1
+0.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C
+:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Program
+ Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/M
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/
+type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
+r5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:
+/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program F
+iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.9/f
+onts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on IntroToCompressiveSensing.pdf (14 pages, 271925 bytes).
+PDF statistics:
+ 152 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 51 words of extra memory for PDF output out of 10000 (max. 10000000)
+

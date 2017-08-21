@@ -44,14 +44,14 @@ end
 phiType = 'spike';
 
 % choose optimization package
-optimizationPackage = 'mex'; % Options: 'cvx', 'sedumi', 'yalmip', 'sparsa', 'fpc', 'cls','sparsaTV'
+optimizationPackage = 'sparsa'; % Options: 'cvx', 'sedumi', 'yalmip', 'sparsa', 'fpc', 'cls','sparsaTV'
 epsilon = 0;
 
 % choose block size - divide whole image in non-overlapping blocks
-blockSize = 16;
+blockSize = 8;
 
 % choose number of measurements used in reconstruction
-noOfMeasurements  = 70;     % desired M << N
+noOfMeasurements  = 64;     % desired M << N
 
 % set desired sparsity percentage
 sparsityPercentage = 0.99;  % percentage of coefficients to be left
@@ -106,7 +106,7 @@ psi_inv = kron(full(psi_inv), full(psi_inv));
 % % phi = mtxdya(blockSize^2);
 % phi = walsh(blockSize^2);
 % phi(phi<0) = 0;
-% phi = normc(phi);
+% phi = normalizeColumns(phi);
 
 % phi(1,:) = ~phi(end,:);
 % phi(:,1) = ~phi(:, end);
@@ -198,7 +198,7 @@ phi2 = phi + randomMatrix;
 % sqrt(size(phi,2)) * max(max(abs(nMatPhi*nMatPsi')))  % From 1 - incoherent to sqrt(size(R,2)) - coherent
 
 % load or create a test image for compressive imaging reconstruction
-image = imresize(im2double(rgb2gray(imread('lenna.tiff'))), 1.5);
+image = imresize(im2double(rgb2gray(imread('lenna.tiff'))), 0.5);
 % image = phantom;
 % image = randn(128, 128)>0.7;
 
@@ -216,7 +216,7 @@ subplot(122), imshow(image, 'InitialMagnification', 'fit'), title('Original imag
 
 
 % choose a random subset of noOfMeasurements (M out of total N)
-ind = logical(randerr(1, blockSize^2, noOfMeasurements));
+% ind = logical(randerr(1, blockSize^2, noOfMeasurements));
 % ind =  1:256;
 % indTemp = logical(randerr(1, blockSize, noOfMeasurements/noOfWaveletLevels));
 %
@@ -257,6 +257,9 @@ for k = 1: blockSize : rows - blockSize + 1
         % simulated observation/measurement
         % observation matrix  x  input data converted to 1D
         y = phi2 * reshape(im1, blockSize*blockSize, 1);
+        y_1 = ones(size(phi2)) * reshape(im1, blockSize*blockSize, 1);
+        
+        
 %         y = y - mean(y);
         %         y = phi * im1(:);
         
@@ -332,11 +335,13 @@ for k = 1: blockSize : rows - blockSize + 1
         
 %         y=psi_inv'*y;
         % select only M observations out of total N
+%         y_m = 2*y(ind)-y_1(ind);
         y_m = y(ind);
-        
         %          y_m = nonzeros(y(:));
         
-        % reduced observation matrix (phi_r)
+%         % reduced observation matrix (phi_r)
+%         phi=walsh(blockSize^2);
+%         
         phi_r = phi(ind, :);
         
         % define compressive sensing design matrix theta
@@ -412,6 +417,7 @@ for k = 1: blockSize : rows - blockSize + 1
 %                 W=size(theta,2):-1:1;
 %                 W=ones(size(theta,2),1);
 %                 W=W';
+
 %                 s_est = mexOMP(y_m, theta, param);
                 s_est = mexLasso(y_m, theta, param);
                 %                 s_est = wmpalg('omp', y ,psi)
@@ -436,23 +442,23 @@ for k = 1: blockSize : rows - blockSize + 1
                     %                     norm(theta*s_est - y_mk, 2)<=epsilon
                     cvx_end
                     
-                    if(strcmp(psiType,'dct'))
+%                     if(strcmp(psiType,'dct'))
                         signal_est = (psi_inv * s_est).';
-                        
-                    elseif(strcmp(psiType,'dwt'))
-                        signal_est = waverec2(s_est, S, waveletType); % wavelet reconstruction (inverse transform)
-                    end
+%                         
+%                     elseif(strcmp(psiType,'dwt'))
+%                         signal_est = waverec2(s_est, S, waveletType); % wavelet reconstruction (inverse transform)
+%                     end
                     
                     image_est(k:k+blockSize-1, l:l+blockSize-1)= reshape(signal_est,[blockSize blockSize]);
-                    image_sparse(k:k+blockSize-1, l:l+blockSize-1)=im;
+%                     image_sparse(k:k+blockSize-1, l:l+blockSize-1)=im;
                     
 
                     
-                    % --- bk update ---
-                    b_Axk = y_m - theta*s_est;
-                    test1(:,i)=b_Axk;
-                    if norm(b_Axk) < 1e-14; break; end
-                    y_m = y_m + b_Axk;
+%                     % --- bk update ---
+%                     b_Axk = y_m - theta*s_est;
+%                     test1(:,i)=b_Axk;
+%                     if norm(b_Axk) < 1e-14; break; end
+%                     y_m = y_m + b_Axk;
                     
                 end
                 
@@ -473,7 +479,21 @@ for k = 1: blockSize : rows - blockSize + 1
                 
             case 'sparsa'
                 % reconstruction method using Bregman iterations and SpaRSA
+                tau = 1e-10;
+                tolA = 1e-20;
+
+                [s_est, ~, objective] = SpaRSA(y_m, theta, tau,...
+                    'Debias',0,...
+                    'Initialization',0,...
+                    'StopCriterion', 0,...
+                    'ToleranceA', tolA,...
+                    'Verbose', 0,...
+                    'Continuation', 0);
                 
+                                    
+                signal_est = (psi_inv * s_est);
+                
+                image_est(k:k+blockSize-1, l:l+blockSize-1)= reshape(signal_est,[blockSize blockSize]);
                 
             case 'fpc'
                 for i = 1:1
