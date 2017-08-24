@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>INTRODUCTION TO COMPRESSIVE SENSING</title><meta name="generator" content="MATLAB 9.1"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-08-21"><meta name="DC.source" content="IntroToCompressiveSensing.m"><style type="text/css">
+      --><title>INTRODUCTION TO COMPRESSIVE SENSING</title><meta name="generator" content="MATLAB 9.1"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-08-23"><meta name="DC.source" content="IntroToCompressiveSensing.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -66,7 +66,7 @@ table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px soli
 
 
 
-  </style></head><body><div class="content"><h1>INTRODUCTION TO COMPRESSIVE SENSING</h1><!--introduction--><p>This script is an introduction to sparse signal representation and compressive sensing.</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#2">Basis Representation Fundamentals</a></li><li><a href="#3">Uncertainty Principle</a></li><li><a href="#4">Sines and spikes example</a></li><li><a href="#5">Minimum Energy Decomposition - <img src="IntroToCompressiveSensing_eq11695167239558615666.png" alt="$l_2$"> norm</a></li><li><a href="#6">Sparse decomposition</a></li><li><a href="#7">Sparse Recovery Problem Formulations</a></li><li><a href="#8">Relaxations of Original Sparse Recovery Problem</a></li><li><a href="#9">Compressed Sensing</a></li><li><a href="#11">Uniqueness of Sparse Recovery Problem Solution</a></li><li><a href="#15">Restricted Isometry Property - RIP</a></li><li><a href="#16">Algorithms for Sparse Recovery</a></li><li><a href="#17">Univariate Thresholding</a></li><li><a href="#18"><img src="IntroToCompressiveSensing_eq07972641343395931655.png" alt="$l_0$">-norm Minimization</a></li><li><a href="#19"><img src="IntroToCompressiveSensing_eq10817116784286670662.png" alt="$l_1$">-norm Minimization</a></li><li><a href="#20">Algorithms for <img src="IntroToCompressiveSensing_eq07972641343395931655.png" alt="$l_0$">-norm Minimization</a></li><li><a href="#21">Algorithms for <img src="IntroToCompressiveSensing_eq10817116784286670662.png" alt="$l_1$">-norm Minimization(LASSO)</a></li><li><a href="#23">Compressive Imaging</a></li><li><a href="#29">Reducing Blocking Artifacts In BCS</a></li><li><a href="#30">A New Theory For Compressive Sensing - Breaking the Coherence Barrier</a></li><li><a href="#31">SPARSITY, FLIP TEST AND THE ABSENCE OF RIP</a></li><li><a href="#32">Dictionary Learning (Sparse Coding)</a></li><li><a href="#33">Image Denoising Using Overcomplete Dictionaries</a></li><li><a href="#34">DICTIONARY LEARNING</a></li><li><a href="#35">Discriminative Sparse Representation</a></li><li><a href="#36">Discriminative K-SVD (D-KSVD)</a></li></ul></div><pre class="codeinput">close <span class="string">all</span>
+  </style></head><body><div class="content"><h1>INTRODUCTION TO COMPRESSIVE SENSING</h1><!--introduction--><p>This script is an introduction to sparse signal representation and compressive sensing.</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#2">Basis Representation Fundamentals</a></li><li><a href="#3">Uncertainty Principle</a></li><li><a href="#4">Sines and spikes example</a></li><li><a href="#5">Minimum Energy Decomposition - <img src="IntroToCompressiveSensing_eq11695167239558615666.png" alt="$l_2$"> norm</a></li><li><a href="#6">Sparse decomposition</a></li><li><a href="#7">Sparse Recovery Problem Formulations</a></li><li><a href="#8">Relaxations of Original Sparse Recovery Problem</a></li><li><a href="#9">Compressed Sensing</a></li><li><a href="#11">Uniqueness of Sparse Recovery Problem Solution</a></li><li><a href="#15">Restricted Isometry Property - RIP</a></li><li><a href="#16">Algorithms for Sparse Recovery</a></li><li><a href="#17">Univariate Thresholding</a></li><li><a href="#18"><img src="IntroToCompressiveSensing_eq07972641343395931655.png" alt="$l_0$">-norm Minimization</a></li><li><a href="#19"><img src="IntroToCompressiveSensing_eq10817116784286670662.png" alt="$l_1$">-norm Minimization</a></li><li><a href="#20">Algorithms for <img src="IntroToCompressiveSensing_eq07972641343395931655.png" alt="$l_0$">-norm Minimization</a></li><li><a href="#21">Algorithms for <img src="IntroToCompressiveSensing_eq10817116784286670662.png" alt="$l_1$">-norm Minimization(LASSO)</a></li><li><a href="#22">Signal Reconstruction Using Iterative Thresholding</a></li><li><a href="#23">Compressive Sensing MRI</a></li><li><a href="#24">Compressive Imaging</a></li><li><a href="#30">Reducing Blocking Artifacts In BCS</a></li><li><a href="#31">A New Theory For Compressive Sensing - Breaking the Coherence Barrier</a></li><li><a href="#32">SPARSITY, FLIP TEST AND THE ABSENCE OF RIP</a></li><li><a href="#33">Dictionary Learning (Sparse Coding)</a></li><li><a href="#34">Image Denoising Using Overcomplete Dictionaries</a></li><li><a href="#35">IMAGE DENOISING USING OVERCOMPLETE DICITONARIES</a></li><li><a href="#36">Discriminative Sparse Representation</a></li><li><a href="#37">Discriminative K-SVD (D-KSVD)</a></li></ul></div><pre class="codeinput">close <span class="string">all</span>
 clearvars
 clc
 
@@ -97,7 +97,7 @@ visualizeDictionary(kron(haar_1d, haar_1d))
 title(<span class="string">'2D-DWT Dictionary - HAAR'</span>)
 </pre><img vspace="5" hspace="5" src="IntroToCompressiveSensing_01.png" alt=""> <img vspace="5" hspace="5" src="IntroToCompressiveSensing_02.png" alt=""> <img vspace="5" hspace="5" src="IntroToCompressiveSensing_03.png" alt=""> <img vspace="5" hspace="5" src="IntroToCompressiveSensing_04.png" alt=""> <h2 id="3">Uncertainty Principle</h2><p>As an illustrative example, we will consider the case where our dictionary is the union of two particular orthobases: the identity (spike) basis and the Fourier (sine) basis <img src="IntroToCompressiveSensing_eq12057953877141152738.png" alt="$\Psi = [I\quad F]$">.</p><p>Spike and Fourier basis are mutually fully incoherent in the sense that it takes <img src="IntroToCompressiveSensing_eq08984225997457563733.png" alt="$n$"> spikes to build up a single sinusoid and also it takes <img src="IntroToCompressiveSensing_eq08984225997457563733.png" alt="$n$"> sinusoids to build up a single spike.</p><pre class="codeinput">n = 64;
 
-fourier = (1/sqrt(n))*exp((1j*2*pi*[0:n-1]'*[0:n-1])/n);
+fourier = (1/sqrt(n))*exp((1j*2*pi*(0:n-1)'*(0:n-1))/n);
 spike = eye(n);
 
 psi = [spike, fourier];
@@ -135,7 +135,7 @@ s = sparseCode(x, psi, K, nIter);
 figure
 stem(real(s))
 title(<span class="string">'Sparse decomposition - l_0 norm'</span>)
-</pre><img vspace="5" hspace="5" src="IntroToCompressiveSensing_08.png" alt=""> <h2 id="7">Sparse Recovery Problem Formulations</h2><p>We will use the following notation in this section: <img src="IntroToCompressiveSensing_eq17764425644247988433.png" alt="$x=(x_1,...,X_N)\in \mathbf{R}N$"> is an unobserbed sparse signal, <img src="IntroToCompressiveSensing_eq01604325742641198289.png" alt="$y=(y_1,...,y_M)\in \mathbf{R}^M$"> is a vector of measurements(observations), and <img src="IntroToCompressiveSensing_eq11209255319736019689.png" alt="$A=\{a_{ij}\}\in\mathbf{R}^{M\times N}$"> is a design matrix.</p><p>The simplest problem we are going to start with is the noiseless signal recovery from a set of linear measurements, i.e. solving for x the system of linear equations:</p><p><img src="IntroToCompressiveSensing_eq16519642589894798372.png" alt="$$y=Ax$$"></p><p>It is usually assumed that <img src="IntroToCompressiveSensing_eq05147331747641807187.png" alt="$A$"> is a full-rank matrix, and thus for any <img src="IntroToCompressiveSensing_eq04168187966925989771.png" alt="$y\in\mathbf{R}^M$">, the above system of linear equations has a solution. Note that when the number of unknown variables, i.e. dimensionality of the signal, exceeds the number of observations, i.e. when %N\geq M%, the above system is underdetermined, and can have infinitely many solutions. In order to recover the signal <img src="IntroToCompressiveSensing_eq12428413953531653171.png" alt="$x$">, it is necessary to further constrain, or regularize, the problem. This is usually done by introducing an objective function, or regularizer R(x), that encodes additional properties of the signal, with lower values corresponding to more desirable solutions. Signal recovery is then formulated as a constrained optimization problem:</p><p><img src="IntroToCompressiveSensing_eq17547994887366463759.png" alt="$$\min\limits_{x\in\mathbf{R}^N} R(x)\quad s.t.\quad y=Ax$$"></p><p>In general, <img src="IntroToCompressiveSensing_eq11256999100043474863.png" alt="$l_q$"> norms for particular values of <img src="IntroToCompressiveSensing_eq15226540192103580117.png" alt="$q$">, denoted <img src="IntroToCompressiveSensing_eq07460701368313500615.png" alt="$\Vert x\Vert_q$"> or more precisely their <img src="IntroToCompressiveSensing_eq15226540192103580117.png" alt="$q$">-th power <img src="IntroToCompressiveSensing_eq08299300742400647135.png" alt="$\Vert x\Vert_q^q$"> are frequently used as regularizers <img src="IntroToCompressiveSensing_eq03088923576334803482.png" alt="$R(x)$"> in constrained optimization problems.</p><p>For a <img src="IntroToCompressiveSensing_eq04824172974799102213.png" alt="$q\ge 1$">, the <img src="IntroToCompressiveSensing_eq11256999100043474863.png" alt="$l_q$"> norm, also called just <img src="IntroToCompressiveSensing_eq15226540192103580117.png" alt="$q$">-norm of a vector <img src="IntroToCompressiveSensing_eq02156963846298394909.png" alt="$x\in\mathbf{R}^N$"> is defined as:</p><p><img src="IntroToCompressiveSensing_eq12425454430905046823.png" alt="$$\Vert x\Vert_q=(\sum\limits_{i=1}^N\vert x_i\vert^q)^\frac{1}{q}$$"></p><p>We can now observe relation between cardinality and <img src="IntroToCompressiveSensing_eq01171060540427018660.png" alt="$\Vert l_q\Vert$">-norms. The function <img src="IntroToCompressiveSensing_eq04933866659674463463.png" alt="$\Vert x\Vert_0$"> referred to as <img src="IntroToCompressiveSensing_eq07972641343395931655.png" alt="$l_0$">-norm of <img src="IntroToCompressiveSensing_eq12428413953531653171.png" alt="$x$"> is defined as a limit of <img src="IntroToCompressiveSensing_eq08299300742400647135.png" alt="$\Vert x\Vert_q^q$"> when <img src="IntroToCompressiveSensing_eq05055262562385898352.png" alt="$q\to0$">:</p><p><img src="IntroToCompressiveSensing_eq03467820065320414386.png" alt="$$\Vert x\Vert_0=\lim\limits_{q\to 0}\Vert x\Vert_q^q=\lim\limits_{q\to 0}\sum\limits_{i=1}^p\vert x_i\vert^q=\sum\limits_{i=1}^p\lim\limits_{q\to 0}\vert x_i\vert^q$$"></p><p>For each <img src="IntroToCompressiveSensing_eq08383031602117067423.png" alt="$x_i$">, when <img src="IntroToCompressiveSensing_eq14039466109267994740.png" alt="$q\to 0$">, <img src="IntroToCompressiveSensing_eq08974387064997530889.png" alt="$\vert x_i\vert^q\to I(x_i)$">, the indicator function, which is 0 at <img src="IntroToCompressiveSensing_eq17014082639638836868.png" alt="$x=0$"> and 1 otherwise. Thus, <img src="IntroToCompressiveSensing_eq09280994527819422030.png" alt="$\Vert x\Vert_0=\sum\limits{i=1}^p I(x_i)$">, which gives exactly the number of nonzero elements of vector x called cardinality. Using the cardinality function, we can now write the problem of sparse signal recovery from noiseless linear measurements as:</p><p><img src="IntroToCompressiveSensing_eq15286715274951793136.png" alt="$$\min\limits_x\Vert x\Vert_0 \quad s.t. \quad y=A x$$"></p><p>As already mentioned before, the above optimization problem is NP-hard and no known algorithm can solve it efficiently in polynomial time. Therefore, approximations are necessary and were already presented before. Under appropriate conditions the optimal solution can be recovered efficiently by certain appproximate techniques.</p><p>First approach to approximation is a heuristic-based search such as gready search. In gready search method, one can start with a zero vector and keep adding nonzero coefficients one by one, selecting at each step the coefficient that leads to the best improvement in the objective function(gready coordinate descent). In general, such heuristic search methods are not guaranteed to find the global optimum. However, in practive, they are simple to implement, very computationally efficient and under certain conditions they are even guaranteed to recovel the optimal solution.</p><p>An alternative approximation technique is the relaxation approach based on replacing an intractable objective function or constraint by a tractable one. For example, convex relaxations approximates a non-convex optimization problem by a convex one, i.e. by a problem with convex objective and convex constraints. Such problems are known to be "easy", i.e. there  exists a variety of efficient optimization methods for solving convex problems. Clearly, besides being easy to solve, e.g., convex, the relaxed version of the optimization problem must also enforce solution sparsity. In the following sections, we discuss lq-norm based relaxations, and show that the Zi-norm occupies a unique position among them, combining convexity with sparsity. A convex optimization problem is minimization of a convex function over a convex set of feasible solutions defined by the constraints. Convex problems are easier to solve than general optimization problems because of the important property that any local minima of a convex function is also a global one.</p><h2 id="8">Relaxations of Original Sparse Recovery Problem</h2><p>We will focus on the <img src="IntroToCompressiveSensing_eq11256999100043474863.png" alt="$l_q$">-norms as possible relaxations of <img src="IntroToCompressiveSensing_eq07972641343395931655.png" alt="$l_0$">-norm. These functions are convex for <img src="IntroToCompressiveSensing_eq07219475928695644184.png" alt="$q\geq 1$"> and nonconvex for <img src="IntroToCompressiveSensing_eq17674307095304986657.png" alt="$q<1$">. For example, <img src="IntroToCompressiveSensing_eq11695167239558615666.png" alt="$l_2$">-norm(Euclidean norm) is natural first choice as a relaxation of <img src="IntroToCompressiveSensing_eq07972641343395931655.png" alt="$l_0$">-norm. Our sparse recovery problem now writes:</p><p><img src="IntroToCompressiveSensing_eq09199718707126755047.png" alt="$$\min\limits_x\Vert x\Vert_2^2 \quad s.t. \quad y=A x$$"></p><p>Using <img src="IntroToCompressiveSensing_eq11695167239558615666.png" alt="$l_2$">-norm as an objective has several advantages some of which are its convexity and thus its property that it has a unique minimum, and finally it solution is available in a closed form. The closed form solution to this problem is also known as pseudo-inverse solution of <img src="IntroToCompressiveSensing_eq08143731260361058485.png" alt="$y=Ax$"> when <img src="IntroToCompressiveSensing_eq05147331747641807187.png" alt="$A$"> has more columns than rows(we assume that <img src="IntroToCompressiveSensing_eq05147331747641807187.png" alt="$A$"> is full-rank, i.e. all of its rows are linearly independent).</p><p>However, despite its convenient properties, <img src="IntroToCompressiveSensing_eq11695167239558615666.png" alt="$l_2$">-norm has a serious drawback when it comes to sparse recovery. It turns out that the optimal solution obtained by pseudo-inverse is practically never sparse.</p><p>To understand why the l2-norm does not promote the solution sparsity while the <img src="IntroToCompressiveSensing_eq10817116784286670662.png" alt="$l_1$">-norm does, and to understand the convexity and sparsity-inducing properties of <img src="IntroToCompressiveSensing_eq11256999100043474863.png" alt="$l_q$">-norms in general, let us consider the geometry of a sparse recovery problem, where <img src="IntroToCompressiveSensing_eq08299300742400647135.png" alt="$\Vert x\Vert_q^q$"> replaces the original cardinality objective <img src="IntroToCompressiveSensing_eq04933866659674463463.png" alt="$\Vert x\Vert_0$"> :</p><p><img src="IntroToCompressiveSensing_eq18348862420971764912.png" alt="$$\min\limits_x\Vert x\Vert_q^q \quad s.t. \quad y=A x$$"></p><p>Sets of vectors with same value of the function <img src="IntroToCompressiveSensing_eq17663307419741296505.png" alt="$f(x)$">,i.e. <img src="IntroToCompressiveSensing_eq06629476721354631103.png" alt="$f(x)=const$">, are called the level sets of <img src="IntroToCompressiveSensing_eq17663307419741296505.png" alt="$f(x)$">. For example, the level sets of <img src="IntroToCompressiveSensing_eq08299300742400647135.png" alt="$\Vert x\Vert_q^q$"> function are vector sets with same <img src="IntroToCompressiveSensing_eq11256999100043474863.png" alt="$l_q$">-norm. A set of vectors satisfying <img src="IntroToCompressiveSensing_eq09807667413285487168.png" alt="$\Vert x\Vert_q^q \leq r^q$"> is called an <img src="IntroToCompressiveSensing_eq11256999100043474863.png" alt="$l_q$">-ball of radius r; its &#8220;surface&#8221; (set boundary) is the corresponding level set <img src="IntroToCompressiveSensing_eq07027749641998703367.png" alt="$\Vert x\Vert_q^q = r^q$">. Note that the corresponding <img src="IntroToCompressiveSensing_eq11256999100043474863.png" alt="$l_q$">-balls bounded by the level sets are convex for <img src="IntroToCompressiveSensing_eq07219475928695644184.png" alt="$q\geq 1$"> (line segments between a pair of its points belong to the ball), and nonconvex for <img src="IntroToCompressiveSensing_eq08800273617805479523.png" alt="$0<q<1$"> (line segments between a pair of its points do not always belong to the ball).</p><p><img vspace="5" hspace="5" src="lq_balls.png" alt=""> </p><p>From a geometric point of view, solving the optimization problem(Pq) is equivalent to &#8220;blowing up&#8221; <img src="IntroToCompressiveSensing_eq11256999100043474863.png" alt="$l_q$">-balls with the center at the origin, i.e., increasing their radius, starting from 0, until they touch the hyperplane Ax = y. The resulting point is the minimum <img src="IntroToCompressiveSensing_eq11256999100043474863.png" alt="$l_q$">-norm vector that is also a feasible point, i.e. it is the optimal solution of sparse recovery problem.</p><p><img vspace="5" hspace="5" src="lq_balls_solution.png" alt=""> </p><p>Note that when <img src="IntroToCompressiveSensing_eq01101354456793090493.png" alt="$q\leq 1$">, <img src="IntroToCompressiveSensing_eq11256999100043474863.png" alt="$l_q$">-balls have sharp &#8220;corners&#8221; on the coordinate axis, corresponding to sparse vectors, since some of their coordinates are zero, but <img src="IntroToCompressiveSensing_eq11256999100043474863.png" alt="$l_q$">-balls for <img src="IntroToCompressiveSensing_eq09032159833364597273.png" alt="$q&gt;1$"> do not have this property. Thus, for <img src="IntroToCompressiveSensing_eq15651314078154429175.png" alt="$q \leq 1$">, <img src="IntroToCompressiveSensing_eq11256999100043474863.png" alt="$l_q$">-balls are likely to meet the hyperplane <img src="IntroToCompressiveSensing_eq05861550537643963662.png" alt="$Ax = y$"> at the corners, thus producing sparse solutions, while for <img src="IntroToCompressiveSensing_eq09032159833364597273.png" alt="$q&gt;1$"> the intersection practically never occurs at the axes, and thus solutions are not sparse.</p><p>Within the family of <img src="IntroToCompressiveSensing_eq08299300742400647135.png" alt="$\Vert x\Vert_q^q$"> functions, only those with <img src="IntroToCompressiveSensing_eq07219475928695644184.png" alt="$q\geq 1$"> are convex, but only those with <img src="IntroToCompressiveSensing_eq03359836017779577806.png" alt="$0<q\leq 1$"> are sparsity-enforcing. The only function within that family that has both useful properties is therefore <img src="IntroToCompressiveSensing_eq03943352315877735714.png" alt="$\Vert x\Vert_1$">, i.e.the <img src="IntroToCompressiveSensing_eq10817116784286670662.png" alt="$l_1$">-norm. This unique combination of sparsity and convexity is the reason for the widespread use of <img src="IntroToCompressiveSensing_eq10817116784286670662.png" alt="$l_1$">-norms in the modern sparse signal recovery field. Optimization problem using <img src="IntroToCompressiveSensing_eq10817116784286670662.png" alt="$l_1$"> norm writes:</p><p><img src="IntroToCompressiveSensing_eq11487629222801674374.png" alt="$$\min\limits_x\Vert x\Vert_1 \quad s.t. \quad y=A x$$"></p><pre class="codeinput">x = [-1:0.01:1];
+</pre><img vspace="5" hspace="5" src="IntroToCompressiveSensing_08.png" alt=""> <h2 id="7">Sparse Recovery Problem Formulations</h2><p>We will use the following notation in this section: <img src="IntroToCompressiveSensing_eq17764425644247988433.png" alt="$x=(x_1,...,X_N)\in \mathbf{R}N$"> is an unobserbed sparse signal, <img src="IntroToCompressiveSensing_eq01604325742641198289.png" alt="$y=(y_1,...,y_M)\in \mathbf{R}^M$"> is a vector of measurements(observations), and <img src="IntroToCompressiveSensing_eq11209255319736019689.png" alt="$A=\{a_{ij}\}\in\mathbf{R}^{M\times N}$"> is a design matrix.</p><p>The simplest problem we are going to start with is the noiseless signal recovery from a set of linear measurements, i.e. solving for x the system of linear equations:</p><p><img src="IntroToCompressiveSensing_eq16519642589894798372.png" alt="$$y=Ax$$"></p><p>It is usually assumed that <img src="IntroToCompressiveSensing_eq05147331747641807187.png" alt="$A$"> is a full-rank matrix, and thus for any <img src="IntroToCompressiveSensing_eq04168187966925989771.png" alt="$y\in\mathbf{R}^M$">, the above system of linear equations has a solution. Note that when the number of unknown variables, i.e. dimensionality of the signal, exceeds the number of observations, i.e. when %N\geq M%, the above system is underdetermined, and can have infinitely many solutions. In order to recover the signal <img src="IntroToCompressiveSensing_eq12428413953531653171.png" alt="$x$">, it is necessary to further constrain, or regularize, the problem. This is usually done by introducing an objective function, or regularizer R(x), that encodes additional properties of the signal, with lower values corresponding to more desirable solutions. Signal recovery is then formulated as a constrained optimization problem:</p><p><img src="IntroToCompressiveSensing_eq17547994887366463759.png" alt="$$\min\limits_{x\in\mathbf{R}^N} R(x)\quad s.t.\quad y=Ax$$"></p><p>In general, <img src="IntroToCompressiveSensing_eq11256999100043474863.png" alt="$l_q$"> norms for particular values of <img src="IntroToCompressiveSensing_eq15226540192103580117.png" alt="$q$">, denoted <img src="IntroToCompressiveSensing_eq07460701368313500615.png" alt="$\Vert x\Vert_q$"> or more precisely their <img src="IntroToCompressiveSensing_eq15226540192103580117.png" alt="$q$">-th power <img src="IntroToCompressiveSensing_eq08299300742400647135.png" alt="$\Vert x\Vert_q^q$"> are frequently used as regularizers <img src="IntroToCompressiveSensing_eq03088923576334803482.png" alt="$R(x)$"> in constrained optimization problems.</p><p>For a <img src="IntroToCompressiveSensing_eq04824172974799102213.png" alt="$q\ge 1$">, the <img src="IntroToCompressiveSensing_eq11256999100043474863.png" alt="$l_q$"> norm, also called just <img src="IntroToCompressiveSensing_eq15226540192103580117.png" alt="$q$">-norm of a vector <img src="IntroToCompressiveSensing_eq02156963846298394909.png" alt="$x\in\mathbf{R}^N$"> is defined as:</p><p><img src="IntroToCompressiveSensing_eq12425454430905046823.png" alt="$$\Vert x\Vert_q=(\sum\limits_{i=1}^N\vert x_i\vert^q)^\frac{1}{q}$$"></p><p>We can now observe relation between cardinality and <img src="IntroToCompressiveSensing_eq01171060540427018660.png" alt="$\Vert l_q\Vert$">-norms. The function <img src="IntroToCompressiveSensing_eq04933866659674463463.png" alt="$\Vert x\Vert_0$"> referred to as <img src="IntroToCompressiveSensing_eq07972641343395931655.png" alt="$l_0$">-norm of <img src="IntroToCompressiveSensing_eq12428413953531653171.png" alt="$x$"> is defined as a limit of <img src="IntroToCompressiveSensing_eq08299300742400647135.png" alt="$\Vert x\Vert_q^q$"> when <img src="IntroToCompressiveSensing_eq05055262562385898352.png" alt="$q\to0$">:</p><p><img src="IntroToCompressiveSensing_eq03467820065320414386.png" alt="$$\Vert x\Vert_0=\lim\limits_{q\to 0}\Vert x\Vert_q^q=\lim\limits_{q\to 0}\sum\limits_{i=1}^p\vert x_i\vert^q=\sum\limits_{i=1}^p\lim\limits_{q\to 0}\vert x_i\vert^q$$"></p><p>For each <img src="IntroToCompressiveSensing_eq08383031602117067423.png" alt="$x_i$">, when <img src="IntroToCompressiveSensing_eq14039466109267994740.png" alt="$q\to 0$">, <img src="IntroToCompressiveSensing_eq08974387064997530889.png" alt="$\vert x_i\vert^q\to I(x_i)$">, the indicator function, which is 0 at <img src="IntroToCompressiveSensing_eq17014082639638836868.png" alt="$x=0$"> and 1 otherwise. Thus, <img src="IntroToCompressiveSensing_eq09280994527819422030.png" alt="$\Vert x\Vert_0=\sum\limits{i=1}^p I(x_i)$">, which gives exactly the number of nonzero elements of vector x called cardinality. Using the cardinality function, we can now write the problem of sparse signal recovery from noiseless linear measurements as:</p><p><img src="IntroToCompressiveSensing_eq15286715274951793136.png" alt="$$\min\limits_x\Vert x\Vert_0 \quad s.t. \quad y=A x$$"></p><p>As already mentioned before, the above optimization problem is NP-hard and no known algorithm can solve it efficiently in polynomial time. Therefore, approximations are necessary and were already presented before. Under appropriate conditions the optimal solution can be recovered efficiently by certain appproximate techniques.</p><p>First approach to approximation is a heuristic-based search such as gready search. In gready search method, one can start with a zero vector and keep adding nonzero coefficients one by one, selecting at each step the coefficient that leads to the best improvement in the objective function(gready coordinate descent). In general, such heuristic search methods are not guaranteed to find the global optimum. However, in practive, they are simple to implement, very computationally efficient and under certain conditions they are even guaranteed to recovel the optimal solution.</p><p>An alternative approximation technique is the relaxation approach based on replacing an intractable objective function or constraint by a tractable one. For example, convex relaxations approximates a non-convex optimization problem by a convex one, i.e. by a problem with convex objective and convex constraints. Such problems are known to be "easy", i.e. there  exists a variety of efficient optimization methods for solving convex problems. Clearly, besides being easy to solve, e.g., convex, the relaxed version of the optimization problem must also enforce solution sparsity. In the following sections, we discuss lq-norm based relaxations, and show that the Zi-norm occupies a unique position among them, combining convexity with sparsity. A convex optimization problem is minimization of a convex function over a convex set of feasible solutions defined by the constraints. Convex problems are easier to solve than general optimization problems because of the important property that any local minima of a convex function is also a global one.</p><h2 id="8">Relaxations of Original Sparse Recovery Problem</h2><p>We will focus on the <img src="IntroToCompressiveSensing_eq11256999100043474863.png" alt="$l_q$">-norms as possible relaxations of <img src="IntroToCompressiveSensing_eq07972641343395931655.png" alt="$l_0$">-norm. These functions are convex for <img src="IntroToCompressiveSensing_eq07219475928695644184.png" alt="$q\geq 1$"> and nonconvex for <img src="IntroToCompressiveSensing_eq17674307095304986657.png" alt="$q<1$">. For example, <img src="IntroToCompressiveSensing_eq11695167239558615666.png" alt="$l_2$">-norm(Euclidean norm) is natural first choice as a relaxation of <img src="IntroToCompressiveSensing_eq07972641343395931655.png" alt="$l_0$">-norm. Our sparse recovery problem now writes:</p><p><img src="IntroToCompressiveSensing_eq09199718707126755047.png" alt="$$\min\limits_x\Vert x\Vert_2^2 \quad s.t. \quad y=A x$$"></p><p>Using <img src="IntroToCompressiveSensing_eq11695167239558615666.png" alt="$l_2$">-norm as an objective has several advantages some of which are its convexity and thus its property that it has a unique minimum, and finally it solution is available in a closed form. The closed form solution to this problem is also known as pseudo-inverse solution of <img src="IntroToCompressiveSensing_eq08143731260361058485.png" alt="$y=Ax$"> when <img src="IntroToCompressiveSensing_eq05147331747641807187.png" alt="$A$"> has more columns than rows(we assume that <img src="IntroToCompressiveSensing_eq05147331747641807187.png" alt="$A$"> is full-rank, i.e. all of its rows are linearly independent).</p><p>However, despite its convenient properties, <img src="IntroToCompressiveSensing_eq11695167239558615666.png" alt="$l_2$">-norm has a serious drawback when it comes to sparse recovery. It turns out that the optimal solution obtained by pseudo-inverse is practically never sparse.</p><p>To understand why the l2-norm does not promote the solution sparsity while the <img src="IntroToCompressiveSensing_eq10817116784286670662.png" alt="$l_1$">-norm does, and to understand the convexity and sparsity-inducing properties of <img src="IntroToCompressiveSensing_eq11256999100043474863.png" alt="$l_q$">-norms in general, let us consider the geometry of a sparse recovery problem, where <img src="IntroToCompressiveSensing_eq08299300742400647135.png" alt="$\Vert x\Vert_q^q$"> replaces the original cardinality objective <img src="IntroToCompressiveSensing_eq04933866659674463463.png" alt="$\Vert x\Vert_0$"> :</p><p><img src="IntroToCompressiveSensing_eq18348862420971764912.png" alt="$$\min\limits_x\Vert x\Vert_q^q \quad s.t. \quad y=A x$$"></p><p>Sets of vectors with same value of the function <img src="IntroToCompressiveSensing_eq17663307419741296505.png" alt="$f(x)$">,i.e. <img src="IntroToCompressiveSensing_eq06629476721354631103.png" alt="$f(x)=const$">, are called the level sets of <img src="IntroToCompressiveSensing_eq17663307419741296505.png" alt="$f(x)$">. For example, the level sets of <img src="IntroToCompressiveSensing_eq08299300742400647135.png" alt="$\Vert x\Vert_q^q$"> function are vector sets with same <img src="IntroToCompressiveSensing_eq11256999100043474863.png" alt="$l_q$">-norm. A set of vectors satisfying <img src="IntroToCompressiveSensing_eq09807667413285487168.png" alt="$\Vert x\Vert_q^q \leq r^q$"> is called an <img src="IntroToCompressiveSensing_eq11256999100043474863.png" alt="$l_q$">-ball of radius r; its &#8220;surface&#8221; (set boundary) is the corresponding level set <img src="IntroToCompressiveSensing_eq07027749641998703367.png" alt="$\Vert x\Vert_q^q = r^q$">. Note that the corresponding <img src="IntroToCompressiveSensing_eq11256999100043474863.png" alt="$l_q$">-balls bounded by the level sets are convex for <img src="IntroToCompressiveSensing_eq07219475928695644184.png" alt="$q\geq 1$"> (line segments between a pair of its points belong to the ball), and nonconvex for <img src="IntroToCompressiveSensing_eq08800273617805479523.png" alt="$0<q<1$"> (line segments between a pair of its points do not always belong to the ball).</p><p><img vspace="5" hspace="5" src="lq_balls.png" alt=""> </p><p>From a geometric point of view, solving the optimization problem(Pq) is equivalent to &#8220;blowing up&#8221; <img src="IntroToCompressiveSensing_eq11256999100043474863.png" alt="$l_q$">-balls with the center at the origin, i.e., increasing their radius, starting from 0, until they touch the hyperplane Ax = y. The resulting point is the minimum <img src="IntroToCompressiveSensing_eq11256999100043474863.png" alt="$l_q$">-norm vector that is also a feasible point, i.e. it is the optimal solution of sparse recovery problem.</p><p><img vspace="5" hspace="5" src="lq_balls_solution.png" alt=""> </p><p>Note that when <img src="IntroToCompressiveSensing_eq01101354456793090493.png" alt="$q\leq 1$">, <img src="IntroToCompressiveSensing_eq11256999100043474863.png" alt="$l_q$">-balls have sharp &#8220;corners&#8221; on the coordinate axis, corresponding to sparse vectors, since some of their coordinates are zero, but <img src="IntroToCompressiveSensing_eq11256999100043474863.png" alt="$l_q$">-balls for <img src="IntroToCompressiveSensing_eq09032159833364597273.png" alt="$q&gt;1$"> do not have this property. Thus, for <img src="IntroToCompressiveSensing_eq15651314078154429175.png" alt="$q \leq 1$">, <img src="IntroToCompressiveSensing_eq11256999100043474863.png" alt="$l_q$">-balls are likely to meet the hyperplane <img src="IntroToCompressiveSensing_eq05861550537643963662.png" alt="$Ax = y$"> at the corners, thus producing sparse solutions, while for <img src="IntroToCompressiveSensing_eq09032159833364597273.png" alt="$q&gt;1$"> the intersection practically never occurs at the axes, and thus solutions are not sparse.</p><p>Within the family of <img src="IntroToCompressiveSensing_eq08299300742400647135.png" alt="$\Vert x\Vert_q^q$"> functions, only those with <img src="IntroToCompressiveSensing_eq07219475928695644184.png" alt="$q\geq 1$"> are convex, but only those with <img src="IntroToCompressiveSensing_eq03359836017779577806.png" alt="$0<q\leq 1$"> are sparsity-enforcing. The only function within that family that has both useful properties is therefore <img src="IntroToCompressiveSensing_eq03943352315877735714.png" alt="$\Vert x\Vert_1$">, i.e.the <img src="IntroToCompressiveSensing_eq10817116784286670662.png" alt="$l_1$">-norm. This unique combination of sparsity and convexity is the reason for the widespread use of <img src="IntroToCompressiveSensing_eq10817116784286670662.png" alt="$l_1$">-norms in the modern sparse signal recovery field. Optimization problem using <img src="IntroToCompressiveSensing_eq10817116784286670662.png" alt="$l_1$"> norm writes:</p><p><img src="IntroToCompressiveSensing_eq11487629222801674374.png" alt="$$\min\limits_x\Vert x\Vert_1 \quad s.t. \quad y=A x$$"></p><pre class="codeinput">x = (-1:0.01:1);
 
 figure
 hold <span class="string">on</span>
@@ -147,8 +147,10 @@ plot(x, (sum(abs(x).^(realmin), 1)))
 axis <span class="string">tight</span>
 </pre><img vspace="5" hspace="5" src="IntroToCompressiveSensing_09.png" alt=""> <h2 id="9">Compressed Sensing</h2><p>The key idea behind compressive sensing is that the majority of real-life signals(images, audio...) can be well approximated by sparse representation vectors, given some appropriate basis <img src="IntroToCompressiveSensing_eq12822177478652287827.png" alt="$\Psi$">, and that exploiting the sparse signal structure can dramatically reduce the signal acquisition cost. Traditional approach to signal acquisition is based on the classical Shannon- Nyquist result stating that in order to preserve information about a signal, one must sample the signal at a rate which is at least twice the signal's bandwidth, defined as the highest frequency in the signal's spectrum. Note, however, that such classical scenario gives a worst-case bound, since it does not take advantage of any specific structure that the signal may possess. In practice, sampling at the Nyquist rate usually produces a tremendous number of samples, e.g., in digital and video cameras, and must be followed by a compression step in order to store or transmit this information efficiently.</p><p>The compression step uses some basis to represent a signal (e.g., Fourier, wavelets, etc.) and essentially throws away a large fraction of coefficients, leaving a relatively few important ones. Thus, a natural question is whether the compression step can be combined with the acquisition step, in order to avoid the collection of an unnecessarily large number of samples.</p><p>Compressive sensing offers positive answer to the above question. Let <img src="IntroToCompressiveSensing_eq02156963846298394909.png" alt="$x\in\mathbf{R}^N$"> be a signal that can be represented sparsely in some basis <img src="IntroToCompressiveSensing_eq12822177478652287827.png" alt="$\Psi$"> i.e. <img src="IntroToCompressiveSensing_eq02592419432369126718.png" alt="$x=\Psi s$"> where <img src="IntroToCompressiveSensing_eq12822177478652287827.png" alt="$\Psi$"> is an <img src="IntroToCompressiveSensing_eq14832117760302904846.png" alt="$N\times N$"> matrix of basis vectors(columns), and where <img src="IntroToCompressiveSensing_eq06384844881623643532.png" alt="$s\in\mathbf{R}^N$"> is a sparse vector of the signal's coordinates with only <img src="IntroToCompressiveSensing_eq07875580218894519798.png" alt="$K\ll N$"> nonzeros. Though the signal is not observed directly, we can obtain a set of linear measurements:</p><p><img src="IntroToCompressiveSensing_eq07797197139395755239.png" alt="$$y=\Phi x=\Phi\Psi s=A s$$"></p><p>where <img src="IntroToCompressiveSensing_eq12822177478652287827.png" alt="$\Psi$"> is an <img src="IntroToCompressiveSensing_eq05735694510500139860.png" alt="$N\times M$"> measurement matrix and <img src="IntroToCompressiveSensing_eq04168187966925989771.png" alt="$y\in\mathbf{R}^M$"> is a set of <img src="IntroToCompressiveSensing_eq00802513524912003067.png" alt="$M$"> measurements or samples where <img src="IntroToCompressiveSensing_eq00802513524912003067.png" alt="$M$"> can be much smaller than the original dimensionality of the signal, hence the name compressive sensing(CS).</p><p>The central problem of compressed sensing is reconstruction of a high-dimensional sparse signal representation <img src="IntroToCompressiveSensing_eq12428413953531653171.png" alt="$x$"> from a low-dimensional linear observation <img src="IntroToCompressiveSensing_eq08830444604280721118.png" alt="$y$">.</p><p><img vspace="5" hspace="5" src="cs_matrix_form.png" alt=""> </p><h2 id="11">Uniqueness of Sparse Recovery Problem Solution</h2><p>In this section we will discuss when the solutions of the <img src="IntroToCompressiveSensing_eq07972641343395931655.png" alt="$l_0$">- and <img src="IntroToCompressiveSensing_eq10817116784286670662.png" alt="$l_1$">- norm minimization problems are unique. The main design criteria for matrix <img src="IntroToCompressiveSensing_eq05147331747641807187.png" alt="$A$"> is to enable the unique identification of a signal of interest <img src="IntroToCompressiveSensing_eq12428413953531653171.png" alt="$x$"> from its measurements <img src="IntroToCompressiveSensing_eq08143731260361058485.png" alt="$y=Ax$">. Clearly, when we consider the class of K-sparse signals <img src="IntroToCompressiveSensing_eq09853050431983408406.png" alt="$\Sigma_K$">, the number of measurements <img src="IntroToCompressiveSensing_eq03661713932214152528.png" alt="$M&gt;K$"> for any matrix design, since the identification problem has <img src="IntroToCompressiveSensing_eq03845174387838694102.png" alt="$K$"> unknowns.</p><p>We will now determine properties of <img src="IntroToCompressiveSensing_eq05147331747641807187.png" alt="$A$"> that guarantee that distinct signals <img src="IntroToCompressiveSensing_eq17598225502705238288.png" alt="$x,x'\in \Sigma_K, x\neq x'$">, lead to different measurement vectors <img src="IntroToCompressiveSensing_eq09672478252983964397.png" alt="$Ax\neq Ax'$">. In other words, we want each vector <img src="IntroToCompressiveSensing_eq07853940282921180281.png" alt="$y\in \mathbf{R}^M$"> to be matched to at most one vector <img src="IntroToCompressiveSensing_eq17339059242541152455.png" alt="$x\in \Sigma_K$"> such that <img src="IntroToCompressiveSensing_eq08143731260361058485.png" alt="$y=Ax$">.</p><p>A key relevant property of the matrix in this context is its spark. Given an <img src="IntroToCompressiveSensing_eq04254758578297376220.png" alt="$M\times N$"> matrix <img src="IntroToCompressiveSensing_eq05147331747641807187.png" alt="$A$">, its spark <img src="IntroToCompressiveSensing_eq15537622861273599228.png" alt="$spark(A)$">, is defined as the minimal number of linearly dependent columns. Spark is closely related to the Kruskal's rank <img src="IntroToCompressiveSensing_eq06202562841516384516.png" alt="$krank(A)$"> defined as the maximal number <img src="IntroToCompressiveSensing_eq15636846968047188835.png" alt="$k$"> such that every subset of <img src="IntroToCompressiveSensing_eq15636846968047188835.png" alt="$k$"> columns of the matrix <img src="IntroToCompressiveSensing_eq05147331747641807187.png" alt="$A$"> is linearly independent.</p><p><img src="IntroToCompressiveSensing_eq18013510611033468681.png" alt="$$spark(A)=krank(A)+1\quad and \quad rank(A)\geq krank(A)$$"></p><p>By definition, the vectors in the null-space of the matrix <img src="IntroToCompressiveSensing_eq03616979685928759595.png" alt="$Ax=0$"> must satisfy <img src="IntroToCompressiveSensing_eq01901806101999818280.png" alt="$\Vert x\Vert_0\geq spark(A)$">, since these vectors combine linearly columns from <img src="IntroToCompressiveSensing_eq05147331747641807187.png" alt="$A$"> to give the zero vector, and at least <img src="IntroToCompressiveSensing_eq01031447492461970329.png" alt="$spark$"> such columns are necessary by definition.</p><p>Sparse recovery solution uniqueness via spark can be stated as:</p><div><ul><li>A vector <img src="IntroToCompressiveSensing_eq05489068739112104243.png" alt="$\bar{x}$"> is the unique solution of the sparse recovery problem if and only if <img src="IntroToCompressiveSensing_eq05489068739112104243.png" alt="$\bar{x}$"> is a solution of <img src="IntroToCompressiveSensing_eq08109617155170760161.png" alt="$Ax=y$"> and <img src="IntroToCompressiveSensing_eq16737126851075212264.png" alt="$\Vert x\Vert_0<\frac{1}{2} spark(A)$"></li></ul></div><p>or in alternative formulation:</p><div><ul><li>If <img src="IntroToCompressiveSensing_eq17131698152345478550.png" alt="$spark(A)&gt;2K$">, then for each measurement vector <img src="IntroToCompressiveSensing_eq04168187966925989771.png" alt="$y\in\mathbf{R}^M$"> there exists at most one signal <img src="IntroToCompressiveSensing_eq01490462440344365433.png" alt="$x\in\Sigma_K$"> such that <img src="IntroToCompressiveSensing_eq08143731260361058485.png" alt="$y=Ax$">.</li></ul></div><p>We can provide proof for the above theorem. Consider an alternative solution <img src="IntroToCompressiveSensing_eq12428413953531653171.png" alt="$x$"> that satisfies the same linear system <img src="IntroToCompressiveSensing_eq06114269529204457908.png" alt="$Ay=x$">. This implies that <img src="IntroToCompressiveSensing_eq06957936843809168436.png" alt="$(\bar{x}-x)$"> must be in the null-space of <img src="IntroToCompressiveSensing_eq05147331747641807187.png" alt="$A$">, i.e. <img src="IntroToCompressiveSensing_eq18327640522480939925.png" alt="$A(\bar{x}-x)=0$">(the columns of <img src="IntroToCompressiveSensing_eq05147331747641807187.png" alt="$A$"> corresponding to nonzero entries of the vector <img src="IntroToCompressiveSensing_eq06957936843809168436.png" alt="$(\bar{x}-x)$"> are linearly dependent). Thus, the number of such columns must be greater or equal to <img src="IntroToCompressiveSensing_eq15537622861273599228.png" alt="$spark(A)$"> by definition of spark. Since the support of <img src="IntroToCompressiveSensing_eq06957936843809168436.png" alt="$(\bar{x}-x)$"> is a union of supports of <img src="IntroToCompressiveSensing_eq05489068739112104243.png" alt="$\bar{x}$"> and <img src="IntroToCompressiveSensing_eq12428413953531653171.png" alt="$x$">, we get <img src="IntroToCompressiveSensing_eq15720756531338848539.png" alt="$\Vert (\bar{x}-x)\Vert_0 \leq \Vert\bar{x}\Vert_0+\Vert x\Vert_0$">. But since <img src="IntroToCompressiveSensing_eq13176239288587567017.png" alt="$\Vert\bar{x}\Vert_0<\frac{1}{2} spark(A)$">, we get:</p><p><img src="IntroToCompressiveSensing_eq17346866017796798809.png" alt="$$\Vert x\Vert_0\geq \Vert\bar{x}-x\Vert_0-\Vert\bar{x}\Vert_0&gt;\frac{1}{2} spark(A)$$"></p><p>which proves that <img src="IntroToCompressiveSensing_eq05489068739112104243.png" alt="$\bar{x}$"> is indeed the sparsest solution.</p><p>The singleton bound yields that the highest spark of an matrix <img src="IntroToCompressiveSensing_eq12661643981880316085.png" alt="$A\in\mathbf{R}^{M\times N}$"> with <img src="IntroToCompressiveSensing_eq08715614181998401501.png" alt="$M<N$"> is less than or equal to <img src="IntroToCompressiveSensing_eq11763278703080369638.png" alt="$M+1$"> and using the before stated theorems we get the requirement <img src="IntroToCompressiveSensing_eq15347832696688100816.png" alt="$M\geq 2K$">.</p><p>While spark is useful notion for proving the exact recovery of a sparse optimization problem, it is NP-hard to compute since one must verify that all sets of columns of a certain size are linearly independent. Thus, it is preferable to use properties of <img src="IntroToCompressiveSensing_eq05147331747641807187.png" alt="$A$"> which are easily computable to provide recovery guarantees.</p><p>The coherence <img src="IntroToCompressiveSensing_eq07761337512776972526.png" alt="$\mu (A)$"> of a matrix is the largest absolute inner product between any two columns of <img src="IntroToCompressiveSensing_eq05147331747641807187.png" alt="$A$">:</p><p><img src="IntroToCompressiveSensing_eq10396040282333867597.png" alt="$$\mu (A)=\max\limits_{1\leq i\neq j\leq N}\frac{\langle a_i,&#xA;a_j\rangle}{\Vert a_i\Vert_2 \Vert a_j\Vert_2}$$"></p><p>For any matrix <img src="IntroToCompressiveSensing_eq05147331747641807187.png" alt="$A$">,</p><p><img src="IntroToCompressiveSensing_eq07773492610854270166.png" alt="$$spark(A)\geq 1+\frac{1}{\mu (A)}$$"></p><p>Quite simple way to read the coherence is from the absolute value Gram matrix. Gram matrix is defined as <img src="IntroToCompressiveSensing_eq14727978759990662230.png" alt="$G=A'A$"> where we are considering conjugate transpose of the matrix A. To read the coherence from Gram matrix, we reject the diagonal elements since they correspond to the inner product of an atom with itself(for a properly normalized dictionary they should be 1 anyway). Since G is symmetric we need to look only upper triangular half of it to read off the coherence. The value of coherence <img src="IntroToCompressiveSensing_eq07761337512776972526.png" alt="$\mu (A)$"> is equal to largest value in upper triangular part of matrix <img src="IntroToCompressiveSensing_eq05147331747641807187.png" alt="$A$"> with diagonal excluded.</p><p>It can be shown that <img src="IntroToCompressiveSensing_eq15980700135752802345.png" alt="$\mu (A)\in [\sqrt{\frac{N-M}{M(N-1)}}, 1]$">. The lower bound is known as the Welch bound. Note that when <img src="IntroToCompressiveSensing_eq16510135358331554482.png" alt="$N&gt;&gt;M$">, the lower bound is approximately <img src="IntroToCompressiveSensing_eq17171517608544366165.png" alt="$\mu(A)\geq \frac{1}{\sqrt(M)}$"></p><p>We can show computation of coherence using Gram matrix on example of dictionary composed of spike and sine basis functions.</p><pre class="codeinput">n = 64;
 
-fourier = (1/sqrt(n))*exp((1j*2*pi*[0:n-1]'*[0:n-1])/n);
+fourier = (1/sqrt(n))*exp((1j*2*pi*(0:n-1)'*(0:n-1))/n);
 spike = eye(n);
+
+<span class="comment">% fourier(7,:)=spike(15,:);</span>
 
 psi = [spike, fourier];
 
@@ -166,7 +168,7 @@ coherence =
 
 </pre><img vspace="5" hspace="5" src="IntroToCompressiveSensing_10.png" alt=""> <p>We will now analyze a method for constructing compressive sensing matrices <img src="IntroToCompressiveSensing_eq01908532921846404702.png" alt="$\Phi$"> that are maximally incoherent with transformation matrix <img src="IntroToCompressiveSensing_eq12822177478652287827.png" alt="$\Psi$">. First we define when a vector is maximally incoherent to some basis. Let <img src="IntroToCompressiveSensing_eq13842519916062138752.png" alt="$\Psi=\{\psi_1, \psi_2, ...,\psi_N\}$"> be an orthonormal basis and <img src="IntroToCompressiveSensing_eq15153157240302531543.png" alt="$H=\sum\limits_{i=1}^N h_i \psi_i$"> be a unit norm vector, then <img src="IntroToCompressiveSensing_eq08062630503172331818.png" alt="$h$"> is maximally incoherent to the basis <img src="IntroToCompressiveSensing_eq12822177478652287827.png" alt="$\Psi$"> is <img src="IntroToCompressiveSensing_eq03657455177175974341.png" alt="$\vert h_i\vert=c, \forall i \in \{1,...,N\}$">. In other words, a unit-norm vector <img src="IntroToCompressiveSensing_eq08062630503172331818.png" alt="$h$"> is maximally incoherent to an orthonormal basis <img src="IntroToCompressiveSensing_eq13842519916062138752.png" alt="$\Psi=\{\psi_1, \psi_2, ...,\psi_N\}$"> when it makes the largest angle possible to the closest <img src="IntroToCompressiveSensing_eq10249155689365202383.png" alt="$\pm \psi_j, j\in\{1,...,N\}$">.</p><p>For the canonical basis(the axes of \mathbf{R}^N) the solution is easy. Any vector in the vertices of the hyper cube(with coordinates <img src="IntroToCompressiveSensing_eq12340415972421202854.png" alt="$\pm\frac{1}{\sqrt{N}}$">) is equidistant from all the basis elements. There are <img src="IntroToCompressiveSensing_eq14874058265146021995.png" alt="$2^N$"> possible solutions and if one has to construct a basis maximally incoherent to <img src="IntroToCompressiveSensing_eq12822177478652287827.png" alt="$\Psi$">, one has to chose <img src="IntroToCompressiveSensing_eq03672095713503266041.png" alt="$N$"> linearly independent elements from the <img src="IntroToCompressiveSensing_eq14874058265146021995.png" alt="$2^N$"> solutions. As it can be noted, the Hadamard basis provides an example of a basis that is maximally incoherent to the canonical. In addition, any two vectors from Hadamard basis have the property of being orthogonal one to another and thus the <img src="IntroToCompressiveSensing_eq00802513524912003067.png" alt="$M$"> vectors in <img src="IntroToCompressiveSensing_eq01908532921846404702.png" alt="$\Phi$"> are orthogonal to each other, maximizing information.</p><p>Any orthonormal basis can be seen as a rotation of the canonical basis. Therefore, to find a maximally incoherent <img src="IntroToCompressiveSensing_eq01908532921846404702.png" alt="$\Phi$">(an <img src="IntroToCompressiveSensing_eq01140604928651766565.png" alt="$M \times N$"> matrix with <img src="IntroToCompressiveSensing_eq08715614181998401501.png" alt="$M<N$">) to a basis <img src="IntroToCompressiveSensing_eq12822177478652287827.png" alt="$\Psi$"> it suffices to rotate <img src="IntroToCompressiveSensing_eq00802513524912003067.png" alt="$M$"> linearly independent vectors from the hypercube using the rotation that transforms canonical basis into <img src="IntroToCompressiveSensing_eq12822177478652287827.png" alt="$\Psi$">. This result is one possible measurement matrix maximally incoherent to <img src="IntroToCompressiveSensing_eq12822177478652287827.png" alt="$\Psi$"> being given by <img src="IntroToCompressiveSensing_eq04313596190596866614.png" alt="$\Phi=H \Psi$"> where <img src="IntroToCompressiveSensing_eq17354617462179732091.png" alt="$H$"> is such that its elements are <img src="IntroToCompressiveSensing_eq01075072871458982955.png" alt="$h_{p,q}=\pm \frac{1}{\sqrt{N}}, p\in \{1,...,M\}, q\in \{1,...,N\}$">. One such <img src="IntroToCompressiveSensing_eq17354617462179732091.png" alt="$H$"> can be formed by rows of the Hadamard matrix.</p><p>Simple algorithm for computing maximally incoherent matrix <img src="IntroToCompressiveSensing_eq01908532921846404702.png" alt="$\Phi$"> with <img src="IntroToCompressiveSensing_eq00802513524912003067.png" alt="$M$"> elements with respect to an orthogonal basis <img src="IntroToCompressiveSensing_eq12822177478652287827.png" alt="$\Psi$"> is to choose <img src="IntroToCompressiveSensing_eq00802513524912003067.png" alt="$M$"> random rows from the Hadamard matrix of size <img src="IntroToCompressiveSensing_eq03672095713503266041.png" alt="$N$"> and to perform <img src="IntroToCompressiveSensing_eq04313596190596866614.png" alt="$\Phi=H \Psi$">.</p><pre class="codeinput">N = 64;
 
-psi = (1/sqrt(N))*exp((1j*2*pi*[0:N-1]'*[0:N-1])/N);
+psi = (1/sqrt(N))*exp((1j*2*pi*(0:N-1)'*(0:N-1))/N);
 
 H = walsh(N);
 phi = normalizeColumns(H * psi);
@@ -195,7 +197,7 @@ x_ht = hardThresholding(x, threshold);
 figure, axis <span class="string">tight</span>
 plot(x, x_ht)
 hold <span class="string">on</span>
-plot([-threshold:0.01:threshold], [-threshold:0.01:threshold], <span class="string">'-.'</span>)
+plot((-threshold:0.01:threshold), (-threshold:0.01:threshold), <span class="string">'-.'</span>)
 title(<span class="string">'Hard Thresholding Operator'</span>)
 xlabel(<span class="string">'x'</span>)
 ylabel(<span class="string">'x*'</span>)
@@ -213,7 +215,191 @@ plot(x, x, <span class="string">'-.'</span>)
 title(<span class="string">'Soft Thresholding Operator'</span>)
 xlabel(<span class="string">'x'</span>)
 ylabel(<span class="string">'x*'</span>)
-</pre><img vspace="5" hspace="5" src="IntroToCompressiveSensing_13.png" alt=""> <h2 id="20">Algorithms for <img src="IntroToCompressiveSensing_eq07972641343395931655.png" alt="$l_0$">-norm Minimization</h2><p>In this section we focus on approximate optimization methods such as greedy approaches for solving <img src="IntroToCompressiveSensing_eq07972641343395931655.png" alt="$l_0$">-norm minimization problems:</p><div><ul><li><img src="IntroToCompressiveSensing_eq08396332029959170691.png" alt="$\min\limits_x\Vert x\Vert_0 \quad s.t.\quad \Vert y-Ax\Vert_2\leq\epsilon$"></li><li><img src="IntroToCompressiveSensing_eq15210062518877877598.png" alt="$\min\limits_x\Vert y-Ax\Vert_2 \quad s.t.\quad \Vert x\Vert_0\leq k$"></li></ul></div><p>In the second form of the optimization problem <img src="IntroToCompressiveSensing_eq15636846968047188835.png" alt="$k$"> represents bound on the number of nonzero elements and is uniquely defined by parameter <img src="IntroToCompressiveSensing_eq04202927574850129020.png" alt="$\epsilon$"> in the first formulation of the problem. The latter problem is also known as the best subset selection problem, since it aims at finding a subset of <img src="IntroToCompressiveSensing_eq15636846968047188835.png" alt="$k$"> variables that yield the lowest quadratic loss, i.e. the best linear regression fit.</p><p>At high-level greedy algorithmic scheme can be outlined as:</p><div><ol><li>Start with an empty support set, i.e. the set of nonzero variables , and zero vector as the current solution</li><li>Select the best variable using some ranking cirterion <img src="IntroToCompressiveSensing_eq11596698849999330607.png" alt="$C_{rank}$">, and add the variable to the current support set.</li><li>Update the current solution, and recompute the current objective function, also called the residual.</li><li>If the current solution <img src="IntroToCompressiveSensing_eq12428413953531653171.png" alt="$x$"> satisfies a given stopping criterion <img src="IntroToCompressiveSensing_eq03749789405994495768.png" alt="$C_{stop}$">, exit and return <img src="IntroToCompressiveSensing_eq12428413953531653171.png" alt="$x$">, otherwise go to step 2.</li></ol></div><p>Gready methods:</p><div><ul><li>Matching Pursuit</li><li>Orthogonal Matching Pursuit(OMP)</li><li>Least-squares OMP(LS-OMP)</li><li>Stagewise OMP(StOMP)</li><li>Regularized OMP(ROMP)</li></ul></div><h2 id="21">Algorithms for <img src="IntroToCompressiveSensing_eq10817116784286670662.png" alt="$l_1$">-norm Minimization(LASSO)</h2><div><ul><li>Least Angle Regression for LASSO(LARS)</li><li>Coordinate Descent</li><li>Proximal methods</li><li>Accelerated methods</li></ul></div><p>close all clearvars clc</p><p>image = imresize(phantom, 0.25);</p><p>% dft_tmp = sparse((dftmtx((size(image,1))))); % psi = kron(dft_tmp, dft_tmp); % % image_fft = reshape(psi * image(:), size(image));</p><p>image_fft = fft2(image);</p><p>sz = 20;</p><p>subsamplingMask = ones(sz); subsamplingMask = padarray(subsamplingMask, 0.5*[size(image)-sz]);</p><p>imagesc(subsamplingMask)</p><p>% phi = (diag(sparse(subsamplingMask(:)))); phi = subsamplingMask;</p><p>y =  phi .* ;</p><p>imagesc(reshape(log2(abs(y)),size(image)))</p><p>%  regularization parameter epsilon = 1e-10;</p><p>% stopping theshold tolA = 1e-5;</p><p>Psi = @(x,th) soft(x,th); Phi = @(x) l0norm(x);</p><p>psi_func = @(x) idct2(x); psi_func_inv = @(x) dct2(x);</p><p>A = @(x) phi * (x); At = @(x) (phi' * x);</p><p>[s_est]= SpaRSA(y, A, epsilon,...     'AT', At, ...     'Phi', Phi, ...     'Psi', Psi, ...     'Monotone',0,...     'MaxiterA', 100, ...     'Initialization',0,...     'StopCriterion', 1,...     'ToleranceA', tolA,...     'Verbose', 0);</p><p>signal_est = idct2(s_est);</p><p>imagesc(reshape(abs(signal_est), size(image))), title('Image Reconstruction'), colormap gray, axis image</p><h2 id="23">Compressive Imaging</h2><p>There has been significant interest in compressed sensing in systems that acquire and process 2D still images. CS offers a compelling alternative to traditional image acquisition paradigm. Instead of sampling in high resolution CS offers the possibility of directly acquiring the image in reduced dimensionality.</p><p>Perhaps the most well-known architecture for the CS acquisition of still images is the "single-pixel camera" which uses a digital micromirror device(DMD) to optically perform the inner products in the CS measurement process. In general, single-pixel imagers are based on optical modulators which enable us to obtain projections of an image against vectors that have binary entries. Example measurement bases <img src="IntroToCompressiveSensing_eq01908532921846404702.png" alt="$\Phi$"> for compressive imaging architecture are Walsh-Hadamard matrices, Bernoulli matrices, Rademacher matrices and Noiselet matrices.</p><p>In measurement matrix design process, we have to take into account restrictions imposed by hardware. When using DMD for optical multiplexing in compressive imaging, we have to design binary measurement matrices since micromirror off state corresponds to zero entry in measurement matrix, and micromirror on state corresponds to one.</p><p>A simple trick to convert measurements from binary to 1/-1 measurements is to obtain measurement with all mirrors set to on position <img src="IntroToCompressiveSensing_eq17926718424094540279.png" alt="$y_1$">. Then it is simple to convert measurement using <img src="IntroToCompressiveSensing_eq04427219057365665873.png" alt="$y_{-1,1}=2*y_{0,1}-y_1$">.</p><p>Straightforward application of CS to imaging applications is to vectorize <img src="IntroToCompressiveSensing_eq10759771773545505961.png" alt="$N \times N$"> image <img src="IntroToCompressiveSensing_eq12362013959998143435.png" alt="$X$"> into <img src="IntroToCompressiveSensing_eq03616933166036453196.png" alt="$N^2$">-dimensional vector <img src="IntroToCompressiveSensing_eq12428413953531653171.png" alt="$x$">. Then we can apply measurement matrix <img src="IntroToCompressiveSensing_eq01908532921846404702.png" alt="$\Phi$"> whose dimensions are <img src="IntroToCompressiveSensing_eq18230493911829429372.png" alt="$M \times N^2$">. Next step is to apply some CS recovery algorithm with <img src="IntroToCompressiveSensing_eq01908532921846404702.png" alt="$\Phi$"> as the measurement matrix and optionally with matrix <img src="IntroToCompressiveSensing_eq10759771773545505961.png" alt="$N \times N$"> <img src="IntroToCompressiveSensing_eq12822177478652287827.png" alt="$\Psi$"> that sparsifies observed phenomenon. Finally, we unrasterize estimated <img src="IntroToCompressiveSensing_eq06693510674829954808.png" alt="$\hat{x}$"> to produce recovered image <img src="IntroToCompressiveSensing_eq12417545138344978856.png" alt="$\hat{X}$">.</p><p>There are several problems with straightforward approach to compressive imaging. First one is that huge memory is required to store random sampling operator <img src="IntroToCompressiveSensing_eq11902127259029713831.png" alt="$\mathcal{O}(N^4)$">. The second disadvantage is that recovery algorithm is blind to the fact that data is an image and it ignores known attributes of images, searches simply for consistent, sparse solution and is not necessarily visualy pleasing.</p><p>Block-based Compressive Sensing (BCS) offers solution to the above problems. In BCS, image is partitioned into <img src="IntroToCompressiveSensing_eq13123250684610125966.png" alt="$B \times B$"> blocks. If we denote <img src="IntroToCompressiveSensing_eq07225361342133155126.png" alt="$j$">-th block of the image as <img src="IntroToCompressiveSensing_eq01434710025594700877.png" alt="$x_j$">, then we can write measurement acquisition as <img src="IntroToCompressiveSensing_eq00958864167336357596.png" alt="$y_j=\Phi_B x_j$"> where <img src="IntroToCompressiveSensing_eq05119835320239960694.png" alt="$\Phi_B$"> is <img src="IntroToCompressiveSensing_eq06517411768159884912.png" alt="$M_B\times B^2$"> random matrix. In this case, the global measurement matrix is block-diagonal.</p><p><img vspace="5" hspace="5" src="bcs.png" alt=""> </p><p>Note that BCS is memory efficient as we just need to store an <img src="IntroToCompressiveSensing_eq06517411768159884912.png" alt="$M_B\times B^2$"> matrix <img src="IntroToCompressiveSensing_eq05119835320239960694.png" alt="$\Phi_B$"> rather than full <img src="IntroToCompressiveSensing_eq04254758578297376220.png" alt="$M\times N$"> measurement matrix <img src="IntroToCompressiveSensing_eq01908532921846404702.png" alt="$\Phi$">. Obviously, there is a trade-off int the selection of block dimension <img src="IntroToCompressiveSensing_eq10170753361147586657.png" alt="$B$">. Small <img src="IntroToCompressiveSensing_eq10170753361147586657.png" alt="$B$"> requires less memory in storage and has faster implementation, while large <img src="IntroToCompressiveSensing_eq10170753361147586657.png" alt="$B$"> offers better reconstruction performance.</p><p><img vspace="5" hspace="5" src="single_pixel_camera.gif" alt=""> </p><pre class="codeinput">whMatrix = walsh(64);
+</pre><img vspace="5" hspace="5" src="IntroToCompressiveSensing_13.png" alt=""> <h2 id="20">Algorithms for <img src="IntroToCompressiveSensing_eq07972641343395931655.png" alt="$l_0$">-norm Minimization</h2><p>In this section we focus on approximate optimization methods such as greedy approaches for solving <img src="IntroToCompressiveSensing_eq07972641343395931655.png" alt="$l_0$">-norm minimization problems:</p><div><ul><li><img src="IntroToCompressiveSensing_eq08396332029959170691.png" alt="$\min\limits_x\Vert x\Vert_0 \quad s.t.\quad \Vert y-Ax\Vert_2\leq\epsilon$"></li><li><img src="IntroToCompressiveSensing_eq15210062518877877598.png" alt="$\min\limits_x\Vert y-Ax\Vert_2 \quad s.t.\quad \Vert x\Vert_0\leq k$"></li></ul></div><p>In the second form of the optimization problem <img src="IntroToCompressiveSensing_eq15636846968047188835.png" alt="$k$"> represents bound on the number of nonzero elements and is uniquely defined by parameter <img src="IntroToCompressiveSensing_eq04202927574850129020.png" alt="$\epsilon$"> in the first formulation of the problem. The latter problem is also known as the best subset selection problem, since it aims at finding a subset of <img src="IntroToCompressiveSensing_eq15636846968047188835.png" alt="$k$"> variables that yield the lowest quadratic loss, i.e. the best linear regression fit.</p><p>At high-level greedy algorithmic scheme can be outlined as:</p><div><ol><li>Start with an empty support set, i.e. the set of nonzero variables , and zero vector as the current solution</li><li>Select the best variable using some ranking cirterion <img src="IntroToCompressiveSensing_eq11596698849999330607.png" alt="$C_{rank}$">, and add the variable to the current support set.</li><li>Update the current solution, and recompute the current objective function, also called the residual.</li><li>If the current solution <img src="IntroToCompressiveSensing_eq12428413953531653171.png" alt="$x$"> satisfies a given stopping criterion <img src="IntroToCompressiveSensing_eq03749789405994495768.png" alt="$C_{stop}$">, exit and return <img src="IntroToCompressiveSensing_eq12428413953531653171.png" alt="$x$">, otherwise go to step 2.</li></ol></div><p>Gready methods:</p><div><ul><li>Matching Pursuit</li><li>Orthogonal Matching Pursuit(OMP)</li><li>Least-squares OMP(LS-OMP)</li><li>Stagewise OMP(StOMP)</li><li>Regularized OMP(ROMP)</li></ul></div><h2 id="21">Algorithms for <img src="IntroToCompressiveSensing_eq10817116784286670662.png" alt="$l_1$">-norm Minimization(LASSO)</h2><div><ul><li>Least Angle Regression for LASSO(LARS)</li><li>Coordinate Descent</li><li>Proximal methods</li><li>Accelerated methods</li></ul></div><h2 id="22">Signal Reconstruction Using Iterative Thresholding</h2><pre class="codeinput">close <span class="string">all</span>
+clearvars
+clc
+
+<span class="comment">% number of signal samples</span>
+n = 256;
+<span class="comment">% number of acquired samples</span>
+m = 128;
+
+<span class="comment">% create Fourier transformation matrix</span>
+fourier = (1/sqrt(n))*exp((1j*2*pi*(0:n-1)'*(0:n-1))/n);
+psi = fourier;
+
+<span class="comment">% desired signal sparsity K</span>
+K = 20;
+
+<span class="comment">% randomly selected basis coefficients</span>
+idx = randi([1, n], 1, K);
+
+<span class="comment">% random sparsity vector with different coefficient weights</span>
+s_orig = zeros(n, 1);
+s_orig(idx) = 1;
+s_orig = rand(size(s_orig)).*s_orig;
+
+<span class="comment">% obtain the signal which is a mixture of impulses and sinusoids</span>
+x_orig = psi * s_orig;
+
+<span class="comment">% undersampling factor</span>
+usFactor = 2;
+phi = zeros(size(s_orig));
+phi(1:usFactor:end) = 1;
+
+<span class="comment">% undersample original signal</span>
+x_us = phi .* x_orig;
+<span class="comment">% calculate Fourier spectrum of undersampled signal</span>
+s_us = psi' * x_us;
+
+figure
+
+subplot(231), stem(x_orig), title(<span class="string">'Original signal'</span>)
+subplot(234), stem(s_orig), title(<span class="string">'Original Spectrum'</span>)
+
+subplot(232), stem(x_us), title(<span class="string">'Uniformly Undersampled signal'</span>)
+subplot(235), stem(s_us), title(<span class="string">'Spectrum with aliasing'</span>)
+
+phi = zeros(size(s_orig));
+phi(randperm(n, m)) = 1;
+
+<span class="comment">% undersample original signal</span>
+x_us = phi .* x_orig;
+<span class="comment">% calculate Fourier spectrum of undersampled signal</span>
+s_us = psi' * x_us;
+
+subplot(233), stem(x_us), title(<span class="string">'Randomly Undersampled signal'</span>)
+subplot(236), stem(s_us), title(<span class="string">'Spectrum with noise-like undersampling artifacts'</span>)
+
+<span class="comment">% number of iterations for thresholding algorithm</span>
+nIter = 50;
+
+<span class="comment">% initialization</span>
+residual = [];
+s_est = zeros(size(s_us));
+
+<span class="keyword">for</span> iterNo = 1:nIter
+    residual = x_us - psi*s_est;
+
+    <span class="comment">% set threshold and perform thresholding</span>
+    th = 0.99*max(abs(psi'*residual));
+
+    s_est = hardThreshold(s_est + psi'*residual, th);
+
+    figure(200)
+    subplot(211), stem(s_orig), ylim([-0.5 1]), title(<span class="string">'Original Spectrum'</span>)
+    subplot(212),
+    line([0, n], [th, th], <span class="string">'Color'</span>, <span class="string">'r'</span>, <span class="string">'LineStyle'</span>, <span class="string">':'</span>);
+    hold <span class="string">on</span>
+    stem(s_est), ylim([-0.5 1]), title(<span class="string">'Recovered Spectrum'</span>)
+    drawnow
+
+    <span class="comment">% if desired sparsity reached, break thresholding procedure</span>
+    <span class="keyword">if</span>(sum(s_est~=0)&gt;=K)
+        <span class="keyword">break</span>;
+    <span class="keyword">end</span>
+<span class="keyword">end</span>
+</pre><img vspace="5" hspace="5" src="IntroToCompressiveSensing_14.png" alt=""> <img vspace="5" hspace="5" src="IntroToCompressiveSensing_15.png" alt=""> <h2 id="23">Compressive Sensing MRI</h2><p>Magnetic resonance imaging(MRI) is an essential medical imaging tool with an inherently slow data acquisiton process. Appying CS to MRI offers potentially significant scan time reductions. MRI obeys two key requirements for successful application of CS:</p><div><ol><li>medical imagery is naturally compressible by sparse coding in an appropriate transform domain(e.g. wavelet transform).</li><li>MRI scanners natureally acquire encoded samples(Fourier domain measurements), rather than direct pixel samples.</li></ol></div><pre class="codeinput">close <span class="string">all</span>
+clearvars
+clc
+
+<span class="comment">% create phantom image of size N</span>
+N = 256;
+image = phantom(N);
+<span class="comment">% image = im2double(imresize(rgb2gray(imread('lenna.tiff')), [N N]));</span>
+
+<span class="comment">% create subsampling mask with radial lines</span>
+nSamplingLines = 64;
+rot=360/nSamplingLines;
+angles = 0:rot:360;
+mask=zeros(N);
+
+<span class="keyword">for</span> i = 1:nSamplingLines
+    line = imrotate(eye(size(image)), angles(i), <span class="string">'bilinear'</span>, <span class="string">'crop'</span>);
+    mask = mask+line;
+    mask = mask&gt;0;
+<span class="keyword">end</span>
+
+<span class="comment">% low-pass filter mask</span>
+mask = ones(64);
+mask = padarray(mask, 0.5*[N-64, N-64]);
+
+<span class="comment">% aliasing mask - subsampled</span>
+mask = kron(ones(64), [1 0 0 0;1 0 0 0 ; 0  0 0 0 ; 0 0 0  0 ]);
+
+<span class="comment">% random subsampling mask</span>
+mask = rand(N) &gt; 0.5;
+
+figure, imagesc(mask)
+
+hR = @(x)   masked_FFT((x), mask);
+hRT = @(x) (masked_FFT_t(x, mask));
+
+<span class="comment">% subsample the Fourier spectrum of the original image</span>
+y = hR(image);
+
+figure, colormap <span class="string">gray</span>
+imagesc(image)
+colormap(gray)
+axis <span class="string">image</span>
+title(<span class="string">'Original'</span>)
+drawnow
+
+<span class="comment">% backprojection is simple inverse Fourier transform</span>
+figure, colormap <span class="string">gray</span>
+imagesc(hRT(y))
+colormap(gray)
+axis <span class="string">image</span>
+title(<span class="string">'Back-projection'</span>)
+drawnow
+
+<span class="comment">% denoising function;</span>
+tv_iters = 10;
+Psi = @(x,th)  tvdenoise(x,2/th,tv_iters);
+
+<span class="comment">% set the penalty function, to compute the objective</span>
+Phi = @(x) TVnorm(x);
+
+<span class="comment">% regularization parameters (empirical)</span>
+tau = 0.001;
+
+tolA = 1e-10;
+<span class="comment">% -- TwIST ---------------------------</span>
+<span class="comment">% stop criterium:  the relative change in the objective function</span>
+<span class="comment">% falls below 'ToleranceA'</span>
+ [x_twist,~,obj_twist,<span class="keyword">...</span>
+    times_twist,~,mse_twist]= <span class="keyword">...</span>
+         TwIST(y, hR, tau,<span class="keyword">...</span>
+         <span class="string">'Lambda'</span>, 1e-3, <span class="keyword">...</span>
+         <span class="string">'AT'</span>, hRT, <span class="keyword">...</span>
+         <span class="string">'Psi'</span>, Psi, <span class="keyword">...</span>
+         <span class="string">'Phi'</span>,Phi, <span class="keyword">...</span>
+         <span class="string">'True_x'</span>, image, <span class="keyword">...</span>
+         <span class="string">'Monotone'</span>,1,<span class="keyword">...</span>
+         <span class="string">'MaxiterA'</span>, 10000, <span class="keyword">...</span>
+         <span class="string">'Initialization'</span>,0,<span class="keyword">...</span>
+         <span class="string">'StopCriterion'</span>,1,<span class="keyword">...</span>
+       	 <span class="string">'ToleranceA'</span>,tolA,<span class="keyword">...</span>
+         <span class="string">'Verbose'</span>, 0);
+
+
+figure, colormap <span class="string">gray</span>
+imagesc(x_twist);
+axis <span class="string">image</span>
+title(<span class="string">'Estimate'</span>)
+
+figure
+semilogy(times_twist, (mse_twist*numel(image)).^0.5/norm(image,<span class="string">'fro'</span>), <span class="string">'LineWidth'</span>,2);
+title(<span class="string">'error ||x^{t}-x||_2/||x||_2'</span>)
+xlabel(<span class="string">'CPU time (sec)'</span>)
+grid <span class="string">on</span>
+
+figure
+semilogy(times_twist, obj_twist, <span class="string">'b'</span>,<span class="string">'LineWidth'</span>,2)
+title(<span class="string">'Objective function'</span>)
+xlabel(<span class="string">'CPU time (sec)'</span>)
+grid <span class="string">on</span>
+</pre><img vspace="5" hspace="5" src="IntroToCompressiveSensing_16.png" alt=""> <img vspace="5" hspace="5" src="IntroToCompressiveSensing_17.png" alt=""> <img vspace="5" hspace="5" src="IntroToCompressiveSensing_18.png" alt=""> <img vspace="5" hspace="5" src="IntroToCompressiveSensing_19.png" alt=""> <img vspace="5" hspace="5" src="IntroToCompressiveSensing_20.png" alt=""> <img vspace="5" hspace="5" src="IntroToCompressiveSensing_21.png" alt=""> <h2 id="24">Compressive Imaging</h2><p>There has been significant interest in compressed sensing in systems that acquire and process 2D still images. CS offers a compelling alternative to traditional image acquisition paradigm. Instead of sampling in high resolution CS offers the possibility of directly acquiring the image in reduced dimensionality.</p><p>Perhaps the most well-known architecture for the CS acquisition of still images is the "single-pixel camera" which uses a digital micromirror device(DMD) to optically perform the inner products in the CS measurement process. In general, single-pixel imagers are based on optical modulators which enable us to obtain projections of an image against vectors that have binary entries. Example measurement bases <img src="IntroToCompressiveSensing_eq01908532921846404702.png" alt="$\Phi$"> for compressive imaging architecture are Walsh-Hadamard matrices, Bernoulli matrices, Rademacher matrices and Noiselet matrices.</p><p>In measurement matrix design process, we have to take into account restrictions imposed by hardware. When using DMD for optical multiplexing in compressive imaging, we have to design binary measurement matrices since micromirror off state corresponds to zero entry in measurement matrix, and micromirror on state corresponds to one.</p><p>A simple trick to convert measurements from binary to 1/-1 measurements is to obtain measurement with all mirrors set to on position <img src="IntroToCompressiveSensing_eq17926718424094540279.png" alt="$y_1$">. Then it is simple to convert measurement using <img src="IntroToCompressiveSensing_eq04427219057365665873.png" alt="$y_{-1,1}=2*y_{0,1}-y_1$">.</p><p>Straightforward application of CS to imaging applications is to vectorize <img src="IntroToCompressiveSensing_eq10759771773545505961.png" alt="$N \times N$"> image <img src="IntroToCompressiveSensing_eq12362013959998143435.png" alt="$X$"> into <img src="IntroToCompressiveSensing_eq03616933166036453196.png" alt="$N^2$">-dimensional vector <img src="IntroToCompressiveSensing_eq12428413953531653171.png" alt="$x$">. Then we can apply measurement matrix <img src="IntroToCompressiveSensing_eq01908532921846404702.png" alt="$\Phi$"> whose dimensions are <img src="IntroToCompressiveSensing_eq18230493911829429372.png" alt="$M \times N^2$">. Next step is to apply some CS recovery algorithm with <img src="IntroToCompressiveSensing_eq01908532921846404702.png" alt="$\Phi$"> as the measurement matrix and optionally with matrix <img src="IntroToCompressiveSensing_eq10759771773545505961.png" alt="$N \times N$"> <img src="IntroToCompressiveSensing_eq12822177478652287827.png" alt="$\Psi$"> that sparsifies observed phenomenon. Finally, we unrasterize estimated <img src="IntroToCompressiveSensing_eq06693510674829954808.png" alt="$\hat{x}$"> to produce recovered image <img src="IntroToCompressiveSensing_eq12417545138344978856.png" alt="$\hat{X}$">.</p><p>There are several problems with straightforward approach to compressive imaging. First one is that huge memory is required to store random sampling operator <img src="IntroToCompressiveSensing_eq11902127259029713831.png" alt="$\mathcal{O}(N^4)$">. The second disadvantage is that recovery algorithm is blind to the fact that data is an image and it ignores known attributes of images, searches simply for consistent, sparse solution and is not necessarily visualy pleasing.</p><p>Block-based Compressive Sensing (BCS) offers solution to the above problems. In BCS, image is partitioned into <img src="IntroToCompressiveSensing_eq13123250684610125966.png" alt="$B \times B$"> blocks. If we denote <img src="IntroToCompressiveSensing_eq07225361342133155126.png" alt="$j$">-th block of the image as <img src="IntroToCompressiveSensing_eq01434710025594700877.png" alt="$x_j$">, then we can write measurement acquisition as <img src="IntroToCompressiveSensing_eq00958864167336357596.png" alt="$y_j=\Phi_B x_j$"> where <img src="IntroToCompressiveSensing_eq05119835320239960694.png" alt="$\Phi_B$"> is <img src="IntroToCompressiveSensing_eq06517411768159884912.png" alt="$M_B\times B^2$"> random matrix. In this case, the global measurement matrix is block-diagonal.</p><p><img vspace="5" hspace="5" src="bcs.png" alt=""> </p><p>Note that BCS is memory efficient as we just need to store an <img src="IntroToCompressiveSensing_eq06517411768159884912.png" alt="$M_B\times B^2$"> matrix <img src="IntroToCompressiveSensing_eq05119835320239960694.png" alt="$\Phi_B$"> rather than full <img src="IntroToCompressiveSensing_eq04254758578297376220.png" alt="$M\times N$"> measurement matrix <img src="IntroToCompressiveSensing_eq01908532921846404702.png" alt="$\Phi$">. Obviously, there is a trade-off int the selection of block dimension <img src="IntroToCompressiveSensing_eq10170753361147586657.png" alt="$B$">. Small <img src="IntroToCompressiveSensing_eq10170753361147586657.png" alt="$B$"> requires less memory in storage and has faster implementation, while large <img src="IntroToCompressiveSensing_eq10170753361147586657.png" alt="$B$"> offers better reconstruction performance.</p><p><img vspace="5" hspace="5" src="single_pixel_camera.gif" alt=""> </p><pre class="codeinput">whMatrix = walsh(64);
 brMatrix = rand(64)&gt;0.5;
 gaMatrix = randn(64);
 
@@ -228,7 +414,7 @@ title(<span class="string">'Random Bernoulli/Rademacher Matrix'</span>)
 figure, colormap <span class="string">gray</span>
 imagesc(gaMatrix)
 title(<span class="string">'Gaussian Matrix'</span>)
-</pre><img vspace="5" hspace="5" src="IntroToCompressiveSensing_14.png" alt=""> <img vspace="5" hspace="5" src="IntroToCompressiveSensing_15.png" alt=""> <img vspace="5" hspace="5" src="IntroToCompressiveSensing_16.png" alt=""> <p><img vspace="5" hspace="5" src="vec2mat_phi.png" alt=""> </p><pre class="codeinput"><span class="comment">%%BLOCK COMPRESSIVE IMAGING EXAMPLE - noiseless case</span>
+</pre><img vspace="5" hspace="5" src="IntroToCompressiveSensing_22.png" alt=""> <img vspace="5" hspace="5" src="IntroToCompressiveSensing_23.png" alt=""> <img vspace="5" hspace="5" src="IntroToCompressiveSensing_24.png" alt=""> <p><img vspace="5" hspace="5" src="vec2mat_phi.png" alt=""> </p><pre class="codeinput"><span class="comment">%%BLOCK COMPRESSIVE IMAGING EXAMPLE - noiseless case</span>
 clearvars
 close <span class="string">all</span>
 clc
@@ -270,7 +456,7 @@ psi = kron(psi_1d, psi_1d);
         <span class="comment">% create random Walsh matrix</span>
         phi = walsh(blockSize^2);
 
-        phi(phi&lt;0)=0;
+<span class="comment">%         phi(phi&lt;0)=0;</span>
 
         phi_r = phi;
 
@@ -392,7 +578,7 @@ image_est = [];
                 param.numThreads = -1;
 
 
-                weights = [1:size(theta,2)].^1';
+                weights = (1:size(theta,2)).^1';
                 <span class="comment">%                 weights = [size(theta,2):-1:1].^2';</span>
 
                 s_est = mexLassoWeighted(y_m, theta, weights, param);
@@ -413,8 +599,7 @@ image_est = [];
                     <span class="string">'Initialization'</span>,0,<span class="keyword">...</span>
                     <span class="string">'StopCriterion'</span>, 0,<span class="keyword">...</span>
                     <span class="string">'ToleranceA'</span>, tolA,<span class="keyword">...</span>
-                    <span class="string">'Verbose'</span>, 0,<span class="keyword">...</span>
-                    <span class="string">'Continuation'</span>, 0);
+                    <span class="string">'Verbose'</span>, 0);
 
             <span class="keyword">case</span> <span class="string">'sparsa2'</span>
                 tau = 1e-15;
@@ -460,7 +645,7 @@ image_est = [];
 figure, colormap <span class="string">gray</span>, imagesc(image), title(<span class="string">'Original image'</span>), axis <span class="string">image</span>
 figure, colormap <span class="string">gray</span>, imagesc(measurementVisualization), title(<span class="string">'Measurement Visualization'</span>), axis <span class="string">image</span>
 figure, colormap <span class="string">gray</span>, imagesc(image_est), title(<span class="string">'Reconstructed image'</span>), axis <span class="string">image</span>
-</pre><img vspace="5" hspace="5" src="IntroToCompressiveSensing_17.png" alt=""> <img vspace="5" hspace="5" src="IntroToCompressiveSensing_18.png" alt=""> <img vspace="5" hspace="5" src="IntroToCompressiveSensing_19.png" alt=""> <img vspace="5" hspace="5" src="IntroToCompressiveSensing_20.png" alt=""> <pre class="codeinput"><span class="comment">%%BLOCK COMPRESSIVE IMAGING EXAMPLE - noisy case - additive noise</span>
+</pre><img vspace="5" hspace="5" src="IntroToCompressiveSensing_25.png" alt=""> <img vspace="5" hspace="5" src="IntroToCompressiveSensing_26.png" alt=""> <img vspace="5" hspace="5" src="IntroToCompressiveSensing_27.png" alt=""> <img vspace="5" hspace="5" src="IntroToCompressiveSensing_28.png" alt=""> <pre class="codeinput"><span class="comment">%%BLOCK COMPRESSIVE IMAGING EXAMPLE - noisy case - additive noise</span>
 clearvars
 close <span class="string">all</span>
 clc
@@ -617,9 +802,9 @@ image_est = [];
 figure, colormap <span class="string">gray</span>, imagesc(image), title(<span class="string">'Original image'</span>), axis <span class="string">image</span>
 figure, colormap <span class="string">gray</span>, imagesc(measurementVisualization), title(<span class="string">'Measurement Visualization'</span>), axis <span class="string">image</span>
 figure, colormap <span class="string">gray</span>, imagesc(image_est), title(<span class="string">'Reconstructed image'</span>), axis <span class="string">image</span>
-</pre><img vspace="5" hspace="5" src="IntroToCompressiveSensing_21.png" alt=""> <img vspace="5" hspace="5" src="IntroToCompressiveSensing_22.png" alt=""> <img vspace="5" hspace="5" src="IntroToCompressiveSensing_23.png" alt=""> <img vspace="5" hspace="5" src="IntroToCompressiveSensing_24.png" alt=""> <pre class="codeinput"><span class="comment">%%BLOCK COMPRESSIVE IMAGING EXAMPLE - noisy case - multiplicative noise</span>
+</pre><img vspace="5" hspace="5" src="IntroToCompressiveSensing_29.png" alt=""> <img vspace="5" hspace="5" src="IntroToCompressiveSensing_30.png" alt=""> <img vspace="5" hspace="5" src="IntroToCompressiveSensing_31.png" alt=""> <img vspace="5" hspace="5" src="IntroToCompressiveSensing_32.png" alt=""> <pre class="codeinput"><span class="comment">%%BLOCK COMPRESSIVE IMAGING EXAMPLE - noisy case - multiplicative noise</span>
 clearvars
-close <span class="string">all</span>
+<span class="comment">% close all</span>
 clc
 
 <span class="comment">% load image</span>
@@ -629,7 +814,7 @@ image = rgb2gray(im2double(imresize(imread(imagePath), 0.5)));
 
 <span class="comment">% choose optimization package for sparse problem solving</span>
 <span class="comment">% options: sedumi_err, mex_err, mex_w_err, omp, grad, sparsa, sparsa2</span>
-optimizationPackage = <span class="string">'sedumi_err'</span>;
+optimizationPackage = <span class="string">'mex_err'</span>;
 
 <span class="comment">% choose block size - divide whole image in non-overlapping blocks</span>
 blockSize = 8;
@@ -643,7 +828,7 @@ sigmaMultiplicativeNoise = 0.01;
 
 <span class="comment">% choose measurement matrix type</span>
 <span class="comment">% options: walsh, bern, radem, gauss, dct</span>
-phi_type = <span class="string">'walsh'</span>;
+phi_type = <span class="string">'bern'</span>;
 
 <span class="comment">% generate desired transformation matrix and use Kronecker delta product to</span>
 <span class="comment">% create 2D transformation matrix</span>
@@ -740,7 +925,7 @@ image_est = [];
             <span class="keyword">case</span> <span class="string">'mex_err'</span>
                 param.mode = 1;
                 param.cholesky = true;
-                param.lambda = 100*sigmaMultiplicativeNoise;
+                param.lambda = 0;
                 param.numThreads = -1;
 
                 s_est = mexLasso(y_m, theta, param);
@@ -773,7 +958,7 @@ image_est = [];
 figure, colormap <span class="string">gray</span>, imagesc(image), title(<span class="string">'Original image'</span>), axis <span class="string">image</span>
 figure, colormap <span class="string">gray</span>, imagesc(measurementVisualization), title(<span class="string">'Measurement Visualization'</span>), axis <span class="string">image</span>
 figure, colormap <span class="string">gray</span>, imagesc(image_est), title(<span class="string">'Reconstructed image'</span>), axis <span class="string">image</span>
-</pre><img vspace="5" hspace="5" src="IntroToCompressiveSensing_25.png" alt=""> <img vspace="5" hspace="5" src="IntroToCompressiveSensing_26.png" alt=""> <img vspace="5" hspace="5" src="IntroToCompressiveSensing_27.png" alt=""> <img vspace="5" hspace="5" src="IntroToCompressiveSensing_28.png" alt=""> <h2 id="29">Reducing Blocking Artifacts In BCS</h2><p>Block-based CS is more practical for images of a large size. However, it causes block boundaries between two adjacent blocks resulting in namely the blocking artefacts especially if the blocks have different qualities of CS recovery.</p><p>A small block size is preferred in CS due to its low sensing cost, whereas a large block size is favoured for better quality of the recovered image. This dilemma can be resolved by sensing in small blocks (SBS) but executing large block recovery (LBR). We will try to recover four small blocks simultaneously using a structural measurement matrix <img src="IntroToCompressiveSensing_eq17734846779308655487.png" alt="$\Phi = diag(\phi , \phi , \phi , \phi)$">. Let <img src="IntroToCompressiveSensing_eq05157428764699225761.png" alt="$x(B) = [ x^T_1 , x^T_2 , x^T_3 , x^T_4]^T$"> represent a large block of size <img src="IntroToCompressiveSensing_eq13123250684610125966.png" alt="$B \times B$"> (in recovery) and <img src="IntroToCompressiveSensing_eq12688017677130758118.png" alt="$x_i (i=1,...,4)$"> represent a small block of size <img src="IntroToCompressiveSensing_eq12410481759044657461.png" alt="$(B/2) \times (B/2)$"> (in sensing), then the measurement vector <img src="IntroToCompressiveSensing_eq14322143517172673806.png" alt="$y(B)$"> of <img src="IntroToCompressiveSensing_eq16017471276083989389.png" alt="$x(B)$"> is</p><p><img src="IntroToCompressiveSensing_eq09005359800861687801.png" alt="$$y(B) = Fx(B) = [ y^T_1 , y^T_2 , y^T_3 , y^T_4]^T$$"></p><h2 id="30">A New Theory For Compressive Sensing - Breaking the Coherence Barrier</h2><p>Traditional CS is based on three pillars: sparsity(there are <img src="IntroToCompressiveSensing_eq17157792396909321071.png" alt="$s$"> important coefficients in the vector to be recovered and their location is arbitrary), incoherence(the values in the measurements matrix should be uniformly spread out), and unifom random sampling. In practical problems where physical device imposes the sampling operator these pillars are often lacking. Many such problems are coherent due to the physics or because they are infinite-dimensional. Other type of problems is where the sensing mechanism offers freedom to design the sampling strategy and the sampling operator.</p><p>The new CS theory and principles reveal that the optimal sampling strategy and benefits of CS depend on two factors: the structure of the signal and its resolution. To bridge the gap between the theory and practice, traditional CS pillars are replaced by new CS principles: asymptotic incoherence, asymptotic sparsity and multilevel sampling.</p><p>Traditional CS states that the sampling strategy is completely independent of the location of nonzero coefficients of an <img src="IntroToCompressiveSensing_eq17157792396909321071.png" alt="$s$">-sparse vector <img src="IntroToCompressiveSensing_eq12428413953531653171.png" alt="$x$">, i.e. with the <img src="IntroToCompressiveSensing_eq17157792396909321071.png" alt="$s$"> nonzero coefficients at arbitrary locations. The flip test allows us to evaluate whether this holds in practice.</p><p>Let <img src="IntroToCompressiveSensing_eq12945510665731308064.png" alt="$x\in \mathbf{C}^N$"> be a vector, and <img src="IntroToCompressiveSensing_eq14925302429038455011.png" alt="$U\in \mathbf{C}^{N\times N}$"> a measurement matrix. We then sample according to some pattern <img src="IntroToCompressiveSensing_eq17502872772442786554.png" alt="$\Omega\subseteq \{1,...,N\}$"> with <img src="IntroToCompressiveSensing_eq01654315537921249861.png" alt="$\vert\Omega \vert=m$"> and solve standard sparse recovery problem to obtain</p><h2 id="31">SPARSITY, FLIP TEST AND THE ABSENCE OF RIP</h2><pre class="codeinput">clearvars
+</pre><img vspace="5" hspace="5" src="IntroToCompressiveSensing_33.png" alt=""> <img vspace="5" hspace="5" src="IntroToCompressiveSensing_34.png" alt=""> <img vspace="5" hspace="5" src="IntroToCompressiveSensing_35.png" alt=""> <img vspace="5" hspace="5" src="IntroToCompressiveSensing_36.png" alt=""> <h2 id="30">Reducing Blocking Artifacts In BCS</h2><p>Block-based CS is more practical for images of a large size. However, it causes block boundaries between two adjacent blocks resulting in namely the blocking artefacts especially if the blocks have different qualities of CS recovery.</p><p>A small block size is preferred in CS due to its low sensing cost, whereas a large block size is favoured for better quality of the recovered image. This dilemma can be resolved by sensing in small blocks (SBS) but executing large block recovery (LBR). We will try to recover four small blocks simultaneously using a structural measurement matrix <img src="IntroToCompressiveSensing_eq17734846779308655487.png" alt="$\Phi = diag(\phi , \phi , \phi , \phi)$">. Let <img src="IntroToCompressiveSensing_eq05157428764699225761.png" alt="$x(B) = [ x^T_1 , x^T_2 , x^T_3 , x^T_4]^T$"> represent a large block of size <img src="IntroToCompressiveSensing_eq13123250684610125966.png" alt="$B \times B$"> (in recovery) and <img src="IntroToCompressiveSensing_eq12688017677130758118.png" alt="$x_i (i=1,...,4)$"> represent a small block of size <img src="IntroToCompressiveSensing_eq12410481759044657461.png" alt="$(B/2) \times (B/2)$"> (in sensing), then the measurement vector <img src="IntroToCompressiveSensing_eq14322143517172673806.png" alt="$y(B)$"> of <img src="IntroToCompressiveSensing_eq16017471276083989389.png" alt="$x(B)$"> is</p><p><img src="IntroToCompressiveSensing_eq09005359800861687801.png" alt="$$y(B) = Fx(B) = [ y^T_1 , y^T_2 , y^T_3 , y^T_4]^T$$"></p><h2 id="31">A New Theory For Compressive Sensing - Breaking the Coherence Barrier</h2><p>Traditional CS is based on three pillars: sparsity(there are <img src="IntroToCompressiveSensing_eq17157792396909321071.png" alt="$s$"> important coefficients in the vector to be recovered and their location is arbitrary), incoherence(the values in the measurements matrix should be uniformly spread out), and unifom random sampling. In practical problems where physical device imposes the sampling operator these pillars are often lacking. Many such problems are coherent due to the physics or because they are infinite-dimensional. Other type of problems is where the sensing mechanism offers freedom to design the sampling strategy and the sampling operator.</p><p>The new CS theory and principles reveal that the optimal sampling strategy and benefits of CS depend on two factors: the structure of the signal and its resolution. To bridge the gap between the theory and practice, traditional CS pillars are replaced by new CS principles: asymptotic incoherence, asymptotic sparsity and multilevel sampling.</p><p>Traditional CS states that the sampling strategy is completely independent of the location of nonzero coefficients of an <img src="IntroToCompressiveSensing_eq17157792396909321071.png" alt="$s$">-sparse vector <img src="IntroToCompressiveSensing_eq12428413953531653171.png" alt="$x$">, i.e. with the <img src="IntroToCompressiveSensing_eq17157792396909321071.png" alt="$s$"> nonzero coefficients at arbitrary locations. The flip test allows us to evaluate whether this holds in practice.</p><p>Let <img src="IntroToCompressiveSensing_eq12945510665731308064.png" alt="$x\in \mathbf{C}^N$"> be a vector, and <img src="IntroToCompressiveSensing_eq14925302429038455011.png" alt="$U\in \mathbf{C}^{N\times N}$"> a measurement matrix. We then sample according to some pattern <img src="IntroToCompressiveSensing_eq17502872772442786554.png" alt="$\Omega\subseteq \{1,...,N\}$"> with <img src="IntroToCompressiveSensing_eq01654315537921249861.png" alt="$\vert\Omega \vert=m$"> and solve standard sparse recovery problem to obtain</p><h2 id="32">SPARSITY, FLIP TEST AND THE ABSENCE OF RIP</h2><pre class="codeinput">clearvars
 close <span class="string">all</span>
 clc
 
@@ -804,7 +989,7 @@ sparsity = m/2;
 nIter = 1;
 stepSize = 5000;
 
-z = sparseCode(y_m, theta, sparsity, nIter, <span class="string">'StepSize'</span>, stepSize, <span class="string">'Verbose'</span>, 1);
+z = sparseCode(y_m, theta, sparsity, nIter, <span class="string">'StepSize'</span>, stepSize, <span class="string">'Verbose'</span>, 0);
 
 signal_est = (psi * z);
 image_est = reshape(signal_est, [rows cols]);
@@ -816,7 +1001,7 @@ imagesc(image_est)
 z_f = flipud(z);
 y_f = theta * z_f;
 
-z_f_est = sparseCode(y_f, theta, sparsity, nIter, <span class="string">'StepSize'</span>, stepSize, <span class="string">'Verbose'</span>, 1);
+z_f_est = sparseCode(y_f, theta, sparsity, nIter, <span class="string">'StepSize'</span>, stepSize, <span class="string">'Verbose'</span>, 0);
 z_f_est = flipud(z_f_est);
 
 signal_est = (psi * z_f_est);
@@ -824,9 +1009,7 @@ image_est = reshape(signal_est, [rows cols]);
 
 figure,
 imagesc(image_est)
-</pre><pre class="codeoutput">Sparse Coding Col. No. 1 - 1/1
-Sparse Coding Col. No. 1 - 1/1
-</pre><img vspace="5" hspace="5" src="IntroToCompressiveSensing_29.png" alt=""> <img vspace="5" hspace="5" src="IntroToCompressiveSensing_30.png" alt=""> <h2 id="32">Dictionary Learning (Sparse Coding)</h2><p>A fixed dictionary may not necessarily be the best match for a particular type of signals, since a given basis (columns of <img src="IntroToCompressiveSensing_eq05147331747641807187.png" alt="$A$">, or dictionary elements) may not yield a sufficiently sparse representation of such signals. Thus, a promising alternative approach that became popular in past years is to learn a dictionary that allows for a sparse representation, given a training set of observed signal samples. Given a data matrix <img src="IntroToCompressiveSensing_eq07649107795707013777.png" alt="$Y$">, where each column represents an observed signal (sample),we want to find the design matrix, or dictionary, <img src="IntroToCompressiveSensing_eq05147331747641807187.png" alt="$A$">, as well as a sparse representation of each observed signal in that dictionary, corresponding to the sparse columns of the matrix <img src="IntroToCompressiveSensing_eq12362013959998143435.png" alt="$X$">.</p><p><img vspace="5" hspace="5" src="dictionary_learning.png" alt=""> </p><p>We now formally state the dictionary learning, or sparse coding, problem. Let <img src="IntroToCompressiveSensing_eq07649107795707013777.png" alt="$Y$"> be an <img src="IntroToCompressiveSensing_eq17149532561360612488.png" alt="$n\times N$"> matrix, where <img src="IntroToCompressiveSensing_eq16617748829556203541.png" alt="$n<N$">,and the i-th column, or sample, <img src="IntroToCompressiveSensing_eq08366435799313302571.png" alt="$y_i$">, is a vector of observations obtained using linear projections specified by some unknown <img src="IntroToCompressiveSensing_eq12457828731756317451.png" alt="$n\times K$"> matrix D, of the corresponding sparse column-vector <img src="IntroToCompressiveSensing_eq08383031602117067423.png" alt="$x_i$"> of the (unobserved) <img src="IntroToCompressiveSensing_eq18317646533159529882.png" alt="$K\times N$"> matrix <img src="IntroToCompressiveSensing_eq12362013959998143435.png" alt="$X$">. For example, if the columns of <img src="IntroToCompressiveSensing_eq07649107795707013777.png" alt="$Y$"> are (vectorized) images, such as fMRI scans of a brain, then the columns of <img src="IntroToCompressiveSensing_eq16171345478199012472.png" alt="$D$"> are dictionary elements, or atoms (i.e., some "elementary" images, for example, corresponding to particular brain areas known to be activated by specific tasks and/or stimuli), and the columns of <img src="IntroToCompressiveSensing_eq12362013959998143435.png" alt="$X$"> correspond to sparse codes needed to represent each image using the dictionary (i.e., one can hypothesize that the brain activation observed in a given fMRI scan can be represented as a weighted linear superposition of a relatively small number of active brain areas, out of a potentially large number of such areas).</p><p>The ultimate sparse-coding objective is to find both <img src="IntroToCompressiveSensing_eq16171345478199012472.png" alt="$D$"> and <img src="IntroToCompressiveSensing_eq12362013959998143435.png" alt="$X$"> that yield the sparsest representation of the data <img src="IntroToCompressiveSensing_eq07649107795707013777.png" alt="$Y$">, subject to some acceptable approximation error <img src="IntroToCompressiveSensing_eq04202927574850129020.png" alt="$\epsilon$">:</p><p><img src="IntroToCompressiveSensing_eq15451292627501911418.png" alt="$$\min\limits_{D,X}\sum\limits_{i=1}^N \Vert x_i\Vert_0 \quad s.t.\quad \Vert Y-DX\Vert_2\leq \epsilon$$"></p><p>Note that this problem formulation looks very similar to the classical sparse signal recovery problem, only with two modifications:</p><div><ol><li>dictionary A is now included as an unknown variable that we must optimize over</li><li>there are M, rather than just one, observed samples and the corresponding sparse signals, or sparse codes.</li></ol></div><p>As usual, there are also two alternative ways of formulating the above constrained optimization problem, i.e. by reversing the roles of the objective and the constraint:</p><p><img src="IntroToCompressiveSensing_eq00836544903080339866.png" alt="$$\min\limits_{D,X}\Vert Y-DX\Vert_2^2  \quad s.t. \quad \Vert X(i,:)\Vert_0\leq k, \quad 1\leq i\leq N$$"></p><p>for some k that corresponds to the above <img src="IntroToCompressiveSensing_eq04202927574850129020.png" alt="$\epsilon$">, or by using the Lagrangian relaxation:</p><p><img src="IntroToCompressiveSensing_eq03001553202724645117.png" alt="$$\min\limits_{D,X}\Vert Y-DX\Vert_2^2 + \lambda\sum\limits_{i=1}^N\Vert X_{i,:}\Vert_0$$"></p><p>Clearly, the computational complexity of dictionary learning is at least as high as the complexity of the original (NP-hard) <img src="IntroToCompressiveSensing_eq07972641343395931655.png" alt="$l_0$">-norm minimization problem. Thus, the <img src="IntroToCompressiveSensing_eq10817116784286670662.png" alt="$l_1$">-norm relaxation can be applied, as before, to at least convexify the subproblem concerned with optimizing over the <img src="IntroToCompressiveSensing_eq12362013959998143435.png" alt="$X$"> matrix. Also, it is common to constrain the norm of the dictionary elements (e.g., by unit norm), in order to avoid arbitrarily large values of <img src="IntroToCompressiveSensing_eq16171345478199012472.png" alt="$D$"> elements (and, correspondingly, infinitesimal values of <img src="IntroToCompressiveSensing_eq12362013959998143435.png" alt="$X$"> entries) during the optimization process.</p><p><img src="IntroToCompressiveSensing_eq17377884187609333712.png" alt="$$\min\limits_{D,X}\Vert Y-DX\Vert_2^2 + \lambda\sum\limits_{i=1}^N\Vert X_{i,:}\Vert_1 \quad s.t.&#xA;\quad \Vert A_{:,j}\Vert_2\leq 1, \quad\forall j =1,...,n$$"></p><p>There exist several algorithms for dictionary learning:</p><div><ul><li>Method of Optimal Directions(MOD)</li><li>K-SVD</li><li>Online dictionary learning</li></ul></div><h2 id="33">Image Denoising Using Overcomplete Dictionaries</h2><p>In this section, we will analyze use of overcomplete dictionaries in classic image denoising problem. An ideal image <img src="IntroToCompressiveSensing_eq12428413953531653171.png" alt="$x$"> is measured in the presence of an additive zero-mean white and homogeneous Gaussian noise <img src="IntroToCompressiveSensing_eq03158747792916826732.png" alt="$v$"> with standard deviation <img src="IntroToCompressiveSensing_eq11373214381793991308.png" alt="$\sigma$">. The measured image <img src="IntroToCompressiveSensing_eq08830444604280721118.png" alt="$y$"> is <img src="IntroToCompressiveSensing_eq12338159011266977184.png" alt="$y=x+v$">. Our goal is to design an algorithm that can remove the noise from <img src="IntroToCompressiveSensing_eq08830444604280721118.png" alt="$y$">, getting as close as possible to the original image <img src="IntroToCompressiveSensing_eq12428413953531653171.png" alt="$x$">.</p><h2 id="34">DICTIONARY LEARNING</h2><pre class="codeinput">clearvars
+</pre><img vspace="5" hspace="5" src="IntroToCompressiveSensing_37.png" alt=""> <img vspace="5" hspace="5" src="IntroToCompressiveSensing_38.png" alt=""> <h2 id="33">Dictionary Learning (Sparse Coding)</h2><p>A fixed dictionary may not necessarily be the best match for a particular type of signals, since a given basis (columns of <img src="IntroToCompressiveSensing_eq05147331747641807187.png" alt="$A$">, or dictionary elements) may not yield a sufficiently sparse representation of such signals. Thus, a promising alternative approach that became popular in past years is to learn a dictionary that allows for a sparse representation, given a training set of observed signal samples. Given a data matrix <img src="IntroToCompressiveSensing_eq07649107795707013777.png" alt="$Y$">, where each column represents an observed signal (sample),we want to find the design matrix, or dictionary, <img src="IntroToCompressiveSensing_eq05147331747641807187.png" alt="$A$">, as well as a sparse representation of each observed signal in that dictionary, corresponding to the sparse columns of the matrix <img src="IntroToCompressiveSensing_eq12362013959998143435.png" alt="$X$">.</p><p><img vspace="5" hspace="5" src="dictionary_learning.png" alt=""> </p><p>We now formally state the dictionary learning, or sparse coding, problem. Let <img src="IntroToCompressiveSensing_eq07649107795707013777.png" alt="$Y$"> be an <img src="IntroToCompressiveSensing_eq17149532561360612488.png" alt="$n\times N$"> matrix, where <img src="IntroToCompressiveSensing_eq16617748829556203541.png" alt="$n<N$">,and the i-th column, or sample, <img src="IntroToCompressiveSensing_eq08366435799313302571.png" alt="$y_i$">, is a vector of observations obtained using linear projections specified by some unknown <img src="IntroToCompressiveSensing_eq12457828731756317451.png" alt="$n\times K$"> matrix D, of the corresponding sparse column-vector <img src="IntroToCompressiveSensing_eq08383031602117067423.png" alt="$x_i$"> of the (unobserved) <img src="IntroToCompressiveSensing_eq18317646533159529882.png" alt="$K\times N$"> matrix <img src="IntroToCompressiveSensing_eq12362013959998143435.png" alt="$X$">. For example, if the columns of <img src="IntroToCompressiveSensing_eq07649107795707013777.png" alt="$Y$"> are (vectorized) images, such as fMRI scans of a brain, then the columns of <img src="IntroToCompressiveSensing_eq16171345478199012472.png" alt="$D$"> are dictionary elements, or atoms (i.e., some "elementary" images, for example, corresponding to particular brain areas known to be activated by specific tasks and/or stimuli), and the columns of <img src="IntroToCompressiveSensing_eq12362013959998143435.png" alt="$X$"> correspond to sparse codes needed to represent each image using the dictionary (i.e., one can hypothesize that the brain activation observed in a given fMRI scan can be represented as a weighted linear superposition of a relatively small number of active brain areas, out of a potentially large number of such areas).</p><p>The ultimate sparse-coding objective is to find both <img src="IntroToCompressiveSensing_eq16171345478199012472.png" alt="$D$"> and <img src="IntroToCompressiveSensing_eq12362013959998143435.png" alt="$X$"> that yield the sparsest representation of the data <img src="IntroToCompressiveSensing_eq07649107795707013777.png" alt="$Y$">, subject to some acceptable approximation error <img src="IntroToCompressiveSensing_eq04202927574850129020.png" alt="$\epsilon$">:</p><p><img src="IntroToCompressiveSensing_eq15451292627501911418.png" alt="$$\min\limits_{D,X}\sum\limits_{i=1}^N \Vert x_i\Vert_0 \quad s.t.\quad \Vert Y-DX\Vert_2\leq \epsilon$$"></p><p>Note that this problem formulation looks very similar to the classical sparse signal recovery problem, only with two modifications:</p><div><ol><li>dictionary A is now included as an unknown variable that we must optimize over</li><li>there are M, rather than just one, observed samples and the corresponding sparse signals, or sparse codes.</li></ol></div><p>As usual, there are also two alternative ways of formulating the above constrained optimization problem, i.e. by reversing the roles of the objective and the constraint:</p><p><img src="IntroToCompressiveSensing_eq00836544903080339866.png" alt="$$\min\limits_{D,X}\Vert Y-DX\Vert_2^2  \quad s.t. \quad \Vert X(i,:)\Vert_0\leq k, \quad 1\leq i\leq N$$"></p><p>for some k that corresponds to the above <img src="IntroToCompressiveSensing_eq04202927574850129020.png" alt="$\epsilon$">, or by using the Lagrangian relaxation:</p><p><img src="IntroToCompressiveSensing_eq03001553202724645117.png" alt="$$\min\limits_{D,X}\Vert Y-DX\Vert_2^2 + \lambda\sum\limits_{i=1}^N\Vert X_{i,:}\Vert_0$$"></p><p>Clearly, the computational complexity of dictionary learning is at least as high as the complexity of the original (NP-hard) <img src="IntroToCompressiveSensing_eq07972641343395931655.png" alt="$l_0$">-norm minimization problem. Thus, the <img src="IntroToCompressiveSensing_eq10817116784286670662.png" alt="$l_1$">-norm relaxation can be applied, as before, to at least convexify the subproblem concerned with optimizing over the <img src="IntroToCompressiveSensing_eq12362013959998143435.png" alt="$X$"> matrix. Also, it is common to constrain the norm of the dictionary elements (e.g., by unit norm), in order to avoid arbitrarily large values of <img src="IntroToCompressiveSensing_eq16171345478199012472.png" alt="$D$"> elements (and, correspondingly, infinitesimal values of <img src="IntroToCompressiveSensing_eq12362013959998143435.png" alt="$X$"> entries) during the optimization process.</p><p><img src="IntroToCompressiveSensing_eq17377884187609333712.png" alt="$$\min\limits_{D,X}\Vert Y-DX\Vert_2^2 + \lambda\sum\limits_{i=1}^N\Vert X_{i,:}\Vert_1 \quad s.t.&#xA;\quad \Vert A_{:,j}\Vert_2\leq 1, \quad\forall j =1,...,n$$"></p><p>There exist several algorithms for dictionary learning:</p><div><ul><li>Method of Optimal Directions(MOD)</li><li>K-SVD</li><li>Online dictionary learning</li></ul></div><h2 id="34">Image Denoising Using Overcomplete Dictionaries</h2><p>In this section, we will analyze use of overcomplete dictionaries in classic image denoising problem. An ideal image <img src="IntroToCompressiveSensing_eq12428413953531653171.png" alt="$x$"> is measured in the presence of an additive zero-mean white and homogeneous Gaussian noise <img src="IntroToCompressiveSensing_eq03158747792916826732.png" alt="$v$"> with standard deviation <img src="IntroToCompressiveSensing_eq11373214381793991308.png" alt="$\sigma$">. The measured image <img src="IntroToCompressiveSensing_eq08830444604280721118.png" alt="$y$"> is <img src="IntroToCompressiveSensing_eq12338159011266977184.png" alt="$y=x+v$">. Our goal is to design an algorithm that can remove the noise from <img src="IntroToCompressiveSensing_eq08830444604280721118.png" alt="$y$">, getting as close as possible to the original image <img src="IntroToCompressiveSensing_eq12428413953531653171.png" alt="$x$">.</p><h2 id="35">IMAGE DENOISING USING OVERCOMPLETE DICITONARIES</h2><pre class="codeinput">clearvars
 close <span class="string">all</span>
 clc
 
@@ -851,7 +1034,7 @@ K = 500;
 
 <span class="comment">% load image for patch extraction</span>
 imagePath = <span class="string">'.\data\barb.png'</span>;
-image = im2double(imresize(imread(imagePath), 0.5));
+image = im2double(imresize(imread(imagePath), 1));
 
 <span class="comment">% add additive noise noise</span>
 sigma = 0.1;
@@ -921,7 +1104,7 @@ legend(<span class="string">'|Y-DX|^2'</span>, <span class="string">'After coeff
 param.lambda = 0.1;
 param.numThreads = -1; <span class="comment">% number of threads</span>
 param.iter = 100;  <span class="comment">% let us see what happens after 1000 iterations.</span>
-param.mode = 5;
+param.mode = 1;
 param.D = D0;
 
 D = mexTrainDL(Y_train, param);
@@ -939,7 +1122,7 @@ D=D0;
 meanY = mean(Y);
 Y = Y - repmat(mean(Y), [blockSize^2,1]);
 
-X = sparseCode(Y, D, T0, 150, <span class="string">'StepSize'</span>, 5000, <span class="string">'Plot'</span>, 0, <span class="string">'Verbose'</span>, 1, <span class="string">'ThreshType'</span>, <span class="string">'soft'</span>, <span class="string">'Sigma'</span>, 0.1);
+X = sparseCode(Y, D, T0, 10, <span class="string">'StepSize'</span>, 5000, <span class="string">'Plot'</span>, 0, <span class="string">'Verbose'</span>, 0, <span class="string">'ThreshType'</span>, <span class="string">'soft'</span>, <span class="string">'Sigma'</span>, 0.1);
 
 PA = reshape((D*X), [blockSize blockSize size(Y, 2)]);
 PA = PA - repmat( mean(mean(PA)), [blockSize blockSize] );
@@ -972,20 +1155,7 @@ Dictionary Learning Iteration No. 7
 Dictionary Learning Iteration No. 8
 Dictionary Learning Iteration No. 9
 Dictionary Learning Iteration No. 10
-Sparse Coding Col. No. 1 - 5001/63504
-Sparse Coding Col. No. 5001 - 10001/63504
-Sparse Coding Col. No. 10001 - 15001/63504
-Sparse Coding Col. No. 15001 - 20001/63504
-Sparse Coding Col. No. 20001 - 25001/63504
-Sparse Coding Col. No. 25001 - 30001/63504
-Sparse Coding Col. No. 30001 - 35001/63504
-Sparse Coding Col. No. 35001 - 40001/63504
-Sparse Coding Col. No. 40001 - 45001/63504
-Sparse Coding Col. No. 45001 - 50001/63504
-Sparse Coding Col. No. 50001 - 55001/63504
-Sparse Coding Col. No. 55001 - 60001/63504
-Sparse Coding Col. No. 60001 - 63504/63504
-</pre><img vspace="5" hspace="5" src="IntroToCompressiveSensing_31.png" alt=""> <img vspace="5" hspace="5" src="IntroToCompressiveSensing_32.png" alt=""> <h2 id="35">Discriminative Sparse Representation</h2><p>If sufficient training samples <img src="IntroToCompressiveSensing_eq07649107795707013777.png" alt="$Y$"> are available from each class, it will be possible to represent the test samples as a linear combination of just those training samples from the same class. This representation is naturally sparse, involving only a small fraction of the overall training database. We argue that in many problems of interest, it is actually the sparsest linear representation of the test sample in terms of this dictionary and can be recovered efficiently via <img src="IntroToCompressiveSensing_eq10817116784286670662.png" alt="$l_1$">-minimization. Seeking the sparsest representation therefore automatically discriminates between the various classes present in the training set.</p><p>A basic problem in object recognition is to use labeled training samples from k distinct object classes to correctly determine the class to which a new test sample belongs. We arrange the given <img src="IntroToCompressiveSensing_eq15835381623295917790.png" alt="$n_i$"> training samples from the <img src="IntroToCompressiveSensing_eq05671228016298599287.png" alt="$i$"> th class as columns of a matrix <img src="IntroToCompressiveSensing_eq12214653144417725908.png" alt="$D_i=[d_{i,1}, d_{i,2}, ..., d_{i,n_i}]\in \mathbf{R}^{m\times n_i}$"></p><p>Given sufficient training samples of the <img src="IntroToCompressiveSensing_eq05671228016298599287.png" alt="$i$"> th object class, <img src="IntroToCompressiveSensing_eq12214653144417725908.png" alt="$D_i=[d_{i,1}, d_{i,2}, ..., d_{i,n_i}]\in \mathbf{R}^{m\times n_i}$">, any new test sample <img src="IntroToCompressiveSensing_eq08712895078701432545.png" alt="$y\in \mathbf{R}^n$"> from the same class will approximately lie in the linear span of the training samples associated with object <img src="IntroToCompressiveSensing_eq05671228016298599287.png" alt="$i$">:</p><p><img src="IntroToCompressiveSensing_eq01949060294205701467.png" alt="$$y=\alpha_{i,1} d_{i,1} + \alpha_{i,2} d_{i,2} + ... + \alpha_{i,n_i} d_{i,n_i}$$"></p><p>for some scalars, <img src="IntroToCompressiveSensing_eq08102276132146637193.png" alt="$\alpha_{i,j}\in\mathbf{R}$">, <img src="IntroToCompressiveSensing_eq16157651194447563946.png" alt="$j=1,2,...n_i$"></p><p>Since the membership <img src="IntroToCompressiveSensing_eq05671228016298599287.png" alt="$i$"> of the test sample is initially unknown, we define a new matrix <img src="IntroToCompressiveSensing_eq16171345478199012472.png" alt="$D$"> for the entire training set as the concatenation of the <img src="IntroToCompressiveSensing_eq08984225997457563733.png" alt="$n$"> training samples of all <img src="IntroToCompressiveSensing_eq15636846968047188835.png" alt="$k$"> object clases:</p><p><img src="IntroToCompressiveSensing_eq06048508813330209852.png" alt="$$D=[D_1, D_2, ..., D_k]=[d_{1,1}, d_{1,2}, ..., d_{k,n_k}]$$"></p><p>Then, the linear representation of <img src="IntroToCompressiveSensing_eq08830444604280721118.png" alt="$y$"> can be rewritten in terms of all training samples as <img src="IntroToCompressiveSensing_eq12230102363949195303.png" alt="$y=Dx_0\in \mathbf{R}^m$"> where <img src="IntroToCompressiveSensing_eq16994662329940267740.png" alt="$x_0=[0,....,0,\alpha_{i,1},\alpha_{i,2},...,\alpha_{i,n_i},0,...,0]^T\in\mathbf{R}^n$"> is a coefficient vector whose entries are zero except those associated with the <img src="IntroToCompressiveSensing_eq05671228016298599287.png" alt="$i$"> th class.</p><p>As the entries of the vector <img src="IntroToCompressiveSensing_eq00349689335557330151.png" alt="$x_0$"> encode the identity of the test sample <img src="IntroToCompressiveSensing_eq08830444604280721118.png" alt="$y$">, it is tempting to attempt to obtain it by solving the linear system of equations <img src="IntroToCompressiveSensing_eq07796951854940372211.png" alt="$y=Dx$">. This can be done by using sparse optimization.</p><p>Given a new test sample <img src="IntroToCompressiveSensing_eq08830444604280721118.png" alt="$y$"> from one of the classes in the training set, we first compute its sparse representation <img src="IntroToCompressiveSensing_eq16269019784437852054.png" alt="$\hat{x}_1$"> using sparse coding. Ideally, the nonzero entries in the estimate <img src="IntroToCompressiveSensing_eq16269019784437852054.png" alt="$\hat{x}_1$"> will all be associated with the columns of <img src="IntroToCompressiveSensing_eq16171345478199012472.png" alt="$D$"> from a single object class <img src="IntroToCompressiveSensing_eq05671228016298599287.png" alt="$i$">, and we can easily assign the test sample <img src="IntroToCompressiveSensing_eq08830444604280721118.png" alt="$y$"> to that class. However, noise and modeling error may lead to small nonzero entries associated with multiple object calsses. We can classify <img src="IntroToCompressiveSensing_eq08830444604280721118.png" alt="$y$"> based on how well the coefficients associated with all training samples of each object reproduce <img src="IntroToCompressiveSensing_eq08830444604280721118.png" alt="$y$">.</p><p>For each calss <img src="IntroToCompressiveSensing_eq05671228016298599287.png" alt="$i$">, let <img src="IntroToCompressiveSensing_eq03384802374437487285.png" alt="$\delta_i:\mathbf{R}^n\to\mathbf{R}^n$"> be the characteristic function that selects the coefficients associated with the <img src="IntroToCompressiveSensing_eq05671228016298599287.png" alt="$i$"> th class. For <img src="IntroToCompressiveSensing_eq00595980038427780821.png" alt="$x\in\mathbf{R}^n$">, <img src="IntroToCompressiveSensing_eq00204845069952107352.png" alt="$\delta_i(x)\in\mathbf{R}^n$"> is a new vector whose only nonzero entries are the entries in <img src="IntroToCompressiveSensing_eq12428413953531653171.png" alt="$x$"> that are associated with calss <img src="IntroToCompressiveSensing_eq05671228016298599287.png" alt="$i$">. Using only the coefficients associated with the <img src="IntroToCompressiveSensing_eq05671228016298599287.png" alt="$i$"> th class, one can approximate the given test sample <img src="IntroToCompressiveSensing_eq08830444604280721118.png" alt="$y$"> as <img src="IntroToCompressiveSensing_eq00379410818267606071.png" alt="$\hat{y}_i=D\delta_i(\hat{x}_i)$">. We then classify <img src="IntroToCompressiveSensing_eq08830444604280721118.png" alt="$y$"> based on these approximations by assigning it to the object class that minimizes the residual between <img src="IntroToCompressiveSensing_eq08830444604280721118.png" alt="$y$"> and <img src="IntroToCompressiveSensing_eq03178361770200368775.png" alt="$\hat{y}_i$">:</p><p><img src="IntroToCompressiveSensing_eq16861447840260191497.png" alt="$$\min\limits_i r_i(y)=\Vert y-D\delta_i(\hat{x}_1)\Vert_2$$"></p><p><img vspace="5" hspace="5" src="src.png" alt=""> </p><pre class="codeinput"><span class="comment">%%SPARSE REPRESENTATION CLASSIFIER</span>
+</pre><img vspace="5" hspace="5" src="IntroToCompressiveSensing_39.png" alt=""> <img vspace="5" hspace="5" src="IntroToCompressiveSensing_40.png" alt=""> <img vspace="5" hspace="5" src="IntroToCompressiveSensing_41.png" alt=""> <img vspace="5" hspace="5" src="IntroToCompressiveSensing_42.png" alt=""> <h2 id="36">Discriminative Sparse Representation</h2><p>If sufficient training samples <img src="IntroToCompressiveSensing_eq07649107795707013777.png" alt="$Y$"> are available from each class, it will be possible to represent the test samples as a linear combination of just those training samples from the same class. This representation is naturally sparse, involving only a small fraction of the overall training database. We argue that in many problems of interest, it is actually the sparsest linear representation of the test sample in terms of this dictionary and can be recovered efficiently via <img src="IntroToCompressiveSensing_eq10817116784286670662.png" alt="$l_1$">-minimization. Seeking the sparsest representation therefore automatically discriminates between the various classes present in the training set.</p><p>A basic problem in object recognition is to use labeled training samples from k distinct object classes to correctly determine the class to which a new test sample belongs. We arrange the given <img src="IntroToCompressiveSensing_eq15835381623295917790.png" alt="$n_i$"> training samples from the <img src="IntroToCompressiveSensing_eq05671228016298599287.png" alt="$i$"> th class as columns of a matrix <img src="IntroToCompressiveSensing_eq12214653144417725908.png" alt="$D_i=[d_{i,1}, d_{i,2}, ..., d_{i,n_i}]\in \mathbf{R}^{m\times n_i}$"></p><p>Given sufficient training samples of the <img src="IntroToCompressiveSensing_eq05671228016298599287.png" alt="$i$"> th object class, <img src="IntroToCompressiveSensing_eq12214653144417725908.png" alt="$D_i=[d_{i,1}, d_{i,2}, ..., d_{i,n_i}]\in \mathbf{R}^{m\times n_i}$">, any new test sample <img src="IntroToCompressiveSensing_eq08712895078701432545.png" alt="$y\in \mathbf{R}^n$"> from the same class will approximately lie in the linear span of the training samples associated with object <img src="IntroToCompressiveSensing_eq05671228016298599287.png" alt="$i$">:</p><p><img src="IntroToCompressiveSensing_eq01949060294205701467.png" alt="$$y=\alpha_{i,1} d_{i,1} + \alpha_{i,2} d_{i,2} + ... + \alpha_{i,n_i} d_{i,n_i}$$"></p><p>for some scalars, <img src="IntroToCompressiveSensing_eq08102276132146637193.png" alt="$\alpha_{i,j}\in\mathbf{R}$">, <img src="IntroToCompressiveSensing_eq16157651194447563946.png" alt="$j=1,2,...n_i$"></p><p>Since the membership <img src="IntroToCompressiveSensing_eq05671228016298599287.png" alt="$i$"> of the test sample is initially unknown, we define a new matrix <img src="IntroToCompressiveSensing_eq16171345478199012472.png" alt="$D$"> for the entire training set as the concatenation of the <img src="IntroToCompressiveSensing_eq08984225997457563733.png" alt="$n$"> training samples of all <img src="IntroToCompressiveSensing_eq15636846968047188835.png" alt="$k$"> object clases:</p><p><img src="IntroToCompressiveSensing_eq06048508813330209852.png" alt="$$D=[D_1, D_2, ..., D_k]=[d_{1,1}, d_{1,2}, ..., d_{k,n_k}]$$"></p><p>Then, the linear representation of <img src="IntroToCompressiveSensing_eq08830444604280721118.png" alt="$y$"> can be rewritten in terms of all training samples as <img src="IntroToCompressiveSensing_eq12230102363949195303.png" alt="$y=Dx_0\in \mathbf{R}^m$"> where <img src="IntroToCompressiveSensing_eq16994662329940267740.png" alt="$x_0=[0,....,0,\alpha_{i,1},\alpha_{i,2},...,\alpha_{i,n_i},0,...,0]^T\in\mathbf{R}^n$"> is a coefficient vector whose entries are zero except those associated with the <img src="IntroToCompressiveSensing_eq05671228016298599287.png" alt="$i$"> th class.</p><p>As the entries of the vector <img src="IntroToCompressiveSensing_eq00349689335557330151.png" alt="$x_0$"> encode the identity of the test sample <img src="IntroToCompressiveSensing_eq08830444604280721118.png" alt="$y$">, it is tempting to attempt to obtain it by solving the linear system of equations <img src="IntroToCompressiveSensing_eq07796951854940372211.png" alt="$y=Dx$">. This can be done by using sparse optimization.</p><p>Given a new test sample <img src="IntroToCompressiveSensing_eq08830444604280721118.png" alt="$y$"> from one of the classes in the training set, we first compute its sparse representation <img src="IntroToCompressiveSensing_eq16269019784437852054.png" alt="$\hat{x}_1$"> using sparse coding. Ideally, the nonzero entries in the estimate <img src="IntroToCompressiveSensing_eq16269019784437852054.png" alt="$\hat{x}_1$"> will all be associated with the columns of <img src="IntroToCompressiveSensing_eq16171345478199012472.png" alt="$D$"> from a single object class <img src="IntroToCompressiveSensing_eq05671228016298599287.png" alt="$i$">, and we can easily assign the test sample <img src="IntroToCompressiveSensing_eq08830444604280721118.png" alt="$y$"> to that class. However, noise and modeling error may lead to small nonzero entries associated with multiple object calsses. We can classify <img src="IntroToCompressiveSensing_eq08830444604280721118.png" alt="$y$"> based on how well the coefficients associated with all training samples of each object reproduce <img src="IntroToCompressiveSensing_eq08830444604280721118.png" alt="$y$">.</p><p>For each calss <img src="IntroToCompressiveSensing_eq05671228016298599287.png" alt="$i$">, let <img src="IntroToCompressiveSensing_eq03384802374437487285.png" alt="$\delta_i:\mathbf{R}^n\to\mathbf{R}^n$"> be the characteristic function that selects the coefficients associated with the <img src="IntroToCompressiveSensing_eq05671228016298599287.png" alt="$i$"> th class. For <img src="IntroToCompressiveSensing_eq00595980038427780821.png" alt="$x\in\mathbf{R}^n$">, <img src="IntroToCompressiveSensing_eq00204845069952107352.png" alt="$\delta_i(x)\in\mathbf{R}^n$"> is a new vector whose only nonzero entries are the entries in <img src="IntroToCompressiveSensing_eq12428413953531653171.png" alt="$x$"> that are associated with calss <img src="IntroToCompressiveSensing_eq05671228016298599287.png" alt="$i$">. Using only the coefficients associated with the <img src="IntroToCompressiveSensing_eq05671228016298599287.png" alt="$i$"> th class, one can approximate the given test sample <img src="IntroToCompressiveSensing_eq08830444604280721118.png" alt="$y$"> as <img src="IntroToCompressiveSensing_eq00379410818267606071.png" alt="$\hat{y}_i=D\delta_i(\hat{x}_i)$">. We then classify <img src="IntroToCompressiveSensing_eq08830444604280721118.png" alt="$y$"> based on these approximations by assigning it to the object class that minimizes the residual between <img src="IntroToCompressiveSensing_eq08830444604280721118.png" alt="$y$"> and <img src="IntroToCompressiveSensing_eq03178361770200368775.png" alt="$\hat{y}_i$">:</p><p><img src="IntroToCompressiveSensing_eq16861447840260191497.png" alt="$$\min\limits_i r_i(y)=\Vert y-D\delta_i(\hat{x}_1)\Vert_2$$"></p><p><img vspace="5" hspace="5" src="src.png" alt=""> </p><pre class="codeinput"><span class="comment">%%SPARSE REPRESENTATION CLASSIFIER</span>
 <span class="comment">% this is example in which we classify human face images based on sparse</span>
 <span class="comment">% representation error</span>
 <span class="comment">% we load 10 training and 10 testing images with face expression,</span>
@@ -1089,7 +1259,7 @@ classificationLabel =
 
     10    10     9    10     9    10     9     9    10
 
-</pre><img vspace="5" hspace="5" src="IntroToCompressiveSensing_33.png" alt=""> <img vspace="5" hspace="5" src="IntroToCompressiveSensing_34.png" alt=""> <img vspace="5" hspace="5" src="IntroToCompressiveSensing_35.png" alt=""> <h2 id="36">Discriminative K-SVD (D-KSVD)</h2><p>Let <img src="IntroToCompressiveSensing_eq10242197867882496642.png" alt="$Y\in\mathbf{R}^{n\times N}$"> denote a set of <img src="IntroToCompressiveSensing_eq03672095713503266041.png" alt="$N$"> <img src="IntroToCompressiveSensing_eq08984225997457563733.png" alt="$n$">-dimensional training signals with a corresponding label matrix <img src="IntroToCompressiveSensing_eq11269296682651908611.png" alt="$H\in\mathbf{R}^{m\times N}$">, where <img src="IntroToCompressiveSensing_eq11319871188381094158.png" alt="$m$"> is the number of classes. Each column <img src="IntroToCompressiveSensing_eq11589510860182967261.png" alt="$h_i$"> of the label matrix <img src="IntroToCompressiveSensing_eq17354617462179732091.png" alt="$H$"> encodes the class label of sample <img src="IntroToCompressiveSensing_eq05671228016298599287.png" alt="$i$"> using the position of the nonzero value. For example, if the label of sample <img src="IntroToCompressiveSensing_eq08366435799313302571.png" alt="$y_i$"> is 3, then <img src="IntroToCompressiveSensing_eq08908410901700367527.png" alt="$h_i=[0,0,1,0,...,0]^T$">.</p><p>The original K-SVD algorithm solves the following optimization problem:</p><p><img src="IntroToCompressiveSensing_eq11460213162177650439.png" alt="$$\langle D^*, X^*\rangle=\min\limits_{D,X}\Vert Y-DX\Vert^2_F \quad s.t.\quad \Vert x_i\Vert_0\leq T_0, \quad i=1,...,N$$"></p><p>where <img src="IntroToCompressiveSensing_eq09699377331652163485.png" alt="$T_0$"> is the sparsity constraint, making sure that each sparse representation <img src="IntroToCompressiveSensing_eq08383031602117067423.png" alt="$x_i$"> contains not more than <img src="IntroToCompressiveSensing_eq09699377331652163485.png" alt="$T_0$"> nonzero entries. The dictionary <img src="IntroToCompressiveSensing_eq08205595328106057301.png" alt="$D\in\mathbf{n\times K}$">, where <img src="IntroToCompressiveSensing_eq14820952107625949581.png" alt="$K&gt;n$"> is the number of atoms in the dictionary, and the sparse codes <img src="IntroToCompressiveSensing_eq08818905507535145954.png" alt="$X\in\mathbf{R}^{K\times N}$">, obtained by the K-SVD solution minimize the signals reconstruction error under the sparsity constraint <img src="IntroToCompressiveSensing_eq09699377331652163485.png" alt="$T_0$">.</p><p>The goal of D-KSVD is to use the given label matrix <img src="IntroToCompressiveSensing_eq17354617462179732091.png" alt="$H$"> to learn a linear classifier <img src="IntroToCompressiveSensing_eq11470882789556129165.png" alt="$W\in\mathbf{R}^{m\times K}$"> taking in a signals sparse representation <img src="IntroToCompressiveSensing_eq08383031602117067423.png" alt="$x_i$"> and returning the most probable class this signal belongs to. A straightforward approach to this would be to solve the following linear ridge regression problem:</p><p><img src="IntroToCompressiveSensing_eq07773576204061098297.png" alt="$$W=\min\limits_W\Vert H-WX\Vert_F^2+\lambda\Vert W\Vert_F^2$$"></p><p>where <img src="IntroToCompressiveSensing_eq07657233533591063549.png" alt="$\lambda$"> is the regularization parameter. This problem has the following closed form solution:</p><p><img src="IntroToCompressiveSensing_eq04646674658840006216.png" alt="$$W=HX^{*T}(X^*X^*T+\lambda I )^-1$$"></p><p>The drawback of this solution is that learning the classifier <img src="IntroToCompressiveSensing_eq14900514129597942148.png" alt="$W$"> is done independently from learning the dictionary <img src="IntroToCompressiveSensing_eq16171345478199012472.png" alt="$D$"> and the sparse codes <img src="IntroToCompressiveSensing_eq12362013959998143435.png" alt="$X$">, and thus is suboptimal: the dictionary learning procedure does not take into account the fact that its output will be used to train a classifier.</p><p>To overcome the sub-optimality of the K-SVD algorithm for classification discussed above, one can incorporate the classification error term directly into the K-SVD dictionary learning formulation, causing the K-SVD algorithm to simultaneously learn the dictionary and the classifier. The joint dictionary classifier learning problem is defined as follows:</p><p><img src="IntroToCompressiveSensing_eq18165240739637757152.png" alt="$$\langle D^*, W^*, X^*\rangle=\min\limits_{D,X}\Vert Y-DX\Vert^2_F + \gamma\Vert H-WX\Vert_F^2 \quad s.t.\quad \forall i \Vert x_i\Vert_0\leq T_0$$"></p><p>where <img src="IntroToCompressiveSensing_eq17096441642737911057.png" alt="$\gamma$"> is a regularization parameter balancing the contribution of the classification error and discrimination power.</p><p><img vspace="5" hspace="5" src="dksvd.png" alt=""> </p><pre class="codeinput"><span class="comment">%%DISCRIMINATIVE DICTIONARY LEARNING USING K-SVD (D-KSVD)</span>
+</pre><img vspace="5" hspace="5" src="IntroToCompressiveSensing_43.png" alt=""> <img vspace="5" hspace="5" src="IntroToCompressiveSensing_44.png" alt=""> <img vspace="5" hspace="5" src="IntroToCompressiveSensing_45.png" alt=""> <img vspace="5" hspace="5" src="IntroToCompressiveSensing_46.png" alt=""> <h2 id="37">Discriminative K-SVD (D-KSVD)</h2><p>Let <img src="IntroToCompressiveSensing_eq10242197867882496642.png" alt="$Y\in\mathbf{R}^{n\times N}$"> denote a set of <img src="IntroToCompressiveSensing_eq03672095713503266041.png" alt="$N$"> <img src="IntroToCompressiveSensing_eq08984225997457563733.png" alt="$n$">-dimensional training signals with a corresponding label matrix <img src="IntroToCompressiveSensing_eq11269296682651908611.png" alt="$H\in\mathbf{R}^{m\times N}$">, where <img src="IntroToCompressiveSensing_eq11319871188381094158.png" alt="$m$"> is the number of classes. Each column <img src="IntroToCompressiveSensing_eq11589510860182967261.png" alt="$h_i$"> of the label matrix <img src="IntroToCompressiveSensing_eq17354617462179732091.png" alt="$H$"> encodes the class label of sample <img src="IntroToCompressiveSensing_eq05671228016298599287.png" alt="$i$"> using the position of the nonzero value. For example, if the label of sample <img src="IntroToCompressiveSensing_eq08366435799313302571.png" alt="$y_i$"> is 3, then <img src="IntroToCompressiveSensing_eq08908410901700367527.png" alt="$h_i=[0,0,1,0,...,0]^T$">.</p><p>The original K-SVD algorithm solves the following optimization problem:</p><p><img src="IntroToCompressiveSensing_eq11460213162177650439.png" alt="$$\langle D^*, X^*\rangle=\min\limits_{D,X}\Vert Y-DX\Vert^2_F \quad s.t.\quad \Vert x_i\Vert_0\leq T_0, \quad i=1,...,N$$"></p><p>where <img src="IntroToCompressiveSensing_eq09699377331652163485.png" alt="$T_0$"> is the sparsity constraint, making sure that each sparse representation <img src="IntroToCompressiveSensing_eq08383031602117067423.png" alt="$x_i$"> contains not more than <img src="IntroToCompressiveSensing_eq09699377331652163485.png" alt="$T_0$"> nonzero entries. The dictionary <img src="IntroToCompressiveSensing_eq08205595328106057301.png" alt="$D\in\mathbf{n\times K}$">, where <img src="IntroToCompressiveSensing_eq14820952107625949581.png" alt="$K&gt;n$"> is the number of atoms in the dictionary, and the sparse codes <img src="IntroToCompressiveSensing_eq08818905507535145954.png" alt="$X\in\mathbf{R}^{K\times N}$">, obtained by the K-SVD solution minimize the signals reconstruction error under the sparsity constraint <img src="IntroToCompressiveSensing_eq09699377331652163485.png" alt="$T_0$">.</p><p>The goal of D-KSVD is to use the given label matrix <img src="IntroToCompressiveSensing_eq17354617462179732091.png" alt="$H$"> to learn a linear classifier <img src="IntroToCompressiveSensing_eq11470882789556129165.png" alt="$W\in\mathbf{R}^{m\times K}$"> taking in a signals sparse representation <img src="IntroToCompressiveSensing_eq08383031602117067423.png" alt="$x_i$"> and returning the most probable class this signal belongs to. A straightforward approach to this would be to solve the following linear ridge regression problem:</p><p><img src="IntroToCompressiveSensing_eq07773576204061098297.png" alt="$$W=\min\limits_W\Vert H-WX\Vert_F^2+\lambda\Vert W\Vert_F^2$$"></p><p>where <img src="IntroToCompressiveSensing_eq07657233533591063549.png" alt="$\lambda$"> is the regularization parameter. This problem has the following closed form solution:</p><p><img src="IntroToCompressiveSensing_eq04646674658840006216.png" alt="$$W=HX^{*T}(X^*X^*T+\lambda I )^-1$$"></p><p>The drawback of this solution is that learning the classifier <img src="IntroToCompressiveSensing_eq14900514129597942148.png" alt="$W$"> is done independently from learning the dictionary <img src="IntroToCompressiveSensing_eq16171345478199012472.png" alt="$D$"> and the sparse codes <img src="IntroToCompressiveSensing_eq12362013959998143435.png" alt="$X$">, and thus is suboptimal: the dictionary learning procedure does not take into account the fact that its output will be used to train a classifier.</p><p>To overcome the sub-optimality of the K-SVD algorithm for classification discussed above, one can incorporate the classification error term directly into the K-SVD dictionary learning formulation, causing the K-SVD algorithm to simultaneously learn the dictionary and the classifier. The joint dictionary classifier learning problem is defined as follows:</p><p><img src="IntroToCompressiveSensing_eq18165240739637757152.png" alt="$$\langle D^*, W^*, X^*\rangle=\min\limits_{D,X}\Vert Y-DX\Vert^2_F + \gamma\Vert H-WX\Vert_F^2 \quad s.t.\quad \forall i \Vert x_i\Vert_0\leq T_0$$"></p><p>where <img src="IntroToCompressiveSensing_eq17096441642737911057.png" alt="$\gamma$"> is a regularization parameter balancing the contribution of the classification error and discrimination power.</p><p><img vspace="5" hspace="5" src="dksvd.png" alt=""> </p><pre class="codeinput"><span class="comment">%%DISCRIMINATIVE DICTIONARY LEARNING USING K-SVD (D-KSVD)</span>
 <span class="comment">% this is example in which we classify human face images based on D-KSVD</span>
 <span class="comment">% we load 10 training and 10 testing images with face expression,</span>
 <span class="comment">% face position and also light condition variations</span>
@@ -1238,7 +1408,7 @@ classificationLabel =
 
     10    10    10    10    10    10    10    10    10
 
-</pre><img vspace="5" hspace="5" src="IntroToCompressiveSensing_36.png" alt=""> <img vspace="5" hspace="5" src="IntroToCompressiveSensing_37.png" alt=""> <img vspace="5" hspace="5" src="IntroToCompressiveSensing_38.png" alt=""> <p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2016b</a><br></p></div><!--
+</pre><img vspace="5" hspace="5" src="IntroToCompressiveSensing_47.png" alt=""> <img vspace="5" hspace="5" src="IntroToCompressiveSensing_48.png" alt=""> <img vspace="5" hspace="5" src="IntroToCompressiveSensing_49.png" alt=""> <img vspace="5" hspace="5" src="IntroToCompressiveSensing_50.png" alt=""> <p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2016b</a><br></p></div><!--
 ##### SOURCE BEGIN #####
 %% INTRODUCTION TO COMPRESSIVE SENSING
 % This script is an introduction to sparse signal representation and
@@ -1318,7 +1488,7 @@ title('2D-DWT Dictionary - HAAR')
 
 n = 64;
 
-fourier = (1/sqrt(n))*exp((1j*2*pi*[0:n-1]'*[0:n-1])/n);
+fourier = (1/sqrt(n))*exp((1j*2*pi*(0:n-1)'*(0:n-1))/n);
 spike = eye(n);
 
 psi = [spike, fourier];
@@ -1581,7 +1751,7 @@ title('Sparse decomposition - l_0 norm')
 % $$\min\limits_x\Vert x\Vert_1 \quad s.t. \quad y=A x$$
 %
 
-x = [-1:0.01:1];
+x = (-1:0.01:1);
 
 figure
 hold on
@@ -1730,8 +1900,10 @@ axis tight
 %%
 n = 64;
 
-fourier = (1/sqrt(n))*exp((1j*2*pi*[0:n-1]'*[0:n-1])/n);
+fourier = (1/sqrt(n))*exp((1j*2*pi*(0:n-1)'*(0:n-1))/n);
 spike = eye(n);
+
+% fourier(7,:)=spike(15,:);
 
 psi = [spike, fourier];
 
@@ -1784,7 +1956,7 @@ title('Gram matrix')
 %%
 N = 64;
 
-psi = (1/sqrt(N))*exp((1j*2*pi*[0:N-1]'*[0:N-1])/N);
+psi = (1/sqrt(N))*exp((1j*2*pi*(0:N-1)'*(0:N-1))/N);
 
 H = walsh(N);
 phi = normalizeColumns(H * psi);
@@ -1899,7 +2071,7 @@ x_ht = hardThresholding(x, threshold);
 figure, axis tight
 plot(x, x_ht)
 hold on
-plot([-threshold:0.01:threshold], [-threshold:0.01:threshold], '-.')
+plot((-threshold:0.01:threshold), (-threshold:0.01:threshold), '-.')
 title('Hard Thresholding Operator')
 xlabel('x')
 ylabel('x*')
@@ -1983,68 +2155,205 @@ ylabel('x*')
 % * Accelerated methods
 %
 %
-%%
-%
-% close all
-% clearvars
-% clc
-%
-% image = imresize(phantom, 0.25);
-%
-% % dft_tmp = sparse((dftmtx((size(image,1)))));
-% % psi = kron(dft_tmp, dft_tmp);
-% %
-% % image_fft = reshape(psi * image(:), size(image));
-%
-% image_fft = fft2(image);
-%
-%
-% sz = 20;
-%
-% subsamplingMask = ones(sz);
-% subsamplingMask = padarray(subsamplingMask, 0.5*[size(image)-sz]);
-%
-% imagesc(subsamplingMask)
-%
-% % phi = (diag(sparse(subsamplingMask(:))));
-% phi = subsamplingMask;
-%
-% y =  phi .* ;
-%
-% imagesc(reshape(log2(abs(y)),size(image)))
-%
-% %  regularization parameter
-% epsilon = 1e-10;
-%
-% % stopping theshold
-% tolA = 1e-5;
-%
-% Psi = @(x,th) soft(x,th);
-% Phi = @(x) l0norm(x);
-%
-% psi_func = @(x) idct2(x);
-% psi_func_inv = @(x) dct2(x);
-%
-% A = @(x) phi * (x);
-% At = @(x) (phi' * x);
-%
-%
-% [s_est]= SpaRSA(y, A, epsilon,...
-%     'AT', At, ...
-%     'Phi', Phi, ...
-%     'Psi', Psi, ...
-%     'Monotone',0,...
-%     'MaxiterA', 100, ...
-%     'Initialization',0,...
-%     'StopCriterion', 1,...
-%     'ToleranceA', tolA,...
-%     'Verbose', 0);
-%
-% signal_est = idct2(s_est);
-%
-% imagesc(reshape(abs(signal_est), size(image))), title('Image Reconstruction'), colormap gray, axis image
+%% Signal Reconstruction Using Iterative Thresholding
+close all
+clearvars
+clc
+
+% number of signal samples
+n = 256;
+% number of acquired samples
+m = 128;
+
+% create Fourier transformation matrix
+fourier = (1/sqrt(n))*exp((1j*2*pi*(0:n-1)'*(0:n-1))/n);
+psi = fourier;
+
+% desired signal sparsity K
+K = 20;
+
+% randomly selected basis coefficients
+idx = randi([1, n], 1, K);
+
+% random sparsity vector with different coefficient weights
+s_orig = zeros(n, 1);
+s_orig(idx) = 1;
+s_orig = rand(size(s_orig)).*s_orig;
+
+% obtain the signal which is a mixture of impulses and sinusoids
+x_orig = psi * s_orig;
+
+% undersampling factor
+usFactor = 2;
+phi = zeros(size(s_orig));
+phi(1:usFactor:end) = 1;
+
+% undersample original signal
+x_us = phi .* x_orig;
+% calculate Fourier spectrum of undersampled signal
+s_us = psi' * x_us;
+
+figure
+
+subplot(231), stem(x_orig), title('Original signal')
+subplot(234), stem(s_orig), title('Original Spectrum')
+
+subplot(232), stem(x_us), title('Uniformly Undersampled signal')
+subplot(235), stem(s_us), title('Spectrum with aliasing')
+
+phi = zeros(size(s_orig));
+phi(randperm(n, m)) = 1;
+
+% undersample original signal
+x_us = phi .* x_orig;
+% calculate Fourier spectrum of undersampled signal
+s_us = psi' * x_us;
+
+subplot(233), stem(x_us), title('Randomly Undersampled signal')
+subplot(236), stem(s_us), title('Spectrum with noise-like undersampling artifacts')
+
+% number of iterations for thresholding algorithm
+nIter = 50;
+
+% initialization
+residual = [];
+s_est = zeros(size(s_us));
+
+for iterNo = 1:nIter
+    residual = x_us - psi*s_est;
+    
+    % set threshold and perform thresholding
+    th = 0.99*max(abs(psi'*residual));
+
+    s_est = hardThreshold(s_est + psi'*residual, th);
+    
+    figure(200)
+    subplot(211), stem(s_orig), ylim([-0.5 1]), title('Original Spectrum')
+    subplot(212),
+    line([0, n], [th, th], 'Color', 'r', 'LineStyle', ':');
+    hold on    
+    stem(s_est), ylim([-0.5 1]), title('Recovered Spectrum')
+    drawnow 
+
+    % if desired sparsity reached, break thresholding procedure
+    if(sum(s_est~=0)>=K) 
+        break;
+    end    
+end
 
 
+
+%% Compressive Sensing MRI
+% Magnetic resonance imaging(MRI) is an essential medical imaging tool with
+% an inherently slow data acquisiton process. Appying CS to MRI offers
+% potentially significant scan time reductions. MRI obeys two key
+% requirements for successful application of CS: 
+%
+% # medical imagery is naturally compressible by sparse coding in an
+% appropriate transform domain(e.g. wavelet transform). 
+% # MRI scanners natureally acquire encoded samples(Fourier domain
+% measurements), rather than direct pixel samples.
+
+close all
+clearvars
+clc
+
+% create phantom image of size N
+N = 256;
+image = phantom(N);
+% image = im2double(imresize(rgb2gray(imread('lenna.tiff')), [N N]));
+
+% create subsampling mask with radial lines
+nSamplingLines = 64;
+rot=360/nSamplingLines;
+angles = 0:rot:360;
+mask=zeros(N);
+
+for i = 1:nSamplingLines
+    line = imrotate(eye(size(image)), angles(i), 'bilinear', 'crop');
+    mask = mask+line;
+    mask = mask>0;
+end
+
+% low-pass filter mask
+mask = ones(64);
+mask = padarray(mask, 0.5*[N-64, N-64]);
+
+% aliasing mask - subsampled
+mask = kron(ones(64), [1 0 0 0;1 0 0 0 ; 0  0 0 0 ; 0 0 0  0 ]);
+
+% random subsampling mask
+mask = rand(N) > 0.5;
+
+figure, imagesc(mask)
+
+hR = @(x)   masked_FFT((x), mask);
+hRT = @(x) (masked_FFT_t(x, mask));
+
+% subsample the Fourier spectrum of the original image
+y = hR(image);
+
+figure, colormap gray
+imagesc(image)
+colormap(gray)
+axis image
+title('Original')
+drawnow
+
+% backprojection is simple inverse Fourier transform 
+figure, colormap gray
+imagesc(hRT(y))
+colormap(gray)
+axis image
+title('Back-projection')
+drawnow
+
+% denoising function;
+tv_iters = 10;
+Psi = @(x,th)  tvdenoise(x,2/th,tv_iters);
+
+% set the penalty function, to compute the objective
+Phi = @(x) TVnorm(x);
+
+% regularization parameters (empirical)
+tau = 0.001;
+
+tolA = 1e-10;
+% REPLACE_WITH_DASH_DASH TwIST REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH-
+% stop criterium:  the relative change in the objective function 
+% falls below 'ToleranceA'         
+ [x_twist,~,obj_twist,...
+    times_twist,~,mse_twist]= ...
+         TwIST(y, hR, tau,...
+         'Lambda', 1e-3, ...
+         'AT', hRT, ...
+         'Psi', Psi, ...
+         'Phi',Phi, ...
+         'True_x', image, ...
+         'Monotone',1,...
+         'MaxiterA', 10000, ...
+         'Initialization',0,...
+         'StopCriterion',1,...
+       	 'ToleranceA',tolA,...
+         'Verbose', 0);
+ 
+     
+figure, colormap gray
+imagesc(x_twist);
+axis image
+title('Estimate')
+
+figure
+semilogy(times_twist, (mse_twist*numel(image)).^0.5/norm(image,'fro'), 'LineWidth',2);
+title('error ||x^{t}-x||_2/||x||_2')
+xlabel('CPU time (sec)')
+grid on
+
+figure
+semilogy(times_twist, obj_twist, 'b','LineWidth',2)
+title('Objective function')
+xlabel('CPU time (sec)')
+grid on
 
 
 %% Compressive Imaging
@@ -2172,7 +2481,7 @@ switch phi_type
         % create random Walsh matrix
         phi = walsh(blockSize^2);
         
-        phi(phi<0)=0;
+%         phi(phi<0)=0;
         
         phi_r = phi;
         
@@ -2294,7 +2603,7 @@ for k = 1: blockSize : rows - blockSize + 1
                 param.numThreads = -1;
                 
                 
-                weights = [1:size(theta,2)].^1';
+                weights = (1:size(theta,2)).^1';
                 %                 weights = [size(theta,2):-1:1].^2';
                 
                 s_est = mexLassoWeighted(y_m, theta, weights, param);
@@ -2315,8 +2624,7 @@ for k = 1: blockSize : rows - blockSize + 1
                     'Initialization',0,...
                     'StopCriterion', 0,...
                     'ToleranceA', tolA,...
-                    'Verbose', 0,...
-                    'Continuation', 0);
+                    'Verbose', 0);
                 
             case 'sparsa2'
                 tau = 1e-15;
@@ -2526,7 +2834,7 @@ figure, colormap gray, imagesc(image_est), title('Reconstructed image'), axis im
 %%
 %%BLOCK COMPRESSIVE IMAGING EXAMPLE - noisy case - multiplicative noise
 clearvars
-close all
+% close all
 clc
 
 % load image
@@ -2536,7 +2844,7 @@ image = rgb2gray(im2double(imresize(imread(imagePath), 0.5)));
 
 % choose optimization package for sparse problem solving
 % options: sedumi_err, mex_err, mex_w_err, omp, grad, sparsa, sparsa2
-optimizationPackage = 'sedumi_err';
+optimizationPackage = 'mex_err';
 
 % choose block size - divide whole image in non-overlapping blocks
 blockSize = 8;
@@ -2550,7 +2858,7 @@ sigmaMultiplicativeNoise = 0.01;
 
 % choose measurement matrix type
 % options: walsh, bern, radem, gauss, dct
-phi_type = 'walsh';
+phi_type = 'bern';
 
 % generate desired transformation matrix and use Kronecker delta product to
 % create 2D transformation matrix
@@ -2647,7 +2955,7 @@ for k = 1: blockSize : rows - blockSize + 1
             case 'mex_err'
                 param.mode = 1;
                 param.cholesky = true;
-                param.lambda = 100*sigmaMultiplicativeNoise;
+                param.lambda = 0;
                 param.numThreads = -1;
                 
                 s_est = mexLasso(y_m, theta, param);
@@ -2762,7 +3070,7 @@ sparsity = m/2;
 nIter = 1;
 stepSize = 5000;
 
-z = sparseCode(y_m, theta, sparsity, nIter, 'StepSize', stepSize, 'Verbose', 1);
+z = sparseCode(y_m, theta, sparsity, nIter, 'StepSize', stepSize, 'Verbose', 0);
 
 signal_est = (psi * z);
 image_est = reshape(signal_est, [rows cols]);
@@ -2774,7 +3082,7 @@ imagesc(image_est)
 z_f = flipud(z);
 y_f = theta * z_f;
 
-z_f_est = sparseCode(y_f, theta, sparsity, nIter, 'StepSize', stepSize, 'Verbose', 1);
+z_f_est = sparseCode(y_f, theta, sparsity, nIter, 'StepSize', stepSize, 'Verbose', 0);
 z_f_est = flipud(z_f_est);
 
 signal_est = (psi * z_f_est);
@@ -2865,7 +3173,7 @@ imagesc(image_est)
 % Our goal is to design an algorithm that can remove the noise from $y$,
 % getting as close as possible to the original image $x$.
 
-%% DICTIONARY LEARNING
+%% IMAGE DENOISING USING OVERCOMPLETE DICITONARIES
 clearvars
 close all
 clc
@@ -2891,7 +3199,7 @@ K = 500;
 
 % load image for patch extraction
 imagePath = '.\data\barb.png';
-image = im2double(imresize(imread(imagePath), 0.5));
+image = im2double(imresize(imread(imagePath), 1));
 
 % add additive noise noise
 sigma = 0.1;
@@ -2961,7 +3269,7 @@ legend('|Y-DX|^2', 'After coefficient update', 'After dictionary update');
 param.lambda = 0.1;
 param.numThreads = -1; % number of threads
 param.iter = 100;  % let us see what happens after 1000 iterations.
-param.mode = 5;
+param.mode = 1;
 param.D = D0;
 
 D = mexTrainDL(Y_train, param);
@@ -2979,7 +3287,7 @@ D=D0;
 meanY = mean(Y);
 Y = Y - repmat(mean(Y), [blockSize^2,1]);
 
-X = sparseCode(Y, D, T0, 150, 'StepSize', 5000, 'Plot', 0, 'Verbose', 1, 'ThreshType', 'soft', 'Sigma', 0.1);
+X = sparseCode(Y, D, T0, 10, 'StepSize', 5000, 'Plot', 0, 'Verbose', 0, 'ThreshType', 'soft', 'Sigma', 0.1);
 
 PA = reshape((D*X), [blockSize blockSize size(Y, 2)]);
 PA = PA - repmat( mean(mean(PA)), [blockSize blockSize] );

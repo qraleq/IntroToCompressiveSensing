@@ -76,7 +76,7 @@ title('2D-DWT Dictionary - HAAR')
 
 n = 64;
 
-fourier = (1/sqrt(n))*exp((1j*2*pi*[0:n-1]'*[0:n-1])/n);
+fourier = (1/sqrt(n))*exp((1j*2*pi*(0:n-1)'*(0:n-1))/n);
 spike = eye(n);
 
 psi = [spike, fourier];
@@ -339,7 +339,7 @@ title('Sparse decomposition - l_0 norm')
 % $$\min\limits_x\Vert x\Vert_1 \quad s.t. \quad y=A x$$
 %
 
-x = [-1:0.01:1];
+x = (-1:0.01:1);
 
 figure
 hold on
@@ -488,8 +488,10 @@ axis tight
 %%
 n = 64;
 
-fourier = (1/sqrt(n))*exp((1j*2*pi*[0:n-1]'*[0:n-1])/n);
+fourier = (1/sqrt(n))*exp((1j*2*pi*(0:n-1)'*(0:n-1))/n);
 spike = eye(n);
+
+% fourier(7,:)=spike(15,:);
 
 psi = [spike, fourier];
 
@@ -542,7 +544,7 @@ title('Gram matrix')
 %%
 N = 64;
 
-psi = (1/sqrt(N))*exp((1j*2*pi*[0:N-1]'*[0:N-1])/N);
+psi = (1/sqrt(N))*exp((1j*2*pi*(0:N-1)'*(0:N-1))/N);
 
 H = walsh(N);
 phi = normalizeColumns(H * psi);
@@ -657,7 +659,7 @@ x_ht = hardThresholding(x, threshold);
 figure, axis tight
 plot(x, x_ht)
 hold on
-plot([-threshold:0.01:threshold], [-threshold:0.01:threshold], '-.')
+plot((-threshold:0.01:threshold), (-threshold:0.01:threshold), '-.')
 title('Hard Thresholding Operator')
 xlabel('x')
 ylabel('x*')
@@ -741,68 +743,213 @@ ylabel('x*')
 % * Accelerated methods
 %
 %
-%%
-%
-% close all
-% clearvars
-% clc
-%
-% image = imresize(phantom, 0.25);
-%
-% % dft_tmp = sparse((dftmtx((size(image,1)))));
-% % psi = kron(dft_tmp, dft_tmp);
-% %
-% % image_fft = reshape(psi * image(:), size(image));
-%
-% image_fft = fft2(image);
-%
-%
-% sz = 20;
-%
-% subsamplingMask = ones(sz);
-% subsamplingMask = padarray(subsamplingMask, 0.5*[size(image)-sz]);
-%
-% imagesc(subsamplingMask)
-%
-% % phi = (diag(sparse(subsamplingMask(:))));
-% phi = subsamplingMask;
-%
-% y =  phi .* ;
-%
-% imagesc(reshape(log2(abs(y)),size(image)))
-%
-% %  regularization parameter
-% epsilon = 1e-10;
-%
-% % stopping theshold
-% tolA = 1e-5;
-%
-% Psi = @(x,th) soft(x,th);
-% Phi = @(x) l0norm(x);
-%
-% psi_func = @(x) idct2(x);
-% psi_func_inv = @(x) dct2(x);
-%
-% A = @(x) phi * (x);
-% At = @(x) (phi' * x);
-%
-%
-% [s_est]= SpaRSA(y, A, epsilon,...
-%     'AT', At, ...
-%     'Phi', Phi, ...
-%     'Psi', Psi, ...
-%     'Monotone',0,...
-%     'MaxiterA', 100, ...
-%     'Initialization',0,...
-%     'StopCriterion', 1,...
-%     'ToleranceA', tolA,...
-%     'Verbose', 0);
-%
-% signal_est = idct2(s_est);
-%
-% imagesc(reshape(abs(signal_est), size(image))), title('Image Reconstruction'), colormap gray, axis image
+%% Signal Reconstruction Using Iterative Thresholding
+close all
+clearvars
+clc
+
+% number of signal samples
+n = 256;
+% number of acquired samples
+m = 64;
+
+% create Fourier transformation matrix
+fourier = (1/sqrt(n))*exp((1j*2*pi*(0:n-1)'*(0:n-1))/n);
+psi = fourier;
+
+% desired signal sparsity K
+K = 10;
+
+% randomly selected basis coefficients
+idx = randi([1, n], 1, K);
+
+% random sparsity vector with different coefficient weights
+s_orig = zeros(n, 1);
+s_orig(idx) = 1;
+s_orig = rand(size(s_orig)).*s_orig;
+
+% obtain the signal which is a mixture of impulses and sinusoids
+x_orig = psi * s_orig;
+
+% undersampling factor
+usFactor = 2;
+phi = zeros(size(s_orig));
+phi(1:usFactor:end) = 1;
+
+% undersample original signal
+x_us = phi .* x_orig;
+% calculate Fourier spectrum of undersampled signal
+s_us = psi' * x_us;
+
+figure
+
+subplot(231), stem(x_orig), title('Original signal')
+subplot(234), stem(s_orig), title('Original Spectrum')
+
+subplot(232), stem(x_us), title('Uniformly Undersampled signal')
+subplot(235), stem(s_us), title('Spectrum with aliasing')
+
+phi = zeros(size(s_orig));
+phi(randperm(n, m)) = 1;
+
+% undersample original signal
+x_us = phi .* x_orig;
+% calculate Fourier spectrum of undersampled signal
+s_us = psi' * x_us;
+
+subplot(233), stem(x_us), title('Randomly Undersampled signal')
+subplot(236), stem(s_us), title('Spectrum with noise-like undersampling artifacts')
+
+% number of iterations for thresholding algorithm
+nIter = 50;
+
+% initialization
+residual = [];
+s_est = zeros(size(s_us));
+
+for iterNo = 1:nIter
+    residual = x_us - psi*s_est;
+    
+    % set threshold and perform thresholding
+    th = 0.99*max(abs(psi'*residual));
+
+    s_est = hardThreshold(s_est + psi'*residual, th);
+    
+    figure(200)
+    subplot(311), stem(s_orig), title('Original Spectrum')
+    subplot(312),
+    line([0, n], [th, th], 'Color', 'r', 'LineStyle', '-.');
+    line([0, n], [-th, -th], 'Color', 'r', 'LineStyle', '-.');
+
+    hold on    
+    stem((s_est + psi'*residual)), title('Subsampled Spectrum')
+    
+    subplot(313), stem((s_est)), title('Recovered Spectrum')
+    
+    waitforbuttonpress 
+
+    % if desired sparsity reached, break thresholding procedure
+    if(sum(s_est~=0)>=K) 
+        break;
+    end   
+    
+    
+    
+end
 
 
+
+%% Compressive Sensing MRI
+% Magnetic resonance imaging(MRI) is an essential medical imaging tool with
+% an inherently slow data acquisiton process. Appying CS to MRI offers
+% potentially significant scan time reductions. MRI obeys two key
+% requirements for successful application of CS: 
+%
+% # medical imagery is naturally compressible by sparse coding in an
+% appropriate transform domain(e.g. wavelet transform). 
+% # MRI scanners natureally acquire encoded samples(Fourier domain
+% measurements), rather than direct pixel samples.
+
+close all
+clearvars
+clc
+
+% create phantom image of size N
+N = 256;
+image = phantom(N);
+% image = im2double(imresize(rgb2gray(imread('lenna.tiff')), [N N]));
+
+% create subsampling mask with radial lines
+nSamplingLines = 64;
+rot=360/nSamplingLines;
+angles = 0:rot:360;
+mask=zeros(N);
+
+for i = 1:nSamplingLines
+    line = imrotate(eye(size(image)), angles(i), 'bilinear', 'crop');
+    mask = mask+line;
+    mask = mask>0;
+end
+
+% low-pass filter mask
+mask = ones(64);
+mask = padarray(mask, 0.5*[N-64, N-64]);
+
+% aliasing mask - subsampled
+% mask = kron(ones(64), [1 0 0 0;1 0 0 0 ; 0  0 0 0 ; 0 0 0  0 ]);
+
+% random subsampling mask
+mask = rand(N) > 0.5;
+
+figure, imagesc(mask)
+
+hR = @(x)   masked_FFT((x), mask);
+hRT = @(x) (masked_FFT_t(x, mask));
+
+% subsample the Fourier spectrum of the original image
+y = hR(image);
+
+figure, colormap gray
+imagesc(image)
+colormap(gray)
+axis image
+title('Original')
+drawnow
+
+% backprojection is simple inverse Fourier transform 
+figure, colormap gray
+imagesc(hRT(y))
+colormap(gray)
+axis image
+title('Back-projection')
+drawnow
+
+% denoising function;
+tv_iters = 10;
+Psi = @(x,th)  tvdenoise(x,2/th,tv_iters);
+
+% set the penalty function, to compute the objective
+Phi = @(x) TVnorm(x);
+
+% regularization parameters (empirical)
+tau = 0.001;
+
+tolA = 1e-10;
+% -- TwIST ---------------------------
+% stop criterium:  the relative change in the objective function 
+% falls below 'ToleranceA'         
+ [x_twist,~,obj_twist,...
+    times_twist,~,mse_twist]= ...
+         TwIST(y, hR, tau,...
+         'Lambda', 1e-3, ...
+         'AT', hRT, ...
+         'Psi', Psi, ...
+         'Phi',Phi, ...
+         'True_x', image, ...
+         'Monotone',1,...
+         'MaxiterA', 10000, ...
+         'Initialization',0,...
+         'StopCriterion',1,...
+       	 'ToleranceA',tolA,...
+         'Verbose', 0);
+ 
+     
+figure, colormap gray
+imagesc(x_twist);
+axis image
+title('Estimate')
+
+figure
+semilogy(times_twist, (mse_twist*numel(image)).^0.5/norm(image,'fro'), 'LineWidth',2);
+title('error ||x^{t}-x||_2/||x||_2')
+xlabel('CPU time (sec)')
+grid on
+
+figure
+semilogy(times_twist, obj_twist, 'b','LineWidth',2)
+title('Objective function')
+xlabel('CPU time (sec)')
+grid on
 
 
 %% Compressive Imaging
@@ -930,7 +1077,7 @@ switch phi_type
         % create random Walsh matrix
         phi = walsh(blockSize^2);
         
-        phi(phi<0)=0;
+%         phi(phi<0)=0;
         
         phi_r = phi;
         
@@ -1052,7 +1199,7 @@ for k = 1: blockSize : rows - blockSize + 1
                 param.numThreads = -1;
                 
                 
-                weights = [1:size(theta,2)].^1';
+                weights = (1:size(theta,2)).^1';
                 %                 weights = [size(theta,2):-1:1].^2';
                 
                 s_est = mexLassoWeighted(y_m, theta, weights, param);
@@ -1073,8 +1220,7 @@ for k = 1: blockSize : rows - blockSize + 1
                     'Initialization',0,...
                     'StopCriterion', 0,...
                     'ToleranceA', tolA,...
-                    'Verbose', 0,...
-                    'Continuation', 0);
+                    'Verbose', 0);
                 
             case 'sparsa2'
                 tau = 1e-15;
@@ -1083,11 +1229,11 @@ for k = 1: blockSize : rows - blockSize + 1
                 Psi = @(x,th) soft(x,th);
                 Phi = @(x) l0norm(x);
                 
-                psi_func_inv = @(x) idct2(x);
-                psi_func = @(x) dct2(x);
+                W = @(x) idct2(x);
+                WT = @(x) dct2(x);
                 
-                A = @(x) phi_f * psi_func_inv(x);
-                At = @(x) psi_func(phi_f' * x);
+                A = @(x) phi_f * W(x);
+                At = @(x) WT(phi_f' * x);
                 
                 [s_est]= SpaRSA(y_m, A, tau,...
                     'AT', At, ...
@@ -1284,7 +1430,7 @@ figure, colormap gray, imagesc(image_est), title('Reconstructed image'), axis im
 %%
 %%BLOCK COMPRESSIVE IMAGING EXAMPLE - noisy case - multiplicative noise
 clearvars
-close all
+% close all
 clc
 
 % load image
@@ -1294,7 +1440,7 @@ image = rgb2gray(im2double(imresize(imread(imagePath), 0.5)));
 
 % choose optimization package for sparse problem solving
 % options: sedumi_err, mex_err, mex_w_err, omp, grad, sparsa, sparsa2
-optimizationPackage = 'sedumi_err';
+optimizationPackage = 'mex_err';
 
 % choose block size - divide whole image in non-overlapping blocks
 blockSize = 8;
@@ -1308,7 +1454,7 @@ sigmaMultiplicativeNoise = 0.01;
 
 % choose measurement matrix type
 % options: walsh, bern, radem, gauss, dct
-phi_type = 'walsh';
+phi_type = 'bern';
 
 % generate desired transformation matrix and use Kronecker delta product to
 % create 2D transformation matrix
@@ -1366,8 +1512,8 @@ phi_r = phi;
 ind = [ones(1, noOfMeasurements), zeros(1, blockSize^2-noOfMeasurements)];
 
 % diagonal reduction matrix
-R = diag(ind);
-R(all(R==0, 2), :)=[];
+R = (diag(sparse(ind)));
+R=R(any(R),:);
 
 % initialize matrix for reconstructed image
 image_est = [];
@@ -1405,7 +1551,7 @@ for k = 1: blockSize : rows - blockSize + 1
             case 'mex_err'
                 param.mode = 1;
                 param.cholesky = true;
-                param.lambda = 100*sigmaMultiplicativeNoise;
+                param.lambda = 0;
                 param.numThreads = -1;
                 
                 s_est = mexLasso(y_m, theta, param);
@@ -1499,30 +1645,90 @@ image = rgb2gray(im2double(imresize(imread(imagePath), 0.125)));
 [rows, cols] = size(image);
 
 blockSize = size(image, 1);
-m = 2048;
+m = 2500;
 
-phi = walsh(blockSize^2);
-psi = wmpdictionary(blockSize^2, 'lstcpt', {{'haar', 3}});
+n_levels = wmaxlev(size(im), wavelet); % maximum number of wavelet decomposition levels
+[C,S] = wavedec2(im, n_levels, wavelet); % conversion to 2D, wavelet decomposition
 
 
 % diagonal reduction matrix
 ind = logical(randerr(1, blockSize^2, m));
-R = diag(ind);
-R(all(R==0, 2), :)=[];
+ind = zeros(1, blockSize^2);
+ind(1:m)=1;
+R = (diag(sparse(ind)));
+R=R(any(R),:);
 
-phi_m = R * phi;
+tau = 1e-10;
+tolA = 1e-5;
 
-y_m = phi_m * reshape(image, rows*cols, 1);
+Psi = @(x,th) soft(x,th);
+Phi = @(x) norm(x, 1);
 
-theta = phi_m * psi;
+psi = @(x) idct2(x);
+psi_inv = @(x) dct2(x);
+
+psi = @(x) wavdec2(x, );
+psi_inv = @(x) dct2(x);
+
+phi = @(x) (blockSize^2)*fwht(x);
+phi_inv = @(x) ifwht(x);
+
+A = @(x) R * phi(psi(x));
+At = @(x) psi_inv(phi_inv(R'*x));
+
+y = phi(reshape((image), rows*cols, 1));
+y_m = R*y;
+
+tic
+[s_est]= SpaRSA(y_m, A, tau,...
+    'AT', At, ...
+    'Phi', Phi, ...
+    'Psi', Psi, ...
+    'Monotone',1,...
+    'MaxiterA', 100, ...
+    'Initialization',0,...
+    'StopCriterion', 1,...
+    'ToleranceA', tolA,...
+    'Verbose', 0);
+toc
+
+figure
+imagesc(reshape(psi(s_est), [blockSize blockSize]))
+
+%imagesc(reshape(dctmtx(blockSize^2)'*(s_est), [blockSize blockSize]))
+
+
+
+%%
+
+
+% theta = phi_m * psi;
 
 sparsity = m/2;
 nIter = 1;
-stepSize = 5000;
+stepSize = 1000;
 
-z = sparseCode(y_m, theta, sparsity, nIter, 'StepSize', stepSize, 'Verbose', 1);
+% s1 = sparseCode(y_m, theta, sparsity, nIter, 'StepSize', stepSize, 'Verbose', 1);
 
-signal_est = (psi * z);
+
+
+
+
+
+
+
+
+
+signal_est = zeros(n,1);
+for ii = 1:n
+    ii
+    ek = zeros(1,n);
+    ek(ii) = 1;
+    psi = idct(ek)';
+    signal_est = signal_est+psi*s1(ii);
+end
+
+% signal_est = (psi * z);
 image_est = reshape(signal_est, [rows cols]);
 
 figure,
@@ -1532,7 +1738,7 @@ imagesc(image_est)
 z_f = flipud(z);
 y_f = theta * z_f;
 
-z_f_est = sparseCode(y_f, theta, sparsity, nIter, 'StepSize', stepSize, 'Verbose', 1);
+z_f_est = sparseCode(y_f, theta, sparsity, nIter, 'StepSize', stepSize, 'Verbose', 0);
 z_f_est = flipud(z_f_est);
 
 signal_est = (psi * z_f_est);
@@ -1623,7 +1829,7 @@ imagesc(image_est)
 % Our goal is to design an algorithm that can remove the noise from $y$,
 % getting as close as possible to the original image $x$.
 
-%% DICTIONARY LEARNING
+%%
 clearvars
 close all
 clc
@@ -1649,7 +1855,7 @@ K = 500;
 
 % load image for patch extraction
 imagePath = '.\data\barb.png';
-image = im2double(imresize(imread(imagePath), 0.5));
+image = im2double(imresize(imread(imagePath), 1));
 
 % add additive noise noise
 sigma = 0.1;
@@ -1719,7 +1925,7 @@ legend('|Y-DX|^2', 'After coefficient update', 'After dictionary update');
 param.lambda = 0.1;
 param.numThreads = -1; % number of threads
 param.iter = 100;  % let us see what happens after 1000 iterations.
-param.mode = 5;
+param.mode = 1;
 param.D = D0;
 
 D = mexTrainDL(Y_train, param);
@@ -1737,7 +1943,7 @@ D=D0;
 meanY = mean(Y);
 Y = Y - repmat(mean(Y), [blockSize^2,1]);
 
-X = sparseCode(Y, D, T0, 150, 'StepSize', 5000, 'Plot', 0, 'Verbose', 1, 'ThreshType', 'soft', 'Sigma', 0.1);
+X = sparseCode(Y, D, T0, 10, 'StepSize', 5000, 'Plot', 0, 'Verbose', 0, 'ThreshType', 'soft', 'Sigma', 0.1);
 
 PA = reshape((D*X), [blockSize blockSize size(Y, 2)]);
 PA = PA - repmat( mean(mean(PA)), [blockSize blockSize] );
@@ -1760,6 +1966,113 @@ denoisedImage = denoisedImage ./ W;
 figure,
 subplot(121), imagesc(image), title('Noisy image'), axis image
 subplot(122), imagesc(denoisedImage), title('Denoised image'), axis image
+
+%% Image Inpainting Using Overcomplete Dictionary
+
+
+%%
+close all
+clearvars
+clc
+
+% load image for patch extraction
+image = im2double(imresize(imread('lena.png'), 0.5));
+[imH, imW] = size(image);
+
+% generate random binary mask
+mask = abs(rand(size(image)))>0.5;
+
+% masking out image pixels
+image = mask .* image;
+
+% size of extracted patch
+w = 16;
+
+% number of image patches in set Y
+N = 5000;
+
+% length of signal y
+n = w^2;
+
+% desired sparsity
+T0 = 10;
+
+% number of atoms in dictionary
+K = 128;
+
+% overlap
+q = 1;
+
+[y, x] = meshgrid(1:q:imH-w/2, 1:q:imW-w/2);
+[dY,dX] = meshgrid(0:w-1,0:w-1);
+
+N = size(x(:),1);
+
+Xp = repmat(dX,[1 1 N]) + repmat( reshape(x(:),[1 1 N]), [w w 1]);
+Yp = repmat(dY,[1 1 N]) + repmat( reshape(y(:),[1 1 N]), [w w 1]);
+
+Xp(Xp>imH) = 2*imH-Xp(Xp>imH);
+Yp(Yp>imW) = 2*imW-Yp(Yp>imW);
+
+Y = image(Xp+(Yp-1)*imH);
+Y = reshape(Y, [n, N]);
+
+M = mask(Xp+(Yp-1)*imH);
+M = reshape(M, [n, N]);
+
+[Y, meanY] = substractMeanCols(Y);
+
+nIter = 1;
+D = generateOvercompleteDCTdictionary(n, 400);
+
+X = zeros(size(D,2),size(Y,2));
+
+sigma = 0.00000001;
+lambda = 1.5 * sigma;
+tau = 1.9/norm(D*D');
+th=tau*lambda;
+stepSize = 5000;
+
+for jj = 1:stepSize:size(Y,2)
+    jj
+
+    jumpSize=min(jj+stepSize-1,size(Y,2));
+    X_tmp = zeros(size(D,2),1);
+    
+    for i = 1:nIter        
+        for kk = jj:jumpSize
+            
+            R = M(:,kk).*D*X_tmp-Y(:,kk);      
+            th = tau*lambda;
+            X_tmp = softThreshold(X_tmp-tau*(M(:,kk).*D)'*R, th');
+
+            X(:,kk)=X_tmp;
+        end
+    end
+end
+
+PA = reshape(D*X, [w w N]);
+PA = PA - repmat( mean(mean(PA)), [w w]);
+PA = PA + reshape(repmat( meanY, [w^2 1] ), [w w N]);
+
+W = zeros(imH, imW);
+inpaintedImage = zeros(imH, imW);
+
+for i=1:size(Y, 2)
+    x = Xp(:,:,i);
+    y = Yp(:,:,i);
+    
+    inpaintedImage(x+(y-1)*imH) = inpaintedImage(x+(y-1)*imH) + PA(:,:,i);
+    W(x+(y-1)*imH) = W(x+(y-1)*imH) + 1;
+end
+
+inpaintedImage = inpaintedImage ./ W;
+
+
+figure,
+subplot(121), imagesc(image), title('Damaged image'), axis image
+subplot(122), imagesc(inpaintedImage), title('Inpainted image'), axis image
+
 
 %% Discriminative Sparse Representation
 % If sufficient training samples $Y$ are available from
