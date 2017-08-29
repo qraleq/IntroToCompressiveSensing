@@ -73,7 +73,6 @@ title('2D-DWT Dictionary - HAAR')
 % it takes $n$ spikes to build up a single sinusoid and also it takes $n$
 % sinusoids to build up a single spike.
 %
-
 n = 64;
 
 fourier = (1/sqrt(n))*exp((1j*2*pi*(0:n-1)'*(0:n-1))/n);
@@ -109,7 +108,6 @@ x = psi*s;
 figure
 stem(real(x))
 title('Signal - mixture of K impulses and sinusoids')
-
 
 %% Minimum Energy Decomposition - $l_2$ norm
 % There are infinite number of ways we can decompose signal x using atoms
@@ -492,6 +490,7 @@ fourier = (1/sqrt(n))*exp((1j*2*pi*(0:n-1)'*(0:n-1))/n);
 spike = eye(n);
 
 % fourier(7,:)=spike(15,:);
+% fourier = normalizeColumns(fourier);
 
 psi = [spike, fourier];
 
@@ -747,6 +746,7 @@ ylabel('x*')
 close all
 clearvars
 clc
+warning off 
 
 % number of signal samples
 n = 256;
@@ -823,20 +823,17 @@ for iterNo = 1:nIter
 
     hold on    
     stem((s_est + psi'*residual)), title('Subsampled Spectrum')
-    
     subplot(313), stem((s_est)), title('Recovered Spectrum')
-    
-    waitforbuttonpress 
+    drawnow 
 
     % if desired sparsity reached, break thresholding procedure
     if(sum(s_est~=0)>=K) 
         break;
     end   
-    
-    
-    
+       
 end
 
+warning on
 
 
 %% Compressive Sensing MRI
@@ -879,15 +876,15 @@ mask = padarray(mask, 0.5*[N-64, N-64]);
 % mask = kron(ones(64), [1 0 0 0;1 0 0 0 ; 0  0 0 0 ; 0 0 0  0 ]);
 
 % random subsampling mask
-mask = rand(N) > 0.5;
+% mask = rand(N) > 0.5;
 
 figure, imagesc(mask)
 
-hR = @(x)   masked_FFT((x), mask);
-hRT = @(x) (masked_FFT_t(x, mask));
+phi = @(x)   masked_FFT((x), mask);
+phi_inv = @(x) (masked_FFT_t(x, mask));
 
 % subsample the Fourier spectrum of the original image
-y = hR(image);
+y = phi(image);
 
 figure, colormap gray
 imagesc(image)
@@ -898,7 +895,7 @@ drawnow
 
 % backprojection is simple inverse Fourier transform 
 figure, colormap gray
-imagesc(hRT(y))
+imagesc(phi_inv(y))
 colormap(gray)
 axis image
 title('Back-projection')
@@ -912,7 +909,7 @@ Psi = @(x,th)  tvdenoise(x,2/th,tv_iters);
 Phi = @(x) TVnorm(x);
 
 % regularization parameters (empirical)
-tau = 0.001;
+tau = 1e-1;
 
 tolA = 1e-10;
 % -- TwIST ---------------------------
@@ -920,14 +917,14 @@ tolA = 1e-10;
 % falls below 'ToleranceA'         
  [x_twist,~,obj_twist,...
     times_twist,~,mse_twist]= ...
-         TwIST(y, hR, tau,...
+         TwIST(y, phi, tau,...
          'Lambda', 1e-3, ...
-         'AT', hRT, ...
+         'AT', phi_inv, ...
          'Psi', Psi, ...
          'Phi',Phi, ...
          'True_x', image, ...
          'Monotone',1,...
-         'MaxiterA', 10000, ...
+         'MaxiterA', 100, ...
          'Initialization',0,...
          'StopCriterion',1,...
        	 'ToleranceA',tolA,...
@@ -1007,6 +1004,8 @@ grid on
 % $\Phi$. Obviously, there is a trade-off int the selection of block dimension $B$.
 % Small $B$ requires less memory in storage and has faster implementation,
 % while large $B$ offers better reconstruction performance.
+
+
 
 
 %%
@@ -1585,6 +1584,91 @@ figure, colormap gray, imagesc(image), title('Original image'), axis image
 figure, colormap gray, imagesc(measurementVisualization), title('Measurement Visualization'), axis image
 figure, colormap gray, imagesc(image_est), title('Reconstructed image'), axis image
 
+%% Temporal Compressive Imaging
+
+close all
+clearvars
+clc
+
+addpath('utilities', 'data');
+
+frames = imreadDir('Y:\Projects\MATLAB Projects\Compressive Temporal Imaging\media\man\', 'tiff');
+frames = imresize(reshape(cell2mat(frames), [size(frames{1}), size(frames, 2)]), 2);
+
+% load Traffic.mat
+% frames = X;
+
+noOfFrames = 8;
+mask_size = size(frames, 1);
+frames=frames(:,:, 1:noOfFrames);
+
+% SIMULATE CODED APERTURE
+mask = zeros(1, mask_size*mask_size);
+mask(1:size(mask,2)*0.66) = 1;
+mask = reshape(mask(randperm(numel(mask))), mask_size, mask_size);
+
+phi = [];
+y = [];
+
+for i=1:noOfFrames
+   
+    phi(:,:,i) = circshift(mask, [-1*i,0]);    % mask is moving from  up to down
+    
+    figure(1)
+    imagesc(phi(:,:,i))
+    drawnow
+    
+end
+
+% reconstruction method using Bregman iterations and SpaRSA
+
+% noise estimation variable
+psi = @(x) idct2(x);
+psi_inv = @(x) dct2(x);
+
+A = @(z) A_xy(z, phi);
+At = @(z) At_xy_nonorm(z, phi);
+
+y = A(frames);
+
+% denoising function
+tv_iters = 1;
+
+% Psi = @(x,th) tvdenoise(x, 2/th ,tv_iters);
+% Psi = @(x,th) hard(x,th);
+Psi = @(x,th) tvdenoise_sitcm(x, 2/th, tv_iters);
+
+% regularizer
+Phi = @(x) TVnorm_sitcm(x);
+% Phi = @(x) l0norm(x);
+%                         Phi_t =@(x) norm(x, 1);
+
+%  regularization parameter
+tau = 1e-1;
+% stopping theshold
+tolA = 1e-10;
+
+[s_est]= SpaRSA(y, A, tau,...
+    'AT', At, ...
+    'Phi', Phi, ...
+    'Psi', Psi, ...
+    'Monotone',0,...
+    'MaxiterA', 100, ...
+    'Initialization',0,...
+    'StopCriterion', 2, ...
+    'ToleranceA', tolA,...
+    'Verbose', 0);
+
+reconstruction = reshape(s_est, [mask_size, mask_size, noOfFrames]);
+
+for i=1:noOfFrames
+    figure(101)
+    imagesc(reconstruction(:,:,i))
+    waitforbuttonpress
+end
+
+
+
 %% Reducing Blocking Artifacts In BCS
 % Block-based CS is more practical for images of a large size. However, it
 % causes block boundaries between two adjacent blocks resulting in namely
@@ -1622,6 +1706,27 @@ figure, colormap gray, imagesc(image_est), title('Reconstructed image'), axis im
 % practice, traditional CS pillars are replaced by new CS principles:
 % asymptotic incoherence, asymptotic sparsity and multilevel sampling.
 %
+% We can consider the MRI CS setup, i.e. 
+% $U=\Phi_{dft}\Psi^*_{dwt} \in \mathbf{C}^{N\times N}$,
+% where $\Phi_{dft}$ and $\Psi_{dwt}$ are the discrete Fourier and wavelet
+% transforms(sampling and sparsity bases) respectively. The coherence here
+% is $\mu(U)=1, N\to \inf$ for any wavelet basis, so this problem has the
+% worst possible coherence. The traditional CS bound states that all
+% samples are needed in this case(i.e. full sampling $m=N$), even though
+% the original signal is typically highly sparse in wavelets. This lack of
+% incoherence means that uniform random subsampling leads to a very poor
+% recovery. This is known in MRI and is illustrated before in this paper.
+% The root cause of this lack of incoherence is the discretization of what
+% is intrinsically an infinite-dimensional problem into a
+% finite-dimensional one. In short, $U$ converges to an infinite matrix and
+% since the incoherence is the supremum of its entries, there exists some
+% $N$ for which a coherence barrier is hit, resulting in the worst case for
+% a CS recovery. This is not restricted to MRI only, any such
+% discretization of an infinite-dimensional problem will suffer the same
+% fate, including MRI, tomography, microscopy, seismology... Changing
+% measurement matrix $\Phi$ may provide marginal benefits, if any, since
+% the coherence barrier always occurs at some $N$.
+%
 % Traditional CS states that the sampling strategy is completely
 % independent of the location of nonzero coefficients of an $s$-sparse
 % vector $x$, i.e. with the $s$ nonzero coefficients at arbitrary
@@ -1631,9 +1736,30 @@ figure, colormap gray, imagesc(image_est), title('Reconstructed image'), axis im
 % Let $x\in \mathbf{C}^N$ be a vector, and $U\in \mathbf{C}^{N\times N}$ a
 % measurement matrix. We then sample according to some pattern
 % $\Omega\subseteq \{1,...,N\}$ with $\vert\Omega \vert=m$ and solve
-% standard sparse recovery problem to obtain
-
-
+% standard sparse recovery problem for $x$, i.e. $\min \Vert z_1\Vert s.t.
+% P_{\Omega}Uz=P_{\Omega}Ux$ to obtain reconstruction $z=\alpha$. Now we
+% flip $x$ to obtain a vector $x'$ with reverse entries, $x'_i = x_{N-i},
+% i=1,...,N$ and solve standard sparse recovery problem for $x'$ using the
+% same $U$ and $\Omega$. Assuming $z$ to be a solution, then by flipping
+% $z$ we obtain a second reconstruction $\alpha'$ of the original vector
+% $x$, where $\alpha'_i=z_{N-i}$.
+%
+% Assume $\Omega$ is a sampling pattern for recovering $x$ using $\alpha$.
+% If sparsity alone dictates the reconstruction quality(since $x'$ has the
+% same sparsity as $x$, being merely a permutation of x).
+%
+% As is evident, the flipped recovery $\alpha'$ is substantially worse than
+% its unflipped version $\alpha$. That confims that sparsity alone does not
+% dictate the reconstruction quality. The optimal sampling strategy depends
+% on the structure of the signal. 
+%
+% We will give a short summary of the effects and benefits emerging from
+% asymptotic sparsity, asymptotic incoherence and multilevel sampling. An
+% important effect is that regardless of the sampling basis and subsampling
+% scheme, the quality of the reconstruction increases as resolution
+% increases. The new theory provides a good fit to some real-world problems
+% that are fundamentally continuous. The errors arising from recovering the
+% continuous samples using discrete models are sometimes significant.
 %% SPARSITY, FLIP TEST AND THE ABSENCE OF RIP
 clearvars
 close all
@@ -1641,22 +1767,25 @@ clc
 
 % load image
 imagePath = '.\data\lenna.tiff';
-image = rgb2gray(im2double(imresize(imread(imagePath), 0.125)));
+image = rgb2gray(im2double(imresize(imread(imagePath), 0.5)));
 [rows, cols] = size(image);
 
 blockSize = size(image, 1);
-m = 2500;
+percentage=0.95;
+m = ceil(percentage*blockSize^2);
 
-n_levels = wmaxlev(size(im), wavelet); % maximum number of wavelet decomposition levels
-[C,S] = wavedec2(im, n_levels, wavelet); % conversion to 2D, wavelet decomposition
-
+wavelet = 'haar';
+n_levels = wmaxlev(size(image), wavelet); % maximum number of wavelet decomposition levels
+% n_levels = 2;
+% [C,S] = wavedec(image(:), n_levels, wavelet); % conversion to 2D, wavelet decomposition
+[C,S] = wavedec2(image, n_levels, wavelet); % conversion to 2D, wavelet decomposition
 
 % diagonal reduction matrix
 ind = logical(randerr(1, blockSize^2, m));
 ind = zeros(1, blockSize^2);
 ind(1:m)=1;
 R = (diag(sparse(ind)));
-R=R(any(R),:);
+R=R(any(R), :);
 
 tau = 1e-10;
 tolA = 1e-5;
@@ -1664,27 +1793,29 @@ tolA = 1e-5;
 Psi = @(x,th) soft(x,th);
 Phi = @(x) norm(x, 1);
 
-psi = @(x) idct2(x);
-psi_inv = @(x) dct2(x);
+% psi = @(x) idct2(x);
+% psi_inv = @(x) dct2(x);
 
-psi = @(x) wavdec2(x, );
-psi_inv = @(x) dct2(x);
+% psi = @(x) waverec(x, S, wavelet);
+% psi_inv = @(x) wavedec(x, n_levels, wavelet);
+
+psi = @(x) reshape(waverec2(x, S, wavelet), blockSize^2, 1);
+psi_inv = @(x) wavedec2(reshape(x, blockSize, blockSize), n_levels, wavelet);
 
 phi = @(x) (blockSize^2)*fwht(x);
 phi_inv = @(x) ifwht(x);
 
-A = @(x) R * phi(psi(x));
+A = @(x) R*phi(psi(x));
 At = @(x) psi_inv(phi_inv(R'*x));
 
-y = phi(reshape((image), rows*cols, 1));
-y_m = R*y;
+y_m = R * phi(reshape((image), rows*cols, 1));
 
 tic
 [s_est]= SpaRSA(y_m, A, tau,...
     'AT', At, ...
     'Phi', Phi, ...
     'Psi', Psi, ...
-    'Monotone',1,...
+    'Monotone',0,...
     'MaxiterA', 100, ...
     'Initialization',0,...
     'StopCriterion', 1,...
@@ -1692,61 +1823,52 @@ tic
     'Verbose', 0);
 toc
 
+image_est = reshape(psi(s_est), [blockSize blockSize]);
+
+s_f = fliplr(psi_inv(image));
+% s_f = flipud(psi_inv(image(:)));
+
+y_f = R * phi(psi(s_f));
+
+tic
+[s_f_est]= SpaRSA(y_f, A, tau,...
+    'AT', At, ...
+    'Phi', Phi, ...
+    'Psi', Psi, ...
+    'Monotone',0,...
+    'MaxiterA', 100, ...
+    'Initialization',0,...
+    'StopCriterion', 1,...
+    'ToleranceA', tolA,...
+    'Verbose', 0);
+toc
+
+s_f_est = fliplr(s_f_est);
+% s_f_est = flipud(s_f_est);
+
+image_f_est = reshape(psi(s_f_est), [blockSize blockSize]);
+
 figure
-imagesc(reshape(psi(s_est), [blockSize blockSize]))
-
-%imagesc(reshape(dctmtx(blockSize^2)'*(s_est), [blockSize blockSize]))
-
+subplot(121)
+imagesc(image_est), title('CS Recovery')
+axis image
+subplot(122)
+imagesc(image_f_est), title('CS Flipped Recovery')
+axis image
 
 
 %%
+%ASYMPTOTIC SPARSITY
+% load image
+imagePath = '.\data\lenna.tiff';
+image = rgb2gray(im2double(imresize(imread(imagePath), 0.75)));
+[rows, cols] = size(image);
 
+wav1d = wmpdictionary(rows, 'lstcpt', {{'haar', 2}});
 
-% theta = phi_m * psi;
+psi = kron(wav1d', wav1d');
 
-sparsity = m/2;
-nIter = 1;
-stepSize = 1000;
-
-% s1 = sparseCode(y_m, theta, sparsity, nIter, 'StepSize', stepSize, 'Verbose', 1);
-
-
-
-
-
-
-
-
-
-
-signal_est = zeros(n,1);
-for ii = 1:n
-    ii
-    ek = zeros(1,n);
-    ek(ii) = 1;
-    psi = idct(ek)';
-    signal_est = signal_est+psi*s1(ii);
-end
-
-% signal_est = (psi * z);
-image_est = reshape(signal_est, [rows cols]);
-
-figure,
-imagesc(image_est)
-
-
-z_f = flipud(z);
-y_f = theta * z_f;
-
-z_f_est = sparseCode(y_f, theta, sparsity, nIter, 'StepSize', stepSize, 'Verbose', 0);
-z_f_est = flipud(z_f_est);
-
-signal_est = (psi * z_f_est);
-image_est = reshape(signal_est, [rows cols]);
-
-figure,
-imagesc(image_est)
-
+imagesc((abs(reshape(psi*image(:), rows, cols))))
 
 
 %% Dictionary Learning (Sparse Coding)
@@ -1821,6 +1943,8 @@ imagesc(image_est)
 % * Method of Optimal Directions(MOD)
 % * K-SVD
 % * Online dictionary learning
+%
+%
 %% Image Denoising Using Overcomplete Dictionaries
 % In this section, we will analyze use of overcomplete dictionaries in
 % classic image denoising problem. An ideal image $x$ is measured in the
@@ -1968,7 +2092,6 @@ subplot(121), imagesc(image), title('Noisy image'), axis image
 subplot(122), imagesc(denoisedImage), title('Denoised image'), axis image
 
 %% Image Inpainting Using Overcomplete Dictionary
-
 
 %%
 close all
