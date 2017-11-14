@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.2.7)  23 AUG 2017 11:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.2.7)  9 OCT 2017 15:50
 entering extended mode
 **./IntroToCompressiveSensing.tex
 (IntroToCompressiveSensing.tex
@@ -149,34 +149,28 @@ LaTeX Font Info:    External font `cmex10' loaded for size
  [1
 
 {C:/Users/Ivan/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-Overfull \hbox (32.9967pt too wide) in paragraph at lines 117--117
+Overfull \hbox (32.9967pt too wide) in paragraph at lines 118--118
 []\OT1/cmtt/m/n/10 % example dictionary for 2D-DCT transformation - using Krone
 cked product[] 
  []
 
 [2]
-Overfull \hbox (38.24666pt too wide) in paragraph at lines 117--117
+Overfull \hbox (38.24666pt too wide) in paragraph at lines 118--118
 []\OT1/cmtt/m/n/10 % example dictionary for 2D-HAAR transformation - using Kron
 ecked product[] 
  []
 
 Package epstopdf Info: Source file: <IntroToCompressiveSensing_01.eps>
-(epstopdf)                    date: 2017-08-23 11:19:55
+(epstopdf)                    date: 2017-10-09 15:33:58
 (epstopdf)                    size: 31882 bytes
 (epstopdf)             Output file: <IntroToCompressiveSensing_01-eps-converted
 -to.pdf>
-(epstopdf)                    date: 2017-08-11 08:03:06
-(epstopdf)                    size: 5901 bytes
+(epstopdf)                    date: 2017-10-09 15:47:42
+(epstopdf)                    size: 8622 bytes
 (epstopdf)             Command: <epstopdf --outfile=IntroToCompressiveSensing_0
 1-eps-converted-to.pdf IntroToCompressiveSensing_01.eps>
-(epstopdf)             \includegraphics on input line 119.
-runsystem(epstopdf --outfile=IntroToCompressiveSensing_01-eps-converted-to.pdf 
-IntroToCompressiveSensing_01.eps)...executed (allowed).
-
-Package epstopdf Info: Result file: <IntroToCompressiveSensing_01-eps-converted
--to.pdf>
-(epstopdf)                    date: 2017-08-23 11:26:10
-(epstopdf)                    size: 8622 bytes.
+(epstopdf)             \includegraphics on input line 120.
+Package epstopdf Info: Output file is already uptodate.
 
 <IntroToCompressiveSensing_01-eps-converted-to.pdf, id=18, 261.97874pt x 274.02
 374pt>
@@ -184,25 +178,19 @@ File: IntroToCompressiveSensing_01-eps-converted-to.pdf Graphic file (type pdf)
 
  <use IntroToCompressiveSensing_01-eps-converted-to.pdf>
 Package pdftex.def Info: IntroToCompressiveSensing_01-eps-converted-to.pdf used
- on input line 119.
+ on input line 120.
 (pdftex.def)             Requested size: 289.07999pt x 302.38037pt.
 Package epstopdf Info: Source file: <IntroToCompressiveSensing_02.eps>
-(epstopdf)                    date: 2017-08-23 11:19:56
+(epstopdf)                    date: 2017-10-09 15:33:59
 (epstopdf)                    size: 31889 bytes
 (epstopdf)             Output file: <IntroToCompressiveSensing_02-eps-converted
 -to.pdf>
-(epstopdf)                    date: 2017-08-11 08:03:08
-(epstopdf)                    size: 4141 bytes
+(epstopdf)                    date: 2017-10-09 15:47:43
+(epstopdf)                    size: 4060 bytes
 (epstopdf)             Command: <epstopdf --outfile=IntroToCompressiveSensing_0
 2-eps-converted-to.pdf IntroToCompressiveSensing_02.eps>
-(epstopdf)             \includegraphics on input line 121.
-runsystem(epstopdf --outfile=IntroToCompressiveSensing_02-eps-converted-to.pdf 
-IntroToCompressiveSensing_02.eps)...executed (allowed).
-
-Package epstopdf Info: Result file: <IntroToCompressiveSensing_02-eps-converted
--to.pdf>
-(epstopdf)                    date: 2017-08-23 11:26:11
-(epstopdf)                    size: 4060 bytes.
+(epstopdf)             \includegraphics on input line 122.
+Package epstopdf Info: Output file is already uptodate.
 
 <IntroToCompressiveSensing_02-eps-converted-to.pdf, id=19, 261.97874pt x 273.02
 pt>
@@ -210,25 +198,19 @@ File: IntroToCompressiveSensing_02-eps-converted-to.pdf Graphic file (type pdf)
 
  <use IntroToCompressiveSensing_02-eps-converted-to.pdf>
 Package pdftex.def Info: IntroToCompressiveSensing_02-eps-converted-to.pdf used
- on input line 121.
+ on input line 122.
 (pdftex.def)             Requested size: 289.07999pt x 301.27277pt.
 Package epstopdf Info: Source file: <IntroToCompressiveSensing_03.eps>
-(epstopdf)                    date: 2017-08-23 11:19:56
+(epstopdf)                    date: 2017-10-09 15:34:00
 (epstopdf)                    size: 31882 bytes
 (epstopdf)             Output file: <IntroToCompressiveSensing_03-eps-converted
 -to.pdf>
-(epstopdf)                    date: 2017-08-11 08:03:09
-(epstopdf)                    size: 6401 bytes
+(epstopdf)                    date: 2017-10-09 15:47:44
+(epstopdf)                    size: 5901 bytes
 (epstopdf)             Command: <epstopdf --outfile=IntroToCompressiveSensing_0
 3-eps-converted-to.pdf IntroToCompressiveSensing_03.eps>
-(epstopdf)             \includegraphics on input line 123.
-runsystem(epstopdf --outfile=IntroToCompressiveSensing_03-eps-converted-to.pdf 
-IntroToCompressiveSensing_03.eps)...executed (allowed).
-
-Package epstopdf Info: Result file: <IntroToCompressiveSensing_03-eps-converted
--to.pdf>
-(epstopdf)                    date: 2017-08-23 11:26:12
-(epstopdf)                    size: 5901 bytes.
+(epstopdf)             \includegraphics on input line 124.
+Package epstopdf Info: Output file is already uptodate.
 
 <IntroToCompressiveSensing_03-eps-converted-to.pdf, id=20, 261.97874pt x 274.02
 374pt> [3 <./IntroToCompressiveSensing_01-eps-converted-to.pdf>]
@@ -237,25 +219,19 @@ File: IntroToCompressiveSensing_03-eps-converted-to.pdf Graphic file (type pdf)
 
 <use IntroToCompressiveSensing_03-eps-converted-to.pdf>
 Package pdftex.def Info: IntroToCompressiveSensing_03-eps-converted-to.pdf used
- on input line 123.
+ on input line 124.
 (pdftex.def)             Requested size: 289.07999pt x 302.38037pt.
 Package epstopdf Info: Source file: <IntroToCompressiveSensing_04.eps>
-(epstopdf)                    date: 2017-08-23 11:19:56
+(epstopdf)                    date: 2017-10-09 15:34:00
 (epstopdf)                    size: 31889 bytes
 (epstopdf)             Output file: <IntroToCompressiveSensing_04-eps-converted
 -to.pdf>
-(epstopdf)                    date: 2017-08-11 08:03:11
-(epstopdf)                    size: 7364 bytes
+(epstopdf)                    date: 2017-10-09 15:47:45
+(epstopdf)                    size: 4141 bytes
 (epstopdf)             Command: <epstopdf --outfile=IntroToCompressiveSensing_0
 4-eps-converted-to.pdf IntroToCompressiveSensing_04.eps>
-(epstopdf)             \includegraphics on input line 125.
-runsystem(epstopdf --outfile=IntroToCompressiveSensing_04-eps-converted-to.pdf 
-IntroToCompressiveSensing_04.eps)...executed (allowed).
-
-Package epstopdf Info: Result file: <IntroToCompressiveSensing_04-eps-converted
--to.pdf>
-(epstopdf)                    date: 2017-08-23 11:26:13
-(epstopdf)                    size: 4141 bytes.
+(epstopdf)             \includegraphics on input line 126.
+Package epstopdf Info: Output file is already uptodate.
 
 <IntroToCompressiveSensing_04-eps-converted-to.pdf, id=28, 261.97874pt x 273.02
 pt> [4 <./IntroToCompressiveSensing_02-eps-converted-to.pdf>]
@@ -264,27 +240,21 @@ File: IntroToCompressiveSensing_04-eps-converted-to.pdf Graphic file (type pdf)
 
 <use IntroToCompressiveSensing_04-eps-converted-to.pdf>
 Package pdftex.def Info: IntroToCompressiveSensing_04-eps-converted-to.pdf used
- on input line 125.
+ on input line 126.
 (pdftex.def)             Requested size: 289.07999pt x 301.27277pt.
  [5 <./IntroToCompressiveSensing_03-eps-converted-to.pdf>] [6 <./IntroToCompres
 siveSensing_04-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <IntroToCompressiveSensing_05.eps>
-(epstopdf)                    date: 2017-08-23 11:19:57
+(epstopdf)                    date: 2017-10-09 15:34:01
 (epstopdf)                    size: 47048 bytes
 (epstopdf)             Output file: <IntroToCompressiveSensing_05-eps-converted
 -to.pdf>
-(epstopdf)                    date: 2017-08-11 08:03:12
-(epstopdf)                    size: 10767 bytes
+(epstopdf)                    date: 2017-10-09 15:47:46
+(epstopdf)                    size: 6401 bytes
 (epstopdf)             Command: <epstopdf --outfile=IntroToCompressiveSensing_0
 5-eps-converted-to.pdf IntroToCompressiveSensing_05.eps>
-(epstopdf)             \includegraphics on input line 150.
-runsystem(epstopdf --outfile=IntroToCompressiveSensing_05-eps-converted-to.pdf 
-IntroToCompressiveSensing_05.eps)...executed (allowed).
-
-Package epstopdf Info: Result file: <IntroToCompressiveSensing_05-eps-converted
--to.pdf>
-(epstopdf)                    date: 2017-08-23 11:26:14
-(epstopdf)                    size: 6401 bytes.
+(epstopdf)             \includegraphics on input line 151.
+Package epstopdf Info: Output file is already uptodate.
 
 <IntroToCompressiveSensing_05-eps-converted-to.pdf, id=50, 343.2825pt x 191.716
 25pt>
@@ -292,25 +262,19 @@ File: IntroToCompressiveSensing_05-eps-converted-to.pdf Graphic file (type pdf)
 
  <use IntroToCompressiveSensing_05-eps-converted-to.pdf>
 Package pdftex.def Info: IntroToCompressiveSensing_05-eps-converted-to.pdf used
- on input line 150.
+ on input line 151.
 (pdftex.def)             Requested size: 289.07999pt x 161.44424pt.
 Package epstopdf Info: Source file: <IntroToCompressiveSensing_06.eps>
-(epstopdf)                    date: 2017-08-23 11:19:57
-(epstopdf)                    size: 38962 bytes
+(epstopdf)                    date: 2017-10-09 15:34:03
+(epstopdf)                    size: 38964 bytes
 (epstopdf)             Output file: <IntroToCompressiveSensing_06-eps-converted
 -to.pdf>
-(epstopdf)                    date: 2017-08-11 08:03:13
-(epstopdf)                    size: 9876 bytes
+(epstopdf)                    date: 2017-10-09 15:47:47
+(epstopdf)                    size: 7919 bytes
 (epstopdf)             Command: <epstopdf --outfile=IntroToCompressiveSensing_0
 6-eps-converted-to.pdf IntroToCompressiveSensing_06.eps>
-(epstopdf)             \includegraphics on input line 177.
-runsystem(epstopdf --outfile=IntroToCompressiveSensing_06-eps-converted-to.pdf 
-IntroToCompressiveSensing_06.eps)...executed (allowed).
-
-Package epstopdf Info: Result file: <IntroToCompressiveSensing_06-eps-converted
--to.pdf>
-(epstopdf)                    date: 2017-08-23 11:26:15
-(epstopdf)                    size: 7905 bytes.
+(epstopdf)             \includegraphics on input line 178.
+Package epstopdf Info: Output file is already uptodate.
 
 <IntroToCompressiveSensing_06-eps-converted-to.pdf, id=51, 358.33875pt x 288.07
 625pt>
@@ -318,33 +282,27 @@ File: IntroToCompressiveSensing_06-eps-converted-to.pdf Graphic file (type pdf)
 
  <use IntroToCompressiveSensing_06-eps-converted-to.pdf>
 Package pdftex.def Info: IntroToCompressiveSensing_06-eps-converted-to.pdf used
- on input line 177.
+ on input line 178.
 (pdftex.def)             Requested size: 289.07999pt x 232.41298pt.
  [7 <./IntroToCompressiveSensing_05-eps-converted-to.pdf>]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 180.
+(Font)              <12> on input line 181.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 180.
+(Font)              <8> on input line 181.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 180.
+(Font)              <6> on input line 181.
  [8 <./IntroToCompressiveSensing_06-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <IntroToCompressiveSensing_07.eps>
-(epstopdf)                    date: 2017-08-23 11:19:58
-(epstopdf)                    size: 58852 bytes
+(epstopdf)                    date: 2017-10-09 15:34:05
+(epstopdf)                    size: 58862 bytes
 (epstopdf)             Output file: <IntroToCompressiveSensing_07-eps-converted
 -to.pdf>
-(epstopdf)                    date: 2017-08-11 08:03:15
-(epstopdf)                    size: 5489 bytes
+(epstopdf)                    date: 2017-10-09 15:47:48
+(epstopdf)                    size: 11181 bytes
 (epstopdf)             Command: <epstopdf --outfile=IntroToCompressiveSensing_0
 7-eps-converted-to.pdf IntroToCompressiveSensing_07.eps>
-(epstopdf)             \includegraphics on input line 206.
-runsystem(epstopdf --outfile=IntroToCompressiveSensing_07-eps-converted-to.pdf 
-IntroToCompressiveSensing_07.eps)...executed (allowed).
-
-Package epstopdf Info: Result file: <IntroToCompressiveSensing_07-eps-converted
--to.pdf>
-(epstopdf)                    date: 2017-08-23 11:26:17
-(epstopdf)                    size: 11179 bytes.
+(epstopdf)             \includegraphics on input line 207.
+Package epstopdf Info: Output file is already uptodate.
 
 <IntroToCompressiveSensing_07-eps-converted-to.pdf, id=70, 356.33125pt x 292.09
 125pt>
@@ -352,26 +310,20 @@ File: IntroToCompressiveSensing_07-eps-converted-to.pdf Graphic file (type pdf)
 
  <use IntroToCompressiveSensing_07-eps-converted-to.pdf>
 Package pdftex.def Info: IntroToCompressiveSensing_07-eps-converted-to.pdf used
- on input line 206.
+ on input line 207.
 (pdftex.def)             Requested size: 289.07999pt x 236.97589pt.
  [9 <./IntroToCompressiveSensing_07-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <IntroToCompressiveSensing_08.eps>
-(epstopdf)                    date: 2017-08-23 11:19:59
+(epstopdf)                    date: 2017-10-09 15:34:06
 (epstopdf)                    size: 59582 bytes
 (epstopdf)             Output file: <IntroToCompressiveSensing_08-eps-converted
 -to.pdf>
-(epstopdf)                    date: 2017-08-11 08:03:16
-(epstopdf)                    size: 6065 bytes
+(epstopdf)                    date: 2017-10-09 15:47:49
+(epstopdf)                    size: 9858 bytes
 (epstopdf)             Command: <epstopdf --outfile=IntroToCompressiveSensing_0
 8-eps-converted-to.pdf IntroToCompressiveSensing_08.eps>
-(epstopdf)             \includegraphics on input line 238.
-runsystem(epstopdf --outfile=IntroToCompressiveSensing_08-eps-converted-to.pdf 
-IntroToCompressiveSensing_08.eps)...executed (allowed).
-
-Package epstopdf Info: Result file: <IntroToCompressiveSensing_08-eps-converted
--to.pdf>
-(epstopdf)                    date: 2017-08-23 11:26:18
-(epstopdf)                    size: 9860 bytes.
+(epstopdf)             \includegraphics on input line 239.
+Package epstopdf Info: Output file is already uptodate.
 
 <IntroToCompressiveSensing_08-eps-converted-to.pdf, id=78, 353.32pt x 292.09125
 pt>
@@ -379,7 +331,7 @@ File: IntroToCompressiveSensing_08-eps-converted-to.pdf Graphic file (type pdf)
 
  <use IntroToCompressiveSensing_08-eps-converted-to.pdf>
 Package pdftex.def Info: IntroToCompressiveSensing_08-eps-converted-to.pdf used
- on input line 238.
+ on input line 239.
 (pdftex.def)             Requested size: 289.07999pt x 238.98598pt.
  [10 <./IntroToCompressiveSensing_08-eps-converted-to.pdf>] [11] [12]
 Missing character: There is no “ in font cmr10!
@@ -388,7 +340,7 @@ Missing character: There is no ” in font cmr10!
 <lq_balls.png, id=95, 773.89125pt x 255.95625pt>
 File: lq_balls.png Graphic file (type png)
  <use lq_balls.png>
-Package pdftex.def Info: lq_balls.png used on input line 315.
+Package pdftex.def Info: lq_balls.png used on input line 316.
 (pdftex.def)             Requested size: 289.07999pt x 95.60841pt.
 Missing character: There is no “ in font cmr10!
 Missing character: There is no ” in font cmr10!
@@ -396,25 +348,21 @@ Missing character: There is no ” in font cmr10!
 File: lq_balls_solution.png Graphic file (type png)
 
 <use lq_balls_solution.png>
-Package pdftex.def Info: lq_balls_solution.png used on input line 323.
+Package pdftex.def Info: lq_balls_solution.png used on input line 324.
 (pdftex.def)             Requested size: 289.07999pt x 103.38483pt.
 Missing character: There is no “ in font cmr10!
 Missing character: There is no ” in font cmr10!
 Package epstopdf Info: Source file: <IntroToCompressiveSensing_09.eps>
-(epstopdf)                    date: 2017-08-23 11:20:00
+(epstopdf)                    date: 2017-10-09 15:34:07
 (epstopdf)                    size: 31443 bytes
 (epstopdf)             Output file: <IntroToCompressiveSensing_09-eps-converted
 -to.pdf>
+(epstopdf)                    date: 2017-10-09 15:47:50
+(epstopdf)                    size: 8018 bytes
 (epstopdf)             Command: <epstopdf --outfile=IntroToCompressiveSensing_0
 9-eps-converted-to.pdf IntroToCompressiveSensing_09.eps>
-(epstopdf)             \includegraphics on input line 348.
-runsystem(epstopdf --outfile=IntroToCompressiveSensing_09-eps-converted-to.pdf 
-IntroToCompressiveSensing_09.eps)...executed (allowed).
-
-Package epstopdf Info: Result file: <IntroToCompressiveSensing_09-eps-converted
--to.pdf>
-(epstopdf)                    date: 2017-08-23 11:26:22
-(epstopdf)                    size: 8018 bytes.
+(epstopdf)             \includegraphics on input line 349.
+Package epstopdf Info: Output file is already uptodate.
 
 <IntroToCompressiveSensing_09-eps-converted-to.pdf, id=101, 346.29375pt x 277.0
 35pt>
@@ -422,7 +370,7 @@ File: IntroToCompressiveSensing_09-eps-converted-to.pdf Graphic file (type pdf)
 
  <use IntroToCompressiveSensing_09-eps-converted-to.pdf>
 Package pdftex.def Info: IntroToCompressiveSensing_09-eps-converted-to.pdf used
- on input line 348.
+ on input line 349.
 (pdftex.def)             Requested size: 289.07999pt x 231.27055pt.
  [14 <./lq_balls_solution.png>] [15 <./IntroToCompressiveSensing_09-eps-convert
 ed-to.pdf>]
@@ -430,24 +378,20 @@ ed-to.pdf>]
 File: cs_matrix_form.png Graphic file (type png)
 
 <use cs_matrix_form.png>
-Package pdftex.def Info: cs_matrix_form.png used on input line 373.
+Package pdftex.def Info: cs_matrix_form.png used on input line 374.
 (pdftex.def)             Requested size: 289.07999pt x 96.5635pt.
  [16 <./cs_matrix_form.png>] [17]
 Package epstopdf Info: Source file: <IntroToCompressiveSensing_10.eps>
-(epstopdf)                    date: 2017-08-23 11:20:00
+(epstopdf)                    date: 2017-10-09 15:34:08
 (epstopdf)                    size: 78393 bytes
 (epstopdf)             Output file: <IntroToCompressiveSensing_10-eps-converted
 -to.pdf>
+(epstopdf)                    date: 2017-10-09 15:47:51
+(epstopdf)                    size: 7070 bytes
 (epstopdf)             Command: <epstopdf --outfile=IntroToCompressiveSensing_1
 0-eps-converted-to.pdf IntroToCompressiveSensing_10.eps>
-(epstopdf)             \includegraphics on input line 472.
-runsystem(epstopdf --outfile=IntroToCompressiveSensing_10-eps-converted-to.pdf 
-IntroToCompressiveSensing_10.eps)...executed (allowed).
-
-Package epstopdf Info: Result file: <IntroToCompressiveSensing_10-eps-converted
--to.pdf>
-(epstopdf)                    date: 2017-08-23 11:26:24
-(epstopdf)                    size: 7070 bytes.
+(epstopdf)             \includegraphics on input line 474.
+Package epstopdf Info: Output file is already uptodate.
 
 <IntroToCompressiveSensing_10-eps-converted-to.pdf, id=118, 347.2975pt x 288.07
 625pt>
@@ -455,24 +399,20 @@ File: IntroToCompressiveSensing_10-eps-converted-to.pdf Graphic file (type pdf)
 
  <use IntroToCompressiveSensing_10-eps-converted-to.pdf>
 Package pdftex.def Info: IntroToCompressiveSensing_10-eps-converted-to.pdf used
- on input line 472.
+ on input line 474.
 (pdftex.def)             Requested size: 289.07999pt x 239.79333pt.
  [18] [19 <./IntroToCompressiveSensing_10-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <IntroToCompressiveSensing_11.eps>
-(epstopdf)                    date: 2017-08-23 11:20:01
+(epstopdf)                    date: 2017-10-09 15:34:10
 (epstopdf)                    size: 78393 bytes
 (epstopdf)             Output file: <IntroToCompressiveSensing_11-eps-converted
 -to.pdf>
+(epstopdf)                    date: 2017-10-09 15:47:52
+(epstopdf)                    size: 6165 bytes
 (epstopdf)             Command: <epstopdf --outfile=IntroToCompressiveSensing_1
 1-eps-converted-to.pdf IntroToCompressiveSensing_11.eps>
-(epstopdf)             \includegraphics on input line 511.
-runsystem(epstopdf --outfile=IntroToCompressiveSensing_11-eps-converted-to.pdf 
-IntroToCompressiveSensing_11.eps)...executed (allowed).
-
-Package epstopdf Info: Result file: <IntroToCompressiveSensing_11-eps-converted
--to.pdf>
-(epstopdf)                    date: 2017-08-23 11:26:25
-(epstopdf)                    size: 6165 bytes.
+(epstopdf)             \includegraphics on input line 513.
+Package epstopdf Info: Output file is already uptodate.
 
 <IntroToCompressiveSensing_11-eps-converted-to.pdf, id=131, 347.2975pt x 288.07
 625pt>
@@ -480,37 +420,33 @@ File: IntroToCompressiveSensing_11-eps-converted-to.pdf Graphic file (type pdf)
 
  <use IntroToCompressiveSensing_11-eps-converted-to.pdf>
 Package pdftex.def Info: IntroToCompressiveSensing_11-eps-converted-to.pdf used
- on input line 511.
+ on input line 513.
 (pdftex.def)             Requested size: 289.07999pt x 239.79333pt.
  [20] [21 <./IntroToCompressiveSensing_11-eps-converted-to.pdf>] [22]
 <hard_thresholding.png, id=146, 260.975pt x 45.16875pt>
 File: hard_thresholding.png Graphic file (type png)
 
 <use hard_thresholding.png>
-Package pdftex.def Info: hard_thresholding.png used on input line 588.
+Package pdftex.def Info: hard_thresholding.png used on input line 590.
 (pdftex.def)             Requested size: 289.07999pt x 50.03381pt.
 
-Overfull \hbox (11.99689pt too wide) in paragraph at lines 609--609
+Overfull \hbox (11.99689pt too wide) in paragraph at lines 611--611
 []\OT1/cmtt/m/n/10 plot((-threshold:0.01:threshold), (-threshold:0.01:threshold
 ), '-.')[] 
  []
 
 [23 <./hard_thresholding.png>]
 Package epstopdf Info: Source file: <IntroToCompressiveSensing_12.eps>
-(epstopdf)                    date: 2017-08-23 11:20:02
+(epstopdf)                    date: 2017-10-09 15:34:11
 (epstopdf)                    size: 23256 bytes
 (epstopdf)             Output file: <IntroToCompressiveSensing_12-eps-converted
 -to.pdf>
+(epstopdf)                    date: 2017-10-09 15:47:53
+(epstopdf)                    size: 5462 bytes
 (epstopdf)             Command: <epstopdf --outfile=IntroToCompressiveSensing_1
 2-eps-converted-to.pdf IntroToCompressiveSensing_12.eps>
-(epstopdf)             \includegraphics on input line 611.
-runsystem(epstopdf --outfile=IntroToCompressiveSensing_12-eps-converted-to.pdf 
-IntroToCompressiveSensing_12.eps)...executed (allowed).
-
-Package epstopdf Info: Result file: <IntroToCompressiveSensing_12-eps-converted
--to.pdf>
-(epstopdf)                    date: 2017-08-23 11:26:26
-(epstopdf)                    size: 5462 bytes.
+(epstopdf)             \includegraphics on input line 613.
+Package epstopdf Info: Output file is already uptodate.
 
 <IntroToCompressiveSensing_12-eps-converted-to.pdf, id=151, 363.3575pt x 303.13
 25pt>
@@ -518,24 +454,20 @@ File: IntroToCompressiveSensing_12-eps-converted-to.pdf Graphic file (type pdf)
 
  <use IntroToCompressiveSensing_12-eps-converted-to.pdf>
 Package pdftex.def Info: IntroToCompressiveSensing_12-eps-converted-to.pdf used
- on input line 611.
+ on input line 613.
 (pdftex.def)             Requested size: 289.07999pt x 241.17421pt.
  [24 <./IntroToCompressiveSensing_12-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <IntroToCompressiveSensing_13.eps>
-(epstopdf)                    date: 2017-08-23 11:20:03
+(epstopdf)                    date: 2017-10-09 15:34:12
 (epstopdf)                    size: 25352 bytes
 (epstopdf)             Output file: <IntroToCompressiveSensing_13-eps-converted
 -to.pdf>
+(epstopdf)                    date: 2017-10-09 15:47:54
+(epstopdf)                    size: 6065 bytes
 (epstopdf)             Command: <epstopdf --outfile=IntroToCompressiveSensing_1
 3-eps-converted-to.pdf IntroToCompressiveSensing_13.eps>
-(epstopdf)             \includegraphics on input line 654.
-runsystem(epstopdf --outfile=IntroToCompressiveSensing_13-eps-converted-to.pdf 
-IntroToCompressiveSensing_13.eps)...executed (allowed).
-
-Package epstopdf Info: Result file: <IntroToCompressiveSensing_13-eps-converted
--to.pdf>
-(epstopdf)                    date: 2017-08-23 11:26:27
-(epstopdf)                    size: 6065 bytes.
+(epstopdf)             \includegraphics on input line 656.
+Package epstopdf Info: Output file is already uptodate.
 
 <IntroToCompressiveSensing_13-eps-converted-to.pdf, id=159, 363.3575pt x 303.13
 25pt>
@@ -543,35 +475,25 @@ File: IntroToCompressiveSensing_13-eps-converted-to.pdf Graphic file (type pdf)
 
  <use IntroToCompressiveSensing_13-eps-converted-to.pdf>
 Package pdftex.def Info: IntroToCompressiveSensing_13-eps-converted-to.pdf used
- on input line 654.
+ on input line 656.
 (pdftex.def)             Requested size: 289.07999pt x 241.17421pt.
  [25 <./IntroToCompressiveSensing_13-eps-converted-to.pdf>] [26] [27]
-Overfull \hbox (90.7462pt too wide) in paragraph at lines 791--791
+Overfull \hbox (90.7462pt too wide) in paragraph at lines 800--800
 []\OT1/cmtt/m/n/10 subplot(236), stem(s_us), title('Spectrum with noise-like un
 dersampling artifacts')[] 
  []
 
-
-Overfull \hbox (43.49661pt too wide) in paragraph at lines 791--791
-[]    \OT1/cmtt/m/n/10 subplot(211), stem(s_orig), ylim([-0.5 1]), title('Origi
-nal Spectrum')[] 
- []
-
 Package epstopdf Info: Source file: <IntroToCompressiveSensing_14.eps>
-(epstopdf)                    date: 2017-08-23 11:20:06
-(epstopdf)                    size: 550004 bytes
+(epstopdf)                    date: 2017-10-09 15:34:16
+(epstopdf)                    size: 549741 bytes
 (epstopdf)             Output file: <IntroToCompressiveSensing_14-eps-converted
 -to.pdf>
+(epstopdf)                    date: 2017-10-09 15:47:55
+(epstopdf)                    size: 98053 bytes
 (epstopdf)             Command: <epstopdf --outfile=IntroToCompressiveSensing_1
 4-eps-converted-to.pdf IntroToCompressiveSensing_14.eps>
-(epstopdf)             \includegraphics on input line 793.
-runsystem(epstopdf --outfile=IntroToCompressiveSensing_14-eps-converted-to.pdf 
-IntroToCompressiveSensing_14.eps)...executed (allowed).
-
-Package epstopdf Info: Result file: <IntroToCompressiveSensing_14-eps-converted
--to.pdf>
-(epstopdf)                    date: 2017-08-23 11:26:29
-(epstopdf)                    size: 99770 bytes.
+(epstopdf)             \includegraphics on input line 802.
+Package epstopdf Info: Output file is already uptodate.
 
 <IntroToCompressiveSensing_14-eps-converted-to.pdf, id=174, 428.60126pt x 285.0
 65pt>
@@ -579,66 +501,64 @@ File: IntroToCompressiveSensing_14-eps-converted-to.pdf Graphic file (type pdf)
 
  <use IntroToCompressiveSensing_14-eps-converted-to.pdf>
 Package pdftex.def Info: IntroToCompressiveSensing_14-eps-converted-to.pdf used
- on input line 793.
+ on input line 802.
 (pdftex.def)             Requested size: 289.07999pt x 192.27138pt.
 Package epstopdf Info: Source file: <IntroToCompressiveSensing_15.eps>
-(epstopdf)                    date: 2017-08-23 11:20:08
-(epstopdf)                    size: 1628759 bytes
+(epstopdf)                    date: 2017-10-09 15:34:18
+(epstopdf)                    size: 1077260 bytes
 (epstopdf)             Output file: <IntroToCompressiveSensing_15-eps-converted
 -to.pdf>
+(epstopdf)                    date: 2017-10-09 15:47:57
+(epstopdf)                    size: 211024 bytes
 (epstopdf)             Command: <epstopdf --outfile=IntroToCompressiveSensing_1
 5-eps-converted-to.pdf IntroToCompressiveSensing_15.eps>
-(epstopdf)             \includegraphics on input line 795.
-runsystem(epstopdf --outfile=IntroToCompressiveSensing_15-eps-converted-to.pdf 
-IntroToCompressiveSensing_15.eps)...executed (allowed).
+(epstopdf)             \includegraphics on input line 804.
+Package epstopdf Info: Output file is already uptodate.
 
-Package epstopdf Info: Result file: <IntroToCompressiveSensing_15-eps-converted
--to.pdf>
-(epstopdf)                    date: 2017-08-23 11:26:31
-(epstopdf)                    size: 258149 bytes.
-
-<IntroToCompressiveSensing_15-eps-converted-to.pdf, id=175, 356.33125pt x 285.0
-65pt> [28]
+<IntroToCompressiveSensing_15-eps-converted-to.pdf, id=175, 356.33125pt x 279.0
+425pt> [28]
 File: IntroToCompressiveSensing_15-eps-converted-to.pdf Graphic file (type pdf)
 
  <use IntroToCompressiveSensing_15-eps-converted-to.pdf>
 Package pdftex.def Info: IntroToCompressiveSensing_15-eps-converted-to.pdf used
- on input line 795.
-(pdftex.def)             Requested size: 289.07999pt x 231.27545pt.
+ on input line 804.
+(pdftex.def)             Requested size: 289.07999pt x 226.38934pt.
  [29 <./IntroToCompressiveSensing_14-eps-converted-to.pdf> <./IntroToCompressiv
 eSensing_15-eps-converted-to.pdf>]
-Overfull \hbox (17.24684pt too wide) in paragraph at lines 909--909
+Overfull \hbox (17.24684pt too wide) in paragraph at lines 918--918
 []\OT1/cmtt/m/n/10 % image = im2double(imresize(rgb2gray(imread('lenna.tiff')),
  [N N]));[] 
  []
 
 
-Overfull \hbox (17.24684pt too wide) in paragraph at lines 909--909
+Overfull \hbox (17.24684pt too wide) in paragraph at lines 918--918
 []    \OT1/cmtt/m/n/10 line = imrotate(eye(size(image)), angles(i), 'bilinear',
  'crop');[] 
  []
 
+
+Overfull \hbox (1.49698pt too wide) in paragraph at lines 918--918
+[]\OT1/cmtt/m/n/10 % mask = kron(ones(64), [1 0 0 0;1 0 0 0 ; 0  0 0 0 ; 0 0 0 
+ 0 ]);[] 
+ []
+
 [30] [31]
-Overfull \hbox (106.49606pt too wide) in paragraph at lines 909--909
+Overfull \hbox (106.49606pt too wide) in paragraph at lines 918--918
 []\OT1/cmtt/m/n/10 semilogy(times_twist, (mse_twist*numel(image)).^0.5/norm(ima
 ge,'fro'), 'LineWidth',2);[] 
  []
 
 Package epstopdf Info: Source file: <IntroToCompressiveSensing_16.eps>
-(epstopdf)                    date: 2017-08-23 11:20:27
+(epstopdf)                    date: 2017-10-09 15:34:28
 (epstopdf)                    size: 265615 bytes
 (epstopdf)             Output file: <IntroToCompressiveSensing_16-eps-converted
 -to.pdf>
+(epstopdf)                    date: 2017-10-09 15:47:58
+(epstopdf)                    size: 4493 bytes
 (epstopdf)             Command: <epstopdf --outfile=IntroToCompressiveSensing_1
 6-eps-converted-to.pdf IntroToCompressiveSensing_16.eps>
-(epstopdf)             \includegraphics on input line 911.
-runsystem(epstopdf --outfile=IntroToCompressiveSensing_16-eps-converted-to.pdf 
-IntroToCompressiveSensing_16.eps)...executed (allowed).
-
-Package epstopdf Info: Result file: <IntroToCompressiveSensing_16-eps-converted
--to.pdf>
-(epstopdf)                    date: 2017-08-23 11:26:34
-(epstopdf)                    size: 20872 bytes.
+(epstopdf)             \includegraphics on input line 920.
+Package epstopdf Info: Output file is already uptodate.
 
 <IntroToCompressiveSensing_16-eps-converted-to.pdf, id=197, 348.30125pt x 275.0
 275pt>
@@ -646,23 +566,19 @@ File: IntroToCompressiveSensing_16-eps-converted-to.pdf Graphic file (type pdf)
 
  <use IntroToCompressiveSensing_16-eps-converted-to.pdf>
 Package pdftex.def Info: IntroToCompressiveSensing_16-eps-converted-to.pdf used
- on input line 911.
+ on input line 920.
 (pdftex.def)             Requested size: 289.07999pt x 228.27696pt.
 Package epstopdf Info: Source file: <IntroToCompressiveSensing_17.eps>
-(epstopdf)                    date: 2017-08-23 11:20:27
+(epstopdf)                    date: 2017-10-09 15:34:28
 (epstopdf)                    size: 21404 bytes
 (epstopdf)             Output file: <IntroToCompressiveSensing_17-eps-converted
 -to.pdf>
+(epstopdf)                    date: 2017-10-09 15:47:59
+(epstopdf)                    size: 6594 bytes
 (epstopdf)             Command: <epstopdf --outfile=IntroToCompressiveSensing_1
 7-eps-converted-to.pdf IntroToCompressiveSensing_17.eps>
-(epstopdf)             \includegraphics on input line 913.
-runsystem(epstopdf --outfile=IntroToCompressiveSensing_17-eps-converted-to.pdf 
-IntroToCompressiveSensing_17.eps)...executed (allowed).
-
-Package epstopdf Info: Result file: <IntroToCompressiveSensing_17-eps-converted
--to.pdf>
-(epstopdf)                    date: 2017-08-23 11:26:35
-(epstopdf)                    size: 6594 bytes.
+(epstopdf)             \includegraphics on input line 922.
+Package epstopdf Info: Output file is already uptodate.
 
 <IntroToCompressiveSensing_17-eps-converted-to.pdf, id=198, 280.04625pt x 288.0
 7625pt>
@@ -670,23 +586,19 @@ File: IntroToCompressiveSensing_17-eps-converted-to.pdf Graphic file (type pdf)
 
  <use IntroToCompressiveSensing_17-eps-converted-to.pdf>
 Package pdftex.def Info: IntroToCompressiveSensing_17-eps-converted-to.pdf used
- on input line 913.
+ on input line 922.
 (pdftex.def)             Requested size: 289.07999pt x 297.38118pt.
 Package epstopdf Info: Source file: <IntroToCompressiveSensing_18.eps>
-(epstopdf)                    date: 2017-08-23 11:20:27
-(epstopdf)                    size: 154732 bytes
+(epstopdf)                    date: 2017-10-09 15:34:29
+(epstopdf)                    size: 97394 bytes
 (epstopdf)             Output file: <IntroToCompressiveSensing_18-eps-converted
 -to.pdf>
+(epstopdf)                    date: 2017-10-09 15:48:00
+(epstopdf)                    size: 8790 bytes
 (epstopdf)             Command: <epstopdf --outfile=IntroToCompressiveSensing_1
 8-eps-converted-to.pdf IntroToCompressiveSensing_18.eps>
-(epstopdf)             \includegraphics on input line 915.
-runsystem(epstopdf --outfile=IntroToCompressiveSensing_18-eps-converted-to.pdf 
-IntroToCompressiveSensing_18.eps)...executed (allowed).
-
-Package epstopdf Info: Result file: <IntroToCompressiveSensing_18-eps-converted
--to.pdf>
-(epstopdf)                    date: 2017-08-23 11:26:37
-(epstopdf)                    size: 13488 bytes.
+(epstopdf)             \includegraphics on input line 924.
+Package epstopdf Info: Output file is already uptodate.
 
 <IntroToCompressiveSensing_18-eps-converted-to.pdf, id=199, 280.04625pt x 287.0
 725pt> [32 <./IntroToCompressiveSensing_16-eps-converted-to.pdf>]
@@ -695,23 +607,19 @@ File: IntroToCompressiveSensing_18-eps-converted-to.pdf Graphic file (type pdf)
 
 <use IntroToCompressiveSensing_18-eps-converted-to.pdf>
 Package pdftex.def Info: IntroToCompressiveSensing_18-eps-converted-to.pdf used
- on input line 915.
+ on input line 924.
 (pdftex.def)             Requested size: 289.07999pt x 296.34502pt.
 Package epstopdf Info: Source file: <IntroToCompressiveSensing_19.eps>
-(epstopdf)                    date: 2017-08-23 11:20:28
-(epstopdf)                    size: 21404 bytes
+(epstopdf)                    date: 2017-10-09 15:34:29
+(epstopdf)                    size: 31519 bytes
 (epstopdf)             Output file: <IntroToCompressiveSensing_19-eps-converted
 -to.pdf>
+(epstopdf)                    date: 2017-10-09 15:48:00
+(epstopdf)                    size: 8161 bytes
 (epstopdf)             Command: <epstopdf --outfile=IntroToCompressiveSensing_1
 9-eps-converted-to.pdf IntroToCompressiveSensing_19.eps>
-(epstopdf)             \includegraphics on input line 917.
-runsystem(epstopdf --outfile=IntroToCompressiveSensing_19-eps-converted-to.pdf 
-IntroToCompressiveSensing_19.eps)...executed (allowed).
-
-Package epstopdf Info: Result file: <IntroToCompressiveSensing_19-eps-converted
--to.pdf>
-(epstopdf)                    date: 2017-08-23 11:26:38
-(epstopdf)                    size: 6594 bytes.
+(epstopdf)             \includegraphics on input line 926.
+Package epstopdf Info: Output file is already uptodate.
 
 <IntroToCompressiveSensing_19-eps-converted-to.pdf, id=207, 280.04625pt x 287.0
 725pt> [33 <./IntroToCompressiveSensing_17-eps-converted-to.pdf>]
@@ -720,94 +628,68 @@ File: IntroToCompressiveSensing_19-eps-converted-to.pdf Graphic file (type pdf)
 
 <use IntroToCompressiveSensing_19-eps-converted-to.pdf>
 Package pdftex.def Info: IntroToCompressiveSensing_19-eps-converted-to.pdf used
- on input line 917.
+ on input line 926.
 (pdftex.def)             Requested size: 289.07999pt x 296.34502pt.
 Package epstopdf Info: Source file: <IntroToCompressiveSensing_20.eps>
-(epstopdf)                    date: 2017-08-23 11:20:28
-(epstopdf)                    size: 42307 bytes
+(epstopdf)                    date: 2017-10-09 15:34:30
+(epstopdf)                    size: 29403 bytes
 (epstopdf)             Output file: <IntroToCompressiveSensing_20-eps-converted
 -to.pdf>
+(epstopdf)                    date: 2017-10-09 15:48:01
+(epstopdf)                    size: 5089 bytes
 (epstopdf)             Command: <epstopdf --outfile=IntroToCompressiveSensing_2
 0-eps-converted-to.pdf IntroToCompressiveSensing_20.eps>
-(epstopdf)             \includegraphics on input line 919.
-runsystem(epstopdf --outfile=IntroToCompressiveSensing_20-eps-converted-to.pdf 
-IntroToCompressiveSensing_20.eps)...executed (allowed).
+(epstopdf)             \includegraphics on input line 928.
+Package epstopdf Info: Output file is already uptodate.
 
-Package epstopdf Info: Result file: <IntroToCompressiveSensing_20-eps-converted
--to.pdf>
-(epstopdf)                    date: 2017-08-23 11:26:39
-(epstopdf)                    size: 8641 bytes.
-
-<IntroToCompressiveSensing_20-eps-converted-to.pdf, id=216, 355.3275pt x 310.15
-875pt> [34 <./IntroToCompressiveSensing_18-eps-converted-to.pdf>]
+<IntroToCompressiveSensing_20-eps-converted-to.pdf, id=216, 350.30875pt x 310.1
+5875pt> [34 <./IntroToCompressiveSensing_18-eps-converted-to.pdf>]
 File: IntroToCompressiveSensing_20-eps-converted-to.pdf Graphic file (type pdf)
 
 
 <use IntroToCompressiveSensing_20-eps-converted-to.pdf>
 Package pdftex.def Info: IntroToCompressiveSensing_20-eps-converted-to.pdf used
- on input line 919.
-(pdftex.def)             Requested size: 289.07999pt x 252.33937pt.
+ on input line 928.
+(pdftex.def)             Requested size: 289.07999pt x 255.96457pt.
 Package epstopdf Info: Source file: <IntroToCompressiveSensing_21.eps>
-(epstopdf)                    date: 2017-08-23 11:20:29
-(epstopdf)                    size: 34444 bytes
+(epstopdf)                    date: 2017-10-09 15:34:30
+(epstopdf)                    size: 23385 bytes
 (epstopdf)             Output file: <IntroToCompressiveSensing_21-eps-converted
 -to.pdf>
+(epstopdf)                    date: 2017-10-09 15:48:02
+(epstopdf)                    size: 4473 bytes
 (epstopdf)             Command: <epstopdf --outfile=IntroToCompressiveSensing_2
 1-eps-converted-to.pdf IntroToCompressiveSensing_21.eps>
-(epstopdf)             \includegraphics on input line 921.
-runsystem(epstopdf --outfile=IntroToCompressiveSensing_21-eps-converted-to.pdf 
-IntroToCompressiveSensing_21.eps)...executed (allowed).
-
-Package epstopdf Info: Result file: <IntroToCompressiveSensing_21-eps-converted
--to.pdf>
-(epstopdf)                    date: 2017-08-23 11:26:40
-(epstopdf)                    size: 6920 bytes.
+(epstopdf)             \includegraphics on input line 930.
+Package epstopdf Info: Output file is already uptodate.
 
 <IntroToCompressiveSensing_21-eps-converted-to.pdf, id=225, 351.3125pt x 305.14
-pt>
+pt> [35 <./IntroToCompressiveSensing_19-eps-converted-to.pdf>]
 File: IntroToCompressiveSensing_21-eps-converted-to.pdf Graphic file (type pdf)
 
- <use IntroToCompressiveSensing_21-eps-converted-to.pdf>
+
+<use IntroToCompressiveSensing_21-eps-converted-to.pdf>
 Package pdftex.def Info: IntroToCompressiveSensing_21-eps-converted-to.pdf used
- on input line 921.
+ on input line 930.
 (pdftex.def)             Requested size: 289.07999pt x 251.10571pt.
- [35 <./IntroToCompressiveSensing_19-eps-converted-to.pdf> <./IntroToCompressiv
-eSensing_20-eps-converted-to.pdf>] [36 <./IntroToCompressiveSensing_21-eps-conv
-erted-to.pdf>]
-<bcs.png, id=245, 347.04657pt x 167.87718pt>
+ [36 <./IntroToCompressiveSensing_20-eps-converted-to.pdf> <./IntroToCompressiv
+eSensing_21-eps-converted-to.pdf>] <bcs.png, id=245, 347.04657pt x 167.87718pt>
 File: bcs.png Graphic file (type png)
  <use bcs.png>
-Package pdftex.def Info: bcs.png used on input line 949.
+Package pdftex.def Info: bcs.png used on input line 958.
 (pdftex.def)             Requested size: 289.07999pt x 139.84265pt.
-
-
-! LaTeX Error: Unknown graphics extension: .gif.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.957 ...hics [width=4in]{single_pixel_camera.gif}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-[37 <./bcs.png>]
+ [37]
 Package epstopdf Info: Source file: <IntroToCompressiveSensing_22.eps>
-(epstopdf)                    date: 2017-08-23 11:20:29
+(epstopdf)                    date: 2017-10-09 15:34:31
 (epstopdf)                    size: 20892 bytes
 (epstopdf)             Output file: <IntroToCompressiveSensing_22-eps-converted
 -to.pdf>
+(epstopdf)                    date: 2017-10-09 15:48:03
+(epstopdf)                    size: 4126 bytes
 (epstopdf)             Command: <epstopdf --outfile=IntroToCompressiveSensing_2
 2-eps-converted-to.pdf IntroToCompressiveSensing_22.eps>
-(epstopdf)             \includegraphics on input line 978.
-runsystem(epstopdf --outfile=IntroToCompressiveSensing_22-eps-converted-to.pdf 
-IntroToCompressiveSensing_22.eps)...executed (allowed).
-
-Package epstopdf Info: Result file: <IntroToCompressiveSensing_22-eps-converted
--to.pdf>
-(epstopdf)                    date: 2017-08-23 11:26:42
-(epstopdf)                    size: 4126 bytes.
+(epstopdf)             \includegraphics on input line 987.
+Package epstopdf Info: Output file is already uptodate.
 
 <IntroToCompressiveSensing_22-eps-converted-to.pdf, id=250, 343.2825pt x 287.07
 25pt>
@@ -815,218 +697,206 @@ File: IntroToCompressiveSensing_22-eps-converted-to.pdf Graphic file (type pdf)
 
  <use IntroToCompressiveSensing_22-eps-converted-to.pdf>
 Package pdftex.def Info: IntroToCompressiveSensing_22-eps-converted-to.pdf used
- on input line 978.
+ on input line 987.
 (pdftex.def)             Requested size: 289.07999pt x 241.74374pt.
 Package epstopdf Info: Source file: <IntroToCompressiveSensing_23.eps>
-(epstopdf)                    date: 2017-08-23 11:20:29
-(epstopdf)                    size: 20951 bytes
+(epstopdf)                    date: 2017-10-09 15:34:31
+(epstopdf)                    size: 20956 bytes
 (epstopdf)             Output file: <IntroToCompressiveSensing_23-eps-converted
 -to.pdf>
+(epstopdf)                    date: 2017-10-09 15:48:04
+(epstopdf)                    size: 4971 bytes
 (epstopdf)             Command: <epstopdf --outfile=IntroToCompressiveSensing_2
 3-eps-converted-to.pdf IntroToCompressiveSensing_23.eps>
-(epstopdf)             \includegraphics on input line 980.
-runsystem(epstopdf --outfile=IntroToCompressiveSensing_23-eps-converted-to.pdf 
-IntroToCompressiveSensing_23.eps)...executed (allowed).
-
-Package epstopdf Info: Result file: <IntroToCompressiveSensing_23-eps-converted
--to.pdf>
-(epstopdf)                    date: 2017-08-23 11:26:43
-(epstopdf)                    size: 4967 bytes.
+(epstopdf)             \includegraphics on input line 989.
+Package epstopdf Info: Output file is already uptodate.
 
 <IntroToCompressiveSensing_23-eps-converted-to.pdf, id=251, 343.2825pt x 288.07
-625pt>
+625pt> [38 <./bcs.png>]
 File: IntroToCompressiveSensing_23-eps-converted-to.pdf Graphic file (type pdf)
 
- <use IntroToCompressiveSensing_23-eps-converted-to.pdf>
+
+<use IntroToCompressiveSensing_23-eps-converted-to.pdf>
 Package pdftex.def Info: IntroToCompressiveSensing_23-eps-converted-to.pdf used
- on input line 980.
+ on input line 989.
 (pdftex.def)             Requested size: 289.07999pt x 242.58899pt.
 Package epstopdf Info: Source file: <IntroToCompressiveSensing_24.eps>
-(epstopdf)                    date: 2017-08-23 11:20:30
-(epstopdf)                    size: 25741 bytes
+(epstopdf)                    date: 2017-10-09 15:34:32
+(epstopdf)                    size: 25713 bytes
 (epstopdf)             Output file: <IntroToCompressiveSensing_24-eps-converted
 -to.pdf>
+(epstopdf)                    date: 2017-10-09 15:48:06
+(epstopdf)                    size: 9180 bytes
 (epstopdf)             Command: <epstopdf --outfile=IntroToCompressiveSensing_2
 4-eps-converted-to.pdf IntroToCompressiveSensing_24.eps>
-(epstopdf)             \includegraphics on input line 982.
-runsystem(epstopdf --outfile=IntroToCompressiveSensing_24-eps-converted-to.pdf 
-IntroToCompressiveSensing_24.eps)...executed (allowed).
+(epstopdf)             \includegraphics on input line 991.
+Package epstopdf Info: Output file is already uptodate.
 
-Package epstopdf Info: Result file: <IntroToCompressiveSensing_24-eps-converted
--to.pdf>
-(epstopdf)                    date: 2017-08-23 11:26:44
-(epstopdf)                    size: 9280 bytes.
-
-<IntroToCompressiveSensing_24-eps-converted-to.pdf, id=252, 343.2825pt x 288.07
-625pt> [38 <./IntroToCompressiveSensing_22-eps-converted-to.pdf>]
+<IntroToCompressiveSensing_24-eps-converted-to.pdf, id=255, 343.2825pt x 288.07
+625pt>
 File: IntroToCompressiveSensing_24-eps-converted-to.pdf Graphic file (type pdf)
 
-
-<use IntroToCompressiveSensing_24-eps-converted-to.pdf>
+ <use IntroToCompressiveSensing_24-eps-converted-to.pdf>
 Package pdftex.def Info: IntroToCompressiveSensing_24-eps-converted-to.pdf used
- on input line 982.
+ on input line 991.
 (pdftex.def)             Requested size: 289.07999pt x 242.58899pt.
 
-<vec2mat_phi.png, id=261, 449.42906pt x 155.07938pt>
+<vec2mat_phi.png, id=256, 449.42906pt x 155.07938pt> [39 <./IntroToCompressiveS
+ensing_22-eps-converted-to.pdf> <./IntroToCompressiveSensing_23-eps-converted-t
+o.pdf>]
 File: vec2mat_phi.png Graphic file (type png)
  <use vec2mat_phi.png>
-Package pdftex.def Info: vec2mat_phi.png used on input line 985.
+Package pdftex.def Info: vec2mat_phi.png used on input line 994.
 (pdftex.def)             Requested size: 289.07999pt x 99.7521pt.
 
-[39 <./IntroToCompressiveSensing_23-eps-converted-to.pdf> <./IntroToCompressive
-Sensing_24-eps-converted-to.pdf>]
-Overfull \hbox (1.49698pt too wide) in paragraph at lines 1220--1220
+Overfull \hbox (1.49698pt too wide) in paragraph at lines 1229--1229
 []\OT1/cmtt/m/n/10 % choose block size - divide whole image in non-overlapping 
 blocks[] 
  []
 
-
-Overfull \hbox (48.74657pt too wide) in paragraph at lines 1220--1220
+[40 <./IntroToCompressiveSensing_24-eps-converted-to.pdf> <./vec2mat_phi.png>]
+Overfull \hbox (48.74657pt too wide) in paragraph at lines 1229--1229
 []\OT1/cmtt/m/n/10 % generate desired transformation matrix and use Kronecker d
 elta product to[] 
  []
 
 
-Overfull \hbox (22.4968pt too wide) in paragraph at lines 1220--1220
+Overfull \hbox (22.4968pt too wide) in paragraph at lines 1229--1229
 []\OT1/cmtt/m/n/10 % we will use binarized measurement measurement matrix to si
 mulate DMD[] 
  []
 
 
-Overfull \hbox (48.74657pt too wide) in paragraph at lines 1220--1220
+Overfull \hbox (48.74657pt too wide) in paragraph at lines 1229--1229
 []\OT1/cmtt/m/n/10 % binary character, but in the reconstruction process we hav
 e option to use[] 
  []
 
 
-Overfull \hbox (27.74675pt too wide) in paragraph at lines 1220--1220
+Overfull \hbox (27.74675pt too wide) in paragraph at lines 1229--1229
 []\OT1/cmtt/m/n/10 % the same binarized measurement matrix or alternatively we 
 can convert[] 
  []
 
 
-Overfull \hbox (38.24666pt too wide) in paragraph at lines 1220--1220
+Overfull \hbox (38.24666pt too wide) in paragraph at lines 1229--1229
 []\OT1/cmtt/m/n/10 % matrix phi_m is used in measurement process, while matrix 
 phi_r is used[] 
  []
 
-[40 <./vec2mat_phi.png>]
-Overfull \hbox (53.99652pt too wide) in paragraph at lines 1220--1220
+
+Overfull \hbox (53.99652pt too wide) in paragraph at lines 1229--1229
 []        \OT1/cmtt/m/n/10 % comment out the line below if you want the same me
 asurement matrix[] 
  []
 
 [41]
-Overfull \hbox (43.49661pt too wide) in paragraph at lines 1220--1220
+Overfull \hbox (43.49661pt too wide) in paragraph at lines 1229--1229
 []\OT1/cmtt/m/n/10 ind = [ones(1, noOfMeasurements), zeros(1, blockSize^2-noOfM
 easurements)];[] 
  []
 
 
-Overfull \hbox (17.24684pt too wide) in paragraph at lines 1220--1220
+Overfull \hbox (17.24684pt too wide) in paragraph at lines 1229--1229
 []        \OT1/cmtt/m/n/10 % calculate observation vector y by calculating inne
 r product[] 
  []
 
-
-Overfull \hbox (17.24684pt too wide) in paragraph at lines 1220--1220
+[42]
+Overfull \hbox (17.24684pt too wide) in paragraph at lines 1229--1229
 []        \OT1/cmtt/m/n/10 % this will be used to transform (0/1) measurements 
 -> (1/-1)[] 
  []
 
 
-Overfull \hbox (48.74657pt too wide) in paragraph at lines 1220--1220
+Overfull \hbox (48.74657pt too wide) in paragraph at lines 1229--1229
 []        \OT1/cmtt/m/n/10 y_1 = ones(size(phi_m)) * reshape(imBlock, blockSize
 *blockSize, 1);[] 
  []
 
 
-Overfull \hbox (59.24648pt too wide) in paragraph at lines 1220--1220
+Overfull \hbox (59.24648pt too wide) in paragraph at lines 1229--1229
 []            \OT1/cmtt/m/n/10 % convert measurements obtained with binary meas
 urement matrix to[] 
  []
 
 
-Overfull \hbox (43.49661pt too wide) in paragraph at lines 1220--1220
+Overfull \hbox (43.49661pt too wide) in paragraph at lines 1229--1229
 []            \OT1/cmtt/m/n/10 % measurements corresponding to measurement matr
 ix with (-1/1)[] 
  []
 
-[42]
-Overfull \hbox (27.74675pt too wide) in paragraph at lines 1220--1220
+
+Overfull \hbox (27.74675pt too wide) in paragraph at lines 1229--1229
 []        \OT1/cmtt/m/n/10 % save single measurement result for meausurement vi
 sualization[] 
  []
 
 
-Overfull \hbox (337.49405pt too wide) in paragraph at lines 1220--1220
+Overfull \hbox (337.49405pt too wide) in paragraph at lines 1229--1229
 []        \OT1/cmtt/m/n/10 measurementVisualization(k:k+blockSize-1, l:l+blockS
 ize-1) = reshape(repmat(y(1), blockSize^2, 1), [blockSize blockSize]);[] 
  []
 
-
-Overfull \hbox (17.24684pt too wide) in paragraph at lines 1220--1220
+[43]
+Overfull \hbox (17.24684pt too wide) in paragraph at lines 1229--1229
 []                \OT1/cmtt/m/n/10 %                 weights = [size(theta,2):-
 1:1].^2';[] 
  []
 
 
-Overfull \hbox (17.24684pt too wide) in paragraph at lines 1220--1220
+Overfull \hbox (17.24684pt too wide) in paragraph at lines 1229--1229
 []                \OT1/cmtt/m/n/10 s_est = mexLassoWeighted(y_m, theta, weights
 , param);[] 
  []
 
 
-Overfull \hbox (106.49606pt too wide) in paragraph at lines 1220--1220
+Overfull \hbox (106.49606pt too wide) in paragraph at lines 1229--1229
 []                \OT1/cmtt/m/n/10 s_est = sparseCode(y_m, theta, sparsity, nIt
 er, 'StepSize', stepSize);[] 
  []
 
-[43]
-Overfull \hbox (164.24556pt too wide) in paragraph at lines 1220--1220
+[44]
+Overfull \hbox (164.24556pt too wide) in paragraph at lines 1229--1229
 []        \OT1/cmtt/m/n/10 image_est(k:k+blockSize-1, l:l+blockSize-1) = reshap
 e(signal_est, [blockSize blockSize]);[] 
  []
 
-[44]
-Overfull \hbox (74.99634pt too wide) in paragraph at lines 1220--1220
+
+Overfull \hbox (74.99634pt too wide) in paragraph at lines 1229--1229
 []    \OT1/cmtt/m/n/10 imagesc(image_est), title('Image Reconstruction'), color
 map gray, axis image[] 
  []
 
 
-Overfull \hbox (43.49661pt too wide) in paragraph at lines 1220--1220
+Overfull \hbox (43.49661pt too wide) in paragraph at lines 1229--1229
 []\OT1/cmtt/m/n/10 figure, colormap gray, imagesc(image), title('Original image
 '), axis image[] 
  []
 
 
-Overfull \hbox (200.99524pt too wide) in paragraph at lines 1220--1220
+Overfull \hbox (200.99524pt too wide) in paragraph at lines 1229--1229
 []\OT1/cmtt/m/n/10 figure, colormap gray, imagesc(measurementVisualization), ti
 tle('Measurement Visualization'), axis image[] 
  []
 
 
-Overfull \hbox (90.7462pt too wide) in paragraph at lines 1220--1220
+Overfull \hbox (90.7462pt too wide) in paragraph at lines 1229--1229
 []\OT1/cmtt/m/n/10 figure, colormap gray, imagesc(image_est), title('Reconstruc
 ted image'), axis image[] 
  []
 
 Package epstopdf Info: Source file: <IntroToCompressiveSensing_25.eps>
-(epstopdf)                    date: 2017-08-23 11:20:33
+(epstopdf)                    date: 2017-10-09 15:34:36
 (epstopdf)                    size: 127268 bytes
 (epstopdf)             Output file: <IntroToCompressiveSensing_25-eps-converted
 -to.pdf>
+(epstopdf)                    date: 2017-10-09 15:48:08
+(epstopdf)                    size: 12032 bytes
 (epstopdf)             Command: <epstopdf --outfile=IntroToCompressiveSensing_2
 5-eps-converted-to.pdf IntroToCompressiveSensing_25.eps>
-(epstopdf)             \includegraphics on input line 1222.
-runsystem(epstopdf --outfile=IntroToCompressiveSensing_25-eps-converted-to.pdf 
-IntroToCompressiveSensing_25.eps)...executed (allowed).
-
-Package epstopdf Info: Result file: <IntroToCompressiveSensing_25-eps-converted
--to.pdf>
-(epstopdf)                    date: 2017-08-23 11:26:45
-(epstopdf)                    size: 12032 bytes.
+(epstopdf)             \includegraphics on input line 1231.
+Package epstopdf Info: Output file is already uptodate.
 
 <IntroToCompressiveSensing_25-eps-converted-to.pdf, id=293, 280.04625pt x 287.0
 725pt>
@@ -1034,1131 +904,1235 @@ File: IntroToCompressiveSensing_25-eps-converted-to.pdf Graphic file (type pdf)
 
  <use IntroToCompressiveSensing_25-eps-converted-to.pdf>
 Package pdftex.def Info: IntroToCompressiveSensing_25-eps-converted-to.pdf used
- on input line 1222.
+ on input line 1231.
 (pdftex.def)             Requested size: 289.07999pt x 296.34502pt.
 Package epstopdf Info: Source file: <IntroToCompressiveSensing_26.eps>
-(epstopdf)                    date: 2017-08-23 11:20:33
+(epstopdf)                    date: 2017-10-09 15:34:37
 (epstopdf)                    size: 132630 bytes
 (epstopdf)             Output file: <IntroToCompressiveSensing_26-eps-converted
 -to.pdf>
+(epstopdf)                    date: 2017-10-09 15:48:09
+(epstopdf)                    size: 12488 bytes
 (epstopdf)             Command: <epstopdf --outfile=IntroToCompressiveSensing_2
 6-eps-converted-to.pdf IntroToCompressiveSensing_26.eps>
-(epstopdf)             \includegraphics on input line 1224.
-runsystem(epstopdf --outfile=IntroToCompressiveSensing_26-eps-converted-to.pdf 
-IntroToCompressiveSensing_26.eps)...executed (allowed).
-
-Package epstopdf Info: Result file: <IntroToCompressiveSensing_26-eps-converted
--to.pdf>
-(epstopdf)                    date: 2017-08-23 11:26:47
-(epstopdf)                    size: 12488 bytes.
+(epstopdf)             \includegraphics on input line 1233.
+Package epstopdf Info: Output file is already uptodate.
 
 <IntroToCompressiveSensing_26-eps-converted-to.pdf, id=294, 280.04625pt x 288.0
-7625pt>
+7625pt> [45]
 File: IntroToCompressiveSensing_26-eps-converted-to.pdf Graphic file (type pdf)
 
  <use IntroToCompressiveSensing_26-eps-converted-to.pdf>
 Package pdftex.def Info: IntroToCompressiveSensing_26-eps-converted-to.pdf used
- on input line 1224.
+ on input line 1233.
 (pdftex.def)             Requested size: 289.07999pt x 297.38118pt.
 Package epstopdf Info: Source file: <IntroToCompressiveSensing_27.eps>
-(epstopdf)                    date: 2017-08-23 11:20:33
+(epstopdf)                    date: 2017-10-09 15:34:37
 (epstopdf)                    size: 34295 bytes
 (epstopdf)             Output file: <IntroToCompressiveSensing_27-eps-converted
 -to.pdf>
+(epstopdf)                    date: 2017-10-09 15:48:11
+(epstopdf)                    size: 8141 bytes
 (epstopdf)             Command: <epstopdf --outfile=IntroToCompressiveSensing_2
 7-eps-converted-to.pdf IntroToCompressiveSensing_27.eps>
-(epstopdf)             \includegraphics on input line 1226.
-runsystem(epstopdf --outfile=IntroToCompressiveSensing_27-eps-converted-to.pdf 
-IntroToCompressiveSensing_27.eps)...executed (allowed).
+(epstopdf)             \includegraphics on input line 1235.
+Package epstopdf Info: Output file is already uptodate.
 
-Package epstopdf Info: Result file: <IntroToCompressiveSensing_27-eps-converted
--to.pdf>
-(epstopdf)                    date: 2017-08-23 11:26:48
-(epstopdf)                    size: 8141 bytes.
-
-<IntroToCompressiveSensing_27-eps-converted-to.pdf, id=295, 280.04625pt x 287.0
-725pt> [45 <./IntroToCompressiveSensing_25-eps-converted-to.pdf>]
+<IntroToCompressiveSensing_27-eps-converted-to.pdf, id=298, 280.04625pt x 287.0
+725pt> [46 <./IntroToCompressiveSensing_25-eps-converted-to.pdf>]
 File: IntroToCompressiveSensing_27-eps-converted-to.pdf Graphic file (type pdf)
 
 
 <use IntroToCompressiveSensing_27-eps-converted-to.pdf>
 Package pdftex.def Info: IntroToCompressiveSensing_27-eps-converted-to.pdf used
- on input line 1226.
+ on input line 1235.
 (pdftex.def)             Requested size: 289.07999pt x 296.34502pt.
 Package epstopdf Info: Source file: <IntroToCompressiveSensing_28.eps>
-(epstopdf)                    date: 2017-08-23 11:20:34
+(epstopdf)                    date: 2017-10-09 15:34:38
 (epstopdf)                    size: 127269 bytes
 (epstopdf)             Output file: <IntroToCompressiveSensing_28-eps-converted
 -to.pdf>
+(epstopdf)                    date: 2017-10-09 15:48:13
+(epstopdf)                    size: 12030 bytes
 (epstopdf)             Command: <epstopdf --outfile=IntroToCompressiveSensing_2
 8-eps-converted-to.pdf IntroToCompressiveSensing_28.eps>
-(epstopdf)             \includegraphics on input line 1228.
-runsystem(epstopdf --outfile=IntroToCompressiveSensing_28-eps-converted-to.pdf 
-IntroToCompressiveSensing_28.eps)...executed (allowed).
+(epstopdf)             \includegraphics on input line 1237.
+Package epstopdf Info: Output file is already uptodate.
 
-Package epstopdf Info: Result file: <IntroToCompressiveSensing_28-eps-converted
--to.pdf>
-(epstopdf)                    date: 2017-08-23 11:26:49
-(epstopdf)                    size: 12030 bytes.
-
-<IntroToCompressiveSensing_28-eps-converted-to.pdf, id=304, 280.04625pt x 287.0
-725pt> [46 <./IntroToCompressiveSensing_26-eps-converted-to.pdf>]
+<IntroToCompressiveSensing_28-eps-converted-to.pdf, id=307, 280.04625pt x 287.0
+725pt> [47 <./IntroToCompressiveSensing_26-eps-converted-to.pdf>]
 File: IntroToCompressiveSensing_28-eps-converted-to.pdf Graphic file (type pdf)
 
 
 <use IntroToCompressiveSensing_28-eps-converted-to.pdf>
 Package pdftex.def Info: IntroToCompressiveSensing_28-eps-converted-to.pdf used
- on input line 1228.
+ on input line 1237.
 (pdftex.def)             Requested size: 289.07999pt x 296.34502pt.
- [47 <./IntroToCompressiveSensing_27-eps-converted-to.pdf>]
-Overfull \hbox (17.24684pt too wide) in paragraph at lines 1387--1387
+ [48 <./IntroToCompressiveSensing_27-eps-converted-to.pdf>]
+Overfull \hbox (17.24684pt too wide) in paragraph at lines 1396--1396
 []\OT1/cmtt/m/n/10 % options: sedumi_err, mex_err, mex_w_err, omp, grad, sparsa
 , sparsa2[] 
  []
 
 
-Overfull \hbox (1.49698pt too wide) in paragraph at lines 1387--1387
+Overfull \hbox (1.49698pt too wide) in paragraph at lines 1396--1396
 []\OT1/cmtt/m/n/10 % choose block size - divide whole image in non-overlapping 
 blocks[] 
  []
 
-[48 <./IntroToCompressiveSensing_28-eps-converted-to.pdf>]
-Overfull \hbox (48.74657pt too wide) in paragraph at lines 1387--1387
+[49 <./IntroToCompressiveSensing_28-eps-converted-to.pdf>]
+Overfull \hbox (48.74657pt too wide) in paragraph at lines 1396--1396
 []\OT1/cmtt/m/n/10 % generate desired transformation matrix and use Kronecker d
 elta product to[] 
  []
 
 
-Overfull \hbox (22.4968pt too wide) in paragraph at lines 1387--1387
+Overfull \hbox (22.4968pt too wide) in paragraph at lines 1396--1396
 []\OT1/cmtt/m/n/10 % we will use binarized measurement measurement matrix to si
 mulate DMD[] 
  []
 
 
-Overfull \hbox (48.74657pt too wide) in paragraph at lines 1387--1387
+Overfull \hbox (48.74657pt too wide) in paragraph at lines 1396--1396
 []\OT1/cmtt/m/n/10 % binary character, but in the reconstruction process we hav
 e option to use[] 
  []
 
 
-Overfull \hbox (27.74675pt too wide) in paragraph at lines 1387--1387
+Overfull \hbox (27.74675pt too wide) in paragraph at lines 1396--1396
 []\OT1/cmtt/m/n/10 % the same binarized measurement matrix or alternatively we 
 can convert[] 
  []
 
 
-Overfull \hbox (38.24666pt too wide) in paragraph at lines 1387--1387
+Overfull \hbox (38.24666pt too wide) in paragraph at lines 1396--1396
 []\OT1/cmtt/m/n/10 % matrix phi_m is used in measurement process, while matrix 
 phi_r is used[] 
  []
 
-[49]
-Overfull \hbox (43.49661pt too wide) in paragraph at lines 1387--1387
+[50]
+Overfull \hbox (43.49661pt too wide) in paragraph at lines 1396--1396
 []\OT1/cmtt/m/n/10 ind = [ones(1, noOfMeasurements), zeros(1, blockSize^2-noOfM
 easurements)];[] 
  []
 
 
-Overfull \hbox (17.24684pt too wide) in paragraph at lines 1387--1387
+Overfull \hbox (17.24684pt too wide) in paragraph at lines 1396--1396
 []        \OT1/cmtt/m/n/10 % calculate observation vector y by calculating inne
 r product[] 
  []
 
 
-Overfull \hbox (27.74675pt too wide) in paragraph at lines 1387--1387
+Overfull \hbox (27.74675pt too wide) in paragraph at lines 1396--1396
 []        \OT1/cmtt/m/n/10 % save single measurement result for meausurement vi
 sualization[] 
  []
 
 
-Overfull \hbox (337.49405pt too wide) in paragraph at lines 1387--1387
+Overfull \hbox (337.49405pt too wide) in paragraph at lines 1396--1396
 []        \OT1/cmtt/m/n/10 measurementVisualization(k:k+blockSize-1, l:l+blockS
 ize-1) = reshape(repmat(y(1), blockSize^2, 1), [blockSize blockSize]);[] 
  []
 
-[50]
-Overfull \hbox (1.49698pt too wide) in paragraph at lines 1387--1387
+[51]
+Overfull \hbox (1.49698pt too wide) in paragraph at lines 1396--1396
 []                \OT1/cmtt/m/n/10 s_est = cs_sr07(y_m, theta, 5*sigmaAdditiveN
 oise);[] 
  []
 
 
-Overfull \hbox (17.24684pt too wide) in paragraph at lines 1387--1387
+Overfull \hbox (17.24684pt too wide) in paragraph at lines 1396--1396
 []                \OT1/cmtt/m/n/10 %                 weights = [size(theta,2):-
 1:1].^2';[] 
  []
 
 
-Overfull \hbox (17.24684pt too wide) in paragraph at lines 1387--1387
+Overfull \hbox (17.24684pt too wide) in paragraph at lines 1396--1396
 []                \OT1/cmtt/m/n/10 s_est = mexLassoWeighted(y_m, theta, weights
 , param);[] 
  []
 
 
-Overfull \hbox (164.24556pt too wide) in paragraph at lines 1387--1387
+Overfull \hbox (164.24556pt too wide) in paragraph at lines 1396--1396
 []        \OT1/cmtt/m/n/10 image_est(k:k+blockSize-1, l:l+blockSize-1) = reshap
 e(signal_est, [blockSize blockSize]);[] 
  []
 
 
-Overfull \hbox (74.99634pt too wide) in paragraph at lines 1387--1387
+Overfull \hbox (74.99634pt too wide) in paragraph at lines 1396--1396
 []    \OT1/cmtt/m/n/10 imagesc(image_est), title('Image Reconstruction'), color
 map gray, axis image[] 
  []
 
 
-Overfull \hbox (43.49661pt too wide) in paragraph at lines 1387--1387
+Overfull \hbox (43.49661pt too wide) in paragraph at lines 1396--1396
 []\OT1/cmtt/m/n/10 figure, colormap gray, imagesc(image), title('Original image
 '), axis image[] 
  []
 
 
-Overfull \hbox (200.99524pt too wide) in paragraph at lines 1387--1387
+Overfull \hbox (200.99524pt too wide) in paragraph at lines 1396--1396
 []\OT1/cmtt/m/n/10 figure, colormap gray, imagesc(measurementVisualization), ti
 tle('Measurement Visualization'), axis image[] 
  []
 
 
-Overfull \hbox (90.7462pt too wide) in paragraph at lines 1387--1387
+Overfull \hbox (90.7462pt too wide) in paragraph at lines 1396--1396
 []\OT1/cmtt/m/n/10 figure, colormap gray, imagesc(image_est), title('Reconstruc
 ted image'), axis image[] 
  []
 
 Package epstopdf Info: Source file: <IntroToCompressiveSensing_29.eps>
-(epstopdf)                    date: 2017-08-23 11:20:36
-(epstopdf)                    size: 119927 bytes
+(epstopdf)                    date: 2017-10-09 15:34:41
+(epstopdf)                    size: 119864 bytes
 (epstopdf)             Output file: <IntroToCompressiveSensing_29-eps-converted
 -to.pdf>
+(epstopdf)                    date: 2017-10-09 15:48:14
+(epstopdf)                    size: 11837 bytes
 (epstopdf)             Command: <epstopdf --outfile=IntroToCompressiveSensing_2
 9-eps-converted-to.pdf IntroToCompressiveSensing_29.eps>
-(epstopdf)             \includegraphics on input line 1389.
-runsystem(epstopdf --outfile=IntroToCompressiveSensing_29-eps-converted-to.pdf 
-IntroToCompressiveSensing_29.eps)...executed (allowed).
+(epstopdf)             \includegraphics on input line 1398.
+Package epstopdf Info: Output file is already uptodate.
 
-Package epstopdf Info: Result file: <IntroToCompressiveSensing_29-eps-converted
--to.pdf>
-(epstopdf)                    date: 2017-08-23 11:26:50
-(epstopdf)                    size: 11807 bytes.
-
-<IntroToCompressiveSensing_29-eps-converted-to.pdf, id=336, 280.04625pt x 287.0
+<IntroToCompressiveSensing_29-eps-converted-to.pdf, id=339, 280.04625pt x 287.0
 725pt>
 File: IntroToCompressiveSensing_29-eps-converted-to.pdf Graphic file (type pdf)
 
  <use IntroToCompressiveSensing_29-eps-converted-to.pdf>
 Package pdftex.def Info: IntroToCompressiveSensing_29-eps-converted-to.pdf used
- on input line 1389.
+ on input line 1398.
 (pdftex.def)             Requested size: 289.07999pt x 296.34502pt.
 Package epstopdf Info: Source file: <IntroToCompressiveSensing_30.eps>
-(epstopdf)                    date: 2017-08-23 11:20:36
+(epstopdf)                    date: 2017-10-09 15:34:42
 (epstopdf)                    size: 132630 bytes
 (epstopdf)             Output file: <IntroToCompressiveSensing_30-eps-converted
 -to.pdf>
+(epstopdf)                    date: 2017-10-09 15:48:16
+(epstopdf)                    size: 12488 bytes
 (epstopdf)             Command: <epstopdf --outfile=IntroToCompressiveSensing_3
 0-eps-converted-to.pdf IntroToCompressiveSensing_30.eps>
-(epstopdf)             \includegraphics on input line 1391.
-runsystem(epstopdf --outfile=IntroToCompressiveSensing_30-eps-converted-to.pdf 
-IntroToCompressiveSensing_30.eps)...executed (allowed).
+(epstopdf)             \includegraphics on input line 1400.
+Package epstopdf Info: Output file is already uptodate.
 
-Package epstopdf Info: Result file: <IntroToCompressiveSensing_30-eps-converted
--to.pdf>
-(epstopdf)                    date: 2017-08-23 11:26:51
-(epstopdf)                    size: 12488 bytes.
-
-<IntroToCompressiveSensing_30-eps-converted-to.pdf, id=337, 280.04625pt x 288.0
-7625pt> [51]
+<IntroToCompressiveSensing_30-eps-converted-to.pdf, id=340, 280.04625pt x 288.0
+7625pt> [52]
 File: IntroToCompressiveSensing_30-eps-converted-to.pdf Graphic file (type pdf)
 
  <use IntroToCompressiveSensing_30-eps-converted-to.pdf>
 Package pdftex.def Info: IntroToCompressiveSensing_30-eps-converted-to.pdf used
- on input line 1391.
+ on input line 1400.
 (pdftex.def)             Requested size: 289.07999pt x 297.38118pt.
 Package epstopdf Info: Source file: <IntroToCompressiveSensing_31.eps>
-(epstopdf)                    date: 2017-08-23 11:20:37
-(epstopdf)                    size: 34272 bytes
+(epstopdf)                    date: 2017-10-09 15:34:42
+(epstopdf)                    size: 34214 bytes
 (epstopdf)             Output file: <IntroToCompressiveSensing_31-eps-converted
 -to.pdf>
+(epstopdf)                    date: 2017-10-09 15:48:17
+(epstopdf)                    size: 8150 bytes
 (epstopdf)             Command: <epstopdf --outfile=IntroToCompressiveSensing_3
 1-eps-converted-to.pdf IntroToCompressiveSensing_31.eps>
-(epstopdf)             \includegraphics on input line 1393.
-runsystem(epstopdf --outfile=IntroToCompressiveSensing_31-eps-converted-to.pdf 
-IntroToCompressiveSensing_31.eps)...executed (allowed).
+(epstopdf)             \includegraphics on input line 1402.
+Package epstopdf Info: Output file is already uptodate.
 
-Package epstopdf Info: Result file: <IntroToCompressiveSensing_31-eps-converted
--to.pdf>
-(epstopdf)                    date: 2017-08-23 11:26:53
-(epstopdf)                    size: 8140 bytes.
-
-<IntroToCompressiveSensing_31-eps-converted-to.pdf, id=341, 280.04625pt x 287.0
-725pt> [52 <./IntroToCompressiveSensing_29-eps-converted-to.pdf>]
+<IntroToCompressiveSensing_31-eps-converted-to.pdf, id=344, 280.04625pt x 287.0
+725pt> [53 <./IntroToCompressiveSensing_29-eps-converted-to.pdf>]
 File: IntroToCompressiveSensing_31-eps-converted-to.pdf Graphic file (type pdf)
 
 
 <use IntroToCompressiveSensing_31-eps-converted-to.pdf>
 Package pdftex.def Info: IntroToCompressiveSensing_31-eps-converted-to.pdf used
- on input line 1393.
+ on input line 1402.
 (pdftex.def)             Requested size: 289.07999pt x 296.34502pt.
 Package epstopdf Info: Source file: <IntroToCompressiveSensing_32.eps>
-(epstopdf)                    date: 2017-08-23 11:20:37
-(epstopdf)                    size: 119928 bytes
+(epstopdf)                    date: 2017-10-09 15:34:42
+(epstopdf)                    size: 119865 bytes
 (epstopdf)             Output file: <IntroToCompressiveSensing_32-eps-converted
 -to.pdf>
+(epstopdf)                    date: 2017-10-09 15:48:18
+(epstopdf)                    size: 11835 bytes
 (epstopdf)             Command: <epstopdf --outfile=IntroToCompressiveSensing_3
 2-eps-converted-to.pdf IntroToCompressiveSensing_32.eps>
-(epstopdf)             \includegraphics on input line 1395.
-runsystem(epstopdf --outfile=IntroToCompressiveSensing_32-eps-converted-to.pdf 
-IntroToCompressiveSensing_32.eps)...executed (allowed).
+(epstopdf)             \includegraphics on input line 1404.
+Package epstopdf Info: Output file is already uptodate.
 
-Package epstopdf Info: Result file: <IntroToCompressiveSensing_32-eps-converted
--to.pdf>
-(epstopdf)                    date: 2017-08-23 11:26:54
-(epstopdf)                    size: 11805 bytes.
-
-<IntroToCompressiveSensing_32-eps-converted-to.pdf, id=350, 280.04625pt x 287.0
-725pt> [53 <./IntroToCompressiveSensing_30-eps-converted-to.pdf>]
+<IntroToCompressiveSensing_32-eps-converted-to.pdf, id=353, 280.04625pt x 287.0
+725pt> [54 <./IntroToCompressiveSensing_30-eps-converted-to.pdf>]
 File: IntroToCompressiveSensing_32-eps-converted-to.pdf Graphic file (type pdf)
 
 
 <use IntroToCompressiveSensing_32-eps-converted-to.pdf>
 Package pdftex.def Info: IntroToCompressiveSensing_32-eps-converted-to.pdf used
- on input line 1395.
+ on input line 1404.
 (pdftex.def)             Requested size: 289.07999pt x 296.34502pt.
- [54 <./IntroToCompressiveSensing_31-eps-converted-to.pdf>]
-Overfull \hbox (27.74675pt too wide) in paragraph at lines 1553--1553
+ [55 <./IntroToCompressiveSensing_31-eps-converted-to.pdf>]
+Overfull \hbox (27.74675pt too wide) in paragraph at lines 1562--1562
 []\OT1/cmtt/m/n/10 %%BLOCK COMPRESSIVE IMAGING EXAMPLE - noisy case - multiplic
 ative noise[] 
  []
 
 
-Overfull \hbox (17.24684pt too wide) in paragraph at lines 1553--1553
+Overfull \hbox (17.24684pt too wide) in paragraph at lines 1562--1562
 []\OT1/cmtt/m/n/10 % options: sedumi_err, mex_err, mex_w_err, omp, grad, sparsa
 , sparsa2[] 
  []
 
 
-Overfull \hbox (1.49698pt too wide) in paragraph at lines 1553--1553
+Overfull \hbox (1.49698pt too wide) in paragraph at lines 1562--1562
 []\OT1/cmtt/m/n/10 % choose block size - divide whole image in non-overlapping 
 blocks[] 
  []
 
-[55 <./IntroToCompressiveSensing_32-eps-converted-to.pdf>]
-Overfull \hbox (48.74657pt too wide) in paragraph at lines 1553--1553
+[56 <./IntroToCompressiveSensing_32-eps-converted-to.pdf>]
+Overfull \hbox (48.74657pt too wide) in paragraph at lines 1562--1562
 []\OT1/cmtt/m/n/10 % generate desired transformation matrix and use Kronecker d
 elta product to[] 
  []
 
 
-Overfull \hbox (22.4968pt too wide) in paragraph at lines 1553--1553
+Overfull \hbox (22.4968pt too wide) in paragraph at lines 1562--1562
 []\OT1/cmtt/m/n/10 % we will use binarized measurement measurement matrix to si
 mulate DMD[] 
  []
 
 
-Overfull \hbox (48.74657pt too wide) in paragraph at lines 1553--1553
+Overfull \hbox (48.74657pt too wide) in paragraph at lines 1562--1562
 []\OT1/cmtt/m/n/10 % binary character, but in the reconstruction process we hav
 e option to use[] 
  []
 
 
-Overfull \hbox (27.74675pt too wide) in paragraph at lines 1553--1553
+Overfull \hbox (27.74675pt too wide) in paragraph at lines 1562--1562
 []\OT1/cmtt/m/n/10 % the same binarized measurement matrix or alternatively we 
 can convert[] 
  []
 
 
-Overfull \hbox (38.24666pt too wide) in paragraph at lines 1553--1553
+Overfull \hbox (38.24666pt too wide) in paragraph at lines 1562--1562
 []\OT1/cmtt/m/n/10 % matrix phi_m is used in measurement process, while matrix 
 phi_r is used[] 
  []
 
-[56]
-Overfull \hbox (106.49606pt too wide) in paragraph at lines 1553--1553
+[57]
+Overfull \hbox (106.49606pt too wide) in paragraph at lines 1562--1562
 []\OT1/cmtt/m/n/10 phi_m = phi + sigmaMultiplicativeNoise*repmat(randn(size(phi
 , 1), 1), 1, size(phi,2));[] 
  []
 
 
-Overfull \hbox (43.49661pt too wide) in paragraph at lines 1553--1553
+Overfull \hbox (43.49661pt too wide) in paragraph at lines 1562--1562
 []\OT1/cmtt/m/n/10 ind = [ones(1, noOfMeasurements), zeros(1, blockSize^2-noOfM
 easurements)];[] 
  []
 
 
-Overfull \hbox (17.24684pt too wide) in paragraph at lines 1553--1553
+Overfull \hbox (17.24684pt too wide) in paragraph at lines 1562--1562
 []        \OT1/cmtt/m/n/10 % calculate observation vector y by calculating inne
 r product[] 
  []
 
 
-Overfull \hbox (27.74675pt too wide) in paragraph at lines 1553--1553
+Overfull \hbox (27.74675pt too wide) in paragraph at lines 1562--1562
 []        \OT1/cmtt/m/n/10 % save single measurement result for meausurement vi
 sualization[] 
  []
 
 
-Overfull \hbox (337.49405pt too wide) in paragraph at lines 1553--1553
+Overfull \hbox (337.49405pt too wide) in paragraph at lines 1562--1562
 []        \OT1/cmtt/m/n/10 measurementVisualization(k:k+blockSize-1, l:l+blockS
 ize-1) = reshape(repmat(y(1), blockSize^2, 1), [blockSize blockSize]);[] 
  []
 
-[57]
-Overfull \hbox (43.49661pt too wide) in paragraph at lines 1553--1553
+[58]
+Overfull \hbox (43.49661pt too wide) in paragraph at lines 1562--1562
 []                \OT1/cmtt/m/n/10 s_est = cs_sr07(y_m, theta, 100*sigmaMultipl
 icativeNoise);[] 
  []
 
 
-Overfull \hbox (27.74675pt too wide) in paragraph at lines 1553--1553
+Overfull \hbox (27.74675pt too wide) in paragraph at lines 1562--1562
 []                \OT1/cmtt/m/n/10 s_est = OMPerr(theta, y_m, 2*sigmaMultiplica
 tiveNoise);[] 
  []
 
 
-Overfull \hbox (17.24684pt too wide) in paragraph at lines 1553--1553
+Overfull \hbox (17.24684pt too wide) in paragraph at lines 1562--1562
 []                \OT1/cmtt/m/n/10 %                 weights = [size(theta,2):-
 1:1].^2';[] 
  []
 
 
-Overfull \hbox (17.24684pt too wide) in paragraph at lines 1553--1553
+Overfull \hbox (17.24684pt too wide) in paragraph at lines 1562--1562
 []                \OT1/cmtt/m/n/10 s_est = mexLassoWeighted(y_m, theta, weights
 , param);[] 
  []
 
 
-Overfull \hbox (164.24556pt too wide) in paragraph at lines 1553--1553
+Overfull \hbox (164.24556pt too wide) in paragraph at lines 1562--1562
 []        \OT1/cmtt/m/n/10 image_est(k:k+blockSize-1, l:l+blockSize-1) = reshap
 e(signal_est, [blockSize blockSize]);[] 
  []
 
 
-Overfull \hbox (74.99634pt too wide) in paragraph at lines 1553--1553
+Overfull \hbox (74.99634pt too wide) in paragraph at lines 1562--1562
 []    \OT1/cmtt/m/n/10 imagesc(image_est), title('Image Reconstruction'), color
 map gray, axis image[] 
  []
 
 
-Overfull \hbox (43.49661pt too wide) in paragraph at lines 1553--1553
+Overfull \hbox (43.49661pt too wide) in paragraph at lines 1562--1562
 []\OT1/cmtt/m/n/10 figure, colormap gray, imagesc(image), title('Original image
 '), axis image[] 
  []
 
 
-Overfull \hbox (200.99524pt too wide) in paragraph at lines 1553--1553
+Overfull \hbox (200.99524pt too wide) in paragraph at lines 1562--1562
 []\OT1/cmtt/m/n/10 figure, colormap gray, imagesc(measurementVisualization), ti
 tle('Measurement Visualization'), axis image[] 
  []
 
 
-Overfull \hbox (90.7462pt too wide) in paragraph at lines 1553--1553
+Overfull \hbox (90.7462pt too wide) in paragraph at lines 1562--1562
 []\OT1/cmtt/m/n/10 figure, colormap gray, imagesc(image_est), title('Reconstruc
 ted image'), axis image[] 
  []
 
 Package epstopdf Info: Source file: <IntroToCompressiveSensing_33.eps>
-(epstopdf)                    date: 2017-08-23 11:20:40
-(epstopdf)                    size: 171846 bytes
+(epstopdf)                    date: 2017-10-09 15:34:46
+(epstopdf)                    size: 167054 bytes
 (epstopdf)             Output file: <IntroToCompressiveSensing_33-eps-converted
 -to.pdf>
+(epstopdf)                    date: 2017-10-09 15:48:19
+(epstopdf)                    size: 70217 bytes
 (epstopdf)             Command: <epstopdf --outfile=IntroToCompressiveSensing_3
 3-eps-converted-to.pdf IntroToCompressiveSensing_33.eps>
-(epstopdf)             \includegraphics on input line 1555.
-runsystem(epstopdf --outfile=IntroToCompressiveSensing_33-eps-converted-to.pdf 
-IntroToCompressiveSensing_33.eps)...executed (allowed).
+(epstopdf)             \includegraphics on input line 1564.
+Package epstopdf Info: Output file is already uptodate.
 
-Package epstopdf Info: Result file: <IntroToCompressiveSensing_33-eps-converted
--to.pdf>
-(epstopdf)                    date: 2017-08-23 11:26:55
-(epstopdf)                    size: 70791 bytes.
-
-<IntroToCompressiveSensing_33-eps-converted-to.pdf, id=382, 280.04625pt x 287.0
+<IntroToCompressiveSensing_33-eps-converted-to.pdf, id=385, 280.04625pt x 287.0
 725pt>
 File: IntroToCompressiveSensing_33-eps-converted-to.pdf Graphic file (type pdf)
 
  <use IntroToCompressiveSensing_33-eps-converted-to.pdf>
 Package pdftex.def Info: IntroToCompressiveSensing_33-eps-converted-to.pdf used
- on input line 1555.
+ on input line 1564.
 (pdftex.def)             Requested size: 289.07999pt x 296.34502pt.
 Package epstopdf Info: Source file: <IntroToCompressiveSensing_34.eps>
-(epstopdf)                    date: 2017-08-23 11:20:40
+(epstopdf)                    date: 2017-10-09 15:34:46
 (epstopdf)                    size: 132630 bytes
 (epstopdf)             Output file: <IntroToCompressiveSensing_34-eps-converted
 -to.pdf>
+(epstopdf)                    date: 2017-10-09 15:48:20
+(epstopdf)                    size: 12488 bytes
 (epstopdf)             Command: <epstopdf --outfile=IntroToCompressiveSensing_3
 4-eps-converted-to.pdf IntroToCompressiveSensing_34.eps>
-(epstopdf)             \includegraphics on input line 1557.
-runsystem(epstopdf --outfile=IntroToCompressiveSensing_34-eps-converted-to.pdf 
-IntroToCompressiveSensing_34.eps)...executed (allowed).
+(epstopdf)             \includegraphics on input line 1566.
+Package epstopdf Info: Output file is already uptodate.
 
-Package epstopdf Info: Result file: <IntroToCompressiveSensing_34-eps-converted
--to.pdf>
-(epstopdf)                    date: 2017-08-23 11:26:56
-(epstopdf)                    size: 12488 bytes.
-
-<IntroToCompressiveSensing_34-eps-converted-to.pdf, id=383, 280.04625pt x 288.0
-7625pt> [58]
+<IntroToCompressiveSensing_34-eps-converted-to.pdf, id=386, 280.04625pt x 288.0
+7625pt> [59]
 File: IntroToCompressiveSensing_34-eps-converted-to.pdf Graphic file (type pdf)
 
  <use IntroToCompressiveSensing_34-eps-converted-to.pdf>
 Package pdftex.def Info: IntroToCompressiveSensing_34-eps-converted-to.pdf used
- on input line 1557.
+ on input line 1566.
 (pdftex.def)             Requested size: 289.07999pt x 297.38118pt.
 Package epstopdf Info: Source file: <IntroToCompressiveSensing_35.eps>
-(epstopdf)                    date: 2017-08-23 11:20:40
-(epstopdf)                    size: 34300 bytes
+(epstopdf)                    date: 2017-10-09 15:34:46
+(epstopdf)                    size: 34173 bytes
 (epstopdf)             Output file: <IntroToCompressiveSensing_35-eps-converted
 -to.pdf>
+(epstopdf)                    date: 2017-10-09 15:48:21
+(epstopdf)                    size: 8082 bytes
 (epstopdf)             Command: <epstopdf --outfile=IntroToCompressiveSensing_3
 5-eps-converted-to.pdf IntroToCompressiveSensing_35.eps>
-(epstopdf)             \includegraphics on input line 1559.
-runsystem(epstopdf --outfile=IntroToCompressiveSensing_35-eps-converted-to.pdf 
-IntroToCompressiveSensing_35.eps)...executed (allowed).
+(epstopdf)             \includegraphics on input line 1568.
+Package epstopdf Info: Output file is already uptodate.
 
-Package epstopdf Info: Result file: <IntroToCompressiveSensing_35-eps-converted
--to.pdf>
-(epstopdf)                    date: 2017-08-23 11:26:57
-(epstopdf)                    size: 8109 bytes.
-
-<IntroToCompressiveSensing_35-eps-converted-to.pdf, id=387, 280.04625pt x 287.0
-725pt> [59 <./IntroToCompressiveSensing_33-eps-converted-to.pdf>]
+<IntroToCompressiveSensing_35-eps-converted-to.pdf, id=390, 280.04625pt x 287.0
+725pt> [60 <./IntroToCompressiveSensing_33-eps-converted-to.pdf>]
 File: IntroToCompressiveSensing_35-eps-converted-to.pdf Graphic file (type pdf)
 
 
 <use IntroToCompressiveSensing_35-eps-converted-to.pdf>
 Package pdftex.def Info: IntroToCompressiveSensing_35-eps-converted-to.pdf used
- on input line 1559.
+ on input line 1568.
 (pdftex.def)             Requested size: 289.07999pt x 296.34502pt.
 Package epstopdf Info: Source file: <IntroToCompressiveSensing_36.eps>
-(epstopdf)                    date: 2017-08-23 11:20:40
-(epstopdf)                    size: 171847 bytes
+(epstopdf)                    date: 2017-10-09 15:34:47
+(epstopdf)                    size: 167055 bytes
 (epstopdf)             Output file: <IntroToCompressiveSensing_36-eps-converted
 -to.pdf>
+(epstopdf)                    date: 2017-10-09 15:48:22
+(epstopdf)                    size: 70215 bytes
 (epstopdf)             Command: <epstopdf --outfile=IntroToCompressiveSensing_3
 6-eps-converted-to.pdf IntroToCompressiveSensing_36.eps>
-(epstopdf)             \includegraphics on input line 1561.
-runsystem(epstopdf --outfile=IntroToCompressiveSensing_36-eps-converted-to.pdf 
-IntroToCompressiveSensing_36.eps)...executed (allowed).
+(epstopdf)             \includegraphics on input line 1570.
+Package epstopdf Info: Output file is already uptodate.
 
-Package epstopdf Info: Result file: <IntroToCompressiveSensing_36-eps-converted
--to.pdf>
-(epstopdf)                    date: 2017-08-23 11:26:59
-(epstopdf)                    size: 70789 bytes.
-
-<IntroToCompressiveSensing_36-eps-converted-to.pdf, id=396, 280.04625pt x 287.0
-725pt> [60 <./IntroToCompressiveSensing_34-eps-converted-to.pdf>]
+<IntroToCompressiveSensing_36-eps-converted-to.pdf, id=399, 280.04625pt x 287.0
+725pt> [61 <./IntroToCompressiveSensing_34-eps-converted-to.pdf>]
 File: IntroToCompressiveSensing_36-eps-converted-to.pdf Graphic file (type pdf)
 
 
 <use IntroToCompressiveSensing_36-eps-converted-to.pdf>
 Package pdftex.def Info: IntroToCompressiveSensing_36-eps-converted-to.pdf used
- on input line 1561.
+ on input line 1570.
 (pdftex.def)             Requested size: 289.07999pt x 296.34502pt.
- [61 <./IntroToCompressiveSensing_35-eps-converted-to.pdf>] [62 <./IntroToCompr
-essiveSensing_36-eps-converted-to.pdf>] [63]
-Overfull \hbox (74.99634pt too wide) in paragraph at lines 1647--1647
-[]\OT1/cmtt/m/n/10 z = sparseCode(y_m, theta, sparsity, nIter, 'StepSize', step
-Size, 'Verbose', 0);[] 
+ [62 <./IntroToCompressiveSensing_35-eps-converted-to.pdf>]
+Overfull \hbox (169.49551pt too wide) in paragraph at lines 1656--1656
+[]\OT1/cmtt/m/n/10 frames = imreadDir('Y:\Projects\MATLAB Projects\Compressive 
+Temporal Imaging\media\man\', 'tiff');[] 
  []
 
 
-Overfull \hbox (106.49606pt too wide) in paragraph at lines 1647--1647
-[]\OT1/cmtt/m/n/10 z_f_est = sparseCode(y_f, theta, sparsity, nIter, 'StepSize'
-, stepSize, 'Verbose', 0);[] 
+Overfull \hbox (95.99615pt too wide) in paragraph at lines 1656--1656
+[]\OT1/cmtt/m/n/10 frames = imresize(reshape(cell2mat(frames), [size(frames{1})
+, size(frames, 2)]), 2);[] 
+ []
+
+[63 <./IntroToCompressiveSensing_36-eps-converted-to.pdf>]
+Overfull \hbox (1.49698pt too wide) in paragraph at lines 1656--1656
+[]\OT1/cmtt/m/n/10 mask = reshape(mask(randperm(numel(mask))), mask_size, mask_
+size);[] 
+ []
+
+
+Overfull \hbox (74.99634pt too wide) in paragraph at lines 1656--1656
+[]    \OT1/cmtt/m/n/10 phi(:,:,i) = circshift(mask, [-1*i,0]);    % mask is mov
+ing from  up to down[] 
+ []
+
+[64]
+Overfull \hbox (11.99689pt too wide) in paragraph at lines 1656--1656
+[]\OT1/cmtt/m/n/10 reconstruction = reshape(s_est, [mask_size, mask_size, noOfF
+rames]);[] 
+ []
+
+
+Overfull \hbox (53.99652pt too wide) in paragraph at lines 1659--1659
+[]\OT1/cmtt/m/n/10 Warning: Integer operands are required for colon operator wh
+en used as index 
  []
 
 Package epstopdf Info: Source file: <IntroToCompressiveSensing_37.eps>
-(epstopdf)                    date: 2017-08-23 11:21:06
-(epstopdf)                    size: 31221 bytes
+(epstopdf)                    date: 2017-10-09 15:35:38
+(epstopdf)                    size: 1021526 bytes
 (epstopdf)             Output file: <IntroToCompressiveSensing_37-eps-converted
 -to.pdf>
+(epstopdf)                    date: 2017-10-09 15:48:24
+(epstopdf)                    size: 67772 bytes
 (epstopdf)             Command: <epstopdf --outfile=IntroToCompressiveSensing_3
 7-eps-converted-to.pdf IntroToCompressiveSensing_37.eps>
-(epstopdf)             \includegraphics on input line 1649.
-runsystem(epstopdf --outfile=IntroToCompressiveSensing_37-eps-converted-to.pdf 
-IntroToCompressiveSensing_37.eps)...executed (allowed).
+(epstopdf)             \includegraphics on input line 1661.
+Package epstopdf Info: Output file is already uptodate.
 
-Package epstopdf Info: Result file: <IntroToCompressiveSensing_37-eps-converted
--to.pdf>
-(epstopdf)                    date: 2017-08-23 11:27:00
-(epstopdf)                    size: 7745 bytes.
-
-<IntroToCompressiveSensing_37-eps-converted-to.pdf, id=425, 343.2825pt x 275.02
-75pt>
+<IntroToCompressiveSensing_37-eps-converted-to.pdf, id=428, 348.30125pt x 275.0
+275pt>
 File: IntroToCompressiveSensing_37-eps-converted-to.pdf Graphic file (type pdf)
 
  <use IntroToCompressiveSensing_37-eps-converted-to.pdf>
 Package pdftex.def Info: IntroToCompressiveSensing_37-eps-converted-to.pdf used
- on input line 1649.
-(pdftex.def)             Requested size: 289.07999pt x 231.60065pt.
+ on input line 1661.
+(pdftex.def)             Requested size: 289.07999pt x 228.27696pt.
 Package epstopdf Info: Source file: <IntroToCompressiveSensing_38.eps>
-(epstopdf)                    date: 2017-08-23 11:21:06
-(epstopdf)                    size: 31221 bytes
+(epstopdf)                    date: 2017-10-09 15:35:38
+(epstopdf)                    size: 1021526 bytes
 (epstopdf)             Output file: <IntroToCompressiveSensing_38-eps-converted
 -to.pdf>
+(epstopdf)                    date: 2017-10-09 15:48:25
+(epstopdf)                    size: 18004 bytes
 (epstopdf)             Command: <epstopdf --outfile=IntroToCompressiveSensing_3
 8-eps-converted-to.pdf IntroToCompressiveSensing_38.eps>
-(epstopdf)             \includegraphics on input line 1651.
-runsystem(epstopdf --outfile=IntroToCompressiveSensing_38-eps-converted-to.pdf 
-IntroToCompressiveSensing_38.eps)...executed (allowed).
+(epstopdf)             \includegraphics on input line 1663.
+Package epstopdf Info: Output file is already uptodate.
 
-Package epstopdf Info: Result file: <IntroToCompressiveSensing_38-eps-converted
--to.pdf>
-(epstopdf)                    date: 2017-08-23 11:27:01
-(epstopdf)                    size: 7687 bytes.
-
-<IntroToCompressiveSensing_38-eps-converted-to.pdf, id=426, 343.2825pt x 275.02
-75pt> [64]
+<IntroToCompressiveSensing_38-eps-converted-to.pdf, id=429, 348.30125pt x 275.0
+275pt>
 File: IntroToCompressiveSensing_38-eps-converted-to.pdf Graphic file (type pdf)
 
  <use IntroToCompressiveSensing_38-eps-converted-to.pdf>
 Package pdftex.def Info: IntroToCompressiveSensing_38-eps-converted-to.pdf used
- on input line 1651.
-(pdftex.def)             Requested size: 289.07999pt x 231.60065pt.
- [65 <./IntroToCompressiveSensing_37-eps-converted-to.pdf> <./IntroToCompressiv
-eSensing_38-eps-converted-to.pdf>]
-<dictionary_learning.png, id=441, 983.92593pt x 541.27219pt>
-File: dictionary_learning.png Graphic file (type png)
-
-<use dictionary_learning.png>
-Package pdftex.def Info: dictionary_learning.png used on input line 1661.
-(pdftex.def)             Requested size: 289.07999pt x 159.0297pt.
- [66 <./dictionary_learning.png>] [67]
-Overfull \hbox (74.99634pt too wide) in paragraph at lines 1857--1857
-[]\OT1/cmtt/m/n/10 % desired sparsity (number of non-zero elements in sparse re
-presentation vector)[] 
+ on input line 1663.
+(pdftex.def)             Requested size: 289.07999pt x 228.27696pt.
+ [65 <./IntroToCompressiveSensing_37-eps-converted-to.pdf>] [66 <./IntroToCompr
+essiveSensing_38-eps-converted-to.pdf>] [67]
+Overfull \hbox (127.49588pt too wide) in paragraph at lines 1804--1804
+[]\OT1/cmtt/m/n/10 n_levels = wmaxlev(size(image), wavelet); % maximum number o
+f wavelet decomposition levels[] 
  []
 
 
-Overfull \hbox (11.99689pt too wide) in paragraph at lines 1857--1857
-[]\OT1/cmtt/m/n/10 % EXTRACT IMAGE PATCHES & INITIALIZE DICTIONARY D0 & PLOT DI
-CTIONARY[] 
+Overfull \hbox (122.24593pt too wide) in paragraph at lines 1804--1804
+[]\OT1/cmtt/m/n/10 % [C,S] = wavedec(image(:), n_levels, wavelet); % conversion
+ to 2D, wavelet decomposition[] 
  []
 
 
-Overfull \hbox (69.74638pt too wide) in paragraph at lines 1857--1857
-[]\OT1/cmtt/m/n/10 [~, Y_train] = extractImagePatches(image, blockSize, 'rand',
- 'nPatches', 5000);[] 
- []
-
-
-Overfull \hbox (53.99652pt too wide) in paragraph at lines 1857--1857
-[]\OT1/cmtt/m/n/10 % [~, Y_train] = extractImagePatches(image, blockSize, 'seq'
-, 'Overlap', 0);[] 
+Overfull \hbox (101.24611pt too wide) in paragraph at lines 1804--1804
+[]\OT1/cmtt/m/n/10 [C,S] = wavedec2(image, n_levels, wavelet); % conversion to 
+2D, wavelet decomposition[] 
  []
 
 [68]
-Overfull \hbox (1.49698pt too wide) in paragraph at lines 1857--1857
-[]\OT1/cmtt/m/n/10 % perform dictionary learning by iteratively repeating coeff
-icient[] 
- []
-
-
-Overfull \hbox (11.99689pt too wide) in paragraph at lines 1857--1857
-[]    \OT1/cmtt/m/n/10 %%%%%%%%%%%%%%%% coefficient calculation %%%%%%%%%%%%%%%
-%%%%%%%%[] 
- []
-
-
-Overfull \hbox (80.24629pt too wide) in paragraph at lines 1857--1857
-[]    \OT1/cmtt/m/n/10 X = sparseCode(Y_train, D, T0, niter_coeff, 'StepSize', 
-20000, 'Verbose', 0);[] 
- []
-
-
-Overfull \hbox (1.49698pt too wide) in paragraph at lines 1857--1857
-[]    \OT1/cmtt/m/n/10 %%%%%%%%%%%%%%%% dictionary update %%%%%%%%%%%%%%%%%%%%%
-%%%%%%[] 
- []
-
-
-Overfull \hbox (122.24593pt too wide) in paragraph at lines 1857--1857
-[]    \OT1/cmtt/m/n/10 [D, X] = updateDictionary(Y_train, X, D, 'aksvd', 'nIter
-', niter_dict, 'Verbose', 0);[] 
+Overfull \hbox (59.24648pt too wide) in paragraph at lines 1804--1804
+[]\OT1/cmtt/m/n/10 psi_inv = @(x) wavedec2(reshape(x, blockSize, blockSize), n_
+levels, wavelet);[] 
  []
 
 [69]
-Overfull \hbox (43.49661pt too wide) in paragraph at lines 1857--1857
-[]\OT1/cmtt/m/n/10 legend('|Y-DX|^2', 'After coefficient update', 'After dictio
-nary update');[] 
- []
-
-
-Overfull \hbox (6.74693pt too wide) in paragraph at lines 1857--1857
-[]\OT1/cmtt/m/n/10 param.iter = 100;  % let us see what happens after 1000 iter
-ations.[] 
- []
-
-
-Overfull \hbox (106.49606pt too wide) in paragraph at lines 1857--1857
-[]\OT1/cmtt/m/n/10 [~, Y, Xp, Yp] = extractImagePatches(image, blockSize, 'seq'
-, 'Overlap', blockSize-1);[] 
- []
-
-
-Overfull \hbox (221.99506pt too wide) in paragraph at lines 1857--1857
-[]\OT1/cmtt/m/n/10 X = sparseCode(Y, D, T0, 10, 'StepSize', 5000, 'Plot', 0, 'V
-erbose', 0, 'ThreshType', 'soft', 'Sigma', 0.1);[] 
- []
-
-
-Overfull \hbox (111.74602pt too wide) in paragraph at lines 1857--1857
-[]\OT1/cmtt/m/n/10 PA = PA + reshape(repmat( meanY, [blockSize^2 1] ), [blockSi
-ze blockSize  size(Y, 2)]);[] 
- []
-
-
-Overfull \hbox (32.9967pt too wide) in paragraph at lines 1857--1857
-[]    \OT1/cmtt/m/n/10 denoisedImage(x+(y-1)*imH) = denoisedImage(x+(y-1)*imH) 
-+ PA(:,:,i);[] 
- []
-
-[70]
-Overfull \hbox (38.24666pt too wide) in paragraph at lines 1857--1857
-[]\OT1/cmtt/m/n/10 subplot(122), imagesc(denoisedImage), title('Denoised image'
-), axis image[] 
- []
-
 Package epstopdf Info: Source file: <IntroToCompressiveSensing_39.eps>
-(epstopdf)                    date: 2017-08-23 11:23:47
-(epstopdf)                    size: 152980 bytes
+(epstopdf)                    date: 2017-10-09 15:36:02
+(epstopdf)                    size: 2026077 bytes
 (epstopdf)             Output file: <IntroToCompressiveSensing_39-eps-converted
 -to.pdf>
+(epstopdf)                    date: 2017-10-09 15:48:27
+(epstopdf)                    size: 45543 bytes
 (epstopdf)             Command: <epstopdf --outfile=IntroToCompressiveSensing_3
 9-eps-converted-to.pdf IntroToCompressiveSensing_39.eps>
-(epstopdf)             \includegraphics on input line 1871.
-runsystem(epstopdf --outfile=IntroToCompressiveSensing_39-eps-converted-to.pdf 
-IntroToCompressiveSensing_39.eps)...executed (allowed).
+(epstopdf)             \includegraphics on input line 1810.
+Package epstopdf Info: Output file is already uptodate.
 
-Package epstopdf Info: Result file: <IntroToCompressiveSensing_39-eps-converted
--to.pdf>
-(epstopdf)                    date: 2017-08-23 11:27:03
-(epstopdf)                    size: 64001 bytes.
-
-<IntroToCompressiveSensing_39-eps-converted-to.pdf, id=458, 330.23375pt x 57.21
+<IntroToCompressiveSensing_39-eps-converted-to.pdf, id=454, 352.31625pt x 170.6
 375pt>
 File: IntroToCompressiveSensing_39-eps-converted-to.pdf Graphic file (type pdf)
 
  <use IntroToCompressiveSensing_39-eps-converted-to.pdf>
 Package pdftex.def Info: IntroToCompressiveSensing_39-eps-converted-to.pdf used
- on input line 1871.
-(pdftex.def)             Requested size: 289.07999pt x 50.08546pt.
+ on input line 1810.
+(pdftex.def)             Requested size: 289.07999pt x 140.00957pt.
 Package epstopdf Info: Source file: <IntroToCompressiveSensing_40.eps>
-(epstopdf)                    date: 2017-08-23 11:23:47
-(epstopdf)                    size: 19850 bytes
+(epstopdf)                    date: 2017-10-09 15:36:03
+(epstopdf)                    size: 1587045 bytes
 (epstopdf)             Output file: <IntroToCompressiveSensing_40-eps-converted
 -to.pdf>
+(epstopdf)                    date: 2017-10-09 15:48:29
+(epstopdf)                    size: 38264 bytes
 (epstopdf)             Command: <epstopdf --outfile=IntroToCompressiveSensing_4
 0-eps-converted-to.pdf IntroToCompressiveSensing_40.eps>
-(epstopdf)             \includegraphics on input line 1873.
-runsystem(epstopdf --outfile=IntroToCompressiveSensing_40-eps-converted-to.pdf 
-IntroToCompressiveSensing_40.eps)...executed (allowed).
+(epstopdf)             \includegraphics on input line 1825.
+Package epstopdf Info: Output file is already uptodate.
 
-Package epstopdf Info: Result file: <IntroToCompressiveSensing_40-eps-converted
--to.pdf>
-(epstopdf)                    date: 2017-08-23 11:27:04
-(epstopdf)                    size: 4838 bytes.
-
-<IntroToCompressiveSensing_40-eps-converted-to.pdf, id=459, 357.335pt x 277.035
-pt>
+<IntroToCompressiveSensing_40-eps-converted-to.pdf, id=455, 348.30125pt x 274.0
+2374pt>
 File: IntroToCompressiveSensing_40-eps-converted-to.pdf Graphic file (type pdf)
 
  <use IntroToCompressiveSensing_40-eps-converted-to.pdf>
 Package pdftex.def Info: IntroToCompressiveSensing_40-eps-converted-to.pdf used
- on input line 1873.
-(pdftex.def)             Requested size: 289.07999pt x 224.1308pt.
+ on input line 1825.
+(pdftex.def)             Requested size: 289.07999pt x 227.44382pt.
+ [70 <./IntroToCompressiveSensing_39-eps-converted-to.pdf>]
+<dictionary_learning.png, id=465, 983.92593pt x 541.27219pt>
+File: dictionary_learning.png Graphic file (type png)
+
+<use dictionary_learning.png>
+Package pdftex.def Info: dictionary_learning.png used on input line 1835.
+(pdftex.def)             Requested size: 289.07999pt x 159.0297pt.
+ [71 <./IntroToCompressiveSensing_40-eps-converted-to.pdf> <./dictionary_learni
+ng.png>] [72]
+Overfull \hbox (74.99634pt too wide) in paragraph at lines 2027--2027
+[]\OT1/cmtt/m/n/10 % desired sparsity (number of non-zero elements in sparse re
+presentation vector)[] 
+ []
+
+[73]
+Overfull \hbox (11.99689pt too wide) in paragraph at lines 2027--2027
+[]\OT1/cmtt/m/n/10 % EXTRACT IMAGE PATCHES & INITIALIZE DICTIONARY D0 & PLOT DI
+CTIONARY[] 
+ []
+
+
+Overfull \hbox (69.74638pt too wide) in paragraph at lines 2027--2027
+[]\OT1/cmtt/m/n/10 [~, Y_train] = extractImagePatches(image, blockSize, 'rand',
+ 'nPatches', 5000);[] 
+ []
+
+
+Overfull \hbox (53.99652pt too wide) in paragraph at lines 2027--2027
+[]\OT1/cmtt/m/n/10 % [~, Y_train] = extractImagePatches(image, blockSize, 'seq'
+, 'Overlap', 0);[] 
+ []
+
+
+Overfull \hbox (1.49698pt too wide) in paragraph at lines 2027--2027
+[]\OT1/cmtt/m/n/10 % perform dictionary learning by iteratively repeating coeff
+icient[] 
+ []
+
+[74]
+Overfull \hbox (11.99689pt too wide) in paragraph at lines 2027--2027
+[]    \OT1/cmtt/m/n/10 %%%%%%%%%%%%%%%% coefficient calculation %%%%%%%%%%%%%%%
+%%%%%%%%[] 
+ []
+
+
+Overfull \hbox (80.24629pt too wide) in paragraph at lines 2027--2027
+[]    \OT1/cmtt/m/n/10 X = sparseCode(Y_train, D, T0, niter_coeff, 'StepSize', 
+20000, 'Verbose', 0);[] 
+ []
+
+
+Overfull \hbox (1.49698pt too wide) in paragraph at lines 2027--2027
+[]    \OT1/cmtt/m/n/10 %%%%%%%%%%%%%%%% dictionary update %%%%%%%%%%%%%%%%%%%%%
+%%%%%%[] 
+ []
+
+
+Overfull \hbox (122.24593pt too wide) in paragraph at lines 2027--2027
+[]    \OT1/cmtt/m/n/10 [D, X] = updateDictionary(Y_train, X, D, 'aksvd', 'nIter
+', niter_dict, 'Verbose', 0);[] 
+ []
+
+
+Overfull \hbox (43.49661pt too wide) in paragraph at lines 2027--2027
+[]\OT1/cmtt/m/n/10 legend('|Y-DX|^2', 'After coefficient update', 'After dictio
+nary update');[] 
+ []
+
+
+Overfull \hbox (6.74693pt too wide) in paragraph at lines 2027--2027
+[]\OT1/cmtt/m/n/10 param.iter = 100;  % let us see what happens after 1000 iter
+ations.[] 
+ []
+
+
+Overfull \hbox (106.49606pt too wide) in paragraph at lines 2027--2027
+[]\OT1/cmtt/m/n/10 [~, Y, Xp, Yp] = extractImagePatches(image, blockSize, 'seq'
+, 'Overlap', blockSize-1);[] 
+ []
+
+[75]
+Overfull \hbox (221.99506pt too wide) in paragraph at lines 2027--2027
+[]\OT1/cmtt/m/n/10 X = sparseCode(Y, D, T0, 10, 'StepSize', 5000, 'Plot', 0, 'V
+erbose', 0, 'ThreshType', 'soft', 'Sigma', 0.1);[] 
+ []
+
+
+Overfull \hbox (111.74602pt too wide) in paragraph at lines 2027--2027
+[]\OT1/cmtt/m/n/10 PA = PA + reshape(repmat( meanY, [blockSize^2 1] ), [blockSi
+ze blockSize  size(Y, 2)]);[] 
+ []
+
+
+Overfull \hbox (32.9967pt too wide) in paragraph at lines 2027--2027
+[]    \OT1/cmtt/m/n/10 denoisedImage(x+(y-1)*imH) = denoisedImage(x+(y-1)*imH) 
++ PA(:,:,i);[] 
+ []
+
+
+Overfull \hbox (38.24666pt too wide) in paragraph at lines 2027--2027
+[]\OT1/cmtt/m/n/10 subplot(122), imagesc(denoisedImage), title('Denoised image'
+), axis image[] 
+ []
+
 Package epstopdf Info: Source file: <IntroToCompressiveSensing_41.eps>
-(epstopdf)                    date: 2017-08-23 11:23:47
-(epstopdf)                    size: 152978 bytes
+(epstopdf)                    date: 2017-10-09 15:38:30
+(epstopdf)                    size: 152980 bytes
 (epstopdf)             Output file: <IntroToCompressiveSensing_41-eps-converted
 -to.pdf>
+(epstopdf)                    date: 2017-10-09 15:48:30
+(epstopdf)                    size: 69265 bytes
 (epstopdf)             Command: <epstopdf --outfile=IntroToCompressiveSensing_4
 1-eps-converted-to.pdf IntroToCompressiveSensing_41.eps>
-(epstopdf)             \includegraphics on input line 1875.
-runsystem(epstopdf --outfile=IntroToCompressiveSensing_41-eps-converted-to.pdf 
-IntroToCompressiveSensing_41.eps)...executed (allowed).
+(epstopdf)             \includegraphics on input line 2041.
+Package epstopdf Info: Output file is already uptodate.
 
-Package epstopdf Info: Result file: <IntroToCompressiveSensing_41-eps-converted
--to.pdf>
-(epstopdf)                    date: 2017-08-23 11:27:05
-(epstopdf)                    size: 64359 bytes.
-
-<IntroToCompressiveSensing_41-eps-converted-to.pdf, id=460, 330.23375pt x 57.21
+<IntroToCompressiveSensing_41-eps-converted-to.pdf, id=488, 330.23375pt x 57.21
 375pt>
 File: IntroToCompressiveSensing_41-eps-converted-to.pdf Graphic file (type pdf)
 
  <use IntroToCompressiveSensing_41-eps-converted-to.pdf>
 Package pdftex.def Info: IntroToCompressiveSensing_41-eps-converted-to.pdf used
- on input line 1875.
+ on input line 2041.
 (pdftex.def)             Requested size: 289.07999pt x 50.08546pt.
 Package epstopdf Info: Source file: <IntroToCompressiveSensing_42.eps>
-(epstopdf)                    date: 2017-08-23 11:23:48
-(epstopdf)                    size: 2026070 bytes
+(epstopdf)                    date: 2017-10-09 15:38:30
+(epstopdf)                    size: 21336 bytes
 (epstopdf)             Output file: <IntroToCompressiveSensing_42-eps-converted
 -to.pdf>
+(epstopdf)                    date: 2017-10-09 15:48:31
+(epstopdf)                    size: 4914 bytes
 (epstopdf)             Command: <epstopdf --outfile=IntroToCompressiveSensing_4
 2-eps-converted-to.pdf IntroToCompressiveSensing_42.eps>
-(epstopdf)             \includegraphics on input line 1877.
-runsystem(epstopdf --outfile=IntroToCompressiveSensing_42-eps-converted-to.pdf 
-IntroToCompressiveSensing_42.eps)...executed (allowed).
+(epstopdf)             \includegraphics on input line 2043.
+Package epstopdf Info: Output file is already uptodate.
 
-Package epstopdf Info: Result file: <IntroToCompressiveSensing_42-eps-converted
--to.pdf>
-(epstopdf)                    date: 2017-08-23 11:27:08
-(epstopdf)                    size: 77646 bytes.
-
-<IntroToCompressiveSensing_42-eps-converted-to.pdf, id=461, 352.31625pt x 170.6
-375pt>
+<IntroToCompressiveSensing_42-eps-converted-to.pdf, id=489, 357.335pt x 278.038
+76pt>
 File: IntroToCompressiveSensing_42-eps-converted-to.pdf Graphic file (type pdf)
 
  <use IntroToCompressiveSensing_42-eps-converted-to.pdf>
 Package pdftex.def Info: IntroToCompressiveSensing_42-eps-converted-to.pdf used
- on input line 1877.
+ on input line 2043.
+(pdftex.def)             Requested size: 289.07999pt x 224.94287pt.
+Package epstopdf Info: Source file: <IntroToCompressiveSensing_43.eps>
+(epstopdf)                    date: 2017-10-09 15:38:31
+(epstopdf)                    size: 152978 bytes
+(epstopdf)             Output file: <IntroToCompressiveSensing_43-eps-converted
+-to.pdf>
+(epstopdf)                    date: 2017-10-09 15:48:32
+(epstopdf)                    size: 61875 bytes
+(epstopdf)             Command: <epstopdf --outfile=IntroToCompressiveSensing_4
+3-eps-converted-to.pdf IntroToCompressiveSensing_43.eps>
+(epstopdf)             \includegraphics on input line 2045.
+Package epstopdf Info: Output file is already uptodate.
+
+<IntroToCompressiveSensing_43-eps-converted-to.pdf, id=490, 330.23375pt x 57.21
+375pt> [76 <./IntroToCompressiveSensing_41-eps-converted-to.pdf>]
+File: IntroToCompressiveSensing_43-eps-converted-to.pdf Graphic file (type pdf)
+
+
+<use IntroToCompressiveSensing_43-eps-converted-to.pdf>
+Package pdftex.def Info: IntroToCompressiveSensing_43-eps-converted-to.pdf used
+ on input line 2045.
+(pdftex.def)             Requested size: 289.07999pt x 50.08546pt.
+Package epstopdf Info: Source file: <IntroToCompressiveSensing_44.eps>
+(epstopdf)                    date: 2017-10-09 15:38:32
+(epstopdf)                    size: 2026070 bytes
+(epstopdf)             Output file: <IntroToCompressiveSensing_44-eps-converted
+-to.pdf>
+(epstopdf)                    date: 2017-10-09 15:48:34
+(epstopdf)                    size: 77743 bytes
+(epstopdf)             Command: <epstopdf --outfile=IntroToCompressiveSensing_4
+4-eps-converted-to.pdf IntroToCompressiveSensing_44.eps>
+(epstopdf)             \includegraphics on input line 2047.
+Package epstopdf Info: Output file is already uptodate.
+
+<IntroToCompressiveSensing_44-eps-converted-to.pdf, id=498, 352.31625pt x 170.6
+375pt>
+File: IntroToCompressiveSensing_44-eps-converted-to.pdf Graphic file (type pdf)
+
+ <use IntroToCompressiveSensing_44-eps-converted-to.pdf>
+Package pdftex.def Info: IntroToCompressiveSensing_44-eps-converted-to.pdf used
+ on input line 2047.
 (pdftex.def)             Requested size: 289.07999pt x 140.00957pt.
- [71 <./IntroToCompressiveSensing_39-eps-converted-to.pdf> <./IntroToCompressiv
-eSensing_40-eps-converted-to.pdf> <./IntroToCompressiveSensing_41-eps-converted
+ [77 <./IntroToCompressiveSensing_42-eps-converted-to.pdf> <./IntroToCompressiv
+eSensing_43-eps-converted-to.pdf> <./IntroToCompressiveSensing_44-eps-converted
 -to.pdf>]
-Underfull \hbox (badness 4765) in paragraph at lines 1889--1891
+Overfull \hbox (1.49698pt too wide) in paragraph at lines 2154--2154
+[]\OT1/cmtt/m/n/10 Xp = repmat(dX,[1 1 N]) + repmat( reshape(x(:),[1 1 N]), [w 
+w 1]);[] 
+ []
+
+
+Overfull \hbox (1.49698pt too wide) in paragraph at lines 2154--2154
+[]\OT1/cmtt/m/n/10 Yp = repmat(dY,[1 1 N]) + repmat( reshape(y(:),[1 1 N]), [w 
+w 1]);[] 
+ []
+
+[78]
+Overfull \hbox (1.49698pt too wide) in paragraph at lines 2154--2154
+[]            \OT1/cmtt/m/n/10 X_tmp = softThreshold(X_tmp-tau*(M(:,kk).*D)'*R,
+ th');[] 
+ []
+
+
+Overfull \hbox (43.49661pt too wide) in paragraph at lines 2154--2154
+[]    \OT1/cmtt/m/n/10 inpaintedImage(x+(y-1)*imH) = inpaintedImage(x+(y-1)*imH
+) + PA(:,:,i);[] 
+ []
+
+
+Overfull \hbox (48.74657pt too wide) in paragraph at lines 2154--2154
+[]\OT1/cmtt/m/n/10 subplot(122), imagesc(inpaintedImage), title('Inpainted imag
+e'), axis image[] 
+ []
+
+[79] [80]
+Package epstopdf Info: Source file: <IntroToCompressiveSensing_45.eps>
+(epstopdf)                    date: 2017-10-09 15:39:15
+(epstopdf)                    size: 521413 bytes
+(epstopdf)             Output file: <IntroToCompressiveSensing_45-eps-converted
+-to.pdf>
+(epstopdf)                    date: 2017-10-09 15:48:35
+(epstopdf)                    size: 39748 bytes
+(epstopdf)             Command: <epstopdf --outfile=IntroToCompressiveSensing_4
+5-eps-converted-to.pdf IntroToCompressiveSensing_45.eps>
+(epstopdf)             \includegraphics on input line 2223.
+Package epstopdf Info: Output file is already uptodate.
+
+<IntroToCompressiveSensing_45-eps-converted-to.pdf, id=525, 351.3125pt x 170.63
+75pt>
+File: IntroToCompressiveSensing_45-eps-converted-to.pdf Graphic file (type pdf)
+
+ <use IntroToCompressiveSensing_45-eps-converted-to.pdf>
+Package pdftex.def Info: IntroToCompressiveSensing_45-eps-converted-to.pdf used
+ on input line 2223.
+(pdftex.def)             Requested size: 289.07999pt x 140.42094pt.
+ [81 <./IntroToCompressiveSensing_45-eps-converted-to.pdf>]
+Underfull \hbox (badness 4765) in paragraph at lines 2235--2237
 []\OT1/cmr/m/n/10 Given suf-fi-cient train-ing sam-ples of the $\OML/cmm/m/it/1
 0 i$ \OT1/cmr/m/n/10 th ob-ject class, $\OML/cmm/m/it/10 D[] \OT1/cmr/m/n/10 =
  []
 
-[72 <./IntroToCompressiveSensing_42-eps-converted-to.pdf>]
-<src.png, id=485, 604.50844pt x 366.61969pt>
+[82] <src.png, id=538, 604.50844pt x 366.61969pt>
 File: src.png Graphic file (type png)
  <use src.png>
-Package pdftex.def Info: src.png used on input line 1920.
+Package pdftex.def Info: src.png used on input line 2266.
 (pdftex.def)             Requested size: 289.07999pt x 175.32092pt.
- [73 <./src.png>]
-Overfull \hbox (32.9967pt too wide) in paragraph at lines 1993--1993
+
+Overfull \hbox (32.9967pt too wide) in paragraph at lines 2351--2351
 []\OT1/cmtt/m/n/10 % this is example in which we classify human face images bas
 ed on sparse[] 
  []
 
 
-Overfull \hbox (1.49698pt too wide) in paragraph at lines 1993--1993
+Overfull \hbox (1.49698pt too wide) in paragraph at lines 2351--2351
 []\OT1/cmtt/m/n/10 visTrain = col2im(images_training, imSize, imSize*10, 'disti
 nct');[] 
  []
 
-
-Overfull \hbox (122.24593pt too wide) in paragraph at lines 1993--1993
+[83 <./src.png>]
+Overfull \hbox (122.24593pt too wide) in paragraph at lines 2351--2351
 []    \OT1/cmtt/m/n/10 residual = Y - D(:, find(labels==uniqlabels(i))) * X(fin
 d(labels==uniqlabels(i)), :);[] 
  []
 
 
-Overfull \hbox (6.74693pt too wide) in paragraph at lines 1993--1993
+Overfull \hbox (6.74693pt too wide) in paragraph at lines 2351--2351
 []\OT1/cmtt/m/n/10 % classify observed test input based on sparse representatio
 n error[] 
  []
 
-[74]
-Overfull \hbox (53.99652pt too wide) in paragraph at lines 1993--1993
-[]\OT1/cmtt/m/n/10 classificationLabel = imresize(classificationLabel, [9000, 1
-00], 'nearest');[] 
+
+Overfull \hbox (69.74638pt too wide) in paragraph at lines 2351--2351
+[]\OT1/cmtt/m/n/10 classificationLabel = imresize(classificationLabelEst, [9000
+, 100], 'nearest');[] 
  []
 
 
-Overfull \hbox (17.24684pt too wide) in paragraph at lines 1993--1993
+Overfull \hbox (17.24684pt too wide) in paragraph at lines 2351--2351
 []\OT1/cmtt/m/n/10 visPred = col2im(classificationLabel, imSize, imSize*10, 'di
 stinct');[] 
  []
 
+[84]
+Overfull \hbox (43.49661pt too wide) in paragraph at lines 2351--2351
+[]\OT1/cmtt/m/n/10 [C,order] = confusionmat(classificationLabelTrue, classifica
+tionLabelEst);[] 
+ []
 
-Overfull \hbox (64.49643pt too wide) in paragraph at lines 2030--2030
+
+Overfull \hbox (64.49643pt too wide) in paragraph at lines 2388--2388
 []     \OT1/cmtt/m/n/10 1     1     1     1     1     1     1     1     1     1
      2     2     2[] 
  []
 
 
-Overfull \hbox (64.49643pt too wide) in paragraph at lines 2030--2030
+Overfull \hbox (64.49643pt too wide) in paragraph at lines 2388--2388
 []     \OT1/cmtt/m/n/10 2     2     2     2     2     2     2     3     3     3
      3     3     3[] 
  []
 
 
-Overfull \hbox (64.49643pt too wide) in paragraph at lines 2030--2030
+Overfull \hbox (64.49643pt too wide) in paragraph at lines 2388--2388
 []     \OT1/cmtt/m/n/10 3     3     3     3     4     4     4     4     4     4
      4     4     4[] 
  []
 
 
-Overfull \hbox (64.49643pt too wide) in paragraph at lines 2030--2030
+Overfull \hbox (64.49643pt too wide) in paragraph at lines 2388--2388
 []     \OT1/cmtt/m/n/10 4     5     5     5     5     5     5     5     5     5
      5     6     6[] 
  []
 
 
-Overfull \hbox (64.49643pt too wide) in paragraph at lines 2030--2030
-[]     \OT1/cmtt/m/n/10 6     6     6     6     6     6     6     6     7     7
-     7     7     7[] 
- []
-
-[75]
-Overfull \hbox (64.49643pt too wide) in paragraph at lines 2030--2030
-[]     \OT1/cmtt/m/n/10 7     7     7     7     7     8     8     8     8     8
-     8     8     8[] 
- []
-
-
-Overfull \hbox (64.49643pt too wide) in paragraph at lines 2030--2030
-[]     \OT1/cmtt/m/n/10 8     8     9     9     9     9     9     9     9     9
-     9     9    10[] 
- []
-
-Package epstopdf Info: Source file: <IntroToCompressiveSensing_43.eps>
-(epstopdf)                    date: 2017-08-23 11:23:51
-(epstopdf)                    size: 1392570 bytes
-(epstopdf)             Output file: <IntroToCompressiveSensing_43-eps-converted
--to.pdf>
-(epstopdf)             Command: <epstopdf --outfile=IntroToCompressiveSensing_4
-3-eps-converted-to.pdf IntroToCompressiveSensing_43.eps>
-(epstopdf)             \includegraphics on input line 2032.
-runsystem(epstopdf --outfile=IntroToCompressiveSensing_43-eps-converted-to.pdf 
-IntroToCompressiveSensing_43.eps)...executed (allowed).
-
-Package epstopdf Info: Result file: <IntroToCompressiveSensing_43-eps-converted
--to.pdf>
-(epstopdf)                    date: 2017-08-23 11:27:10
-(epstopdf)                    size: 105906 bytes.
-
-<IntroToCompressiveSensing_43-eps-converted-to.pdf, id=496, 257.96375pt x 287.0
-725pt>
-File: IntroToCompressiveSensing_43-eps-converted-to.pdf Graphic file (type pdf)
-
- <use IntroToCompressiveSensing_43-eps-converted-to.pdf>
-Package pdftex.def Info: IntroToCompressiveSensing_43-eps-converted-to.pdf used
- on input line 2032.
-(pdftex.def)             Requested size: 289.07999pt x 321.72926pt.
-Package epstopdf Info: Source file: <IntroToCompressiveSensing_44.eps>
-(epstopdf)                    date: 2017-08-23 11:23:52
-(epstopdf)                    size: 1390500 bytes
-(epstopdf)             Output file: <IntroToCompressiveSensing_44-eps-converted
--to.pdf>
-(epstopdf)             Command: <epstopdf --outfile=IntroToCompressiveSensing_4
-4-eps-converted-to.pdf IntroToCompressiveSensing_44.eps>
-(epstopdf)             \includegraphics on input line 2034.
-runsystem(epstopdf --outfile=IntroToCompressiveSensing_44-eps-converted-to.pdf 
-IntroToCompressiveSensing_44.eps)...executed (allowed).
-
-Package epstopdf Info: Result file: <IntroToCompressiveSensing_44-eps-converted
--to.pdf>
-(epstopdf)                    date: 2017-08-23 11:27:12
-(epstopdf)                    size: 105425 bytes.
-
-<IntroToCompressiveSensing_44-eps-converted-to.pdf, id=497, 257.96375pt x 287.0
-725pt>
-File: IntroToCompressiveSensing_44-eps-converted-to.pdf Graphic file (type pdf)
-
- <use IntroToCompressiveSensing_44-eps-converted-to.pdf>
-Package pdftex.def Info: IntroToCompressiveSensing_44-eps-converted-to.pdf used
- on input line 2034.
-(pdftex.def)             Requested size: 289.07999pt x 321.72926pt.
-Package epstopdf Info: Source file: <IntroToCompressiveSensing_45.eps>
-(epstopdf)                    date: 2017-08-23 11:23:53
-(epstopdf)                    size: 3459076 bytes
-(epstopdf)             Output file: <IntroToCompressiveSensing_45-eps-converted
--to.pdf>
-(epstopdf)             Command: <epstopdf --outfile=IntroToCompressiveSensing_4
-5-eps-converted-to.pdf IntroToCompressiveSensing_45.eps>
-(epstopdf)             \includegraphics on input line 2036.
-runsystem(epstopdf --outfile=IntroToCompressiveSensing_45-eps-converted-to.pdf 
-IntroToCompressiveSensing_45.eps)...executed (allowed).
-
-Package epstopdf Info: Result file: <IntroToCompressiveSensing_45-eps-converted
--to.pdf>
-(epstopdf)                    date: 2017-08-23 11:27:14
-(epstopdf)                    size: 24868 bytes.
-
-<IntroToCompressiveSensing_45-eps-converted-to.pdf, id=498, 257.96375pt x 288.0
-7625pt> [76 <./IntroToCompressiveSensing_43-eps-converted-to.pdf>]
-File: IntroToCompressiveSensing_45-eps-converted-to.pdf Graphic file (type pdf)
-
-
-<use IntroToCompressiveSensing_45-eps-converted-to.pdf>
-Package pdftex.def Info: IntroToCompressiveSensing_45-eps-converted-to.pdf used
- on input line 2036.
-(pdftex.def)             Requested size: 289.07999pt x 322.85417pt.
- [77 <./IntroToCompressiveSensing_44-eps-converted-to.pdf>] [78 <./IntroToCompr
-essiveSensing_45-eps-converted-to.pdf>] <dksvd.png, id=523, 495.35063pt x 438.1
-3687pt>
-File: dksvd.png Graphic file (type png)
- <use dksvd.png>
-Package pdftex.def Info: dksvd.png used on input line 2079.
-(pdftex.def)             Requested size: 289.07999pt x 255.69063pt.
-
-[79]
-Overfull \hbox (32.9967pt too wide) in paragraph at lines 2197--2197
-[]\OT1/cmtt/m/n/10 % this is example in which we classify human face images bas
-ed on D-KSVD[] 
- []
-
-
-Overfull \hbox (1.49698pt too wide) in paragraph at lines 2197--2197
-[]\OT1/cmtt/m/n/10 visTrain = col2im(images_training, imSize, imSize*10, 'disti
-nct');[] 
- []
-
-[80 <./dksvd.png>]
-Overfull \hbox (6.74693pt too wide) in paragraph at lines 2197--2197
-[]\OT1/cmtt/m/n/10 % perform few iterations of KSVD on class-specific dictionar
-ies and[] 
- []
-
-
-Overfull \hbox (127.49588pt too wide) in paragraph at lines 2197--2197
-[]    \OT1/cmtt/m/n/10 [D_part, X] = learnDictionary(Y_part, D_part, param.K, '
-nIterLearn', 5, 'Verbose', 0);[] 
- []
-
-
-Overfull \hbox (43.49661pt too wide) in paragraph at lines 2197--2197
-[]\OT1/cmtt/m/n/10 % factor that controls reconstructive/discriminative diction
-ary properties[] 
- []
-
-
-Overfull \hbox (53.99652pt too wide) in paragraph at lines 2197--2197
-[]\OT1/cmtt/m/n/10 % concatenate linear classifier W to the dictionary D0 and c
-oncatenate label[] 
- []
-
-[81]
-Overfull \hbox (53.99652pt too wide) in paragraph at lines 2197--2197
-[]\OT1/cmtt/m/n/10 classificationLabel = imresize(classificationLabel, [9000, 1
-00], 'nearest');[] 
- []
-
-
-Overfull \hbox (17.24684pt too wide) in paragraph at lines 2197--2197
-[]\OT1/cmtt/m/n/10 visPred = col2im(classificationLabel, imSize, imSize*10, 'di
-stinct');[] 
- []
-
-[82]
-Overfull \hbox (64.49643pt too wide) in paragraph at lines 2234--2234
-[]     \OT1/cmtt/m/n/10 1     1     1     1     1     1     1     1     1     1
-     2     2     2[] 
- []
-
-
-Overfull \hbox (64.49643pt too wide) in paragraph at lines 2234--2234
-[]     \OT1/cmtt/m/n/10 2     2     2     2     2     2     2     3     3     3
-     3     3     3[] 
- []
-
-
-Overfull \hbox (64.49643pt too wide) in paragraph at lines 2234--2234
-[]     \OT1/cmtt/m/n/10 3     3     3     3     4     4     4     4     4     4
-     4     4     4[] 
- []
-
-
-Overfull \hbox (64.49643pt too wide) in paragraph at lines 2234--2234
-[]     \OT1/cmtt/m/n/10 4     5     5     5     5     5     5     5     5     5
-     5     6     6[] 
- []
-
-
-Overfull \hbox (64.49643pt too wide) in paragraph at lines 2234--2234
+Overfull \hbox (64.49643pt too wide) in paragraph at lines 2388--2388
 []     \OT1/cmtt/m/n/10 6     6     6     6     6     6     6     6     7     7
      7     7     7[] 
  []
 
 
-Overfull \hbox (64.49643pt too wide) in paragraph at lines 2234--2234
+Overfull \hbox (64.49643pt too wide) in paragraph at lines 2388--2388
 []     \OT1/cmtt/m/n/10 7     7     7     7     7     8     8     8     8     8
      8     8     8[] 
  []
 
 
-Overfull \hbox (64.49643pt too wide) in paragraph at lines 2234--2234
+Overfull \hbox (64.49643pt too wide) in paragraph at lines 2388--2388
 []     \OT1/cmtt/m/n/10 8     8     9     9     9     9     9     9     9     9
      9     9    10[] 
  []
 
+[85]
 Package epstopdf Info: Source file: <IntroToCompressiveSensing_46.eps>
-(epstopdf)                    date: 2017-08-23 11:23:59
+(epstopdf)                    date: 2017-10-09 15:39:18
 (epstopdf)                    size: 1392570 bytes
 (epstopdf)             Output file: <IntroToCompressiveSensing_46-eps-converted
 -to.pdf>
+(epstopdf)                    date: 2017-10-09 15:48:37
+(epstopdf)                    size: 105906 bytes
 (epstopdf)             Command: <epstopdf --outfile=IntroToCompressiveSensing_4
 6-eps-converted-to.pdf IntroToCompressiveSensing_46.eps>
-(epstopdf)             \includegraphics on input line 2236.
-runsystem(epstopdf --outfile=IntroToCompressiveSensing_46-eps-converted-to.pdf 
-IntroToCompressiveSensing_46.eps)...executed (allowed).
+(epstopdf)             \includegraphics on input line 2390.
+Package epstopdf Info: Output file is already uptodate.
 
-Package epstopdf Info: Result file: <IntroToCompressiveSensing_46-eps-converted
--to.pdf>
-(epstopdf)                    date: 2017-08-23 11:27:17
-(epstopdf)                    size: 106273 bytes.
-
-<IntroToCompressiveSensing_46-eps-converted-to.pdf, id=537, 257.96375pt x 287.0
+<IntroToCompressiveSensing_46-eps-converted-to.pdf, id=549, 257.96375pt x 287.0
 725pt>
 File: IntroToCompressiveSensing_46-eps-converted-to.pdf Graphic file (type pdf)
 
  <use IntroToCompressiveSensing_46-eps-converted-to.pdf>
 Package pdftex.def Info: IntroToCompressiveSensing_46-eps-converted-to.pdf used
- on input line 2236.
+ on input line 2390.
 (pdftex.def)             Requested size: 289.07999pt x 321.72926pt.
 Package epstopdf Info: Source file: <IntroToCompressiveSensing_47.eps>
-(epstopdf)                    date: 2017-08-23 11:24:00
+(epstopdf)                    date: 2017-10-09 15:39:20
 (epstopdf)                    size: 1390500 bytes
 (epstopdf)             Output file: <IntroToCompressiveSensing_47-eps-converted
 -to.pdf>
+(epstopdf)                    date: 2017-10-09 15:48:39
+(epstopdf)                    size: 105425 bytes
 (epstopdf)             Command: <epstopdf --outfile=IntroToCompressiveSensing_4
 7-eps-converted-to.pdf IntroToCompressiveSensing_47.eps>
-(epstopdf)             \includegraphics on input line 2238.
-runsystem(epstopdf --outfile=IntroToCompressiveSensing_47-eps-converted-to.pdf 
-IntroToCompressiveSensing_47.eps)...executed (allowed).
+(epstopdf)             \includegraphics on input line 2392.
+Package epstopdf Info: Output file is already uptodate.
 
-Package epstopdf Info: Result file: <IntroToCompressiveSensing_47-eps-converted
--to.pdf>
-(epstopdf)                    date: 2017-08-23 11:27:20
-(epstopdf)                    size: 105425 bytes.
-
-<IntroToCompressiveSensing_47-eps-converted-to.pdf, id=538, 257.96375pt x 287.0
-725pt> [83]
+<IntroToCompressiveSensing_47-eps-converted-to.pdf, id=550, 257.96375pt x 287.0
+725pt>
 File: IntroToCompressiveSensing_47-eps-converted-to.pdf Graphic file (type pdf)
 
  <use IntroToCompressiveSensing_47-eps-converted-to.pdf>
 Package pdftex.def Info: IntroToCompressiveSensing_47-eps-converted-to.pdf used
- on input line 2238.
+ on input line 2392.
 (pdftex.def)             Requested size: 289.07999pt x 321.72926pt.
 Package epstopdf Info: Source file: <IntroToCompressiveSensing_48.eps>
-(epstopdf)                    date: 2017-08-23 11:24:01
+(epstopdf)                    date: 2017-10-09 15:39:23
 (epstopdf)                    size: 3459076 bytes
 (epstopdf)             Output file: <IntroToCompressiveSensing_48-eps-converted
 -to.pdf>
+(epstopdf)                    date: 2017-10-09 15:48:41
+(epstopdf)                    size: 25497 bytes
 (epstopdf)             Command: <epstopdf --outfile=IntroToCompressiveSensing_4
 8-eps-converted-to.pdf IntroToCompressiveSensing_48.eps>
-(epstopdf)             \includegraphics on input line 2240.
-runsystem(epstopdf --outfile=IntroToCompressiveSensing_48-eps-converted-to.pdf 
-IntroToCompressiveSensing_48.eps)...executed (allowed).
+(epstopdf)             \includegraphics on input line 2394.
+Package epstopdf Info: Output file is already uptodate.
 
-Package epstopdf Info: Result file: <IntroToCompressiveSensing_48-eps-converted
--to.pdf>
-(epstopdf)                    date: 2017-08-23 11:27:23
-(epstopdf)                    size: 25497 bytes.
-
-<IntroToCompressiveSensing_48-eps-converted-to.pdf, id=542, 257.96375pt x 288.0
-7625pt> [84 <./IntroToCompressiveSensing_46-eps-converted-to.pdf>]
+<IntroToCompressiveSensing_48-eps-converted-to.pdf, id=551, 257.96375pt x 288.0
+7625pt> [86 <./IntroToCompressiveSensing_46-eps-converted-to.pdf>]
 File: IntroToCompressiveSensing_48-eps-converted-to.pdf Graphic file (type pdf)
 
 
 <use IntroToCompressiveSensing_48-eps-converted-to.pdf>
 Package pdftex.def Info: IntroToCompressiveSensing_48-eps-converted-to.pdf used
- on input line 2240.
+ on input line 2394.
 (pdftex.def)             Requested size: 289.07999pt x 322.85417pt.
- [85 <./IntroToCompressiveSensing_47-eps-converted-to.pdf>] [86 <./IntroToCompr
-essiveSensing_48-eps-converted-to.pdf>] (IntroToCompressiveSensing.aux) ) 
+Package epstopdf Info: Source file: <IntroToCompressiveSensing_49.eps>
+(epstopdf)                    date: 2017-10-09 15:39:24
+(epstopdf)                    size: 17206 bytes
+(epstopdf)             Output file: <IntroToCompressiveSensing_49-eps-converted
+-to.pdf>
+(epstopdf)                    date: 2017-10-09 15:48:43
+(epstopdf)                    size: 4200 bytes
+(epstopdf)             Command: <epstopdf --outfile=IntroToCompressiveSensing_4
+9-eps-converted-to.pdf IntroToCompressiveSensing_49.eps>
+(epstopdf)             \includegraphics on input line 2396.
+Package epstopdf Info: Output file is already uptodate.
+
+<IntroToCompressiveSensing_49-eps-converted-to.pdf, id=560, 274.02374pt x 288.0
+7625pt> [87 <./IntroToCompressiveSensing_47-eps-converted-to.pdf>]
+File: IntroToCompressiveSensing_49-eps-converted-to.pdf Graphic file (type pdf)
+
+
+<use IntroToCompressiveSensing_49-eps-converted-to.pdf>
+Package pdftex.def Info: IntroToCompressiveSensing_49-eps-converted-to.pdf used
+ on input line 2396.
+(pdftex.def)             Requested size: 289.07999pt x 303.92636pt.
+ [88 <./IntroToCompressiveSensing_48-eps-converted-to.pdf>] [89 <./IntroToCompr
+essiveSensing_49-eps-converted-to.pdf>] <dksvd.png, id=586, 495.35063pt x 438.1
+3687pt>
+File: dksvd.png Graphic file (type png)
+ <use dksvd.png>
+Package pdftex.def Info: dksvd.png used on input line 2439.
+(pdftex.def)             Requested size: 289.07999pt x 255.69063pt.
+
+[90]
+Overfull \hbox (32.9967pt too wide) in paragraph at lines 2570--2570
+[]\OT1/cmtt/m/n/10 % this is example in which we classify human face images bas
+ed on D-KSVD[] 
+ []
+
+
+Overfull \hbox (1.49698pt too wide) in paragraph at lines 2570--2570
+[]\OT1/cmtt/m/n/10 visTrain = col2im(images_training, imSize, imSize*10, 'disti
+nct');[] 
+ []
+
+[91 <./dksvd.png>]
+Overfull \hbox (6.74693pt too wide) in paragraph at lines 2570--2570
+[]\OT1/cmtt/m/n/10 % perform few iterations of KSVD on class-specific dictionar
+ies and[] 
+ []
+
+
+Overfull \hbox (127.49588pt too wide) in paragraph at lines 2570--2570
+[]    \OT1/cmtt/m/n/10 [D_part, X] = learnDictionary(Y_part, D_part, param.K, '
+nIterLearn', 5, 'Verbose', 0);[] 
+ []
+
+
+Overfull \hbox (43.49661pt too wide) in paragraph at lines 2570--2570
+[]\OT1/cmtt/m/n/10 % factor that controls reconstructive/discriminative diction
+ary properties[] 
+ []
+
+
+Overfull \hbox (53.99652pt too wide) in paragraph at lines 2570--2570
+[]\OT1/cmtt/m/n/10 % concatenate linear classifier W to the dictionary D0 and c
+oncatenate label[] 
+ []
+
+[92]
+Overfull \hbox (69.74638pt too wide) in paragraph at lines 2570--2570
+[]\OT1/cmtt/m/n/10 classificationLabel = imresize(classificationLabelEst, [9000
+, 100], 'nearest');[] 
+ []
+
+
+Overfull \hbox (17.24684pt too wide) in paragraph at lines 2570--2570
+[]\OT1/cmtt/m/n/10 visPred = col2im(classificationLabel, imSize, imSize*10, 'di
+stinct');[] 
+ []
+
+[93]
+Overfull \hbox (43.49661pt too wide) in paragraph at lines 2570--2570
+[]\OT1/cmtt/m/n/10 [C,order] = confusionmat(classificationLabelTrue, classifica
+tionLabelEst);[] 
+ []
+
+
+Overfull \hbox (64.49643pt too wide) in paragraph at lines 2607--2607
+[]     \OT1/cmtt/m/n/10 1     1     1     1     1     1     1     1     1     1
+     2     2     2[] 
+ []
+
+
+Overfull \hbox (64.49643pt too wide) in paragraph at lines 2607--2607
+[]     \OT1/cmtt/m/n/10 2     2     2     2     2     2     2     3     3     3
+     3     3     3[] 
+ []
+
+
+Overfull \hbox (64.49643pt too wide) in paragraph at lines 2607--2607
+[]     \OT1/cmtt/m/n/10 3     3     3     3     4     4     4     4     4     4
+     4     4     4[] 
+ []
+
+
+Overfull \hbox (64.49643pt too wide) in paragraph at lines 2607--2607
+[]     \OT1/cmtt/m/n/10 4     5     5     5     5     5     5     5     5     5
+     5     6     6[] 
+ []
+
+
+Overfull \hbox (64.49643pt too wide) in paragraph at lines 2607--2607
+[]     \OT1/cmtt/m/n/10 6     6     6     6     6     6     6     6     7     7
+     7     7     7[] 
+ []
+
+
+Overfull \hbox (64.49643pt too wide) in paragraph at lines 2607--2607
+[]     \OT1/cmtt/m/n/10 7     7     7     7     7     8     8     8     8     8
+     8     8     8[] 
+ []
+
+
+Overfull \hbox (64.49643pt too wide) in paragraph at lines 2607--2607
+[]     \OT1/cmtt/m/n/10 8     8     9     9     9     9     9     9     9     9
+     9     9    10[] 
+ []
+
+[94]
+Package epstopdf Info: Source file: <IntroToCompressiveSensing_50.eps>
+(epstopdf)                    date: 2017-10-09 15:40:01
+(epstopdf)                    size: 1392570 bytes
+(epstopdf)             Output file: <IntroToCompressiveSensing_50-eps-converted
+-to.pdf>
+(epstopdf)                    date: 2017-10-09 15:48:46
+(epstopdf)                    size: 105906 bytes
+(epstopdf)             Command: <epstopdf --outfile=IntroToCompressiveSensing_5
+0-eps-converted-to.pdf IntroToCompressiveSensing_50.eps>
+(epstopdf)             \includegraphics on input line 2609.
+Package epstopdf Info: Output file is already uptodate.
+
+<IntroToCompressiveSensing_50-eps-converted-to.pdf, id=603, 257.96375pt x 287.0
+725pt>
+File: IntroToCompressiveSensing_50-eps-converted-to.pdf Graphic file (type pdf)
+
+ <use IntroToCompressiveSensing_50-eps-converted-to.pdf>
+Package pdftex.def Info: IntroToCompressiveSensing_50-eps-converted-to.pdf used
+ on input line 2609.
+(pdftex.def)             Requested size: 289.07999pt x 321.72926pt.
+Package epstopdf Info: Source file: <IntroToCompressiveSensing_51.eps>
+(epstopdf)                    date: 2017-10-09 15:40:02
+(epstopdf)                    size: 1390500 bytes
+(epstopdf)             Output file: <IntroToCompressiveSensing_51-eps-converted
+-to.pdf>
+(epstopdf)                    date: 2017-10-09 15:48:47
+(epstopdf)                    size: 105425 bytes
+(epstopdf)             Command: <epstopdf --outfile=IntroToCompressiveSensing_5
+1-eps-converted-to.pdf IntroToCompressiveSensing_51.eps>
+(epstopdf)             \includegraphics on input line 2611.
+Package epstopdf Info: Output file is already uptodate.
+
+<IntroToCompressiveSensing_51-eps-converted-to.pdf, id=604, 257.96375pt x 287.0
+725pt>
+File: IntroToCompressiveSensing_51-eps-converted-to.pdf Graphic file (type pdf)
+
+ <use IntroToCompressiveSensing_51-eps-converted-to.pdf>
+Package pdftex.def Info: IntroToCompressiveSensing_51-eps-converted-to.pdf used
+ on input line 2611.
+(pdftex.def)             Requested size: 289.07999pt x 321.72926pt.
+Package epstopdf Info: Source file: <IntroToCompressiveSensing_52.eps>
+(epstopdf)                    date: 2017-10-09 15:40:04
+(epstopdf)                    size: 3459076 bytes
+(epstopdf)             Output file: <IntroToCompressiveSensing_52-eps-converted
+-to.pdf>
+(epstopdf)                    date: 2017-10-09 15:48:50
+(epstopdf)                    size: 25497 bytes
+(epstopdf)             Command: <epstopdf --outfile=IntroToCompressiveSensing_5
+2-eps-converted-to.pdf IntroToCompressiveSensing_52.eps>
+(epstopdf)             \includegraphics on input line 2613.
+Package epstopdf Info: Output file is already uptodate.
+
+<IntroToCompressiveSensing_52-eps-converted-to.pdf, id=605, 257.96375pt x 288.0
+7625pt> [95 <./IntroToCompressiveSensing_50-eps-converted-to.pdf>]
+File: IntroToCompressiveSensing_52-eps-converted-to.pdf Graphic file (type pdf)
+
+
+<use IntroToCompressiveSensing_52-eps-converted-to.pdf>
+Package pdftex.def Info: IntroToCompressiveSensing_52-eps-converted-to.pdf used
+ on input line 2613.
+(pdftex.def)             Requested size: 289.07999pt x 322.85417pt.
+Package epstopdf Info: Source file: <IntroToCompressiveSensing_53.eps>
+(epstopdf)                    date: 2017-10-09 15:40:05
+(epstopdf)                    size: 17206 bytes
+(epstopdf)             Output file: <IntroToCompressiveSensing_53-eps-converted
+-to.pdf>
+(epstopdf)                    date: 2017-10-09 15:48:51
+(epstopdf)                    size: 4200 bytes
+(epstopdf)             Command: <epstopdf --outfile=IntroToCompressiveSensing_5
+3-eps-converted-to.pdf IntroToCompressiveSensing_53.eps>
+(epstopdf)             \includegraphics on input line 2615.
+Package epstopdf Info: Output file is already uptodate.
+
+<IntroToCompressiveSensing_53-eps-converted-to.pdf, id=614, 274.02374pt x 288.0
+7625pt> [96 <./IntroToCompressiveSensing_51-eps-converted-to.pdf>]
+File: IntroToCompressiveSensing_53-eps-converted-to.pdf Graphic file (type pdf)
+
+
+<use IntroToCompressiveSensing_53-eps-converted-to.pdf>
+Package pdftex.def Info: IntroToCompressiveSensing_53-eps-converted-to.pdf used
+ on input line 2615.
+(pdftex.def)             Requested size: 289.07999pt x 303.92636pt.
+ [97 <./IntroToCompressiveSensing_52-eps-converted-to.pdf>] [98 <./IntroToCompr
+essiveSensing_53-eps-converted-to.pdf>] (IntroToCompressiveSensing.aux) ) 
 Here is how much of TeX's memory you used:
- 1852 strings out of 493333
- 35063 string characters out of 3139198
+ 1874 strings out of 493333
+ 36262 string characters out of 3139198
  86292 words of memory out of 3000000
- 5321 multiletter control sequences out of 15000+200000
+ 5340 multiletter control sequences out of 15000+200000
  9004 words of font info for 32 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,6n,25p,1109b,247s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 39i,6n,25p,1373b,247s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Fi
 les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKT
@@ -2174,9 +2148,9 @@ X 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/font
 s/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
 public/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/am
 sfonts/cm/cmtt10.pfb>
-Output written on IntroToCompressiveSensing.pdf (86 pages, 2036462 bytes).
+Output written on IntroToCompressiveSensing.pdf (98 pages, 2170490 bytes).
 PDF statistics:
- 619 PDF objects out of 1000 (max. 8388607)
+ 691 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 286 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 311 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -99,7 +99,15 @@ idx = randi([1,2*n], 1, K);
 
 %random sparsity vector
 s = zeros(2*n, 1);
-s(idx) = 1;
+
+% s(idx) = 1;
+
+s(10) = 1;
+s(38) = 1.75;
+
+s(69) = 2;
+s(100)= 2.5;
+s(80) = 0.75;
 
 %obtain the signal which is a mixture of impulses and sinusoids
 x = psi*s;
@@ -811,9 +819,9 @@ for iterNo = 1:nIter
     residual = x_us - psi*s_est;
     
     % set threshold and perform thresholding
-    th = 0.99*max(abs(psi'*residual));
+    th = max(abs(psi'*residual));
 
-    s_est = hardThreshold(s_est + psi'*residual, th);
+    s_est = hardThreshold(s_est + psi'*residual, th-eps);
     
     figure(200)
     subplot(311), stem(s_orig), title('Original Spectrum')
@@ -869,8 +877,8 @@ for i = 1:nSamplingLines
 end
 
 % low-pass filter mask
-mask = ones(64);
-mask = padarray(mask, 0.5*[N-64, N-64]);
+% mask = ones(64);
+% mask = padarray(mask, 0.5*[N-64, N-64]);
 
 % aliasing mask - subsampled
 % mask = kron(ones(64), [1 0 0 0;1 0 0 0 ; 0  0 0 0 ; 0 0 0  0 ]);
@@ -1049,11 +1057,11 @@ image = rgb2gray(im2double(imresize(imread(imagePath), 0.5)));
 optimizationPackage = 'mex';
 
 % choose block size - divide whole image in non-overlapping blocks
-blockSize = 8;
+blockSize = 16;
 
 % choose number of measurements used in reconstruction
 % desired M << N
-noOfMeasurements  = 32;
+noOfMeasurements  = 128;
 
 % choose measurement matrix type
 % options: walsh, bern, radem, gauss, dct
@@ -1766,41 +1774,41 @@ close all
 clc
 
 % load image
-imagePath = '.\data\lenna.tiff';
-image = rgb2gray(im2double(imresize(imread(imagePath), 0.5)));
+imagePath = '.\data\barb.png';
+image = (im2double(imresize(imread(imagePath), 0.25)));
 [rows, cols] = size(image);
 
 blockSize = size(image, 1);
-percentage=0.95;
+percentage=0.8;
 m = ceil(percentage*blockSize^2);
 
 wavelet = 'haar';
-n_levels = wmaxlev(size(image), wavelet); % maximum number of wavelet decomposition levels
-% n_levels = 2;
-% [C,S] = wavedec(image(:), n_levels, wavelet); % conversion to 2D, wavelet decomposition
-[C,S] = wavedec2(image, n_levels, wavelet); % conversion to 2D, wavelet decomposition
+% n_levels = wmaxlev(size(image), wavelet); % maximum number of wavelet decomposition levels
+n_levels = 8;
+[C,S] = wavedec(image(:), n_levels, wavelet); % conversion to 2D, wavelet decomposition
+% [C,S] = wavedec2(image, n_levels, wavelet); % conversion to 2D, wavelet decomposition
 
 % diagonal reduction matrix
 ind = logical(randerr(1, blockSize^2, m));
 ind = zeros(1, blockSize^2);
 ind(1:m)=1;
 R = (diag(sparse(ind)));
-R=R(any(R), :);
+R = R(any(R), :);
 
 tau = 1e-10;
-tolA = 1e-5;
+tolA = 1e-15;
 
 Psi = @(x,th) soft(x,th);
 Phi = @(x) norm(x, 1);
 
-% psi = @(x) idct2(x);
-% psi_inv = @(x) dct2(x);
+psi = @(x) idct2(x);
+psi_inv = @(x) dct2(x);
 
 % psi = @(x) waverec(x, S, wavelet);
 % psi_inv = @(x) wavedec(x, n_levels, wavelet);
 
-psi = @(x) reshape(waverec2(x, S, wavelet), blockSize^2, 1);
-psi_inv = @(x) wavedec2(reshape(x, blockSize, blockSize), n_levels, wavelet);
+% psi = @(x) reshape(waverec2(x, S, wavelet), blockSize^2, 1);
+% psi_inv = @(x) wavedec2(reshape(x, blockSize, blockSize), n_levels, wavelet);
 
 phi = @(x) (blockSize^2)*fwht(x);
 phi_inv = @(x) ifwht(x);
@@ -1825,8 +1833,8 @@ toc
 
 image_est = reshape(psi(s_est), [blockSize blockSize]);
 
-s_f = fliplr(psi_inv(image));
-% s_f = flipud(psi_inv(image(:)));
+% s_f = fliplr(psi_inv(image));
+s_f = flipud(psi_inv(image(:)));
 
 y_f = R * phi(psi(s_f));
 
@@ -1843,8 +1851,8 @@ tic
     'Verbose', 0);
 toc
 
-s_f_est = fliplr(s_f_est);
-% s_f_est = flipud(s_f_est);
+% s_f_est = fliplr(s_f_est);
+s_f_est = flipud(s_f_est);
 
 image_f_est = reshape(psi(s_f_est), [blockSize blockSize]);
 
@@ -2274,6 +2282,10 @@ subplot(122), imagesc(inpaintedImage), title('Inpainted image'), axis image
 % we load 10 training and 10 testing images with face expression,
 % face position and also light condition variations
 
+clearvars
+close all
+clc
+
 load images_training
 load images_testing
 
@@ -2286,7 +2298,7 @@ visTest = col2im(images_testing, imSize, imSize*10, 'distinct');
 labels = kron(1:10, [1 1 1 1 1 1 1 1 1 1]);
 
 % random faces dimensionality reduction
-n = 500;
+n = 300;
 
 R = randn(n, size(images_training, 1));
 R = normalizeColumns(R')';
@@ -2295,10 +2307,10 @@ D=(R*images_training);
 Y=(R*images_testing);
 
 % desired sparsity of sparse representation
-T0 = 10;
+T0 = 5;
 
 % no of iterations of sparse coding algorithm
-nIter = 10;
+nIter = 100;
 
 % perform sparse coding
 X = sparseCode(Y, D, T0, nIter);
@@ -2317,10 +2329,10 @@ end
 % smallest error representation is the best one
 [maxval, indices] = min(src_scores, [], 2);
 
-classificationLabel = uniqlabels(indices)
+classificationLabelEst = uniqlabels(indices)
 
 
-classificationLabel = imresize(classificationLabel, [9000, 100], 'nearest');
+classificationLabel = imresize(classificationLabelEst, [9000, 100], 'nearest');
 visPred = col2im(classificationLabel, imSize, imSize*10, 'distinct');
 
 figure, colormap gray
@@ -2338,7 +2350,13 @@ imagesc(visPred)
 axis image
 title('Classification Labels')
 
+classificationLabelTrue = kron(1:10, ones(1, 10));
+[C,order] = confusionmat(classificationLabelTrue, classificationLabelEst);
 
+figure, colormap jet
+imagesc(C)
+axis image
+title('Confusion Matrix')
 %% Discriminative K-SVD (D-KSVD)
 % Let $Y\in\mathbf{R}^{n\times N}$ denote a set of $N$ $n$-dimensional
 % training signals with a corresponding label matrix
@@ -2393,6 +2411,11 @@ title('Classification Labels')
 % this is example in which we classify human face images based on D-KSVD
 % we load 10 training and 10 testing images with face expression,
 % face position and also light condition variations
+
+close all
+clearvars
+clc
+
 load images_training
 load images_testing
 
@@ -2406,7 +2429,7 @@ visTrain = col2im(images_training, imSize, imSize*10, 'distinct');
 visTest = col2im(images_testing, imSize, imSize*10, 'distinct');
 
 % random faces dimensionality reduction
-n = 500;
+n = 1000;
 R = randn(n, size(images_training, 1));
 R = normalizeColumns(R')';
 
@@ -2418,7 +2441,7 @@ niter_coeff = 30;
 niter_dict = 10;
 
 % desired sparsity
-T0 = 4;
+T0 = 7;
 
 D_cat = [];
 
@@ -2429,7 +2452,7 @@ H = kron(diag(ones(nPerson,1)), ones(size(Y0,2)/10, 1))';
 % concatenate them to form initial dictionary for D-KSVD
 param.K = K/nPerson;
 param.numIteration=niter_learn;
-param.InitializationMethod='DataElements';
+param.InitializationMethod = 'DataElements';
 param.preserveDCAtom=0;
 param.L = T0;
 
@@ -2445,7 +2468,7 @@ for i = 1:nPerson
 end
 
 % compute sparse representation for training images using OMP
-X = OMP(D_cat,Y0,T0);
+X = OMP(D_cat, Y0, T0);
 
 % initialize linear classifier W
 W0 = (H*X')/(X*X'+eye(size(X*X')));
@@ -2474,6 +2497,7 @@ W_final = (D(n+1:end,:))./(sqrt(sum(abs(D(1:n,:).^2),1)));
 
 % perform random faces dimensionality reduction on test dataset
 Y_testing = R*images_testing;
+Y_testing(:,end-10:end)=Y_testing(:,end-10:end);
 
 % sparse code test dataset using OMP
 X = zeros(size(D, 2), size(Y_testing, 2));
@@ -2483,10 +2507,9 @@ X = OMP(D_final, Y_testing, 5);
 classCode = (W_final * X);
 
 % find class label
-[~, classificationLabel] = max(abs(classCode))
+[~, classificationLabelEst] = max(abs(classCode))
 
-
-classificationLabel = imresize(classificationLabel, [9000, 100], 'nearest');
+classificationLabel = imresize(classificationLabelEst, [9000, 100], 'nearest');
 visPred = col2im(classificationLabel, imSize, imSize*10, 'distinct');
 
 figure, colormap gray
@@ -2504,5 +2527,11 @@ imagesc(visPred)
 axis image
 title('Classification Labels')
 
+classificationLabelTrue = kron(1:10, ones(1, 10));
+[C,order] = confusionmat(classificationLabelTrue, classificationLabelEst);
 
+figure, colormap jet
+imagesc(C)
+axis image
+title('Confusion Matrix')
 
